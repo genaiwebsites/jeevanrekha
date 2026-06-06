@@ -195,7 +195,7 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 
 /* ═══════════════════ HOMEPAGE PRODUCTS (3-COLUMN REFERENCE FIX) ═══════════════════ */
 .prods-home { padding: 120px 0 0 0; background: var(--bk); }
-.phd-top { max-width: 1360px; margin: 0 auto; padding: 0 56px 40px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px; }
+.phd-top { max-width: 1360px; margin: 0 auto; padding: 0 56px 40px; display: flex; justify-content: center; align-items: center; text-align: center; flex-wrap: wrap; gap: 24px; }
 .phd-title { font-family: var(--fd); font-size: clamp(2rem, 3.5vw, 3rem); color: var(--w); font-weight: 500; letter-spacing: -0.02em; }
 .phd-title em { font-style: italic; color: var(--r-plumlt); }
 .phd-btn { 

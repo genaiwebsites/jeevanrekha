@@ -98,7 +98,6 @@ export default function Home() {
       <section className="prods-home">
         <div className="phd-top">
           <h2 className="phd-title rv">Three Oils. <em>One Standard</em> of Excellence.</h2>
-          <Link href="/products" className="phd-btn rv" data-d="1">VIEW ALL PRODUCTS</Link>
         </div>
 
         <div className="pgrid-home">
