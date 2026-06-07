@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeevan Rekha Foods — Purity. Health. Happiness.</title>
+<link rel="icon" href="https://jeevanrekhafoods.com/wp-content/uploads/2025/04/cropped-Fav-Icon-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,600&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<style>
+:root{
+  --p:#4B2685;--pd:#2D1660;--pm:#6F2496;--pl:#EDE8F8;--pll:#F5F2FC;
+  --y:#FEDC06;--yd:#C8A000;--yl:#FFFCE0;
+  --w:#FFFFFF;--off:#FAFAF8;
+  --g05:#F4F2FA;--g10:#EAE6F6;--g20:#D4CCF0;--g40:#A898D4;
+  --g60:#5E4F8C;--g80:#3A2870;--bk:#100B28;
+  --fd:'Fraunces',serif;--fb:'Instrument Sans',sans-serif;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:var(--fb);background:var(--off);color:var(--bk);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--bk)}
+::-webkit-scrollbar-thumb{background:var(--y);border-radius:4px}
+
+/* CURSOR */
+#cur-ring{position:fixed;width:44px;height:44px;border-radius:50%;border:1.5px solid rgba(75,38,133,.5);transform:translate(-50%,-50%);pointer-events:none;z-index:9999;transition:transform .12s,border-color .25s,width .3s,height .3s;mix-blend-mode:exclusion}
+#cur-dot{position:fixed;width:7px;height:7px;border-radius:50%;background:var(--y);transform:translate(-50%,-50%);pointer-events:none;z-index:9999;transition:transform .08s}
+body:has(a:hover) #cur-ring{width:60px;height:60px;border-color:var(--y);opacity:.6}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:800;height:80px}
+.nav-bg{position:absolute;inset:0;background:transparent;transition:background .5s var(--ease),backdrop-filter .5s,border-bottom-color .5s;border-bottom:1px solid transparent}
+#nav.scrolled .nav-bg{background:rgba(255,255,255,.95);backdrop-filter:blur(28px) saturate(160%);border-bottom-color:rgba(75,38,133,.1);box-shadow:0 2px 32px rgba(75,38,133,.07)}
+.nav-inner{position:relative;z-index:2;max-width:1360px;margin:0 auto;padding:0 56px;height:80px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{text-decoration:none;display:flex;align-items:center}
+.nav-logo img{height:54px;width:auto;object-fit:contain;filter:brightness(0) invert(1);transition:filter .4s var(--ease)}
+#nav.scrolled .nav-logo img{filter:none}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{font-size:.76rem;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.7);text-decoration:none;transition:color .25s;position:relative;padding-bottom:3px}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--y);transition:width .35s var(--ease);border-radius:2px}
+.nav-links a:hover{color:var(--y)}
+.nav-links a:hover::after{width:100%}
+#nav.scrolled .nav-links a{color:var(--g60)}
+#nav.scrolled .nav-links a:hover{color:var(--p)}
+#nav.scrolled .nav-links a::after{background:var(--p)}
+.nav-cta{background:var(--y);color:var(--pd);padding:11px 28px;border-radius:50px;font-size:.76rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .35s var(--ease);box-shadow:0 4px 20px rgba(254,220,6,.3);display:inline-flex;align-items:center;gap:8px}
+.nav-cta:hover{background:var(--yd);transform:translateY(-2px);box-shadow:0 10px 36px rgba(254,220,6,.45)}
+
+/* HERO */
+.hero{height:100vh;min-height:780px;position:relative;overflow:hidden;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0;background:var(--bk)}
+.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 90% 80% at 15% 55%,rgba(75,38,133,.9) 0%,transparent 65%),radial-gradient(ellipse 65% 65% at 78% 25%,rgba(111,36,150,.75) 0%,transparent 60%),radial-gradient(ellipse 55% 55% at 55% 85%,rgba(45,22,96,.8) 0%,transparent 55%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(254,220,6,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(254,220,6,.035) 1px,transparent 1px);background-size:72px 72px;animation:gSlide 22s linear infinite}
+@keyframes gSlide{0%{background-position:0 0}100%{background-position:72px 72px}}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none}
+.orb1{width:700px;height:700px;background:rgba(75,38,133,.4);top:-20%;right:-12%;animation:oFloat 9s ease-in-out infinite}
+.orb2{width:450px;height:450px;background:rgba(254,220,6,.1);bottom:-5%;left:-10%;animation:oFloat 12s ease-in-out infinite;animation-delay:-4s}
+.orb3{width:320px;height:320px;background:rgba(111,36,150,.3);top:25%;left:20%;animation:oFloat 7s ease-in-out infinite;animation-delay:-6s}
+@keyframes oFloat{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(28px,-18px) scale(1.04)}66%{transform:translate(-18px,14px) scale(.97)}}
+
+.hero-wrap{position:relative;z-index:4;max-width:1360px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:1fr .85fr;gap:72px;align-items:center;width:100%}
+.hero-left{padding-top:16px}
+
+.h-eyebrow{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:50px;padding:8px 20px 8px 14px;margin-bottom:32px;backdrop-filter:blur(12px)}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--y);box-shadow:0 0 0 0 rgba(254,220,6,.6);animation:pulseAnim 2.4s infinite;flex-shrink:0}
+@keyframes pulseAnim{0%{box-shadow:0 0 0 0 rgba(254,220,6,.6)}70%{box-shadow:0 0 0 10px rgba(254,220,6,0)}100%{box-shadow:0 0 0 0 rgba(254,220,6,0)}}
+.eyebrow-t{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+
+.h1{font-family:var(--fd);font-size:clamp(3.2rem,6.2vw,6.2rem);font-weight:300;line-height:.98;letter-spacing:-.03em;color:var(--w);margin-bottom:30px}
+.h1-a{display:block;font-weight:700}
+.h1-b{display:block;font-style:italic;color:var(--y);font-weight:600}
+.h1-c{display:block;-webkit-text-stroke:1.5px rgba(255,255,255,.35);color:transparent;font-style:italic}
+
+.h-desc{font-size:1.06rem;line-height:1.84;color:rgba(255,255,255,.52);max-width:460px;margin-bottom:44px}
+.h-desc strong{color:rgba(255,255,255,.82);font-weight:600}
+
+.h-btns{display:flex;gap:15px;margin-bottom:56px;flex-wrap:wrap}
+.btn-y{background:var(--y);color:var(--pd);padding:16px 42px;border-radius:50px;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .4s var(--ease);box-shadow:0 6px 28px rgba(254,220,6,.35);display:inline-flex;align-items:center;gap:10px;position:relative;overflow:hidden}
+.btn-y::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.18);transform:translateX(-110%);transition:.4s var(--ease)}
+.btn-y:hover::after{transform:translateX(0)}
+.btn-y:hover{transform:translateY(-3px);box-shadow:0 18px 52px rgba(254,220,6,.5)}
+.btn-outline-w{border:1.5px solid rgba(255,255,255,.22);color:rgba(255,255,255,.75);padding:16px 38px;border-radius:50px;font-size:.82rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .35s var(--ease);background:rgba(255,255,255,.04);backdrop-filter:blur(8px)}
+.btn-outline-w:hover{border-color:var(--y);color:var(--y);background:rgba(254,220,6,.07)}
+
+.h-stats{display:flex;gap:36px}
+.hst{position:relative;padding-left:16px}
+.hst::before{content:'';position:absolute;left:0;top:4px;bottom:4px;width:2px;background:var(--y);border-radius:2px}
+.hst-n{font-family:var(--fd);font-size:1.85rem;color:var(--w);line-height:1;font-style:italic}
+.hst-l{font-size:.63rem;color:rgba(255,255,255,.38);letter-spacing:.14em;text-transform:uppercase;margin-top:3px;font-weight:500}
+
+/* Hero right scene */
+.hero-right{position:relative;display:flex;align-items:center;justify-content:center}
+.h-scene{position:relative;width:480px;height:540px}
+.s-glow{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:360px;height:360px;border-radius:50%;background:radial-gradient(ellipse,rgba(254,220,6,.16) 0%,transparent 70%);animation:sGlow 4.5s ease-in-out infinite}
+@keyframes sGlow{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.12)}}
+.s-ring{position:absolute;left:50%;top:50%;border-radius:50%;transform:translate(-50%,-50%)}
+.sr1{width:310px;height:310px;border:1px solid rgba(254,220,6,.18);animation:rSpin 16s linear infinite}
+.sr2{width:410px;height:410px;border:1px solid rgba(75,38,133,.3);animation:rSpin 26s linear infinite reverse}
+.sr3{width:490px;height:490px;border:1px solid rgba(254,220,6,.07);animation:rSpin 38s linear infinite}
+@keyframes rSpin{from{transform:translate(-50%,-50%) rotate(0)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+.sr1::before{content:'';position:absolute;top:-5px;left:50%;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:var(--y);box-shadow:0 0 14px rgba(254,220,6,.9)}
+.sr2::after{content:'';position:absolute;bottom:-5px;right:22%;width:8px;height:8px;border-radius:50%;background:var(--pm);box-shadow:0 0 12px rgba(111,36,150,.9)}
+
+.bottle-wrap{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);animation:bFloat 5.5s ease-in-out infinite;z-index:4;filter:drop-shadow(0 48px 72px rgba(0,0,0,.65)) drop-shadow(0 0 48px rgba(254,220,6,.12))}
+@keyframes bFloat{0%,100%{transform:translate(-50%,-50%) translateY(0)}50%{transform:translate(-50%,-50%) translateY(-20px)}}
+
+.d-chip{position:absolute;z-index:5;background:rgba(255,255,255,.09);backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,.17);border-radius:14px;padding:13px 18px;transition:transform .3s var(--ease)}
+.d-chip:hover{transform:translateY(-4px) scale(1.04)}
+.dc-a{top:56px;left:0}
+.dc-b{bottom:90px;right:-8px}
+.dc-c{top:46%;left:-44px;transform:translateY(-50%)}
+.dc-n{font-family:var(--fd);font-size:1.45rem;color:var(--y);line-height:1;font-style:italic}
+.dc-l{font-size:.56rem;color:rgba(255,255,255,.48);letter-spacing:.13em;text-transform:uppercase;margin-top:3px;font-weight:600}
+
+/* TICKER */
+.ticker{background:var(--y);overflow:hidden}
+.ticker-t{display:flex;animation:tkr 32s linear infinite;white-space:nowrap}
+@keyframes tkr{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ti{flex-shrink:0;display:inline-flex;align-items:center;gap:20px;padding:14px 30px;font-size:.72rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pd)}
+.ti-sep{opacity:.35}
+
+/* STATS DARK */
+.stats-dark{background:var(--bk)}
+.sd-row{max-width:1360px;margin:0 auto;padding:0 56px;display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid rgba(255,255,255,.05)}
+.sd-cell{padding:52px 32px;border-right:1px solid rgba(255,255,255,.05);text-align:center;position:relative;overflow:hidden;transition:background .35s}
+.sd-cell:last-child{border-right:none}
+.sd-cell:hover{background:rgba(255,255,255,.025)}
+.sd-cell::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--p),var(--y));transform:scaleX(0);transform-origin:center;transition:transform .5s var(--ease)}
+.sd-cell:hover::after{transform:scaleX(1)}
+.sd-n{font-family:var(--fd);font-size:2.8rem;color:var(--y);line-height:1;font-style:italic;margin-bottom:8px}
+.sd-l{font-size:.68rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.3)}
+
+/* COMMON */
+.wrap{max-width:1360px;margin:0 auto;padding:0 56px}
+.kicker{display:flex;align-items:center;gap:13px;margin-bottom:18px}
+.k-bar{width:34px;height:2px;background:var(--y);border-radius:2px}
+.k-txt{font-size:.67rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--p)}
+.k-txt-lt{color:rgba(255,255,255,.38)}
+.s-h{font-family:var(--fd);font-size:clamp(2.1rem,3.7vw,3.3rem);font-weight:400;line-height:1.06;letter-spacing:-.025em;color:var(--bk)}
+.s-h em{font-style:italic;color:var(--p)}
+.s-h strong{font-weight:700;color:var(--p)}
+.s-h .wt{color:var(--w)}
+.s-h .yw{color:var(--y)}
+.body-t{font-size:.97rem;line-height:1.86;color:var(--g60);font-weight:400}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(44px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.vis{opacity:1;transform:none}
+.rv.sl{transform:translateX(-44px)}.rv.sr{transform:translateX(44px)}
+.rv.sl.vis,.rv.sr.vis{transform:none}
+[data-d="1"]{transition-delay:.12s}[data-d="2"]{transition-delay:.24s}[data-d="3"]{transition-delay:.36s}[data-d="4"]{transition-delay:.48s}
+
+/* WHY */
+.why{padding:116px 0;background:var(--off)}
+.why-top{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:68px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.wcard{background:var(--w);border-radius:26px;padding:50px 40px;border:1px solid rgba(75,38,133,.07);position:relative;overflow:hidden;transition:all .5s var(--ease);cursor:default}
+.wcard::before{content:'';position:absolute;inset:0;border-radius:26px;background:linear-gradient(140deg,var(--p),var(--pm));opacity:0;transition:opacity .4s}
+.wcard:hover::before{opacity:1}
+.wcard:hover{transform:translateY(-10px);box-shadow:0 40px 100px rgba(75,38,133,.25)}
+.wc-bg-n{position:absolute;top:16px;right:24px;font-family:var(--fd);font-size:6.5rem;line-height:1;color:rgba(75,38,133,.05);font-style:italic;transition:color .4s}
+.wcard:hover .wc-bg-n{color:rgba(255,255,255,.05)}
+.wc-ico{width:60px;height:60px;border-radius:18px;margin-bottom:28px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--p),var(--pm));box-shadow:0 10px 28px rgba(75,38,133,.28);transition:all .4s var(--ease);position:relative;z-index:1}
+.wcard:hover .wc-ico{background:rgba(255,255,255,.12);box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.wc-ico svg{width:26px;height:26px;fill:var(--y);transition:fill .3s}
+.wcard h3{font-family:var(--fd);font-size:1.4rem;font-weight:600;color:var(--bk);margin-bottom:14px;transition:color .3s;position:relative;z-index:1}
+.wcard:hover h3{color:var(--w)}
+.wcard p{font-size:.86rem;line-height:1.82;color:var(--g60);transition:color .3s;position:relative;z-index:1;font-weight:400}
+.wcard:hover p{color:rgba(255,255,255,.65)}
+.wc-ft{margin-top:32px;padding-top:22px;border-top:1px solid rgba(75,38,133,.08);font-size:.67rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--p);transition:all .3s;position:relative;z-index:1;display:flex;align-items:center;gap:8px}
+.wcard:hover .wc-ft{color:rgba(255,255,255,.45);border-top-color:rgba(255,255,255,.1)}
+.wc-ft::after{content:'→';transition:transform .3s var(--ease)}
+.wcard:hover .wc-ft::after{transform:translateX(6px)}
+
+/* PRODUCTS DARK */
+.prods{padding:116px 0;background:var(--bk)}
+.prods-hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:64px;flex-wrap:wrap;gap:20px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;background:rgba(255,255,255,.04);border-radius:0}
+.pcard{position:relative;overflow:hidden;min-height:560px;display:flex;flex-direction:column;text-decoration:none;transition:flex .6s var(--ease)}
+.pcard::before{content:'';position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.25) 55%,rgba(0,0,0,.06) 100%);transition:background .5s}
+.pcard:hover::before{background:linear-gradient(to top,rgba(45,22,96,.96) 0%,rgba(75,38,133,.55) 55%,rgba(75,38,133,.15) 100%)}
+.pc-bg-img{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.0);transition:transform .9s var(--ease)}
+.pcard:hover .pc-bg-img{transform:scale(1.08)}
+.bg-mustard{background:radial-gradient(ellipse at 40% 30%,#FFD740,#C67C00 50%,#3D1800 100%)}
+.bg-rice{background:radial-gradient(ellipse at 60% 30%,#A070FF,#4B2685 50%,#0D0420 100%)}
+.bg-soy{background:radial-gradient(ellipse at 40% 30%,#80D880,#2E7D32 50%,#061406 100%)}
+
+.pc-deco{position:absolute;top:0;left:0;right:0;height:3px;z-index:3}
+.deco-mustard{background:linear-gradient(90deg,var(--y),#C67C00)}
+.deco-rice{background:linear-gradient(90deg,var(--p),#A070FF)}
+.deco-soy{background:linear-gradient(90deg,#2E7D32,#80D880)}
+
+/* Liquid fill animation */
+.pc-liquid{position:absolute;bottom:-30px;left:0;right:0;height:160px;border-radius:80% 80% 0 0;z-index:1;transition:height .6s var(--ease),bottom .6s var(--ease)}
+.pcard:hover .pc-liquid{height:260px;bottom:-50px}
+.liq-m{background:rgba(254,220,6,.18)}
+.liq-r{background:rgba(75,38,133,.28)}
+.liq-s{background:rgba(46,139,46,.22)}
+
+.pc-btl{position:absolute;top:24px;right:24px;z-index:3;opacity:.65;transform:scale(.9) rotate(8deg) translateY(0);transition:all .65s var(--ease)}
+.pcard:hover .pc-btl{opacity:1;transform:scale(1.04) rotate(0) translateY(-10px)}
+
+.pc-body{position:relative;z-index:4;padding:40px 36px;margin-top:auto}
+.pc-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 15px;border-radius:50px;font-size:.61rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px;backdrop-filter:blur(12px)}
+.b-gold{background:rgba(254,220,6,.18);border:1px solid rgba(254,220,6,.38);color:var(--y)}
+.b-plum{background:rgba(180,140,255,.12);border:1px solid rgba(180,140,255,.28);color:#C9A8FF}
+.b-jade{background:rgba(100,200,100,.12);border:1px solid rgba(100,200,100,.28);color:#90E890}
+.pc-name{font-family:var(--fd);font-size:1.85rem;font-weight:400;color:var(--w);line-height:1.1;margin-bottom:6px}
+.pc-name em{font-style:italic}
+.n-gold em{color:var(--y)}
+.n-plum em{color:#C9A8FF}
+.n-jade em{color:#90E890}
+.pc-sub{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:500;margin-bottom:16px}
+.pc-desc{font-size:.83rem;line-height:1.74;color:rgba(255,255,255,.45);max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+.pcard:hover .pc-desc{max-height:80px}
+.pc-cta-lnk{display:inline-flex;align-items:center;gap:10px;margin-top:18px;font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;opacity:0;transform:translateY(12px);transition:all .45s var(--ease)}
+.pcard:hover .pc-cta-lnk{opacity:1;transform:none}
+.cta-m{color:var(--y)}
+.cta-r{color:#C9A8FF}
+.cta-s{color:#90E890}
+.cta-arr{transition:transform .3s var(--ease)}
+.pcard:hover .cta-arr{transform:translateX(6px)}
+
+.p-footer{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:rgba(255,255,255,.04)}
+.pf-row{padding:44px 52px;display:flex;align-items:center;justify-content:space-between;gap:20px;transition:background .35s}
+.pf-lt{background:rgba(255,255,255,.03)}
+.pf-dk{background:rgba(254,220,6,.04)}
+.pf-lt:hover{background:rgba(255,255,255,.06)}
+.pf-dk:hover{background:rgba(254,220,6,.08)}
+.pf-t h3{font-family:var(--fd);font-size:1.3rem;color:var(--w);margin-bottom:10px;font-weight:400}
+.pf-t p{font-size:.83rem;line-height:1.7;color:rgba(255,255,255,.35);font-weight:400}
+.pf-right{text-align:right;flex-shrink:0}
+.pf-num{font-family:var(--fd);font-size:3rem;font-style:italic;line-height:1}
+.pf-lt .pf-num{color:rgba(255,255,255,.12)}
+.pf-dk .pf-num{color:rgba(254,220,6,.28)}
+.pf-lbl{font-size:.63rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;margin-top:4px}
+.pf-lt .pf-lbl{color:rgba(255,255,255,.18)}
+.pf-dk .pf-lbl{color:rgba(254,220,6,.38)}
+
+.btn-ghost-w{display:inline-flex;align-items:center;gap:12px;border:1.5px solid rgba(255,255,255,.18);color:rgba(255,255,255,.7);padding:14px 34px;border-radius:50px;font-size:.77rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .4s var(--ease)}
+.btn-ghost-w:hover{border-color:var(--y);color:var(--y);background:rgba(254,220,6,.06)}
+
+/* PHILOSOPHY */
+.phil{padding:130px 0;background:var(--off);position:relative;overflow:hidden}
+.phil::before{content:'';position:absolute;right:-180px;top:-200px;width:650px;height:650px;border-radius:50%;background:radial-gradient(ellipse,rgba(75,38,133,.055) 0%,transparent 70%);pointer-events:none}
+.phil-grid{display:grid;grid-template-columns:1fr 1fr;gap:110px;align-items:center}
+.phil-vis-card{background:linear-gradient(150deg,var(--p) 0%,var(--pm) 52%,#180840 100%);border-radius:34px;padding:76px 60px;position:relative;overflow:hidden;box-shadow:0 48px 120px rgba(75,38,133,.3)}
+.pvc-grid{position:absolute;inset:0;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:44px 44px}
+.pvc-glow{position:absolute;top:-80px;right:-80px;width:340px;height:340px;border-radius:50%;background:radial-gradient(ellipse,rgba(254,220,6,.2) 0%,transparent 70%)}
+.p-qmark{font-family:var(--fd);font-size:8.5rem;line-height:.62;color:rgba(254,220,6,.28);position:relative;z-index:1;margin-bottom:22px;display:block}
+.p-quote{font-family:var(--fd);font-size:1.75rem;font-style:italic;font-weight:300;color:var(--w);line-height:1.42;position:relative;z-index:1;margin-bottom:40px}
+.p-quote em{color:var(--y)}
+.p-sig{font-size:.67rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.38);position:relative;z-index:1;display:flex;align-items:center;gap:14px}
+.p-sig::before{content:'';width:32px;height:1px;background:var(--y)}
+.p-chip1{position:absolute;bottom:-22px;right:-18px;background:var(--y);border-radius:18px;padding:20px 26px;box-shadow:0 16px 48px rgba(75,38,133,.2);display:flex;align-items:center;gap:14px}
+.p-chip1 .pcn{font-family:var(--fd);font-size:1.5rem;color:var(--pd);line-height:1;font-style:italic}
+.p-chip1 .pcl{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(51,25,104,.52);margin-top:2px}
+.p-chip2{position:absolute;top:-18px;left:-18px;background:var(--w);border-radius:16px;padding:18px 22px;box-shadow:0 12px 36px rgba(75,38,133,.14)}
+.p-chip2 .pcn{font-family:var(--fd);font-size:1.4rem;color:var(--p);line-height:1;font-style:italic}
+.p-chip2 .pcl{font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--g60);margin-top:2px}
+.p-chip-ico{width:44px;height:44px;background:var(--pd);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.p-chip-ico svg{width:22px;height:22px;fill:var(--y)}
+.phil-txt .kicker{margin-bottom:22px}
+.phil-txt .s-h{margin-bottom:26px}
+.p-para{font-size:.97rem;line-height:1.9;color:var(--g60);margin-bottom:20px;font-weight:400}
+.p-para strong{color:var(--p);font-weight:600}
+.p-divider{font-family:var(--fd);font-size:1.28rem;font-style:italic;color:var(--p);padding:24px 0;border-top:1px solid var(--g10);border-bottom:1px solid var(--g10);margin:28px 0 38px}
+.btn-purple{display:inline-flex;align-items:center;gap:12px;background:var(--p);color:var(--w);padding:16px 42px;border-radius:50px;font-size:.81rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .4s var(--ease);box-shadow:0 6px 24px rgba(75,38,133,.28);position:relative;overflow:hidden}
+.btn-purple::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.1);transform:translateX(-110%);transition:.4s var(--ease)}
+.btn-purple:hover::after{transform:translateX(0)}
+.btn-purple:hover{transform:translateY(-3px);box-shadow:0 20px 52px rgba(75,38,133,.42)}
+
+/* BENEFITS */
+.bens{padding:116px 0;background:var(--bk);position:relative;overflow:hidden}
+.bens::before{content:'';position:absolute;left:-220px;bottom:-220px;width:580px;height:580px;border-radius:50%;background:radial-gradient(ellipse,rgba(75,38,133,.38) 0%,transparent 70%);pointer-events:none}
+.ben-top{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:end;margin-bottom:72px}
+.ben-desc{font-size:.98rem;line-height:1.86;color:rgba(255,255,255,.4);font-weight:400}
+.ben-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.04);border-radius:28px;overflow:hidden}
+.bcard{background:var(--bk);padding:46px 34px;position:relative;overflow:hidden;transition:background .4s}
+.bcard::before{content:'';position:absolute;bottom:0;left:0;right:0;height:0;background:linear-gradient(to top,rgba(75,38,133,.65),transparent);transition:height .55s var(--ease)}
+.bcard:hover::before{height:100%}
+.bcard:hover{background:rgba(75,38,133,.12)}
+.b-ico{width:62px;height:62px;border-radius:18px;background:rgba(75,38,133,.38);border:1px solid rgba(75,38,133,.55);display:flex;align-items:center;justify-content:center;margin-bottom:26px;transition:all .45s var(--ease);position:relative;z-index:1}
+.bcard:hover .b-ico{background:var(--p);border-color:var(--pm);transform:scale(1.1) rotate(-5deg);box-shadow:0 12px 32px rgba(75,38,133,.6)}
+.b-ico svg{width:26px;height:26px;fill:rgba(168,152,212,.75);transition:fill .3s}
+.bcard:hover .b-ico svg{fill:var(--y)}
+.bcard h4{font-family:var(--fd);font-size:1.12rem;color:rgba(255,255,255,.82);margin-bottom:12px;position:relative;z-index:1;transition:color .3s}
+.bcard:hover h4{color:var(--w)}
+.bcard p{font-size:.83rem;line-height:1.76;color:rgba(255,255,255,.32);position:relative;z-index:1;font-weight:400;transition:color .3s}
+.bcard:hover p{color:rgba(255,255,255,.58)}
+.b-tag{display:inline-block;margin-top:18px;font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--y);border-bottom:1.5px solid rgba(254,220,6,.32);padding-bottom:2px;position:relative;z-index:1}
+
+/* CERTS */
+.certs{background:linear-gradient(135deg,var(--p) 0%,var(--pm) 50%,var(--pd) 100%);padding:56px 0;position:relative;overflow:hidden}
+.certs::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:40px 40px}
+.certs-row{position:relative;z-index:1;max-width:1360px;margin:0 auto;padding:0 56px;display:flex;gap:0}
+.cert{flex:1;display:flex;align-items:center;gap:18px;padding:0 36px;border-right:1px solid rgba(255,255,255,.1)}
+.cert:first-child{padding-left:0}
+.cert:last-child{border-right:none}
+.cert-ico{width:52px;height:52px;border-radius:50%;border:1.5px solid rgba(254,220,6,.38);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:rgba(254,220,6,.07);transition:all .3s}
+.cert:hover .cert-ico{background:var(--y);border-color:var(--y)}
+.cert-ico svg{width:22px;height:22px;fill:var(--y);transition:fill .3s}
+.cert:hover .cert-ico svg{fill:var(--pd)}
+.cert-t strong{display:block;font-size:.84rem;font-weight:700;color:var(--y);margin-bottom:2px}
+.cert-t span{font-size:.69rem;color:rgba(255,255,255,.44);font-weight:400}
+
+/* TESTIMONIALS */
+.testi{padding:116px 0;background:var(--off)}
+.testi-hd{text-align:center;margin-bottom:68px}
+.testi-hd .kicker{justify-content:center}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tc{background:var(--w);border-radius:26px;padding:46px 38px;border:1px solid rgba(75,38,133,.07);position:relative;overflow:hidden;transition:all .5s var(--ease)}
+.tc:hover{transform:translateY(-10px);box-shadow:0 48px 120px rgba(75,38,133,.16);border-color:rgba(75,38,133,.14)}
+.tc::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--p),var(--y));transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+.tc:hover::after{transform:scaleX(1)}
+.t-qm{font-family:var(--fd);font-size:5.5rem;line-height:.75;color:var(--y);margin-bottom:8px;font-style:italic}
+.t-stars{color:var(--p);font-size:.88rem;letter-spacing:3px;margin-bottom:16px}
+.t-txt{font-size:.91rem;line-height:1.84;color:var(--g60);font-style:italic;font-weight:400;margin-bottom:30px}
+.t-auth{display:flex;align-items:center;gap:14px}
+.t-av{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:.92rem;font-weight:400;color:var(--w);flex-shrink:0}
+.av-p{background:linear-gradient(135deg,var(--p),var(--pm))}
+.av-y{background:linear-gradient(135deg,var(--y),var(--yd));color:var(--pd)}
+.av-g{background:linear-gradient(135deg,#4CAF50,#1B5E20)}
+.t-name{font-weight:600;font-size:.9rem;color:var(--bk)}
+.t-loc{font-size:.71rem;color:var(--g60);margin-top:2px}
+
+/* CTA */
+.cta{background:var(--y);padding:116px 0;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-180px;right:5%;width:480px;height:480px;border-radius:50%;background:rgba(75,38,133,.08);pointer-events:none}
+.cta::after{content:'';position:absolute;bottom:-140px;right:22%;width:340px;height:340px;border-radius:50%;background:rgba(75,38,133,.05);pointer-events:none}
+.cta-in{display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap;position:relative;z-index:1}
+.cta-t h2{font-family:var(--fd);font-size:clamp(2.3rem,3.8vw,3.4rem);font-weight:400;color:var(--pd);line-height:1.06;margin-bottom:14px}
+.cta-t h2 em{font-style:italic;font-weight:700}
+.cta-t p{font-size:.98rem;color:rgba(51,25,104,.58);line-height:1.76;font-weight:400;max-width:400px}
+.cta-btns{display:flex;gap:14px;flex-shrink:0}
+.btn-cta-p{background:var(--p);color:var(--y);padding:17px 46px;border-radius:50px;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .4s var(--ease);box-shadow:0 8px 28px rgba(75,38,133,.32)}
+.btn-cta-p:hover{background:var(--pd);transform:translateY(-3px);box-shadow:0 20px 52px rgba(75,38,133,.5)}
+.btn-cta-w{background:var(--w);color:var(--p);padding:17px 42px;border-radius:50px;font-size:.82rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .35s var(--ease)}
+.btn-cta-w:hover{background:var(--pl);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:#060311;padding:88px 0 38px;position:relative}
+footer::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(254,220,6,.18),transparent)}
+.f-inner{max-width:1360px;margin:0 auto;padding:0 56px}
+.f-grid{display:grid;grid-template-columns:2.4fr 1fr 1fr 1fr;gap:60px;margin-bottom:68px}
+.f-brand-logo{display:flex;margin-bottom:20px}
+.f-brand-logo img{height:46px;width:auto;object-fit:contain;opacity:.7;filter:brightness(0) invert(1);transition:opacity .3s}
+.f-brand-logo:hover img{opacity:.95}
+.f-desc{font-size:.81rem;line-height:1.84;color:rgba(255,255,255,.26);font-weight:400;margin-bottom:26px}
+.f-socs{display:flex;gap:10px}
+.f-soc{width:40px;height:40px;border-radius:11px;border:1px solid rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.28);font-size:.7rem;font-weight:700;text-decoration:none;transition:all .3s;letter-spacing:.04em}
+.f-soc:hover{border-color:var(--y);color:var(--y);background:rgba(254,220,6,.06)}
+.f-col h5{font-size:.62rem;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--y);margin-bottom:22px}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.f-col a{font-size:.81rem;color:rgba(255,255,255,.26);text-decoration:none;font-weight:400;transition:color .3s}
+.f-col a:hover{color:rgba(255,255,255,.72)}
+.f-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.f-bottom p{font-size:.71rem;color:rgba(255,255,255,.17)}
+.f-fssai{font-size:.69rem;color:rgba(254,220,6,.38);letter-spacing:.1em}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .wrap,.nav-inner,.sd-row,.certs-row,.f-inner{padding-left:28px;padding-right:28px}
+  .nav-links{display:none}
+  .hero-wrap{grid-template-columns:1fr;gap:0;padding:0 28px}
+  .hero-right{display:none}
+  .why-top{grid-template-columns:1fr;gap:24px}
+  .why-grid,.pgrid,.p-footer,.tgrid{grid-template-columns:1fr}
+  .phil-grid{grid-template-columns:1fr;gap:52px}
+  .ben-top{grid-template-columns:1fr;gap:24px}
+  .ben-grid{grid-template-columns:1fr 1fr}
+  .certs-row{flex-direction:column}
+  .cert{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding:22px 0}
+  .cert:last-child{border-bottom:none}
+  .cta-in{flex-direction:column;text-align:center}
+  .cta-t p{max-width:100%}
+  .f-grid{grid-template-columns:1fr 1fr;gap:36px}
+  .sd-row{grid-template-columns:1fr 1fr}
+  .sd-cell:nth-child(2){border-right:none}
+  .prods-hd{flex-direction:column;gap:20px}
+}
+@media(max-width:640px){
+  .ben-grid,.f-grid{grid-template-columns:1fr}
+  .h1{font-size:2.9rem}
+  .h-stats{flex-wrap:wrap;gap:24px}
+}
+</style>
+</head>
+<body>
+
+<div id="cur-ring"></div>
+<div id="cur-dot"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-bg"></div>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://jeevanrekhafoods.com/wp-content/uploads/2024/05/JR-New-Logo-e1744100437370.png" alt="Jeevan Rekha Foods">
+    </a>
+    <ul class="nav-links" id="navL">
+      <li><a href="products.html">Products</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#benefits">Health</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-mesh"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+  <div class="hero-orb orb3"></div>
+
+  <div class="hero-wrap">
+    <div class="hero-left" id="hLeft">
+      <div class="h-eyebrow" id="hEye">
+        <span class="pulse"></span>
+        <span class="eyebrow-t">India's Premium Edible Oils · Est. 2019 · AB Udyog Pvt. Ltd.</span>
+      </div>
+      <h1 class="h1" id="hH1">
+        <span class="h1-a">Nature's Finest</span>
+        <span class="h1-b">in Every Drop</span>
+        <span class="h1-c">of Purity</span>
+      </h1>
+      <p class="h-desc" id="hDesc">
+        From premium <strong>Kacchi Ghani Mustard</strong> to heart-healthy <strong>Rice Bran Oil</strong> — 40+ years of mastery in every bottle. Pure. Indigenous. Trusted.
+      </p>
+      <div class="h-btns" id="hBtns">
+        <a href="products.html" class="btn-y">
+          Explore Range
+          <svg width="17" height="17" viewBox="0 0 17 17" fill="none"><path d="M3.5 8.5h10M9.5 4.5l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="about.html" class="btn-outline-w">Our Story</a>
+      </div>
+      <div class="h-stats" id="hStats">
+        <div class="hst"><div class="hst-n">40+</div><div class="hst-l">Years Experience</div></div>
+        <div class="hst"><div class="hst-n">300 TPD</div><div class="hst-l">Extraction Capacity</div></div>
+        <div class="hst"><div class="hst-n">15K+</div><div class="hst-l">Families Served</div></div>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="h-scene" id="hScene">
+        <div class="s-glow"></div>
+        <div class="s-ring sr1"></div>
+        <div class="s-ring sr2"></div>
+        <div class="s-ring sr3"></div>
+
+        <div class="bottle-wrap">
+          <svg width="200" height="400" viewBox="0 0 200 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#7540C8"/>
+                <stop offset="45%" stop-color="#4B2685"/>
+                <stop offset="100%" stop-color="#160840"/>
+              </linearGradient>
+              <linearGradient id="bshine" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="rgba(255,255,255,.16)"/>
+                <stop offset="35%" stop-color="rgba(255,255,255,.06)"/>
+                <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+              </linearGradient>
+              <linearGradient id="lblg" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FEDC06"/>
+                <stop offset="100%" stop-color="#C89000"/>
+              </linearGradient>
+              <linearGradient id="capg" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#FFE84D"/>
+                <stop offset="100%" stop-color="#C8A000"/>
+              </linearGradient>
+              <filter id="bdrp"><feDropShadow dx="0" dy="24" stdDeviation="24" flood-color="rgba(0,0,0,.55)"/></filter>
+            </defs>
+            <g filter="url(#bdrp)">
+              <path d="M66 80 C66 66 74 58 82 54 L118 54 C126 58 134 66 134 80 L148 152 C156 168 160 184 160 200 L160 346 C160 360 149 370 136 370 L64 370 C51 370 40 360 40 346 L40 200 C40 184 44 168 52 152 Z" fill="url(#bg1)"/>
+              <path d="M66 80 C66 66 74 58 82 54 L100 54 L96 370 L64 370 C51 370 40 360 40 346 L40 200 C40 184 44 168 52 152 Z" fill="url(#bshine)"/>
+              <rect x="43" y="164" width="114" height="48" fill="rgba(254,220,6,.07)"/>
+              <rect x="50" y="212" width="100" height="116" rx="5" fill="url(#lblg)"/>
+              <rect x="58" y="230" width="84" height=".8" fill="rgba(51,25,104,.22)"/>
+              <rect x="58" y="302" width="84" height=".8" fill="rgba(51,25,104,.18)"/>
+              <text x="100" y="250" font-family="Georgia,serif" font-size="8.5" font-weight="bold" fill="rgba(45,22,96,.85)" text-anchor="middle" letter-spacing="1.8">JEEVAN REKHA</text>
+              <text x="100" y="272" font-family="Georgia,serif" font-size="18" font-weight="bold" fill="#2D1660" text-anchor="middle">Rice Bran</text>
+              <text x="100" y="292" font-family="Georgia,serif" font-size="18" font-style="italic" fill="#2D1660" text-anchor="middle">Oil</text>
+              <rect x="66" y="306" width="68" height="14" rx="7" fill="#2D1660"/>
+              <text x="100" y="316" font-family="sans-serif" font-size="7" font-weight="bold" fill="#FEDC06" text-anchor="middle" letter-spacing="1.2">FSSAI CERTIFIED</text>
+              <rect x="40" y="350" width="120" height="6" fill="rgba(254,220,6,.2)"/>
+              <rect x="76" y="40" width="48" height="18" rx="9" fill="url(#capg)"/>
+              <rect x="80" y="28" width="40" height="14" rx="7" fill="url(#capg)"/>
+              <rect x="84" y="20" width="32" height="10" rx="5" fill="#EEC000"/>
+            </g>
+            <circle cx="150" cy="225" r="2.5" fill="rgba(254,220,6,.7)">
+              <animateTransform attributeName="transform" type="translate" values="0,0;-6,-32;4,-64" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;.8;0" dur="3s" repeatCount="indefinite"/>
+            </circle>
+            <circle cx="50" cy="265" r="2" fill="rgba(254,220,6,.55)">
+              <animateTransform attributeName="transform" type="translate" values="0,0;8,-44;-3,-88" dur="4s" repeatCount="indefinite" begin="1.2s"/><animate attributeName="opacity" values="0;.65;0" dur="4s" repeatCount="indefinite" begin="1.2s"/>
+            </circle>
+            <circle cx="162" cy="300" r="2" fill="rgba(180,130,255,.7)">
+              <animateTransform attributeName="transform" type="translate" values="0,0;10,-52;0,-100" dur="3.8s" repeatCount="indefinite" begin="2.4s"/><animate attributeName="opacity" values="0;.7;0" dur="3.8s" repeatCount="indefinite" begin="2.4s"/>
+            </circle>
+          </svg>
+        </div>
+
+        <div class="d-chip dc-a"><div class="dc-n">254°C</div><div class="dc-l">Smoke Point</div></div>
+        <div class="d-chip dc-b"><div class="dc-n">γ-Oryzanol</div><div class="dc-l">Antioxidant Rich</div></div>
+        <div class="d-chip dc-c"><div class="dc-n">Vit E</div><div class="dc-l">Natural Source</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-t">
+    <span class="ti">Kacchi Ghani Mustard Oil <span class="ti-sep">◆</span></span>
+    <span class="ti">Rice Bran Oil <span class="ti-sep">◆</span></span>
+    <span class="ti">Soyabean Oil <span class="ti-sep">◆</span></span>
+    <span class="ti">FSSAI Certified <span class="ti-sep">◆</span></span>
+    <span class="ti">Purity · Health · Happiness <span class="ti-sep">◆</span></span>
+    <span class="ti">Burdwan, West Bengal <span class="ti-sep">◆</span></span>
+    <span class="ti">AB Udyog Pvt. Ltd. <span class="ti-sep">◆</span></span>
+    <span class="ti">300 TPD Capacity <span class="ti-sep">◆</span></span>
+    <span class="ti">Atmanirbhar Bharat <span class="ti-sep">◆</span></span>
+    <span class="ti">Kacchi Ghani Mustard Oil <span class="ti-sep">◆</span></span>
+    <span class="ti">Rice Bran Oil <span class="ti-sep">◆</span></span>
+    <span class="ti">Soyabean Oil <span class="ti-sep">◆</span></span>
+    <span class="ti">FSSAI Certified <span class="ti-sep">◆</span></span>
+    <span class="ti">Purity · Health · Happiness <span class="ti-sep">◆</span></span>
+    <span class="ti">Burdwan, West Bengal <span class="ti-sep">◆</span></span>
+    <span class="ti">AB Udyog Pvt. Ltd. <span class="ti-sep">◆</span></span>
+    <span class="ti">300 TPD Capacity <span class="ti-sep">◆</span></span>
+    <span class="ti">Atmanirbhar Bharat <span class="ti-sep">◆</span></span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-dark">
+  <div class="sd-row">
+    <div class="sd-cell rv"><div class="sd-n">300 TPD</div><div class="sd-l">Solvent Extraction</div></div>
+    <div class="sd-cell rv" data-d="1"><div class="sd-n">150 TPD</div><div class="sd-l">Physical Refinery</div></div>
+    <div class="sd-cell rv" data-d="2"><div class="sd-n">500+</div><div class="sd-l">Retail Partners</div></div>
+    <div class="sd-cell rv" data-d="3"><div class="sd-n">40+</div><div class="sd-l">Years of Expertise</div></div>
+  </div>
+</div>
+
+<!-- WHY -->
+<section class="why">
+  <div class="wrap">
+    <div class="why-top">
+      <div>
+        <div class="kicker rv"><div class="k-bar"></div><span class="k-txt">Why Jeevan Rekha</span></div>
+        <h2 class="s-h rv" data-d="1">Built on <em>Science</em>,<br>Trusted by <strong>India</strong></h2>
+      </div>
+      <p class="body-t rv" data-d="2">Four decades of industry knowledge meet state-of-the-art technology at our Burdwan plant — delivering oils as nutritious as they are delicious, batch after batch.</p>
+    </div>
+    <div class="why-grid">
+      <div class="wcard rv" data-d="1">
+        <div class="wc-bg-n">01</div>
+        <div class="wc-ico"><svg viewBox="0 0 28 28"><path d="M14 2C7.4 2 2 7.4 2 14s5.4 12 12 12 12-5.4 12-12S20.6 2 14 2zm-1 5h2v7l5 3-1 1.8-6-3.5V7z"/></svg></div>
+        <h3>State-of-Art Manufacturing</h3>
+        <p>Our Burdwan facility houses a 300 TPD Solvent Extraction Plant and 150 TPD Physical Refinery — operating to the highest hygiene and quality standards in the industry.</p>
+        <div class="wc-ft">Dighirkon, Burdwan 713427</div>
+      </div>
+      <div class="wcard rv" data-d="2">
+        <div class="wc-bg-n">02</div>
+        <div class="wc-ico"><svg viewBox="0 0 28 28"><path d="M12 2L3 7v5c0 5.6 3.8 10.9 9 12.3C17.2 22.9 21 17.6 21 12V7L12 2zm0 3.2L19 8.7V12c0 4.4-3 8.5-7 9.9-4-1.4-7-5.5-7-9.9V8.7L12 5.2z"/></svg></div>
+        <h3>Authentic Sourcing</h3>
+        <p>With 40+ years in the rice bran value chain, we partner directly with trusted suppliers across India — relationships built on quality, transparency, and enduring trust.</p>
+        <div class="wc-ft">Pan-India Supply Network</div>
+      </div>
+      <div class="wcard rv" data-d="3">
+        <div class="wc-bg-n">03</div>
+        <div class="wc-ico"><svg viewBox="0 0 28 28"><path d="M14 2C7.4 2 2 7.4 2 14s5.4 12 12 12 12-5.4 12-12S20.6 2 14 2zm4.3 8.7L14 18.6l-4.3-4.3 1.4-1.4 2.9 2.9 2.9-5.8 1.8.9-.4.8z"/></svg></div>
+        <h3>Atmanirbhar Bharat</h3>
+        <p>We proudly support Make-in-India. We use the same oil in-house that we deliver to customers — genuine quality that makes us a preferred supplier to India's snack industry.</p>
+        <div class="wc-ft">Make in India · CSR Committed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="prods" id="products">
+  <div class="wrap">
+    <div class="prods-hd">
+      <div>
+        <div class="kicker rv"><div class="k-bar"></div><span class="k-txt k-txt-lt">Our Products</span></div>
+        <h2 class="s-h rv" data-d="1"><span class="wt">Three Oils.</span> <em>One Standard</em> <span class="wt">of Excellence.</span></h2>
+      </div>
+      <a href="products.html" class="btn-ghost-w rv" data-d="2">View All Products →</a>
+    </div>
+  </div>
+
+  <div class="pgrid">
+    <a href="https://kgmo-spa.vercel.app/" target="_blank" class="pcard rv">
+      <div class="pc-bg-img bg-mustard"></div>
+      <div class="pc-deco deco-mustard"></div>
+      <div class="pc-liquid liq-m"></div>
+      <div class="pc-btl">
+        <svg width="72" height="145" viewBox="0 0 72 145" fill="none"><defs><linearGradient id="m1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFD740"/><stop offset="100%" stop-color="#9B6000"/></linearGradient></defs>
+        <rect x="24" y="14" width="24" height="7" rx="3.5" fill="#9B6000" opacity=".9"/>
+        <path d="M16 30c0-7 5-10.5 10-11.5h20c5 1 10 4.5 10 11.5l7 36c3.5 7 5 14 5 21v37c0 7-5.5 11.5-12 11.5H16C9.5 135.5 4 131 4 124V87c0-7 1.5-14 5-21z" fill="url(#m1)"/>
+        <rect x="17" y="80" width="38" height="38" rx="3" fill="rgba(0,0,0,.22)"/>
+        <rect x="19" y="82" width="34" height="34" rx="2" fill="#FFF5B0"/>
+        <text x="36" y="96" font-size="5" font-family="serif" font-weight="bold" fill="#7A4000" text-anchor="middle">JEEVAN REKHA</text>
+        <text x="36" y="107" font-size="8" font-family="serif" fill="#4B2685" text-anchor="middle">Mustard</text>
+        <text x="36" y="116" font-size="6" font-family="serif" fill="#7A4000" text-anchor="middle">Kacchi Ghani</text></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-badge b-gold">⭐ Bestseller</div>
+        <div class="pc-name n-gold">Kacchi Ghani <em>Mustard</em></div>
+        <div class="pc-sub">Premium Cold Pressed · Traditional Method</div>
+        <p class="pc-desc">Naturally pungent, rich in allyl isothiocyanate and monounsaturated fats. The authentic soul of Indian cooking.</p>
+        <div class="pc-cta-lnk cta-m">Explore Product <svg class="cta-arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+    <a href="https://rbo-spa.vercel.app/" target="_blank" class="pcard rv" data-d="1">
+      <div class="pc-bg-img bg-rice"></div>
+      <div class="pc-deco deco-rice"></div>
+      <div class="pc-liquid liq-r"></div>
+      <div class="pc-btl">
+        <svg width="72" height="145" viewBox="0 0 72 145" fill="none"><defs><linearGradient id="r1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#7844C8"/><stop offset="100%" stop-color="#200850"/></linearGradient></defs>
+        <rect x="24" y="14" width="24" height="7" rx="3.5" fill="#FEDC06" opacity=".9"/>
+        <path d="M16 30c0-7 5-10.5 10-11.5h20c5 1 10 4.5 10 11.5l7 36c3.5 7 5 14 5 21v37c0 7-5.5 11.5-12 11.5H16C9.5 135.5 4 131 4 124V87c0-7 1.5-14 5-21z" fill="url(#r1)"/>
+        <rect x="17" y="80" width="38" height="38" rx="3" fill="rgba(0,0,0,.22)"/>
+        <rect x="19" y="82" width="34" height="34" rx="2" fill="#FEDC06"/>
+        <text x="36" y="96" font-size="5" font-family="serif" font-weight="bold" fill="#2D1660" text-anchor="middle">JEEVAN REKHA</text>
+        <text x="36" y="107" font-size="7" font-family="serif" fill="#2D1660" text-anchor="middle">Rice Bran</text>
+        <text x="36" y="116" font-size="6" font-family="serif" fill="#2D1660" text-anchor="middle">Oil</text></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-badge b-plum">❤️ Heart Healthy</div>
+        <div class="pc-name n-plum">Rice Bran <em>Oil</em></div>
+        <div class="pc-sub">Gamma-Oryzanol Rich · 254°C Smoke Point</div>
+        <p class="pc-desc">Physically refined, Vitamin E and Gamma-Oryzanol rich. Ideal for high-heat Indian cooking without compromise.</p>
+        <div class="pc-cta-lnk cta-r">Explore Product <svg class="cta-arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+
+    <a href="https://sbo-spa.vercel.app/" target="_blank" class="pcard rv" data-d="2">
+      <div class="pc-bg-img bg-soy"></div>
+      <div class="pc-deco deco-soy"></div>
+      <div class="pc-liquid liq-s"></div>
+      <div class="pc-btl">
+        <svg width="72" height="145" viewBox="0 0 72 145" fill="none"><defs><linearGradient id="s1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#4CAF50"/><stop offset="100%" stop-color="#0A2E0A"/></linearGradient></defs>
+        <rect x="24" y="14" width="24" height="7" rx="3.5" fill="#2E7D32" opacity=".9"/>
+        <path d="M16 30c0-7 5-10.5 10-11.5h20c5 1 10 4.5 10 11.5l7 36c3.5 7 5 14 5 21v37c0 7-5.5 11.5-12 11.5H16C9.5 135.5 4 131 4 124V87c0-7 1.5-14 5-21z" fill="url(#s1)"/>
+        <rect x="17" y="80" width="38" height="38" rx="3" fill="rgba(0,0,0,.22)"/>
+        <rect x="19" y="82" width="34" height="34" rx="2" fill="white"/>
+        <text x="36" y="96" font-size="5" font-family="serif" font-weight="bold" fill="#1B5E20" text-anchor="middle">JEEVAN REKHA</text>
+        <text x="36" y="107" font-size="7" font-family="serif" fill="#2E7D32" text-anchor="middle">Soyabean</text>
+        <text x="36" y="116" font-size="6" font-family="serif" fill="#2E7D32" text-anchor="middle">Oil</text></svg>
+      </div>
+      <div class="pc-body">
+        <div class="pc-badge b-jade">🌱 All Purpose</div>
+        <div class="pc-name n-jade">Soyabean <em>Oil</em></div>
+        <div class="pc-sub">Omega-3 Rich · Light &amp; Versatile</div>
+        <p class="pc-desc">Neutral-flavoured, packed with Omega-3 fatty acids. Perfect for baking, dressings, and everyday light cooking.</p>
+        <div class="pc-cta-lnk cta-s">Explore Product <svg class="cta-arr" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      </div>
+    </a>
+  </div>
+
+  <div class="p-footer">
+    <div class="pf-row pf-lt">
+      <div class="pf-t"><h3>Available Pan-India</h3><p>From Kolkata kiranas to modern retail chains — Jeevan Rekha is never far. Bulk orders welcome.</p></div>
+      <div class="pf-right"><div class="pf-num">500+</div><div class="pf-lbl">Retail Partners</div></div>
+    </div>
+    <div class="pf-row pf-dk">
+      <div class="pf-t"><h3>Trusted by the Snack Industry</h3><p>India's preferred rice bran oil supplier to snack &amp; namkeen manufacturers nationwide.</p></div>
+      <div class="pf-right"><div class="pf-num">B2B</div><div class="pf-lbl">Trade Enquiries</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="phil" id="philosophy">
+  <div class="wrap">
+    <div class="phil-grid">
+      <div class="rv sl">
+        <div class="phil-vis-card">
+          <div class="pvc-grid"></div>
+          <div class="pvc-glow"></div>
+          <span class="p-qmark">"</span>
+          <div class="p-quote">Purity. Health. Happiness.<br><em>Each flows into the next</em><br>in a beautiful, unbroken circle.</div>
+          <div class="p-sig">The Jeevan Rekha Promise</div>
+          <div class="p-chip1">
+            <div class="p-chip-ico"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 14.5v-9l7 4.5-7 4.5z"/></svg></div>
+            <div><div class="pcn">40+</div><div class="pcl">Years Expertise</div></div>
+          </div>
+          <div class="p-chip2">
+            <div class="pcn">2019</div><div class="pcl">Year Founded</div>
+          </div>
+        </div>
+      </div>
+      <div class="phil-txt">
+        <div class="kicker rv"><div class="k-bar"></div><span class="k-txt">Our Philosophy</span></div>
+        <h2 class="s-h rv" data-d="1" style="margin-bottom:26px">When you choose <em>pure</em>,<br>you choose <strong>life itself</strong></h2>
+        <p class="p-para rv" data-d="2">When we strip away the artificial and embrace what's genuine, our lives transform. A pure existence — free from toxins and harmful habits — creates the foundation for <strong>true health</strong> that no medicine can replicate.</p>
+        <p class="p-para rv" data-d="3">Health is vitality flowing through every cell — the energy to pursue what matters and the resilience for life's challenges. From health springs <strong>happiness</strong>: a deeper contentment that radiates from within.</p>
+        <div class="p-divider rv" data-d="3">"You can see it in the eyes that crinkle with genuine smiles."</div>
+        <a href="about.html" class="btn-purple rv" data-d="4">Read Our Full Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="bens" id="benefits">
+  <div class="wrap">
+    <div class="ben-top">
+      <div>
+        <div class="kicker rv"><div class="k-bar"></div><span class="k-txt k-txt-lt">Health &amp; Nutrition</span></div>
+        <h2 class="s-h rv" data-d="1"><span class="wt">Every Drop,</span><br><em>a Dose of</em> <span class="yw">Vitality</span></h2>
+      </div>
+      <p class="ben-desc rv" data-d="2">Jeevan Rekha oils are crafted to nourish your body while delivering authentic Indian taste. Each oil carries a precise balance of flavour, nutrition, and high-heat performance.</p>
+    </div>
+    <div class="ben-grid">
+      <div class="bcard rv">
+        <div class="b-ico"><svg viewBox="0 0 28 28"><path d="M14 3C8 3 3 8 3 14s5 11 11 11 11-5 11-11S20 3 14 3zm-1 15.6l-4.2-4.2 1.4-1.4 2.8 2.8 5.8-5.8 1.4 1.4L13 18.6z"/></svg></div>
+        <h4>Heart Protection</h4>
+        <p>Balanced Omega-3, 6 &amp; 9 fatty acids. Rice Bran Oil's Gamma-Oryzanol actively reduces LDL cholesterol and protects cardiovascular health with every meal.</p>
+        <span class="b-tag">Rice Bran Oil</span>
+      </div>
+      <div class="bcard rv" data-d="1">
+        <div class="b-ico"><svg viewBox="0 0 28 28"><path d="M14 2L4 7v7c0 6.5 4.3 12.6 10 14 5.7-1.4 10-7.5 10-14V7L14 2zm0 3.5L21.5 8V14c0 5-3.2 9.7-8 11.2-4.8-1.5-8-6.2-8-11.2V8l8-4.5z"/></svg></div>
+        <h4>Antioxidant Power</h4>
+        <p>Vitamin E tocopherols and Gamma-Oryzanol neutralise free radicals — protecting cells from oxidative stress and premature aging in everyday use.</p>
+        <span class="b-tag">All Oils</span>
+      </div>
+      <div class="bcard rv" data-d="2">
+        <div class="b-ico"><svg viewBox="0 0 28 28"><path d="M14 2C7.4 2 2 7.4 2 14s5.4 12 12 12 12-5.4 12-12S20.6 2 14 2zm1 6v6.6l4.5 2.7-1.1 1.7-5.4-3.3V8h2z"/></svg></div>
+        <h4>254°C Smoke Point</h4>
+        <p>Rice Bran Oil's remarkable smoke point enables safe, high-heat frying. Less oil breakdown, fewer harmful compounds, more nutrition retained in food.</p>
+        <span class="b-tag">Rice Bran Oil</span>
+      </div>
+      <div class="bcard rv" data-d="3">
+        <div class="b-ico"><svg viewBox="0 0 28 28"><path d="M14 3C9 3 5 7 5 12c0 6.5 9 15 9 15s9-8.5 9-15c0-5-4-9-9-9zm0 12a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
+        <h4>Anti-inflammatory</h4>
+        <p>Mustard Oil's allyl isothiocyanate and Omega-3 fatty acids provide powerful anti-inflammatory benefits for joints, gut, skin, and hair health.</p>
+        <span class="b-tag">Mustard Oil</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<div class="certs">
+  <div class="certs-row">
+    <div class="cert rv"><div class="cert-ico"><svg viewBox="0 0 22 22"><path d="M11 2L3 6v5c0 5.3 3.4 10.2 8 11.7C16.6 21.2 20 16.3 20 11V6L11 2zm-1 14.1L5.6 11.7l1.4-1.4L10 13.3l5-5 1.4 1.4L10 16.1z"/></svg></div><div class="cert-t"><strong>FSSAI Certified</strong><span>Food Safety Standards Authority of India</span></div></div>
+    <div class="cert rv" data-d="1"><div class="cert-ico"><svg viewBox="0 0 22 22"><path d="M11 2C6 2 2 6 2 11s4 9 9 9 9-4 9-9-4-9-9-9zm4 13l-4-2.3V6h2v5.7l3.5 2L15 15z"/></svg></div><div class="cert-t"><strong>Kacchi Ghani</strong><span>Traditional Cold Press Method</span></div></div>
+    <div class="cert rv" data-d="2"><div class="cert-ico"><svg viewBox="0 0 22 22"><path d="M11 1L3 5v6c0 5.6 3.4 10.7 8 12 4.6-1.3 8-6.4 8-12V5L11 1z"/></svg></div><div class="cert-t"><strong>Lab Tested</strong><span>Every Single Batch</span></div></div>
+    <div class="cert rv" data-d="3"><div class="cert-ico"><svg viewBox="0 0 22 22"><path d="M11 2a9 9 0 100 18A9 9 0 0011 2zm0 16a7 7 0 110-14 7 7 0 010 14zm-1-9v6l5-3-5-3z"/></svg></div><div class="cert-t"><strong>Make in India</strong><span>Manufactured at Burdwan, W.B.</span></div></div>
+    <div class="cert rv" data-d="4"><div class="cert-ico"><svg viewBox="0 0 22 22"><path d="M11 2C6 2 2 6 2 11s4 9 9 9 9-4 9-9-4-9-9-9zm5.5 5.5l-6 8.5-3.5-3.5 1.4-1.4 2 2 4.7-6.7 1.4 1.1z"/></svg></div><div class="cert-t"><strong>Tamper-Proof</strong><span>Hygienically Sealed &amp; Labelled</span></div></div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section class="testi">
+  <div class="wrap">
+    <div class="testi-hd">
+      <div class="kicker rv"><div class="k-bar"></div><span class="k-txt">What Families Say</span></div>
+      <h2 class="s-h rv" data-d="1" style="margin-top:16px">Trusted by <em>Thousands</em><br>Across <strong>India</strong></h2>
+    </div>
+    <div class="tgrid">
+      <div class="tc rv"><div class="t-qm">"</div><div class="t-stars">★★★★★</div><p class="t-txt">Switched to Jeevan Rekha Rice Bran Oil on my cardiologist's advice. My LDL has dropped noticeably and the food tastes so much lighter. My entire family loves it.</p><div class="t-auth"><div class="t-av av-p">SM</div><div><div class="t-name">Subhashis Mukherjee</div><div class="t-loc">Salt Lake City, Kolkata</div></div></div></div>
+      <div class="tc rv" data-d="1"><div class="t-qm">"</div><div class="t-stars">★★★★★</div><p class="t-txt">The Kacchi Ghani Mustard Oil is extraordinary — that authentic pungency and deep golden colour makes our machher jhol taste just like grandmother's recipe. Nothing compares.</p><div class="t-auth"><div class="t-av av-y">RB</div><div><div class="t-name">Rina Biswas</div><div class="t-loc">Ballygunge, Kolkata</div></div></div></div>
+      <div class="tc rv" data-d="2"><div class="t-qm">"</div><div class="t-stars">★★★★★</div><p class="t-txt">I run a catering business and switched to Jeevan Rekha bulk packs. The high smoke point means less oil absorption in fried dishes. My clients notice the quality difference.</p><div class="t-auth"><div class="t-av av-g">AC</div><div><div class="t-name">Animesh Chatterjee</div><div class="t-loc">Tollygunge, Kolkata</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="wrap">
+    <div class="cta-in">
+      <div class="cta-t rv">
+        <h2>Ready to Cook<br>the <em>Jeevan Rekha Way?</em></h2>
+        <p>Join thousands of Indian families who've made the switch to purer, healthier cooking. Reach out for retail or bulk trade enquiries.</p>
+      </div>
+      <div class="cta-btns rv" data-d="2">
+        <a href="tel:+917439289709" class="btn-cta-p">📞 +91 74392 89709</a>
+        <a href="mailto:info@abudyog.in" class="btn-cta-w">Email Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-inner">
+    <div class="f-grid">
+      <div>
+        <a href="index.html" class="f-brand-logo"><img src="https://jeevanrekhafoods.com/wp-content/uploads/2024/05/JR-New-Logo-e1744100437370.png" alt="Jeevan Rekha Foods"></a>
+        <p class="f-desc">A brand of AB Udyog Pvt. Ltd. Bringing 40+ years of rice bran industry expertise to every household. Manufactured in Burdwan, West Bengal. FSSAI certified, proudly made in India.</p>
+        <div class="f-socs">
+          <a href="https://www.instagram.com/jeevanrekhafoods/" target="_blank" class="f-soc">ig</a>
+          <a href="https://www.facebook.com/JeevanRekhaFoods/" target="_blank" class="f-soc">fb</a>
+          <a href="https://www.linkedin.com/company/jeevanrekha/" target="_blank" class="f-soc">in</a>
+          <a href="https://www.youtube.com/@JeevanRekhaFoods" target="_blank" class="f-soc">yt</a>
+        </div>
+      </div>
+      <div class="f-col">
+        <h5>Products</h5>
+        <ul>
+          <li><a href="https://kgmo-spa.vercel.app/" target="_blank">Kacchi Ghani Mustard Oil</a></li>
+          <li><a href="https://rbo-spa.vercel.app/" target="_blank">Rice Bran Oil</a></li>
+          <li><a href="https://jeevanrekhafoods.com/product/rice-bran-oil-lite/" target="_blank">Rice Bran Oil Lite</a></li>
+          <li><a href="https://sbo-spa.vercel.app/" target="_blank">Soyabean Oil</a></li>
+          <li><a href="products.html">All Products</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="https://jeevanrekhafoods.com/blogs/" target="_blank">Blogs</a></li>
+          <li><a href="https://jeevanrekhafoods.com/recipes/" target="_blank">Recipes</a></li>
+          <li><a href="https://abudyog.in/" target="_blank">AB Udyog Pvt. Ltd.</a></li>
+          <li><a href="https://jeevanrekhafoods.com/privacy-policy/" target="_blank">Privacy Policy</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="tel:+917439289709">📞 +91 74392 89709</a></li>
+          <li><a href="mailto:info@abudyog.in">✉️ info@abudyog.in</a></li>
+          <li><a href="#">📍 Strand Road, Kolkata 700006</a></li>
+          <li><a href="#">🏭 Dighirkon, Burdwan 713427</a></li>
+          <li><a href="https://web.whatsapp.com/send?phone=+917439289709" target="_blank">💬 WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2025 AB Udyog Pvt. Ltd. All rights reserved. Brand: Jeevan Rekha Foods.</p>
+      <div class="f-fssai">FSSAI Certified · Made in India 🇮🇳</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Cursor
+const ring=document.getElementById('cur-ring'),dot=document.getElementById('cur-dot');
+let mx=0,my=0,rx=0,ry=0;
+window.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px'});
+(function a(){rx+=(mx-rx)*.11;ry+=(my-ry)*.11;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a)})();
+
+// Nav
+const nav=document.getElementById('nav'),navL=document.getElementById('navL');
+window.addEventListener('scroll',()=>{
+  const s=scrollY>60;
+  nav.classList.toggle('scrolled',s);
+});
+
+// GSAP hero
+gsap.registerPlugin(ScrollTrigger);
+const tl=gsap.timeline({defaults:{ease:'power4.out'}});
+tl.from('#hEye',{y:28,opacity:0,duration:.9},0.35)
+  .from('.h1-a',{y:70,opacity:0,duration:1.1},0.52)
+  .from('.h1-b',{y:70,opacity:0,duration:1.1},0.67)
+  .from('.h1-c',{y:70,opacity:0,duration:1.1},0.82)
+  .from('#hDesc',{y:28,opacity:0,duration:.88},0.95)
+  .from('#hBtns',{y:22,opacity:0,duration:.78},1.1)
+  .from('.hst',{y:18,opacity:0,duration:.65,stagger:.13},1.18)
+  .from('#hScene',{scale:.88,opacity:0,duration:1.5,ease:'power3.out'},0.55);
+
+// Scroll reveal
+const rvEls=document.querySelectorAll('.rv');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}});
+},{threshold:.07,rootMargin:'0px 0px -36px 0px'});
+rvEls.forEach(el=>obs.observe(el));
+
+// Hero grid parallax
+window.addEventListener('scroll',()=>{
+  document.querySelector('.hero-grid').style.transform=`translateY(${scrollY*.28}px)`;
+});
+</script>
+</body>
+</html>

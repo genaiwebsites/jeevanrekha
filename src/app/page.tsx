@@ -15,11 +15,11 @@ export default function Home() {
           <div className="hero-left">
             <div className="h-eyebrow rv"><span className="pulse"></span><span className="eyebrow-t">India's Premium Edible Oils · Est. 2019</span></div>
             <h1 className="h1 rv" data-d="1">
-              <span className="h1-a">Nature's Finest</span>
-              <span className="h1-b">in Every Drop</span>
-              <span className="h1-c">of Purity</span>
+              <span className="h1-a">Pure Choice.</span>
+              <span className="h1-b">Healthy Life.</span>
+              <span className="h1-c">Happy Home.</span>
             </h1>
-            <p className="h-desc rv" data-d="2">From premium <strong>Kacchi Ghani Mustard</strong> to heart-healthy <strong>Rice Bran Oil</strong> — 40+ years of mastery in every bottle. Pure. Indigenous. Trusted.</p>
+            <p className="h-desc rv" data-d="2">Forty years of rice bran expertise, crafted into premium edible oils. Directly from our Burdwan refinery to your kitchen.</p>
             <div className="h-btns rv" data-d="3">
               <Link href="/products" className="btn-y">Explore Range</Link>
               <Link href="/about" className="btn-outline">Our Story</Link>
@@ -105,27 +105,42 @@ export default function Home() {
           <Link href="/products#p-mustard" className="pcard-home rv">
             <div className="pch-bg bg-m"></div>
             <div className="particles"><div className="p-dot"></div><div className="p-dot"></div><div className="p-dot"></div></div>
-            <div className="pch-content">
-              <img src="/jr_kgmo.png" alt="Mustard Oil" />
-              <h3 className="pch-title">Mustard Oil</h3>
+            <div className="pch-img-wrap">
+              <img src="/jr_kgmo.png" alt="Mustard Oil" className="pch-btl-img" />
+            </div>
+            <div className="pch-body">
+              <div className="pch-badge b-mustard">⭐ Bestseller</div>
+              <h3 className="pch-title">Kacchi Ghani <em style={{ color: 'var(--y)' }}>Mustard</em></h3>
+              <p className="pch-desc">Naturally pungent, rich in allyl isothiocyanate and monounsaturated fats. The authentic soul of Indian cooking.</p>
+              <div className="pch-link" style={{ color: 'var(--y)' }}>Explore Product <span className="pch-arrow">→</span></div>
             </div>
           </Link>
           {/* Rice Bran */}
           <Link href="/products#p-rice" className="pcard-home rv" data-d="1">
             <div className="pch-bg bg-r"></div>
             <div className="particles"><div className="p-dot"></div><div className="p-dot"></div><div className="p-dot"></div></div>
-            <div className="pch-content">
-              <img src="/jr_rbo.png" alt="Rice Bran Oil" />
-              <h3 className="pch-title">Rice Bran Oil</h3>
+            <div className="pch-img-wrap">
+              <img src="/jr_rbo.png" alt="Rice Bran Oil" className="pch-btl-img" />
+            </div>
+            <div className="pch-body">
+              <div className="pch-badge b-rice">❤️ Heart Healthy</div>
+              <h3 className="pch-title">Rice Bran <em style={{ color: 'var(--r-plumlt)' }}>Oil</em></h3>
+              <p className="pch-desc">Physically refined, Vitamin E and Gamma-Oryzanol rich. Ideal for high-heat Indian cooking without compromise.</p>
+              <div className="pch-link" style={{ color: 'var(--r-plumlt)' }}>Explore Product <span className="pch-arrow">→</span></div>
             </div>
           </Link>
           {/* Soyabean */}
           <Link href="/products#p-soy" className="pcard-home rv" data-d="2">
             <div className="pch-bg bg-s"></div>
             <div className="particles"><div className="p-dot"></div><div className="p-dot"></div><div className="p-dot"></div></div>
-            <div className="pch-content">
-              <img src="/jr_sbo.png" alt="Soyabean Oil" />
-              <h3 className="pch-title">Soyabean Oil</h3>
+            <div className="pch-img-wrap">
+              <img src="/jr_sbo.png" alt="Soyabean Oil" className="pch-btl-img" />
+            </div>
+            <div className="pch-body">
+              <div className="pch-badge b-soy">🌱 All Purpose</div>
+              <h3 className="pch-title">Soyabean <em style={{ color: 'var(--s-jadelt)' }}>Oil</em></h3>
+              <p className="pch-desc">Neutral-flavoured, packed with Omega-3 fatty acids. Perfect for baking, dressings, and everyday light cooking.</p>
+              <div className="pch-link" style={{ color: 'var(--s-jadelt)' }}>Explore Product <span className="pch-arrow">→</span></div>
             </div>
           </Link>
         </div>

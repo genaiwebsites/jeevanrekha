@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
-import { Fraunces, Instrument_Sans, JetBrains_Mono } from "next/font/google";
+import { Fraunces, Instrument_Sans, JetBrains_Mono, Geist } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollRevealObserver from "@/components/ScrollRevealObserver";
+import { cn } from "@/lib/utils";
+
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
@@ -42,7 +45,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${fraunces.variable} ${instrumentSans.variable} ${jetbrainsMono.variable}`}
+      className={cn(fraunces.variable, instrumentSans.variable, jetbrainsMono.variable, "font-sans", geist.variable)}
     >
       <body>
         {/* Universal SVG Marker for all Pipeline Arrows */}
