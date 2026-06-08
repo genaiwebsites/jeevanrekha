@@ -108,10 +108,34 @@ export default function Products() {
               <div className="comp-th" style={{ color: 'var(--s-jadelt)' }}>Soyabean</div>
             </div>
             <div className="comp-row">
+              <div className="comp-cell">Method</div>
+              <div className="comp-cell"><span style={{ color: 'var(--y)' }}>Kacchi Ghani</span></div>
+              <div className="comp-cell"><span style={{ color: 'var(--r-plumlt)' }}>Physical Refinery</span></div>
+              <div className="comp-cell"><span style={{ color: 'var(--s-jadelt)' }}>Refined</span></div>
+            </div>
+            <div className="comp-row">
               <div className="comp-cell">Smoke Point</div>
               <div className="comp-cell"><span style={{ color: 'var(--y)' }}>~160°C</span></div>
               <div className="comp-cell"><span style={{ color: 'var(--r-plumlt)' }}>254°C</span></div>
               <div className="comp-cell"><span style={{ color: 'var(--s-jadelt)' }}>~240°C</span></div>
+            </div>
+            <div className="comp-row">
+              <div className="comp-cell">Best For</div>
+              <div className="comp-cell" style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>Traditional cooking, marinades, hair & skin</div>
+              <div className="comp-cell" style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>High-heat frying, daily cooking, heart health</div>
+              <div className="comp-cell" style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>Baking, dressings, all-purpose cooking</div>
+            </div>
+            <div className="comp-row">
+              <div className="comp-cell">Gamma-Oryzanol</div>
+              <div className="comp-cell"><div className="cc-no">✕</div></div>
+              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--r-plumlt)', background: 'rgba(160,130,255,.12)' }}>✓</div></div>
+              <div className="comp-cell"><div className="cc-no">✕</div></div>
+            </div>
+            <div className="comp-row">
+              <div className="comp-cell">Omega-3 Rich</div>
+              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--y)' }}>✓</div></div>
+              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--r-plumlt)', background: 'rgba(160,130,255,.12)' }}>✓</div></div>
+              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--s-jadelt)', background: 'rgba(100,200,100,.12)' }}>✓</div></div>
             </div>
             <div className="comp-row">
               <div className="comp-cell">Heart Health</div>
@@ -120,8 +144,20 @@ export default function Products() {
               <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--s-jadelt)', background: 'rgba(100,200,100,.12)' }}>✓</div></div>
             </div>
             <div className="comp-row">
+              <div className="comp-cell">Anti-inflammatory</div>
+              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--y)' }}>✓</div></div>
+              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--r-plumlt)', background: 'rgba(160,130,255,.12)' }}>✓</div></div>
+              <div className="comp-cell"><div className="cc-no" style={{ opacity: 0.3 }}>—</div></div>
+            </div>
+            <div className="comp-row">
               <div className="comp-cell">Neutral Flavour</div>
               <div className="comp-cell"><div className="cc-no">✕</div></div>
+              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--r-plumlt)', background: 'rgba(160,130,255,.12)' }}>✓</div></div>
+              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--s-jadelt)', background: 'rgba(100,200,100,.12)' }}>✓</div></div>
+            </div>
+            <div className="comp-row">
+              <div className="comp-cell">Vitamin E</div>
+              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--y)' }}>✓</div></div>
               <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--r-plumlt)', background: 'rgba(160,130,255,.12)' }}>✓</div></div>
               <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--s-jadelt)', background: 'rgba(100,200,100,.12)' }}>✓</div></div>
             </div>
@@ -161,15 +197,15 @@ export default function Products() {
       </section>
 
       {/* PRODUCTS CTA (B2B Focused) */}
-      <section className="cta-strip cta-light">
+      <section className="cta-strip cta-yellow">
         <div className="cta-inner">
           <div className="rv sl">
             <h2 className="s-h">Need Bulk Supply for<br/><em>Your Business?</em></h2>
-            <p className="body-t" style={{ marginTop: '16px' }}>Join 500+ retail partners and snack manufacturers who trust our consistent quality, high-volume capacity, and competitive trade pricing.</p>
+            <p style={{ marginTop: '16px', color: 'rgba(51,25,104,.62)', fontSize: '0.97rem', lineHeight: 1.86, maxWidth: '420px' }}>Join 500+ retail partners and snack manufacturers who trust our consistent quality, high-volume capacity, and competitive trade pricing.</p>
           </div>
           <div className="rv sr" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn-y">Trade Enquiry</Link>
-            <Link href="/contact" className="btn-outline dark">Contact Sales</Link>
+            <Link href="/contact" className="btn-p">Trade Enquiry</Link>
+            <Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '16px 42px', borderRadius: '50px', fontSize: '.82rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', textDecoration: 'none', border: '1.5px solid rgba(51,25,104,.25)', color: 'var(--pd)', background: 'rgba(51,25,104,.07)', transition: 'all .4s' }}>Contact Sales</Link>
           </div>
         </div>
       </section>

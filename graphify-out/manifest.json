@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "src/app/contact/page.tsx": {
-    "mtime": 1780774981.2108896,
-    "ast_hash": "f49b4643bb7ca3d7a868e05aa11db1eb",
+    "mtime": 1780928318.5783584,
+    "ast_hash": "c6df196978f8d311e9c39c406d171605",
     "semantic_hash": ""
   },
   "src/app/layout.tsx": {
@@ -60,8 +60,8 @@
     "semantic_hash": ""
   },
   "src/app/products/page.tsx": {
-    "mtime": 1780774949.0496068,
-    "ast_hash": "df5ccd7cde69de74cde55224f6619024",
+    "mtime": 1780930025.1149561,
+    "ast_hash": "9b355f653268b6e4184df811258b8d2a",
     "semantic_hash": ""
   },
   "src/components/AnimatedCounter.tsx": {
@@ -80,8 +80,8 @@
     "semantic_hash": ""
   },
   "src/components/Navbar.tsx": {
-    "mtime": 1780774901.872704,
-    "ast_hash": "4d612ef40e7be2d49a5c0662e9be3711",
+    "mtime": 1780929157.2209222,
+    "ast_hash": "1a1f965c1c2b679930652299de3f7ee9",
     "semantic_hash": ""
   },
   "src/components/ScrollRevealObserver.tsx": {

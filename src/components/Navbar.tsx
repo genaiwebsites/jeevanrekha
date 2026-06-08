@@ -24,7 +24,7 @@ export default function Navbar() {
   }, [pathname]);
 
   // Determine if we should force solid styling based on the path
-  const isLightPage = pathname === '/contact' || pathname === '/blogs' || pathname.startsWith('/blogs/');
+  const isLightPage = pathname === '/blogs' || pathname.startsWith('/blogs/');
 
   const navClass = [
     scrolled ? 'scrolled' : '',
