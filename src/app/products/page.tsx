@@ -205,7 +205,7 @@ export default function Products() {
           </div>
           <div className="rv sr" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-p">Trade Enquiry</Link>
-            <Link href="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '16px 42px', borderRadius: '50px', fontSize: '.82rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', textDecoration: 'none', border: '1.5px solid rgba(51,25,104,.25)', color: 'var(--pd)', background: 'rgba(51,25,104,.07)', transition: 'all .4s' }}>Contact Sales</Link>
+            <Link href="/contact" className="btn-outline dark">Contact Sales</Link>
           </div>
         </div>
       </section>
