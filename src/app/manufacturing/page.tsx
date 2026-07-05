@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Droplet, Wind, Thermometer, Sparkles, Palette, Beaker, FlaskConical, ShieldCheck, CheckCircle2, Eye, Gauge, Compass, Atom, Filter } from 'lucide-react';
 
 export default function Manufacturing() {
   return (
@@ -9,7 +10,7 @@ export default function Manufacturing() {
         <div className="hero-wrap rv text-center" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
           <div className="h-eyebrow"><span className="pulse"></span><span className="eyebrow-t">Bio-Refined Engineering</span></div>
           <h1 className="h1"><em>Physical Purity,</em><br/>Scientifically Refined</h1>
-          <p className="h-desc" style={{ maxWidth: '650px' }}>Experience the continuous mechanical, thermal, and <strong>enzymatic</strong> workflow that preserves every critical molecule of nature's finest oil across our 150 TPD digital twin.</p>
+          <p className="h-desc" style={{ maxWidth: '650px', textAlign: 'center' }}>Experience the continuous mechanical, thermal, and <strong>enzymatic</strong> workflow that preserves every critical molecule of nature's finest oil across our 150 TPD physical refinery.</p>
         </div>
       </div>
 
@@ -228,43 +229,108 @@ export default function Manufacturing() {
 
       {/* NABL Report Finale */}
       <div className="nabl-wrapper">
-        <div className="wrap">
+        <div className="wrap" style={{ width: '100%' }}>
           <div className="finale-grid">
             {/* Left Column */}
             <div className="rv sl">
-              <h2 className="s-h" style={{ marginBottom: '1rem' }}>Grain to<br/><em>Golden Oil</em></h2>
-              <p className="body-t">The result of this rigorous, continuous architecture is Jeevan Rekha. A premium golden oil, proudly a product of India. Engineered without caustic soda to preserve delicate antioxidants and ensure superior molecular integrity.</p>
-              <div className="guarantee-block">
-                <div className="g-100">100%</div>
-                <div className="g-sub">Physically Refined</div>
-                <p className="body-t" style={{ fontSize: '0.95rem', marginBottom: 0 }}>Engineered without caustic soda to protect delicate antioxidants like Gamma-Oryzanol and preserve the oil's natural molecular integrity. No shortcuts.</p>
+              <div className="kicker" style={{ marginBottom: '1rem' }}>
+                <div className="k-bar"></div>
+                <span className="k-txt">Verified Purity</span>
+              </div>
+              <h2 className="s-h" style={{ marginBottom: '1.5rem', lineHeight: '1.1' }}>
+                Grain to<br /><em>Golden Oil</em>
+              </h2>
+              <p className="body-t" style={{ fontSize: '0.95rem', lineHeight: '1.6', maxWidth: '460px', marginBottom: '1.5rem' }}>
+                Every batch of Jeevan Rekha undergoes strict physical refining. Completely free from caustic soda, our process protects the oil's biological structure and retains essential antioxidants.
+              </p>
+              
+              <div className="guarantee-block-clean" style={{ maxWidth: '460px' }}>
+                <div className="g-100-clean">100%</div>
+                <div className="g-text-clean">
+                  <span className="g-sub-clean">Physically Refined</span>
+                  <p className="g-desc-clean">Processed without caustic chemicals to protect delicate antioxidants and preserve natural purity.</p>
+                </div>
               </div>
             </div>
 
-            {/* Right Column (Report) */}
+            {/* Right Column (Report Card) */}
             <div className="rv sr">
-              <div className="nabl-card">
-                <div className="nabl-header">
-                  <span style={{ fontFamily: 'var(--fd)', fontSize: 'clamp(1.2rem, 2vw, 1.5rem)', fontWeight: 600, color: 'var(--bk)' }}>NABL Final Analysis</span>
-                  <span style={{ fontFamily: 'var(--f-tech)', fontSize: '0.7rem', color: 'var(--w)', background: 'var(--p)', padding: '0.35rem 0.8rem', borderRadius: '4px', fontWeight: 700, letterSpacing: '.05em' }}>VERIFIED</span>
-                </div>
-                <div className="nabl-grid">
-                  <div className="nabl-row"><span className="nabl-metric">Appearance</span><span className="nabl-value">Clear Liquid</span></div>
-                  <div className="nabl-row"><span className="nabl-metric">Organoleptic</span><span className="nabl-value">No Rancidity</span></div>
-                  <div className="nabl-row"><span className="nabl-metric">Cloud Point</span><span className="nabl-value">3.0 °C</span></div>
-                  <div className="nabl-row"><span className="nabl-metric">γ-Oryzanol Min</span><span className="nabl-value" style={{ color: 'var(--p)' }}>&gt;1.3 %</span></div>
-                  <div className="nabl-row"><span className="nabl-metric">Colour (Lovibond)</span><span className="nabl-value">11.6 Units</span></div>
-                  <div className="nabl-row"><span className="nabl-metric">Free Fatty Acids</span><span className="nabl-value">0.089 %</span></div>
-                  <div className="nabl-row"><span className="nabl-metric">Moisture Max</span><span className="nabl-value">0.013 %</span></div>
-                  <div className="nabl-row"><span className="nabl-metric">Peroxide Value</span><span className="nabl-value">0.56 meq/kg</span></div>
-                  <div className="nabl-row"><span className="nabl-metric">Refractive Index @40°C</span><span className="nabl-value">1.4656</span></div>
-                  <div className="nabl-row"><span className="nabl-metric">Iodine Value</span><span className="nabl-value">98.93</span></div>
-                  <div className="nabl-row"><span className="nabl-metric">Phosphorus Max</span><span className="nabl-value">0.07 ppm</span></div>
-                  <div className="nabl-row"><span className="nabl-metric">Hexane Content</span><span className="nabl-value">Nil</span></div>
-                  <div className="nabl-row full-width">
-                    <span className="nabl-metric">Argemone / Mineral Oil Tests</span>
-                    <span className="nabl-value" style={{ color: 'var(--p)', background: 'rgba(75,38,133,.1)', padding: '0.4rem 1rem', borderRadius: '4px' }}>NEGATIVE</span>
+              <div className="nabl-card-clean">
+                {/* Card Header */}
+                <div className="nabl-card-header">
+                  <div className="nabl-card-title-group">
+                    <span className="nabl-card-eyebrow">VERIFIED LABORATORY ANALYSIS</span>
+                    <h3 className="nabl-card-title">NABL Batch Certificate</h3>
                   </div>
+                  <img src="/nabl_logo.png" alt="NABL Accredited" className="nabl-card-logo" />
+                </div>
+
+                {/* Tables Container */}
+                <div className="nabl-table-container">
+                  {/* Left Table */}
+                  <div className="nabl-table">
+                    <div className="nabl-table-row">
+                      <span className="nabl-param-name"><Eye size={14} /> Appearance</span>
+                      <span className="nabl-param-value">Clear Liquid</span>
+                    </div>
+                    <div className="nabl-table-row">
+                      <span className="nabl-param-name"><Wind size={14} className="icon-wind" /> Organoleptic</span>
+                      <span className="nabl-param-value">No Rancidity</span>
+                    </div>
+                    <div className="nabl-table-row">
+                      <span className="nabl-param-name"><Thermometer size={14} className="icon-temp" /> Cloud Point</span>
+                      <span className="nabl-param-value">3.0 °C</span>
+                    </div>
+                    <div className="nabl-table-row">
+                      <span className="nabl-param-name"><Sparkles size={14} className="icon-sparkle" /> γ-Oryzanol Min</span>
+                      <span className="nabl-param-value highlight-purple">&gt;1.3%</span>
+                    </div>
+                    <div className="nabl-table-row">
+                      <span className="nabl-param-name"><Palette size={14} /> Colour (Lovibond)</span>
+                      <span className="nabl-param-value">11.6 Units</span>
+                    </div>
+                    <div className="nabl-table-row">
+                      <span className="nabl-param-name"><Gauge size={14} className="icon-gauge" /> Free Fatty Acids</span>
+                      <span className="nabl-param-value">0.089%</span>
+                    </div>
+                  </div>
+
+                  {/* Right Table */}
+                  <div className="nabl-table">
+                    <div className="nabl-table-row">
+                      <span className="nabl-param-name"><Droplet size={14} className="icon-drop" /> Moisture Max</span>
+                      <span className="nabl-param-value">0.013%</span>
+                    </div>
+                    <div className="nabl-table-row">
+                      <span className="nabl-param-name"><Beaker size={14} /> Peroxide Value</span>
+                      <span className="nabl-param-value">0.56 meq/kg</span>
+                    </div>
+                    <div className="nabl-table-row">
+                      <span className="nabl-param-name"><Compass size={14} className="icon-compass" /> Refractive Index</span>
+                      <span className="nabl-param-value">1.4656</span>
+                    </div>
+                    <div className="nabl-table-row">
+                      <span className="nabl-param-name"><FlaskConical size={14} /> Iodine Value</span>
+                      <span className="nabl-param-value">98.93</span>
+                    </div>
+                    <div className="nabl-table-row">
+                      <span className="nabl-param-name"><Atom size={14} className="icon-atom" /> Phosphorus Max</span>
+                      <span className="nabl-param-value highlight-green">0.07 ppm</span>
+                    </div>
+                    <div className="nabl-table-row">
+                      <span className="nabl-param-name"><Filter size={14} className="icon-filter" /> Hexane Content</span>
+                      <span className="nabl-param-value highlight-green">Nil</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Footer Banner */}
+                <div className="nabl-card-footer">
+                  <div className="nabl-footer-title">
+                    <ShieldCheck size={16} />
+                    <span>Argemone &amp; Mineral Oil Tests</span>
+                  </div>
+                  <div className="nabl-footer-value">NEGATIVE (100% PASS)</div>
                 </div>
               </div>
             </div>
