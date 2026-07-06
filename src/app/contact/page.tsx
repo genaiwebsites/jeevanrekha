@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import gsap from 'gsap';
+import { MapPin, Mail, Phone, Clock, Check } from 'lucide-react';
 
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle');
@@ -218,95 +219,50 @@ export default function Contact() {
         <div className="cm-inner">
           {/* LEFT: Info panel */}
           <div className="ci-left">
-            {/* Office Locations & Business Hours */}
-            <div className="rv ci-left-stack-wrapper" data-d="3">
-              <div className="office-stack">
-                {/* Office Card with styled SVG Map */}
-                <div className="office-card-map">
-                  <div className="office-map">
-                    <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} viewBox="0 0 480 180" preserveAspectRatio="xMidYMid slice" fill="none">
-                      <line x1="0" y1="60" x2="480" y2="60" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" />
-                      <line x1="0" y1="120" x2="480" y2="120" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" />
-                      <line x1="80" y1="0" x2="80" y2="180" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" />
-                      <line x1="200" y1="0" x2="200" y2="180" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" />
-                      <line x1="320" y1="0" x2="320" y2="180" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" />
-                      <line x1="400" y1="0" x2="400" y2="180" stroke="rgba(255,255,255,0.08)" strokeWidth="1.5" />
-                      <path d="M0 90 Q60 70 120 95 Q180 120 240 95 Q300 70 360 95 Q420 120 480 95" stroke="rgba(255,255,255,0.15)" strokeWidth="12" fill="none" />
-                      <rect x="88" y="68" width="40" height="28" rx="3" fill="rgba(255,255,255,0.06)" />
-                      <rect x="140" y="70" width="28" height="22" rx="3" fill="rgba(255,255,255,0.06)" />
-                      <rect x="208" y="66" width="50" height="32" rx="3" fill="rgba(255,255,255,0.06)" />
-                      <rect x="330" y="70" width="38" height="26" rx="3" fill="rgba(255,255,255,0.06)" />
-                      <text x="240" y="55" textAnchor="middle" fontSize="7" fill="rgba(255,255,255,0.3)" fontFamily="sans-serif" fontWeight="700" letterSpacing="2">STRAND ROAD</text>
-                    </svg>
-                    <div className="map-chip mc-1">Kolkata 700006</div>
-                    <div className="map-chip mc-2">West Bengal, India</div>
-                    <div className="map-pin">
-                      <div className="map-pin-head"></div>
-                      <div className="map-pin-tail"></div>
+            <div className="contact-sidebar-card">
+              <div className="sidebar-section">
+                <h3 className="contact-card-title">Corporate Head Office</h3>
+                <div className="contact-detail-list">
+                  <div className="contact-detail-item">
+                    <span className="contact-detail-icon"><MapPin size={16} /></span>
+                    <div>
+                      <div className="contact-detail-label">Address</div>
+                      <div className="contact-detail-value">55/1B, Strand Road, 3rd Floor, Room 05<br />Kolkata – 700006, West Bengal</div>
                     </div>
                   </div>
-                  <div className="office-body">
-                    <div className="office-title">Corporate Head Office</div>
-                    <div className="office-rows">
-                      <div className="office-row">
-                        <div className="or-dot">
-                          <svg viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.515 1.5 2.5 3.515 2.5 6C2.5 9 7 12.5 7 12.5C7 12.5 11.5 9 11.5 6C11.5 3.515 9.485 1.5 7 1.5Z" stroke="#4B2685" strokeWidth="1.4" /><circle cx="7" cy="6" r="1.5" stroke="#4B2685" strokeWidth="1.2" /></svg>
-                        </div>
-                        <div>
-                          <div className="or-label">Address</div>
-                          <div className="or-val">55/1B, Strand Road, 3rd Floor, Room 05<br />Kolkata – 700006, West Bengal</div>
-                        </div>
-                      </div>
-                      <div className="office-row">
-                        <div className="or-dot">
-                          <svg viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="8" rx="1" stroke="#4B2685" strokeWidth="1.4" /><path d="M2 5.5L7 8.5L12 5.5" stroke="#4B2685" strokeWidth="1.2" strokeLinecap="round" /></svg>
-                        </div>
-                        <div>
-                          <div className="or-label">Email</div>
-                          <div className="or-val">info@abudyog.in</div>
-                        </div>
-                      </div>
-                      <div className="office-row">
-                        <div className="or-dot">
-                          <svg viewBox="0 0 14 14" fill="none"><path d="M3.5 2H2.5C2.224 2 2 2.224 2 2.5C2 7.851 6.149 12 11.5 12C11.776 12 12 11.776 12 11.5V10.5L10 8.5L8.5 10C7.5 9.5 5.5 7.5 5 6.5L6.5 5L4.5 3L3.5 2Z" stroke="#4B2685" strokeWidth="1.4" strokeLinejoin="round" /></svg>
-                        </div>
-                        <div>
-                          <div className="or-label">Phone</div>
-                          <div className="or-val">+91 74392 89709</div>
-                        </div>
-                      </div>
+                  <div className="contact-detail-item">
+                    <span className="contact-detail-icon"><Mail size={16} /></span>
+                    <div>
+                      <div className="contact-detail-label">Email</div>
+                      <div className="contact-detail-value">info@abudyog.in</div>
+                    </div>
+                  </div>
+                  <div className="contact-detail-item">
+                    <span className="contact-detail-icon"><Phone size={16} /></span>
+                    <div>
+                      <div className="contact-detail-label">Phone</div>
+                      <div className="contact-detail-value">+91 74392 89709</div>
                     </div>
                   </div>
                 </div>
- 
-                {/* Business Hours Card */}
-                <div className="hours-card-simple">
-                  <div className="hours-header-simple">
-                    <div className="hours-icon-badge">
-                      <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
-                        <circle cx="12" cy="12" r="10" strokeWidth="1.8" />
-                        <path d="M12 6v6l4 2" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                    <div className="office-title" style={{ marginBottom: 0 }}>Business Hours</div>
+              </div>
+
+              <div className="sidebar-divider"></div>
+
+              <div className="sidebar-section">
+                <h3 className="contact-card-title">Business Hours</h3>
+                <div className="business-hours-list">
+                  <div className="hours-row-item">
+                    <span className="hours-day">Monday – Friday</span>
+                    <span className="hours-time">9:00 AM – 6:00 PM</span>
                   </div>
-                  <div className="hours-rows">
-                    <div className="hr-row">
-                      <span className="hr-day">Monday – Friday</span>
-                      <span className="hr-time">9:00 AM – 6:00 PM</span>
-                    </div>
-                    <div className="hr-row">
-                      <span className="hr-day">Saturday</span>
-                      <span className="hr-time">9:00 AM – 2:00 PM</span>
-                    </div>
-                    <div className="hr-row">
-                      <span className="hr-day">Sunday</span>
-                      <span className="hr-time hr-closed">Closed</span>
-                    </div>
-                    <div className="hr-row">
-                      <span className="hr-day">Public Holidays</span>
-                      <span className="hr-time hr-closed">Closed</span>
-                    </div>
+                  <div className="hours-row-item">
+                    <span className="hours-day">Saturday</span>
+                    <span className="hours-time">9:00 AM – 2:00 PM</span>
+                  </div>
+                  <div className="hours-row-item">
+                    <span className="hours-day">Sunday &amp; Holidays</span>
+                    <span className="hours-time closed">Closed</span>
                   </div>
                 </div>
               </div>
@@ -314,82 +270,84 @@ export default function Contact() {
           </div>
 
           {/* RIGHT: Contact Form */}
-          <div className="ci-right rv sr" data-d="1">
-            <div className="form-card" id="formCard">
+          <div className="ci-right">
+            <div className="contact-form-container" id="formCard">
               {status !== 'success' && (
                 <>
-                  <h2 className="form-heading">Send us a <em>Message</em></h2>
-                  <p className="form-sub">
+                  <h3 className="contact-form-title">Send us a Message</h3>
+                  <p className="contact-form-sub">
                     Fill in the details below and our team will get back to you within 24 hours. We look forward to connecting with you.
                   </p>
 
                   <form id="contactForm" onSubmit={handleSubmit} noValidate>
-                    {/* Enquiry type */}
-                    <div className={`form-group ${errors.enquiry ? 'error' : ''}`}>
-                      <label className="form-label" htmlFor="enquiry">Enquiry Type <span>*</span></label>
-                      <select 
-                        id="enquiry" 
-                        name="enquiry" 
-                        className={`form-select ${errors.enquiry ? 'error' : ''}`} 
-                        value={selectedEnquiry}
-                        onChange={(e) => setSelectedEnquiry(e.target.value)}
-                        required
-                      >
-                        <option value="" disabled>Select enquiry type</option>
-                        <option value="retail">🛒 Retail Order</option>
-                        <option value="bulk">📦 Bulk / B2B</option>
-                        <option value="distribution">🚚 Distribution</option>
-                        <option value="partnership">🤝 Partnership</option>
-                        <option value="media">📰 Media</option>
-                        <option value="other">💬 General</option>
-                      </select>
-                    </div>
-
-                    <div className="form-row">
-                      <div className={`form-group ${errors.fname ? 'error' : ''}`}>
-                        <label className="form-label" htmlFor="fname">First Name <span>*</span></label>
+                    {/* Full Name & Company */}
+                    <div className="field-grid">
+                      <div className={`form-field ${errors.fname ? 'error' : ''}`}>
+                        <label className="field-label" htmlFor="fname">Full Name <span>*</span></label>
                         <input 
                           type="text" 
                           id="fname" 
                           name="fname" 
-                          className={`form-input ${errors.fname ? 'error' : ''}`} 
-                          placeholder="Rahul" 
+                          className={`field-input ${errors.fname ? 'error' : ''}`} 
+                          placeholder="Your full name" 
                           required 
                         />
                       </div>
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="lname">Last Name <span>*</span></label>
-                        <input type="text" id="lname" name="lname" className="form-input" placeholder="Sharma" />
+                      <div className="form-field">
+                        <label className="field-label" htmlFor="company">Company Name</label>
+                        <input 
+                          type="text" 
+                          id="company" 
+                          name="company" 
+                          className="field-input" 
+                          placeholder="ABC Foods Pvt. Ltd." 
+                        />
                       </div>
                     </div>
 
-                    <div className="form-row">
-                      <div className={`form-group ${errors.email ? 'error' : ''}`}>
-                        <label className="form-label" htmlFor="email">Email Address <span>*</span></label>
+                    {/* Email & Phone */}
+                    <div className="field-grid">
+                      <div className={`form-field ${errors.email ? 'error' : ''}`}>
+                        <label className="field-label" htmlFor="email">Email Address <span>*</span></label>
                         <input 
                           type="email" 
                           id="email" 
                           name="email" 
-                          className={`form-input ${errors.email ? 'error' : ''}`} 
+                          className={`field-input ${errors.email ? 'error' : ''}`} 
                           placeholder="rahul@company.com" 
                           required 
                         />
                       </div>
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" className="form-input" placeholder="+91 98765 43210" />
+                      <div className="form-field">
+                        <label className="field-label" htmlFor="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" className="field-input" placeholder="+91 98765 43210" />
                       </div>
                     </div>
 
-                    <div className="form-row">
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="company">Company / Organisation</label>
-                        <input type="text" id="company" name="company" className="form-input" placeholder="ABC Foods Pvt. Ltd." />
+                    {/* Enquiry Type & Product */}
+                    <div className="field-grid">
+                      <div className={`form-field ${errors.enquiry ? 'error' : ''}`}>
+                        <label className="field-label" htmlFor="enquiry">Enquiry Type <span>*</span></label>
+                        <select 
+                          id="enquiry" 
+                          name="enquiry" 
+                          className={`field-select ${errors.enquiry ? 'error' : ''}`} 
+                          value={selectedEnquiry}
+                          onChange={(e) => setSelectedEnquiry(e.target.value)}
+                          required
+                        >
+                          <option value="" disabled>Select type</option>
+                          <option value="retail">🛒 Retail Order</option>
+                          <option value="bulk">📦 Bulk / B2B</option>
+                          <option value="distribution">🚚 Distribution</option>
+                          <option value="partnership">🤝 Partnership</option>
+                          <option value="other">General Enquiry</option>
+                        </select>
                       </div>
-                      <div className="form-group">
-                        <label className="form-label" htmlFor="product">Product of Interest</label>
-                        <select id="product" name="product" className="form-select" defaultValue="">
-                          <option value="" disabled>Select a product</option>
+                      <div className="form-field">
+                        <label className="field-label" htmlFor="product">Product of Interest</label>
+                        <select id="product" name="product" className="field-select" defaultValue="">
+                          <option value="" disabled>Select product</option>
                           <option value="mustard">Kacchi Ghani Mustard Oil</option>
                           <option value="rice-bran">Rice Bran Oil</option>
                           <option value="rice-bran-lite">Rice Bran Oil Lite</option>
@@ -399,41 +357,40 @@ export default function Contact() {
                       </div>
                     </div>
 
-                    <div className="form-row">
-                      <div className={`form-group full ${errors.message ? 'error' : ''}`}>
-                        <label className="form-label" htmlFor="message">Your Message <span>*</span></label>
-                        <textarea 
-                          id="message" 
-                          name="message" 
-                          className={`form-textarea ${errors.message ? 'error' : ''}`} 
-                          placeholder="Tell us about your requirements — quantity, frequency, specific questions..." 
-                          required 
-                        />
-                      </div>
+                    {/* Message */}
+                    <div className={`form-field ${errors.message ? 'error' : ''}`}>
+                      <label className="field-label" htmlFor="message">Your Message <span>*</span></label>
+                      <textarea 
+                        id="message" 
+                        name="message" 
+                        className={`field-textarea ${errors.message ? 'error' : ''}`} 
+                        placeholder="Tell us about your requirements..." 
+                        required 
+                      />
                     </div>
 
-                    <button type="submit" className="form-submit" disabled={status === 'sending'}>
+                    <button type="submit" className="form-btn" disabled={status === 'sending'}>
                       {status === 'sending' ? 'Sending…' : 'Send Message'}
-                      <svg viewBox="0 0 18 18" fill="none" width="18" height="18">
+                      <svg viewBox="0 0 18 18" fill="none" width="16" height="16">
                         <path d="M3.75 9h10.5M9.75 4.5L14.25 9l-4.5 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </button>
-                    <p className="submit-note">We respect your privacy. Read our <a href="https://jeevanrekhafoods.com/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
+                    <p className="privacy-note">We respect your privacy. Read our <a href="https://jeevanrekhafoods.com/privacy-policy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a>.</p>
                   </form>
                 </>
               )}
 
               {/* Success state */}
               {status === 'success' && (
-                <div className="form-success" id="formSuccess" style={{ display: 'block' }}>
-                  <div className="success-ico">
-                    <svg viewBox="0 0 32 32" width="32" height="32">
-                      <path d="M6 16l7 7L26 9" fill="none" stroke="var(--y)" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                <div className="form-success-panel" id="formSuccess">
+                  <div className="success-icon-badge">
+                    <svg viewBox="0 0 32 32" width="24" height="24">
+                      <path d="M6 16l7 7L26 9" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <h3 className="success-h">Message Sent!</h3>
-                  <p className="success-p">
-                    Thank you for reaching out to Jeevan Rekha Foods. Our team will get back to you within 24 hours. We look forward to connecting with you.
+                  <h4 className="success-title">Message Sent Successfully</h4>
+                  <p className="success-desc">
+                    Thank you for reaching out. A representative from Jeevan Rekha Foods will get back to you within 24 hours.
                   </p>
                 </div>
               )}
@@ -446,86 +403,71 @@ export default function Contact() {
       <section className="factory-section">
         <div className="wrap">
           <div className="factory-grid">
-            <div className="factory-left rv sl">
-              <div className="label">Manufacturing Plant</div>
-              <h2 className="heading" style={{ marginTop: '14px', marginBottom: '16px' }}>
-                Visit Our <b>Burdwan</b><br />
-                Production <em>Facility</em>
+            <div className="factory-left">
+              <div className="section-label">
+                <div className="sl-bar"></div>
+                <span className="sl-text">Manufacturing Plant</span>
+              </div>
+              <h2 className="ci-heading" style={{ marginTop: '14px', marginBottom: '16px' }}>
+                Visit Our <em>Burdwan</em> <strong>Production Facility</strong>
               </h2>
-              <p className="prose">
-                Our state-of-the-art processing plant in Burdwan, West Bengal is where Jeevan Rekha oils are born. Trade partners, institutional buyers, and authorised visitors are welcome to tour our facility by appointment.
+              <p className="ci-desc">
+                Our state-of-the-art processing plant in Burdwan, West Bengal is where Jeevan Rekha oils are manufactured. Institutional buyers, distributors, and trade partners are welcome to tour our facility by appointment.
               </p>
 
-              <div className="factory-address" style={{ marginTop: '28px' }}>
-                <div className="fa-row">
-                  <div className="fa-ico">
-                    <svg viewBox="0 0 16 16" fill="none"><path d="M8 1.5C5.515 1.5 3.5 3.515 3.5 6C3.5 9 8 14.5 8 14.5C8 14.5 12.5 9 12.5 6C12.5 3.515 10.485 1.5 8 1.5Z" stroke="#4B2685" strokeWidth="1.4" /><circle cx="8" cy="6" r="1.5" stroke="#4B2685" strokeWidth="1.2" /></svg>
-                  </div>
+              <div className="plant-info-list">
+                <div className="plant-info-item">
+                  <span className="plant-info-icon"><MapPin size={16} /></span>
                   <div>
-                    <div className="fa-label">Factory Address</div>
-                    <div className="fa-val">Dighirkon, Bamunia Road, Uchallan<br />Burdwan – 713427, West Bengal</div>
+                    <div className="plant-info-label">Factory Address</div>
+                    <div className="plant-info-value">Dighirkon, Bamunia Road, Uchallan, Burdwan – 713427, West Bengal</div>
                   </div>
                 </div>
-                <div style={{ height: '1px', background: 'var(--g10)' }}></div>
-                <div className="fa-row">
-                  <div className="fa-ico">
-                    <svg viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="5.5" stroke="#4B2685" strokeWidth="1.4" /><line x1="8" y1="5" x2="8" y2="8.5" stroke="#4B2685" strokeWidth="1.4" strokeLinecap="round" /><line x1="8" y1="8.5" x2="10" y2="10" stroke="#4B2685" strokeWidth="1.4" strokeLinecap="round" /></svg>
-                  </div>
+                <div className="plant-info-item">
+                  <span className="plant-info-icon"><Phone size={16} /></span>
                   <div>
-                    <div className="fa-label">Visit Hours</div>
-                    <div className="fa-val">By appointment only — Monday to Friday</div>
-                  </div>
-                </div>
-                <div style={{ height: '1px', background: 'var(--g10)' }}></div>
-                <div className="fa-row">
-                  <div className="fa-ico">
-                    <svg viewBox="0 0 16 16" fill="none"><path d="M3.5 2H2.5C2.224 2 2 2.224 2 2.5C2 7.851 6.149 12 11.5 12C11.776 12 12 11.776 12 11.5V10.5L10 8.5L8.5 10C7.5 9.5 5.5 7.5 5 6.5L6.5 5L4.5 3L3.5 2Z" stroke="#4B2685" strokeWidth="1.4" strokeLinejoin="round" /></svg>
-                  </div>
-                  <div>
-                    <div className="fa-label">Book a Visit</div>
-                    <div className="fa-val">Call +91 74392 89709 or email info@abudyog.in</div>
+                    <div className="plant-info-label">Book a Visit</div>
+                    <div className="plant-info-value">Call +91 74392 89709 or email info@abudyog.in (Mon–Fri)</div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="factory-visual rv sr">
-              <svg className="factory-svg" viewBox="0 0 480 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <pattern id="fp" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-                  <line x1="0" y1="40" x2="40" y2="0" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-                </pattern>
-                <rect width="480" height="380" fill="url(#fp)" />
-                <rect x="60" y="180" width="360" height="140" rx="4" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
-                <polyline points="60,180 120,140 180,180 240,140 300,180 360,140 420,180" stroke="rgba(255,255,255,0.15)" strokeWidth="1.5" fill="none" />
-                <rect x="130" y="100" width="20" height="80" rx="2" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-                <rect x="240" y="90" width="24" height="90" rx="2" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-                <rect x="340" y="105" width="18" height="75" rx="2" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.12)" strokeWidth="1" />
-                <path d="M140 100 Q148 82 138 68 Q128 54 136 42" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-                <path d="M252 90 Q262 72 250 58 Q238 44 248 30" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-                <path d="M349 105 Q357 88 347 74 Q337 60 345 48" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-                <rect x="90" y="210" width="32" height="24" rx="2" fill="rgba(254,220,6,0.15)" stroke="rgba(254,220,6,0.3)" strokeWidth="1" />
-                <rect x="140" y="210" width="32" height="24" rx="2" fill="rgba(254,220,6,0.1)" stroke="rgba(254,220,6,0.2)" strokeWidth="1" />
-                <rect x="280" y="210" width="32" height="24" rx="2" fill="rgba(254,220,6,0.1)" stroke="rgba(254,220,6,0.2)" strokeWidth="1" />
-                <rect x="330" y="210" width="32" height="24" rx="2" fill="rgba(254,220,6,0.15)" stroke="rgba(254,220,6,0.3)" strokeWidth="1" />
-                <rect x="210" y="250" width="60" height="70" rx="3" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" />
-                <line x1="40" y1="320" x2="440" y2="320" stroke="rgba(255,255,255,0.12)" strokeWidth="1.5" />
-                <circle cx="380" cy="100" r="52" fill="rgba(254,220,6,0.08)" stroke="rgba(254,220,6,0.2)" strokeWidth="1.5" />
-                <text x="380" y="94" textAnchor="middle" fontFamily="serif" fontSize="10" fill="rgba(254,220,6,0.7)" fontWeight="700">BURDWAN</text>
-                <text x="380" y="108" textAnchor="middle" fontFamily="serif" fontSize="8" fill="rgba(254,220,6,0.5)">PLANT</text>
-              </svg>
-
-              <div className="fv-top">
-                <div className="fv-badge">Manufacturing Facility · Est. 2019</div>
-              </div>
-              <div className="fv-bottom">
-                <div className="fv-stats">
-                  <div className="fv-stat">
-                    <div className="fv-num">300<span style={{ fontSize: '1.1rem' }}>T</span></div>
-                    <div className="fv-lbl">Solvent Extraction Daily</div>
+            <div className="factory-right">
+              <div className="plant-capacity-card">
+                <div className="plant-capacity-header">
+                  <span className="capacity-eyebrow">ESTABLISHED 2019</span>
+                  <h3 className="capacity-title">Refinery Processing Capacity</h3>
+                </div>
+                <div className="capacity-stats-grid">
+                  <div className="capacity-stat-box">
+                    <div className="stat-value">300<span className="stat-unit">TPD</span></div>
+                    <div className="stat-label">Solvent Extraction Capacity</div>
                   </div>
-                  <div className="fv-stat">
-                    <div className="fv-num">150<span style={{ fontSize: '1.1rem' }}>T</span></div>
-                    <div className="fv-lbl">Physical Refinery Daily</div>
+                  <div className="capacity-stat-box">
+                    <div className="stat-value">150<span className="stat-unit">TPD</span></div>
+                    <div className="stat-label">Physical Refining Capacity</div>
+                  </div>
+                </div>
+                <div className="plant-capabilities-list">
+                  <h4 className="capabilities-title">Plant Capabilities</h4>
+                  <div className="capability-items">
+                    <div className="capability-item">
+                      <Check size={14} color="var(--p)" strokeWidth={3} />
+                      <span>Multi-stage physical refining without caustic soda</span>
+                    </div>
+                    <div className="capability-item">
+                      <Check size={14} color="var(--p)" strokeWidth={3} />
+                      <span>Fully automated continuous workflow systems</span>
+                    </div>
+                    <div className="capability-item">
+                      <Check size={14} color="var(--p)" strokeWidth={3} />
+                      <span>Enzymatic degumming for enhanced nutrient retention</span>
+                    </div>
+                    <div className="capability-item">
+                      <Check size={14} color="var(--p)" strokeWidth={3} />
+                      <span>State-of-the-art quality control and testing lab</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -542,7 +484,7 @@ export default function Contact() {
               <div className="faq-sl-bar"></div>
               <span className="faq-sl-t">Common Questions</span>
             </div>
-            <h2 className="faq-h">Got <em>Questions?</em><br />We&apos;ve Got Answers.</h2>
+            <h2 className="faq-h">Got <em>Questions?</em><br />We&apos;ve Got <strong>Answers.</strong></h2>
             <p className="faq-p">
               Everything you need to know about our products, ordering, and distribution. Can&apos;t find what you&apos;re looking for? Just ask us directly.
             </p>
