@@ -56,7 +56,21 @@ export default function Navbar() {
         
         <div className="nav-cta-wrap">
           <Link href="/contact" className="nav-cta">Get in Touch</Link>
-          <div className="mobile-toggle" onClick={() => setIsMobileOpen(!isMobileOpen)}>
+          <div 
+            className="mobile-toggle" 
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setIsMobileOpen(!isMobileOpen);
+              }
+            }}
+            role="button"
+            tabIndex={0}
+            aria-label="Toggle navigation menu"
+            aria-expanded={isMobileOpen}
+            aria-controls="navL"
+          >
             <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
               <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
             </svg>

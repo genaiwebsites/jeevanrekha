@@ -17,7 +17,7 @@ export default function Manufacturing() {
       <section id="pipeline-section" style={{ paddingTop: '60px', paddingBottom: '100px' }}>
         <div className="wrap" style={{ position: 'relative', zIndex: 10 }}>
           <h2 className="s-h rv light" style={{ textAlign: 'center', marginBottom: '1.25rem' }}>Purity, <em>Engineered</em></h2>
-          <p className="body-t rv" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 3rem', fontSize: '0.9rem', color: 'rgba(255,255,255,.7)' }}>Trace the journey of our physically refined rice bran oil. Hover over any stage to view process parameters.</p>
+          <p className="body-t rv" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 3rem', fontSize: '0.9rem', color: 'rgba(255,255,255,.7)' }}>Trace the journey of our physically refined rice bran oil, showcasing the mechanical, thermal, and biological stages of physical refining.</p>
           
           <div className="pipeline-grid rv">
             {/* Node 1: Silo */}

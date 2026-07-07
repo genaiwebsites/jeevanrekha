@@ -33,7 +33,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL('https://jeevanrekhafoods.com'),
   title: {
-    default: 'Jeevan Rekha Foods — Purity. Health. Happiness.',
+    default: 'Jeevan Rekha Foods | Purity. Health. Happiness.',
     template: '%s | Jeevan Rekha Foods',
   },
   description: 'Jeevan Rekha Foods, a brand of AB Udyog Pvt. Ltd., brings 40+ years of expertise in producing premium Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soyabean Oil. Manufactured in Burdwan, West Bengal. NABL-certified quality. Proudly made in India.',
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
     locale: 'en_IN',
     url: 'https://jeevanrekhafoods.com',
     siteName: 'Jeevan Rekha Foods',
-    title: 'Jeevan Rekha Foods — Purity. Health. Happiness.',
-    description: 'Premium edible oils crafted with 40+ years of expertise. Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soyabean Oil — NABL-certified, proudly made in India.',
+    title: 'Jeevan Rekha Foods | Purity. Health. Happiness.',
+    description: 'Premium edible oils crafted with 40+ years of expertise. Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soyabean Oil. Quality is NABL-certified, and our products are proudly made in India.',
     images: [
       {
         url: 'https://jeevanrekhafoods.com/wp-content/uploads/2024/05/JR-New-Logo-e1744100437370.png',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Jeevan Rekha Foods — Purity. Health. Happiness.',
+    title: 'Jeevan Rekha Foods | Purity. Health. Happiness.',
     description: 'Premium edible oils crafted with 40+ years of expertise. Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soyabean Oil.',
     images: ['https://jeevanrekhafoods.com/wp-content/uploads/2024/05/JR-New-Logo-e1744100437370.png'],
   },

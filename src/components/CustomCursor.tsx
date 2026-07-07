@@ -60,6 +60,8 @@ export default function CustomCursor() {
   }, []);
 
   return (
-    <div id="cur-follower" ref={cursorRef}></div>
+    <div id="cur-follower" ref={cursorRef}>
+      <div className="cursor-dot"></div>
+    </div>
   );
 }
