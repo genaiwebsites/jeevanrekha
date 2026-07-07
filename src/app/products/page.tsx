@@ -26,43 +26,22 @@ export default function Products() {
       <div className="prod-nav">
         <div className="prod-nav-inner">
           <div className="prod-tabs">
-            <button className="pt-btn mustard act" onClick={() => handleScrollTo('p-mustard')}>Mustard Oil</button>
-            <button className="pt-btn rice" onClick={() => handleScrollTo('p-rice')}>Rice Bran Oil</button>
+            <button className="pt-btn rice act" onClick={() => handleScrollTo('p-rice')}>Rice Bran Oil</button>
+            <button className="pt-btn mustard" onClick={() => handleScrollTo('p-mustard')}>Mustard Oil</button>
             <button className="pt-btn soy" onClick={() => handleScrollTo('p-soy')}>Soyabean Oil</button>
           </div>
         </div>
       </div>
 
-      {/* Product 1: Mustard */}
-      <div className="prod-block" id="p-mustard">
-        <div className="pb-visual pv-mustard rv sl">
-          <div className="pb-vis-bg"></div><div className="pb-vis-grid"></div>
-          <div className="pb-bottle-scene">
-            <img src="/jr_kgmo.png" alt="Mustard Oil" />
-          </div>
-        </div>
-        <div className="pb-content rv sr">
-          <div className="pb-badge b-mustard">⭐ Traditional</div>
-          <h2 className="pb-name">Kacchi Ghani <em>Mustard Oil</em></h2>
-          <div className="pb-feats">
-            <span className="pb-feat">Cold Pressed</span>
-            <span className="pb-feat">Heart Friendly</span>
-            <span className="pb-feat">Anti-inflammatory</span>
-          </div>
-          <p className="pb-desc body-t">Traditional cold-pressed from premium black mustard seeds — no heat, no chemicals, just pure nature. The authentic soul of every Indian kitchen.</p>
-          <a href="https://kgmo-spa.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-y" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Mustard Oil</a>
-        </div>
-      </div>
-
-      {/* Product 2: Rice Bran */}
-      <div className="prod-block reverse" id="p-rice">
-        <div className="pb-visual pv-rice rv sr">
+      {/* Product 1: Rice Bran */}
+      <div className="prod-block" id="p-rice">
+        <div className="pb-visual pv-rice rv sl">
           <div className="pb-vis-bg"></div><div className="pb-vis-grid"></div>
           <div className="pb-bottle-scene">
             <img src="/jr_rbo.png" alt="Rice Bran Oil" />
           </div>
         </div>
-        <div className="pb-content rv sl">
+        <div className="pb-content rv sr">
           <div className="pb-badge b-rice">❤️ Heart Healthy</div>
           <h2 className="pb-name">Physically Refined <em>Rice Bran Oil</em></h2>
           <div className="pb-feats">
@@ -72,6 +51,27 @@ export default function Products() {
           </div>
           <p className="pb-desc body-t">Physically refined to retain natural antioxidants. With a 254°C smoke point, it's India's healthiest choice for high-heat frying and daily cooking.</p>
           <a href="https://rbo-spa.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-p" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Rice Bran Oil</a>
+        </div>
+      </div>
+
+      {/* Product 2: Mustard */}
+      <div className="prod-block reverse" id="p-mustard">
+        <div className="pb-visual pv-mustard rv sr">
+          <div className="pb-vis-bg"></div><div className="pb-vis-grid"></div>
+          <div className="pb-bottle-scene">
+            <img src="/jr_kgmo.png" alt="Mustard Oil" />
+          </div>
+        </div>
+        <div className="pb-content rv sl">
+          <div className="pb-badge b-mustard">⭐ Traditional</div>
+          <h2 className="pb-name">Kacchi Ghani <em>Mustard Oil</em></h2>
+          <div className="pb-feats">
+            <span className="pb-feat">Cold Pressed</span>
+            <span className="pb-feat">Heart Friendly</span>
+            <span className="pb-feat">Anti-inflammatory</span>
+          </div>
+          <p className="pb-desc body-t">Traditional cold-pressed from premium black mustard seeds — no heat, no chemicals, just pure nature. The authentic soul of every Indian kitchen.</p>
+          <a href="https://kgmo-spa.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-red" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Mustard Oil</a>
         </div>
       </div>
 
@@ -92,7 +92,7 @@ export default function Products() {
             <span className="pb-feat">Baking Friendly</span>
           </div>
           <p className="pb-desc body-t">Light, neutral-flavoured and packed with Omega-3 fatty acids. A versatile all-purpose oil for baking, dressings, and light cooking.</p>
-          <a href="https://sbo-spa.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-y" style={{ width: 'fit-content', background: '#2E7D32', color: '#fff', marginTop: '30px' }}>Explore Soyabean Oil</a>
+          <a href="https://sbo-spa.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-green" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Soyabean Oil</a>
         </div>
       </div>
 
