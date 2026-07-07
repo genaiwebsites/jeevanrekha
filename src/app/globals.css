@@ -1347,12 +1347,10 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 .faq-item.open .faq-q-arrow { background: var(--y); border-color: var(--y); }
 .faq-item.open .faq-q-arrow svg { fill: var(--pd); transform: rotate(45deg); }
 .faq-a {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: grid-template-rows .45s var(--ease);
+  max-height: 0;
   overflow: hidden;
 }
-.faq-item.open .faq-a { grid-template-rows: 1fr; }
+.faq-item.open .faq-a { max-height: 500px; }
 .faq-a-inner { min-height: 0; padding: 0 28px 24px; font-size: .88rem; line-height: 1.78; color: rgba(255,255,255,.75); font-weight: 400; }
 .faq-a-inner a { color: var(--y); text-decoration: none; border-bottom: 1px solid rgba(254,220,6,.3); }
 
