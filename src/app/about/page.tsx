@@ -27,7 +27,7 @@ export default function About() {
 
           <div className="hero-right rv" data-d="2" style={{ position: 'relative' }}>
             <div className="ph-visual-card">
-              <img src="/factory.png" alt="Jeevan Rekha Burdwan Factory" />
+              <img src="/factory.png" alt="Jeevan Rekha Burdwan Factory" loading="lazy" />
               <div className="ph-visual-overlay"></div>
               <div className="ph-visual-content-overlay">
                 <div style={{ fontFamily: 'var(--fd)', fontSize: '2rem', fontStyle: 'italic', color: 'var(--w)', fontWeight: 600, lineHeight: 1.1, marginBottom: '4px' }}>Burdwan Plant</div>

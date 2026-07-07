@@ -288,7 +288,10 @@ export default function Contact() {
                           className={`field-input ${errors.fname ? 'error' : ''}`} 
                           placeholder="Your full name" 
                           required 
+                          aria-invalid={errors.fname ? "true" : "false"}
+                          aria-describedby={errors.fname ? "fname-error" : undefined}
                         />
+                        {errors.fname && <span id="fname-error" className="field-error-msg" role="alert">Full name is required</span>}
                       </div>
                       <div className="form-field">
                         <label className="field-label" htmlFor="company">Company Name</label>
@@ -313,7 +316,10 @@ export default function Contact() {
                           className={`field-input ${errors.email ? 'error' : ''}`} 
                           placeholder="rahul@company.com" 
                           required 
+                          aria-invalid={errors.email ? "true" : "false"}
+                          aria-describedby={errors.email ? "email-error" : undefined}
                         />
+                        {errors.email && <span id="email-error" className="field-error-msg" role="alert">Valid email address is required</span>}
                       </div>
                       <div className="form-field">
                         <label className="field-label" htmlFor="phone">Phone Number</label>
@@ -332,6 +338,8 @@ export default function Contact() {
                           value={selectedEnquiry}
                           onChange={(e) => setSelectedEnquiry(e.target.value)}
                           required
+                          aria-invalid={errors.enquiry ? "true" : "false"}
+                          aria-describedby={errors.enquiry ? "enquiry-error" : undefined}
                         >
                           <option value="" disabled>Select type</option>
                           <option value="retail">🛒 Retail Order</option>
@@ -340,6 +348,7 @@ export default function Contact() {
                           <option value="partnership">🤝 Partnership</option>
                           <option value="other">General Enquiry</option>
                         </select>
+                        {errors.enquiry && <span id="enquiry-error" className="field-error-msg" role="alert">Please select an enquiry type</span>}
                       </div>
                       <div className="form-field">
                         <label className="field-label" htmlFor="product">Product of Interest</label>
@@ -363,7 +372,10 @@ export default function Contact() {
                         className={`field-textarea ${errors.message ? 'error' : ''}`} 
                         placeholder="Tell us about your requirements..." 
                         required 
+                        aria-invalid={errors.message ? "true" : "false"}
+                        aria-describedby={errors.message ? "message-error" : undefined}
                       />
+                      {errors.message && <span id="message-error" className="field-error-msg" role="alert">Please enter your message</span>}
                     </div>
 
                     <button type="submit" className="form-btn" disabled={status === 'sending'}>

@@ -38,7 +38,7 @@ export default function Products() {
         <div className="pb-visual pv-rice rv sl">
           <div className="pb-vis-bg"></div>
           <div className="pb-bottle-scene">
-            <img src="/jr_rbo.png" alt="Rice Bran Oil" />
+            <img src="/jr_rbo.png" alt="Rice Bran Oil" loading="lazy" />
           </div>
         </div>
         <div className="pb-content rv sr" data-d="1">
@@ -59,7 +59,7 @@ export default function Products() {
         <div className="pb-visual pv-mustard rv sr">
           <div className="pb-vis-bg"></div>
           <div className="pb-bottle-scene">
-            <img src="/jr_kgmo.png" alt="Mustard Oil" />
+            <img src="/jr_kgmo.png" alt="Mustard Oil" loading="lazy" />
           </div>
         </div>
         <div className="pb-content rv sl" data-d="1">
@@ -80,7 +80,7 @@ export default function Products() {
         <div className="pb-visual pv-soy rv sl">
           <div className="pb-vis-bg"></div>
           <div className="pb-bottle-scene">
-            <img src="/jr_sbo.png" alt="Soyabean Oil" />
+            <img src="/jr_sbo.png" alt="Soyabean Oil" loading="lazy" />
           </div>
         </div>
         <div className="pb-content rv sr" data-d="1">
@@ -172,21 +172,21 @@ export default function Products() {
           <div className="wt-grid">
             <div className="wt-card rv" onClick={() => handleScrollTo('p-mustard')}>
               <div className="wt-top">
-                <div className="wt-ico" style={{ background: 'linear-gradient(135deg,#FFD740,#9B6200)' }}><Flame style={{ width: '28px', height: '28px', color: '#fff' }} /></div>
+                <div className="wt-ico wt-ico-mustard"><Flame style={{ width: '28px', height: '28px', color: 'var(--w)' }} /></div>
               </div>
               <h3 className="wt-name">Mustard Oil</h3>
               <p className="wt-desc">For the authentic Indian cook. Traditional pungency, uncompromised nutrition. Perfect for Bengali cuisine and marinades.</p>
             </div>
             <div className="wt-card rv" data-d="1" onClick={() => handleScrollTo('p-rice')}>
               <div className="wt-top">
-                <div className="wt-ico" style={{ background: 'linear-gradient(135deg,var(--p),var(--pm))' }}><Heart style={{ width: '28px', height: '28px', color: '#fff' }} /></div>
+                <div className="wt-ico wt-ico-rice"><Heart style={{ width: '28px', height: '28px', color: 'var(--w)' }} /></div>
               </div>
               <h3 className="wt-name">Rice Bran Oil</h3>
               <p className="wt-desc">For health-conscious families and professional kitchens. The gold standard of edible oils, being light, nutritious, and perfect for high-heat cooking.</p>
             </div>
             <div className="wt-card rv" data-d="2" onClick={() => handleScrollTo('p-soy')}>
               <div className="wt-top">
-                <div className="wt-ico" style={{ background: 'linear-gradient(135deg,#4CAF50,#1B5E20)' }}><Sprout style={{ width: '28px', height: '28px', color: '#fff' }} /></div>
+                <div className="wt-ico wt-ico-soy"><Sprout style={{ width: '28px', height: '28px', color: 'var(--w)' }} /></div>
               </div>
               <h3 className="wt-name">Soyabean Oil</h3>
               <p className="wt-desc">For everyday cooking, baking, and dressings. A light, budget-friendly Omega-3 rich oil that works across every cuisine.</p>

@@ -20,7 +20,7 @@ export default function BlogPost() {
           <p>When it comes to Indian cooking, the choice of oil can dramatically alter both the flavor profile of the dish and its impact on your family's health. While traditional oils have their place, top chefs and nutritionists across the country are increasingly turning to a modern kitchen staple: physically refined Rice Bran Oil.</p>
           <p>But what makes this oil so special? The secret lies in a unique combination of high heat tolerance, neutral flavor, and a powerhouse of antioxidants.</p>
 
-          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Cooking with Rice Bran Oil" className="post-img" />
+          <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Cooking with Rice Bran Oil" className="post-img" loading="lazy" />
 
           <h2>The Science of the Smoke Point</h2>
           <p>Indian cuisine heavily relies on high-heat techniques, whether it's the intense tempering of spices (tadka), deep-frying crispy pakoras, or searing vegetables. This is where many popular cooking oils fail. When an oil reaches its "smoke point," it begins to break down, releasing free radicals and toxic fumes, while simultaneously imparting a bitter, burnt taste to your food.</p>
