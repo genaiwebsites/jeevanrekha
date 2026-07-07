@@ -3,11 +3,6 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer>
-      <svg className="f-bg-art" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M100,20 C100,20 40,80 40,130 C40,163.137 66.863,190 100,190 C133.137,190 160,163.137 160,130 C160,80 100,20 100,20 Z" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <path d="M100,190 C100,190 100,100 140,80" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <path d="M100,150 C100,150 70,130 60,100" fill="none" stroke="currentColor" strokeWidth="2"/>
-      </svg>
       <div className="wrap">
         <div className="f-grid">
           <div>

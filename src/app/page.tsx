@@ -102,8 +102,8 @@ export default function Home() {
               <img src="/jr_kgmo.png" alt="Mustard Oil" className="pch-btl-img" />
             </div>
             <div className="pch-body">
-              <div className="pch-badge b-mustard">⭐ Bestseller</div>
-              <h3 className="pch-title">Kacchi Ghani <em style={{ color: 'var(--y)' }}>Mustard</em></h3>
+              <div className="pch-badge b-mustard">⭐ Traditional</div>
+              <h3 className="pch-title">Kacchi Ghani <em style={{ color: 'var(--y)' }}>Mustard Oil</em></h3>
               <p className="pch-desc">Naturally pungent, rich in allyl isothiocyanate and monounsaturated fats. The authentic soul of Indian cooking.</p>
               <div className="pch-link" style={{ color: 'var(--y)' }}>Explore Product <span className="pch-arrow">→</span></div>
             </div>

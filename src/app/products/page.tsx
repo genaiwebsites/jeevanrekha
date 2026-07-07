@@ -42,7 +42,7 @@ export default function Products() {
           </div>
         </div>
         <div className="pb-content rv sr">
-          <div className="pb-badge b-mustard">⭐ Bestseller · Traditional</div>
+          <div className="pb-badge b-mustard">⭐ Traditional</div>
           <h2 className="pb-name">Kacchi Ghani <em>Mustard Oil</em></h2>
           <div className="pb-feats">
             <span className="pb-feat">Cold Pressed</span>
