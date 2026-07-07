@@ -334,45 +334,37 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
   line-height: 1.1;
 }
 
-/* Description collapses by default, expands on hover */
 .pch-desc {
   font-size: 0.84rem;
   line-height: 1.65;
-  color: rgba(255, 255, 255, 0.5);
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  margin-top: 0;
-  transition: max-height 0.5s var(--ease), opacity 0.5s var(--ease), margin-top 0.5s var(--ease);
+  color: rgba(255, 255, 255, 0.65);
+  max-height: none;
+  opacity: 1;
+  overflow: visible;
+  margin-top: 12px;
+  transition: color 0.3s var(--ease);
 }
 .pcard-home:hover .pch-desc {
-  max-height: 100px;
-  opacity: 1;
-  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.85);
 }
 
-/* CTA Link slides/fades in on hover */
+/* CTA Link visible by default */
 .pch-link {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  margin-top: 0px;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
+  margin-top: 14px;
+  max-height: none;
+  opacity: 1;
+  overflow: visible;
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  transform: translateY(12px);
-  transition: max-height 0.5s var(--ease), opacity 0.5s var(--ease), transform 0.5s var(--ease), margin-top 0.5s var(--ease);
+  transform: none;
+  transition: opacity 0.3s var(--ease);
 }
-.pcard-home:hover .pch-link {
-  max-height: 40px;
-  opacity: 1;
-  margin-top: 14px;
-  transform: translateY(0);
-}
+
 .pch-arrow {
   transition: transform 0.3s var(--ease);
   display: inline-block;
@@ -1297,7 +1289,7 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 .faq-sl-t { font-size: .65rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.38); }
 .faq-h { font-family: var(--fd); font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; line-height: 1.1; color: var(--w); margin-top: 8px; margin-bottom: 14px; }
 .faq-h em { font-style: italic; color: var(--y); }
-.faq-p { font-size: .9rem; line-height: 1.65; color: rgba(255,255,255,.42); font-weight: 400; }
+.faq-p { font-size: .9rem; line-height: 1.65; color: rgba(255,255,255,.75); font-weight: 400; }
 .faq-contact-cta { margin-top: 24px; display: inline-flex; align-items: center; gap: 10px; background: var(--y); color: var(--pd); padding: 12px 28px; border-radius: 50px; font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; text-decoration: none; transition: all .35s var(--ease); box-shadow: 0 6px 24px rgba(254,220,6,.3); }
 .faq-contact-cta:hover { background: var(--yd); transform: translateY(-2px); }
 .faq-right {}
@@ -1331,7 +1323,7 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
   transition: max-height .45s var(--ease), padding .3s;
 }
 .faq-item.open .faq-a { max-height: 500px; }
-.faq-a-inner { padding: 0 28px 24px; font-size: .88rem; line-height: 1.78; color: rgba(255,255,255,.45); font-weight: 400; }
+.faq-a-inner { padding: 0 28px 24px; font-size: .88rem; line-height: 1.78; color: rgba(255,255,255,.75); font-weight: 400; }
 .faq-a-inner a { color: var(--y); text-decoration: none; border-bottom: 1px solid rgba(254,220,6,.3); }
 
 /* Responsive adjustments specific to contact page */
@@ -1667,7 +1659,8 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 .bc-title { font-family: var(--fd); font-size: 1.4rem; font-weight: 600; color: var(--bk); line-height: 1.25; margin-bottom: 16px; transition: color .3s; }
 .blog-card:hover .bc-title { color: var(--p); }
 .bc-desc { font-size: .88rem; line-height: 1.7; color: var(--g60); margin-bottom: 24px; flex-grow: 1; }
-.bc-read { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--y); display: inline-flex; align-items: center; gap: 6px; }
+.bc-read { font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--p); display: inline-flex; align-items: center; gap: 6px; transition: color .3s var(--ease); }
+.blog-card:hover .bc-read { color: var(--bk); }
 .bc-read::after { content: '→'; transition: transform .3s; }
 .blog-card:hover .bc-read::after { transform: translateX(4px); }
 
@@ -1709,7 +1702,7 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 .cta-yellow { background: var(--y); }
 .cta-yellow::before { content: ''; position: absolute; top: -150px; right: 5%; width: 480px; height: 480px; border-radius: 50%; background: rgba(75,38,133,.08); pointer-events: none; }
 .cta-yellow h2 { color: var(--pd); }
-.cta-yellow p { color: rgba(51,25,104,.58); max-width: 400px; }
+.cta-yellow p { color: var(--pd); max-width: 400px; }
 .cta-yellow .btn-outline.dark { border-color: var(--pd); color: var(--pd); background: transparent; }
 .cta-yellow .btn-outline.dark:hover { background: var(--pd); color: var(--y); }
 
@@ -1723,7 +1716,7 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 .cta-dark { background: var(--bk); border-top: 1px solid rgba(255,255,255,.05); border-bottom: none; }
 .cta-dark h2 { color: var(--w); }
 .cta-dark h2 em, .cta-dark h2 strong { color: var(--r-plumlt); }
-.cta-dark p { color: rgba(255,255,255,.45); max-width: 420px; }
+.cta-dark p { color: rgba(255,255,255,.75); max-width: 420px; }
 .cta-dark .btn-outline.dark { border-color: rgba(255,255,255,.22); color: rgba(255,255,255,.75); background: rgba(255,255,255,.04); }
 .cta-dark .btn-outline.dark:hover { border-color: var(--y); color: var(--y); background: rgba(254,220,6,.07); }
 

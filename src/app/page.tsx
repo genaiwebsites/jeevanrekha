@@ -7,10 +7,6 @@ export default function Home() {
       <div className="hero vh-100">
         <div className="hero-bg"></div>
         <div className="hero-mesh"></div>
-        <div className="hero-grid"></div>
-        <div className="hero-orb orb1"></div>
-        <div className="hero-orb orb2"></div>
-        
         <div className="hero-wrap grid-2">
           <div className="hero-left">
             <div className="h-eyebrow rv"><span className="pulse"></span><span className="eyebrow-t">India's Premium Edible Oils · Est. 2019</span></div>
@@ -33,9 +29,9 @@ export default function Home() {
               <div className="bottle-wrap">
                 <svg width="180" height="380" viewBox="0 0 200 400" fill="none">
                   <path d="M66 80 C66 66 74 58 82 54 L118 54 C126 58 134 66 134 80 L148 152 C156 168 160 184 160 200 L160 346 C160 360 149 370 136 370 L64 370 C51 370 40 360 40 346 L40 200 C40 184 44 168 52 152 Z" fill="url(#bg1)"/>
-                  <rect x="50" y="212" width="100" height="116" rx="5" fill="#FEDC06"/>
-                  <text x="100" y="260" fontFamily="Georgia,serif" fontSize="18" fontWeight="bold" fill="#2D1660" textAnchor="middle">Jeevan Rekha</text>
-                  <text x="100" y="280" fontFamily="Georgia,serif" fontSize="14" fontStyle="italic" fill="#2D1660" textAnchor="middle">Premium Oil</text>
+                  <rect x="50" y="212" width="100" height="116" rx="10" fill="#FEDC06"/>
+                  <text x="100" y="254" fontFamily="var(--font-fraunces),Georgia,serif" fontSize="14" fontWeight="600" fill="#2D1660" textAnchor="middle">Jeevan Rekha</text>
+                  <text x="100" y="278" fontFamily="var(--font-instrument-sans),sans-serif" fontSize="10" fontWeight="500" letterSpacing="0.1em" fill="#2D1660" textAnchor="middle">PREMIUM OIL</text>
                   <rect x="76" y="40" width="48" height="18" rx="9" fill="#FFE84D"/>
                   <defs><linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#7540C8"/><stop offset="100%" stopColor="#160840"/></linearGradient></defs>
                 </svg>
@@ -73,19 +69,16 @@ export default function Home() {
           </div>
           <div className="why-grid">
             <div className="wcard rv">
-              <div className="wc-bg-n">01</div>
               <div className="wc-ico"><svg viewBox="0 0 28 28"><path d="M14 2C7.4 2 2 7.4 2 14s5.4 12 12 12 12-5.4 12-12S20.6 2 14 2zm-1 5h2v7l5 3-1 1.8-6-3.5V7z"/></svg></div>
               <h3>State-of-Art Manufacturing</h3>
               <p>Our Burdwan facility houses a 300 TPD Solvent Extraction Plant and 150 TPD Physical Refinery — operating to the highest hygiene and quality standards.</p>
             </div>
             <div className="wcard rv" data-d="1">
-              <div className="wc-bg-n">02</div>
               <div className="wc-ico"><svg viewBox="0 0 28 28"><path d="M12 2L3 7v5c0 5.6 3.8 10.9 9 12.3C17.2 22.9 21 17.6 21 12V7L12 2zm0 3.2L19 8.7V12c0 4.4-3 8.5-7 9.9-4-1.4-7-5.5-7-9.9V8.7L12 5.2z"/></svg></div>
               <h3>Authentic Sourcing</h3>
               <p>With 40+ years in the value chain, we partner directly with trusted suppliers across India — relationships built on quality and transparency.</p>
             </div>
             <div className="wcard rv" data-d="2">
-              <div className="wc-bg-n">03</div>
               <div className="wc-ico"><svg viewBox="0 0 28 28"><path d="M14 2C7.4 2 2 7.4 2 14s5.4 12 12 12 12-5.4 12-12S20.6 2 14 2zm4.3 8.7L14 18.6l-4.3-4.3 1.4-1.4 2.9 2.9 2.9-5.8 1.8.9-.4.8z"/></svg></div>
               <h3>Atmanirbhar Bharat</h3>
               <p>We proudly support Make-in-India. We use the same oil in-house that we deliver to customers — genuine quality that makes us a preferred supplier.</p>
@@ -192,7 +185,6 @@ export default function Home() {
               </div>
             </div>
             <div className="rv sr">
-              <div className="kicker"><div className="k-bar"></div><span className="k-txt">Our Philosophy</span></div>
               <h2 className="s-h" style={{ marginBottom: '26px' }}>When you choose <em>pure</em>,<br/>you choose <strong>life itself</strong></h2>
               <p className="body-t" style={{ marginBottom: '20px' }}>When we strip away the artificial and embrace what's genuine, our lives transform. A pure existence creates the foundation for true health that no medicine can replicate.</p>
               <p className="body-t" style={{ marginBottom: '30px' }}>Health is vitality flowing through every cell. From health springs happiness: a deeper contentment that radiates from within.</p>
@@ -255,8 +247,7 @@ export default function Home() {
       <section className="testi">
         <div className="wrap">
           <div className="testi-hd">
-            <div className="kicker rv"><div className="k-bar"></div><span className="k-txt">What Families Say</span></div>
-            <h2 className="s-h rv" data-d="1" style={{ marginTop: '16px' }}>Trusted by <em>Thousands</em><br/>Across <strong>India</strong></h2>
+            <h2 className="s-h rv" data-d="1">Trusted by <em>Thousands</em><br/>Across <strong>India</strong></h2>
           </div>
           <div className="tgrid">
             <div className="tc rv"><div className="t-qm">"</div><div className="t-stars">★★★★★</div><p className="t-txt">Switched to Jeevan Rekha Rice Bran Oil on my cardiologist's advice. My LDL has dropped noticeably and the food tastes so much lighter.</p><div className="t-auth"><div className="t-av av-p">SM</div><div><div className="t-name">Subhashis Mukherjee</div><div className="t-loc">Salt Lake City, Kolkata</div></div></div></div>

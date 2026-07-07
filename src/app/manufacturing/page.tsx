@@ -14,11 +14,10 @@ export default function Manufacturing() {
         </div>
       </div>
 
-      {/* The Pipeline Grid */}
-      <section id="pipeline-section">
+      <section id="pipeline-section" style={{ paddingTop: '60px', paddingBottom: '100px' }}>
         <div className="wrap" style={{ position: 'relative', zIndex: 10 }}>
-          <div className="kicker rv" style={{ justifyContent: 'center', marginBottom: '2rem' }}><div className="k-bar"></div><span className="k-txt" style={{ color: 'var(--y)' }}>Interactive P&amp;ID Process Map</span></div>
-          <p className="body-t rv" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 4rem', fontSize: '0.85rem', color: 'rgba(255,255,255,.6)' }}>Hover or tap any process node to accelerate live simulation and view detailed scientific parameters.</p>
+          <h2 className="s-h rv light" style={{ textAlign: 'center', marginBottom: '1.25rem' }}>Purity, <em>Engineered</em></h2>
+          <p className="body-t rv" style={{ textAlign: 'center', maxWidth: '600px', margin: '0 auto 3rem', fontSize: '0.9rem', color: 'rgba(255,255,255,.7)' }}>Trace the journey of our physically refined rice bran oil. Hover over any stage to view process parameters.</p>
           
           <div className="pipeline-grid rv">
             {/* Node 1: Silo */}
@@ -233,10 +232,6 @@ export default function Manufacturing() {
           <div className="finale-grid">
             {/* Left Column */}
             <div className="rv sl">
-              <div className="kicker" style={{ marginBottom: '1rem' }}>
-                <div className="k-bar"></div>
-                <span className="k-txt">Verified Purity</span>
-              </div>
               <h2 className="s-h" style={{ marginBottom: '1.5rem', lineHeight: '1.1' }}>
                 Grain to<br /><em>Golden Oil</em>
               </h2>
@@ -259,7 +254,7 @@ export default function Manufacturing() {
                 {/* Card Header */}
                 <div className="nabl-card-header">
                   <div className="nabl-card-title-group">
-                    <span className="nabl-card-eyebrow">VERIFIED LABORATORY ANALYSIS</span>
+                    <span className="nabl-card-eyebrow">Verified Laboratory Analysis</span>
                     <h3 className="nabl-card-title">NABL Batch Certificate</h3>
                   </div>
                   <img src="/nabl_logo.png" alt="NABL Accredited" className="nabl-card-logo" />

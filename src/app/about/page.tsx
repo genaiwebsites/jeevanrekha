@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Factory, Handshake, ShieldCheck, Microscope, Sprout, Package, Phone, Mail, MapPin, Sparkles, Droplet, Heart } from 'lucide-react';
+import { Factory, Handshake, ShieldCheck, Microscope, Sprout, Package, Phone, Mail, MapPin, Sparkles, Droplet, Heart, Globe } from 'lucide-react';
 
 export default function About() {
   return (
@@ -8,9 +8,6 @@ export default function About() {
       <div className="hero vh-100">
         <div className="hero-bg"></div>
         <div className="hero-mesh"></div>
-        <div className="hero-grid"></div>
-        <div className="hero-orb orb1"></div>
-        <div className="hero-orb orb2"></div>
 
         <div className="hero-wrap grid-2">
           <div className="hero-left rv">
@@ -54,7 +51,6 @@ export default function About() {
         <div className="wrap">
           <div className="history-grid">
             <div className="history-left">
-              <div className="kicker rv"><div className="k-bar"></div><span className="k-txt">The History</span></div>
               <h2 className="s-h rv" data-d="1">Where We<br /><strong>Come From</strong></h2>
               <p className="body-t rv" data-d="2" style={{ marginTop: '20px' }}>
                 Jeevan Rekha is a brand of AB Udyog Pvt. Ltd., incorporated in February 2019 — guided by our philosophy of Purity, Health, and Happiness. While young in incorporation, we bring over 40 years of deep industry experience through our team's extensive involvement in the Rice Bran sector across India.
@@ -168,7 +164,6 @@ export default function About() {
             </div>
 
             <div className="legacy-content">
-              <div className="kicker rv"><div className="k-bar"></div><span className="k-txt">The Legacy</span></div>
               <h2 className="s-h rv" data-d="1">A Trusted Name in<br />the <strong>Rice Bran</strong> <em>Industry</em></h2>
               <p className="body-t rv" data-d="2" style={{ marginTop: '20px' }}>
                 Our deep-rooted experience in the rice bran value chain has enabled us to become one of the most reliable suppliers of rice bran and its derivatives in India. We supply to solvent extraction units nationwide and have built long-term relationships based on trust, quality, and our commitment to Purity. Health. Happiness.
@@ -183,7 +178,7 @@ export default function About() {
                 <span className="supply-tag">Solvent Extraction Units</span>
                 <span className="supply-tag">Retail Distribution</span>
               </div>
-              <div className="rv" data-d="4" style={{ background: 'var(--g05)', borderRadius: '24px', padding: '20px 24px', display: 'flex', alignItems: 'center', gap: '14px', borderLeft: '3px solid var(--y)', borderTop: '1px solid var(--g10)', borderRight: '1px solid var(--g10)', borderBottom: '1px solid var(--g10)' }}>
+              <div className="rv" data-d="4" style={{ background: 'var(--g05)', borderRadius: '24px', padding: '20px 24px', display: 'flex', alignItems: 'center', gap: '14px', border: '1px solid var(--g10)' }}>
                 <div style={{ color: 'var(--p)' }}><ShieldCheck style={{ width: '24px', height: '24px' }} /></div>
                 <p className="body-t" style={{ fontSize: '0.82rem', lineHeight: '1.65' }}>
                   Each unit of Jeevan Rekha oil is <strong style={{ color: 'var(--bk)' }}>hygienically packed, tamper-proof sealed</strong>, and clearly labelled for full transparency, safety, and quality assurance.
@@ -199,8 +194,7 @@ export default function About() {
         <div className="wrap">
           <div className="phil-banner rv">
             <div className="pb-left">
-              <div className="kicker"><div className="k-bar" style={{ background: 'var(--w)' }}></div><span className="k-txt" style={{ color: 'var(--y)' }}>Our Philosophy</span></div>
-              <h2 className="headline" style={{ marginTop: '14px', fontFamily: 'var(--fd)', fontWeight: 300, lineHeight: 1.1, color: 'var(--w)' }}>
+              <h2 className="headline" style={{ fontFamily: 'var(--fd)', fontWeight: 300, lineHeight: 1.1, color: 'var(--w)' }}>
                 Purity. <b style={{ color: 'var(--y)' }}>Health.</b><br />Happiness.
               </h2>
             </div>
@@ -260,27 +254,26 @@ export default function About() {
       <section className="commitment-section">
         <div className="wrap">
           <div className="section-head" style={{ marginBottom: '48px' }}>
-            <div className="kicker rv"><div className="k-bar"></div><span className="k-txt">The Commitment</span></div>
-            <h2 className="s-h rv" data-d="1" style={{ marginTop: '10px' }}>How We Deliver on<br />Our <strong>Promise</strong> to India</h2>
+            <h2 className="s-h rv" data-d="1">How We Deliver on<br />Our <strong>Promise</strong> to India</h2>
           </div>
           <div className="commitment-grid">
             <div className="commitment-card cc-light rv" data-d="1">
-              <div className="cc-icon cc-icon-bg">🇮🇳</div>
+              <div className="cc-icon cc-icon-bg"><Globe style={{ color: 'var(--p)' }} /></div>
               <h3>Atmanirbhar Bharat Commitment</h3>
               <p>We proudly support the vision of Atmanirbhar Bharat and the Make-in-India initiative. At AB Udyog, we believe in fully utilising local resources before considering imported alternatives — contributing to India's self-sufficiency and economic strength.</p>
               <div className="cc-tag cct-w">Make in India →</div>
             </div>
-            <div className="commitment-card cc-purple rv" data-d="2">
-              <div className="cc-icon cc-icon-purple"><Microscope style={{ color: 'var(--y)' }} /></div>
+            <div className="commitment-card cc-light rv" data-d="2">
+              <div className="cc-icon cc-icon-bg"><Microscope style={{ color: 'var(--p)' }} /></div>
               <h3>In-House Quality Assurance</h3>
               <p>We use the same rice bran oil in-house that we deliver to our customers. This genuine approach ensures authenticity and quality at every step — we stand behind every batch because we cook with it ourselves.</p>
-              <div className="cc-tag cct-p">Zero Compromise →</div>
+              <div className="cc-tag cct-w">Zero Compromise →</div>
             </div>
-            <div className="commitment-card cc-yellow rv" data-d="3">
-              <div className="cc-icon cc-icon-yellow"><Sprout style={{ color: 'var(--p)' }} /></div>
+            <div className="commitment-card cc-light rv" data-d="3">
+              <div className="cc-icon cc-icon-bg"><Sprout style={{ color: 'var(--p)' }} /></div>
               <h3>Community & Farmer Welfare</h3>
-              <p>Our commitment goes beyond the bottle. We invest in the communities and rice farmers that make our products possible, creating sustainable livelihoods and building an agricultural ecosystem that benefits everyone in the value chain.</p>
-              <div className="cc-tag cct-y">CSR Initiatives →</div>
+              <p>We invest in the communities and rice farmers that make our products possible, creating sustainable livelihoods and building an agricultural ecosystem that benefits everyone in the value chain.</p>
+              <div className="cc-tag cct-w">CSR Initiatives →</div>
             </div>
             <div className="commitment-card cc-light rv" data-d="4">
               <div className="cc-icon cc-icon-bg"><Package style={{ color: 'var(--p)' }} /></div>

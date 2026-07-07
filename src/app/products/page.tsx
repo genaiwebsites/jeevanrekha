@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import { Flame, Heart, Sprout } from 'lucide-react';
 
 export default function Products() {
   const handleScrollTo = (id: string) => {
@@ -61,7 +62,7 @@ export default function Products() {
             <img src="/jr_rbo.png" alt="Rice Bran Oil" />
           </div>
         </div>
-        <div className="pb-content rv sl" style={{ background: 'var(--w)' }}>
+        <div className="pb-content rv sl">
           <div className="pb-badge b-rice">❤️ Heart Healthy</div>
           <h2 className="pb-name">Physically Refined <em>Rice Bran Oil</em></h2>
           <div className="pb-feats">
@@ -98,7 +99,6 @@ export default function Products() {
       {/* Comparison Table */}
       <section className="comparison">
         <div className="wrap">
-          <div className="kicker rv"><div className="k-bar"></div><span className="k-txt" style={{ color: '#fff' }}>Side by Side</span></div>
           <h2 className="s-h rv light" style={{ marginBottom: '40px' }}>Which Oil is <em>Right for You?</em></h2>
           <div className="comp-table rv">
             <div className="comp-header">
@@ -168,26 +168,25 @@ export default function Products() {
       {/* Why Choose Each (Three Cards) */}
       <section className="why-three">
         <div className="wrap">
-          <div className="kicker rv"><div className="k-bar"></div><span className="k-txt">Find Your Oil</span></div>
           <h2 className="s-h rv" data-d="1">One Brand. <em>Every Kitchen.</em><br/><strong>Every Need.</strong></h2>
           <div className="wt-grid">
             <div className="wt-card rv" onClick={() => handleScrollTo('p-mustard')}>
               <div className="wt-top">
-                <div className="wt-ico" style={{ background: 'linear-gradient(135deg,#FFD740,#9B6200)' }}><svg viewBox="0 0 28 28"><path d="M14 3C9 3 5 7 5 12c0 6.5 9 15 9 15s9-8.5 9-15c0-5-4-9-9-9zm0 12a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
+                <div className="wt-ico" style={{ background: 'linear-gradient(135deg,#FFD740,#9B6200)' }}><Flame style={{ width: '28px', height: '28px', color: '#fff' }} /></div>
               </div>
               <h3 className="wt-name">Mustard Oil</h3>
               <p className="wt-desc">For the authentic Indian cook. Traditional pungency, uncompromised nutrition. Perfect for Bengali cuisine and marinades.</p>
             </div>
             <div className="wt-card rv" data-d="1" onClick={() => handleScrollTo('p-rice')}>
               <div className="wt-top">
-                <div className="wt-ico" style={{ background: 'linear-gradient(135deg,var(--p),var(--pm))' }}><svg viewBox="0 0 28 28"><path d="M14 2L4 7v7c0 6.5 4.3 12.6 10 14 5.7-1.4 10-7.5 10-14V7L14 2zm-1 15.6l-4.2-4.2 1.4-1.4 2.8 2.8 5.8-5.8 1.4 1.4L13 17.6z"/></svg></div>
+                <div className="wt-ico" style={{ background: 'linear-gradient(135deg,var(--p),var(--pm))' }}><Heart style={{ width: '28px', height: '28px', color: '#fff' }} /></div>
               </div>
               <h3 className="wt-name">Rice Bran Oil</h3>
               <p className="wt-desc">For health-conscious families and professional kitchens. The gold standard of edible oils — light, nutritious, and perfect for high-heat.</p>
             </div>
             <div className="wt-card rv" data-d="2" onClick={() => handleScrollTo('p-soy')}>
               <div className="wt-top">
-                <div className="wt-ico" style={{ background: 'linear-gradient(135deg,#4CAF50,#1B5E20)' }}><svg viewBox="0 0 28 28"><path d="M14 2C7.4 2 2 7.4 2 14s5.4 12 12 12 12-5.4 12-12S20.6 2 14 2zm1 6v6.6l4.5 2.7-1.1 1.7-5.4-3.3V8h2z"/></svg></div>
+                <div className="wt-ico" style={{ background: 'linear-gradient(135deg,#4CAF50,#1B5E20)' }}><Sprout style={{ width: '28px', height: '28px', color: '#fff' }} /></div>
               </div>
               <h3 className="wt-name">Soyabean Oil</h3>
               <p className="wt-desc">For everyday cooking, baking, and dressings. A light, budget-friendly Omega-3 rich oil that works across every cuisine.</p>
@@ -201,7 +200,7 @@ export default function Products() {
         <div className="cta-inner">
           <div className="rv sl">
             <h2 className="s-h">Need Bulk Supply for<br/><em>Your Business?</em></h2>
-            <p style={{ marginTop: '16px', color: 'rgba(51,25,104,.62)', fontSize: '0.97rem', lineHeight: 1.86, maxWidth: '420px' }}>Join 500+ retail partners and snack manufacturers who trust our consistent quality, high-volume capacity, and competitive trade pricing.</p>
+            <p style={{ marginTop: '16px', color: 'var(--p)', fontSize: '0.97rem', lineHeight: 1.86, maxWidth: '420px' }}>Join 500+ retail partners and snack manufacturers who trust our consistent quality, high-volume capacity, and competitive trade pricing.</p>
           </div>
           <div className="rv sr" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-p">Trade Enquiry</Link>

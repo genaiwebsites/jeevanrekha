@@ -13,7 +13,7 @@ export default function Blogs() {
 
       <div className="blog-master">
         <div className="wrap">
-          <div className="kicker rv"><div className="k-bar"></div><span className="k-txt">Latest Articles</span></div>
+          <h2 className="s-h rv" style={{ marginBottom: '40px' }}>Latest <em>Articles</em></h2>
           <div className="blog-grid">
             
             <Link href="/blogs/healthy-cooking" className="blog-card rv">

@@ -205,10 +205,7 @@ export default function Contact() {
       {/* ══ MAIN CONTACT SECTION ══ */}
       <section className="contact-main">
         <div className="cm-header">
-          <div className="section-label rv">
-            <div className="sl-bar"></div>
-            <span className="sl-text">Get in Touch</span>
-          </div>
+
           <h2 className="ci-heading rv" data-d="1">
             We&apos;re Always <em>Here</em> to <strong>Help You</strong>
           </h2>
@@ -404,10 +401,7 @@ export default function Contact() {
         <div className="wrap">
           <div className="factory-grid">
             <div className="factory-left">
-              <div className="section-label">
-                <div className="sl-bar"></div>
-                <span className="sl-text">Manufacturing Plant</span>
-              </div>
+
               <h2 className="ci-heading" style={{ marginTop: '14px', marginBottom: '16px' }}>
                 Visit Our <em>Burdwan</em> <strong>Production Facility</strong>
               </h2>
@@ -436,7 +430,7 @@ export default function Contact() {
             <div className="factory-right">
               <div className="plant-capacity-card">
                 <div className="plant-capacity-header">
-                  <span className="capacity-eyebrow">ESTABLISHED 2019</span>
+                  <span className="capacity-eyebrow">Established 2019</span>
                   <h3 className="capacity-title">Refinery Processing Capacity</h3>
                 </div>
                 <div className="capacity-stats-grid">
@@ -480,10 +474,7 @@ export default function Contact() {
       <section className="faq">
         <div className="faq-inner">
           <div className="faq-left rv sl">
-            <div className="faq-sl">
-              <div className="faq-sl-bar"></div>
-              <span className="faq-sl-t">Common Questions</span>
-            </div>
+
             <h2 className="faq-h">Got <em>Questions?</em><br />We&apos;ve Got <strong>Answers.</strong></h2>
             <p className="faq-p">
               Everything you need to know about our products, ordering, and distribution. Can&apos;t find what you&apos;re looking for? Just ask us directly.
