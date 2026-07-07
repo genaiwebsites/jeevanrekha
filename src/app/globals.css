@@ -554,9 +554,9 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 .pb-vis-bg { position: absolute; inset: 0; transition: transform 1.2s var(--ease); }
 .prod-block:hover .pb-vis-bg { transform: scale(1.04); }
 
-.pv-mustard .pb-vis-bg { background: radial-gradient(ellipse at 40% 30%, #FFE040, #C8780A 50%, #3D1800 100%); }
-.pv-rice .pb-vis-bg { background: radial-gradient(ellipse at 60% 35%, #A070FF, #4B2685 55%, #0A0520 100%); }
-.pv-soy .pb-vis-bg { background: radial-gradient(ellipse at 45% 30%, #78D878, #2E7D32 55%, #061406 100%); }
+.pv-mustard .pb-vis-bg { background: radial-gradient(ellipse at 40% 30%, #E5C030, #A65D03 50%, #200E00 100%); }
+.pv-rice .pb-vis-bg { background: radial-gradient(ellipse at 60% 35%, #7D52C8, #3E1E70 55%, #060214 100%); }
+.pv-soy .pb-vis-bg { background: radial-gradient(ellipse at 45% 30%, #58B058, #1E5E20 55%, #020A02 100%); }
 .pb-vis-grid { position: absolute; inset: 0; opacity: .08; background-image: linear-gradient(rgba(255,255,255,.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.15) 1px, transparent 1px); background-size: 52px 52px; }
 
 .pb-bottle-scene { position: relative; z-index: 4; display: flex; justify-content: center; align-items: center; }

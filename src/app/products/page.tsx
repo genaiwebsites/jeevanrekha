@@ -36,7 +36,7 @@ export default function Products() {
       {/* Product 1: Rice Bran */}
       <div className="prod-block" id="p-rice">
         <div className="pb-visual pv-rice rv sl">
-          <div className="pb-vis-bg"></div><div className="pb-vis-grid"></div>
+          <div className="pb-vis-bg"></div>
           <div className="pb-bottle-scene">
             <img src="/jr_rbo.png" alt="Rice Bran Oil" />
           </div>
@@ -57,7 +57,7 @@ export default function Products() {
       {/* Product 2: Mustard */}
       <div className="prod-block reverse" id="p-mustard">
         <div className="pb-visual pv-mustard rv sr">
-          <div className="pb-vis-bg"></div><div className="pb-vis-grid"></div>
+          <div className="pb-vis-bg"></div>
           <div className="pb-bottle-scene">
             <img src="/jr_kgmo.png" alt="Mustard Oil" />
           </div>
@@ -78,7 +78,7 @@ export default function Products() {
       {/* Product 3: Soyabean */}
       <div className="prod-block" id="p-soy">
         <div className="pb-visual pv-soy rv sl">
-          <div className="pb-vis-bg"></div><div className="pb-vis-grid"></div>
+          <div className="pb-vis-bg"></div>
           <div className="pb-bottle-scene">
             <img src="/jr_sbo.png" alt="Soyabean Oil" />
           </div>
