@@ -41,7 +41,7 @@ export default function Products() {
             <img src="/jr_rbo.png" alt="Rice Bran Oil" />
           </div>
         </div>
-        <div className="pb-content rv sr">
+        <div className="pb-content rv sr" data-d="1">
           <div className="pb-badge b-rice">❤️ Heart Healthy</div>
           <h2 className="pb-name">Physically Refined <em>Rice Bran Oil</em></h2>
           <div className="pb-feats">
@@ -62,7 +62,7 @@ export default function Products() {
             <img src="/jr_kgmo.png" alt="Mustard Oil" />
           </div>
         </div>
-        <div className="pb-content rv sl">
+        <div className="pb-content rv sl" data-d="1">
           <div className="pb-badge b-mustard">⭐ Traditional</div>
           <h2 className="pb-name">Kacchi Ghani <em>Mustard Oil</em></h2>
           <div className="pb-feats">
@@ -83,7 +83,7 @@ export default function Products() {
             <img src="/jr_sbo.png" alt="Soyabean Oil" />
           </div>
         </div>
-        <div className="pb-content rv sr">
+        <div className="pb-content rv sr" data-d="1">
           <div className="pb-badge b-soy">🌱 All Purpose</div>
           <h2 className="pb-name">Refined <em>Soyabean Oil</em></h2>
           <div className="pb-feats">
