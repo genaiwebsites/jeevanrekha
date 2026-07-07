@@ -29,9 +29,9 @@ export default function Footer() {
             <h5>Navigation</h5>
             <ul>
               <li><Link href="/">Home</Link></li>
-              <li><Link href="/about">About Us</Link></li>
               <li><Link href="/products">Products</Link></li>
               <li><Link href="/manufacturing">Manufacturing</Link></li>
+              <li><Link href="/about">About Us</Link></li>
               <li><Link href="/blogs">Blogs</Link></li>
               <li><Link href="/contact">Contact</Link></li>
             </ul>

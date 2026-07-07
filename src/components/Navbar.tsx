@@ -47,9 +47,9 @@ export default function Navbar() {
         </Link>
         <ul className={`nav-links ${isMobileOpen ? 'nav-open' : ''}`} id="navL">
           <li><Link href="/" id="link-home" className={getLinkClass('/')}>Home</Link></li>
-          <li><Link href="/about" id="link-about" className={getLinkClass('/about')}>About Us</Link></li>
           <li><Link href="/products" id="link-products" className={getLinkClass('/products')}>Products</Link></li>
           <li><Link href="/manufacturing" id="link-manufacturing" className={getLinkClass('/manufacturing')}>Manufacturing</Link></li>
+          <li><Link href="/about" id="link-about" className={getLinkClass('/about')}>About Us</Link></li>
           <li><Link href="/blogs" id="link-blogs" className={pathname.startsWith('/blogs') ? 'active' : ''}>Blogs</Link></li>
           <li><Link href="/contact" id="link-contact" className={getLinkClass('/contact')}>Contact</Link></li>
         </ul>
