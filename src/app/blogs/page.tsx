@@ -27,8 +27,8 @@ export default function Blogs() {
         <div style={{
           position: 'absolute',
           inset: 0,
-          backdropFilter: 'blur(8px) brightness(0.48)',
-          backgroundColor: 'rgba(45, 22, 96, 0.15)',
+          backdropFilter: 'blur(2.5px) brightness(0.65)',
+          backgroundColor: 'rgba(45, 22, 96, 0.22)',
           zIndex: 2
         }}></div>
         
