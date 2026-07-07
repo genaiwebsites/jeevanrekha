@@ -65,23 +65,23 @@ export default function Home() {
               <div className="kicker rv"><div className="k-bar"></div><span className="k-txt">Why Jeevan Rekha</span></div>
               <h2 className="s-h rv" data-d="1">Built on <em>Science</em>,<br/>Trusted by <strong>India</strong></h2>
             </div>
-            <p className="body-t rv" data-d="2">Four decades of industry knowledge meet state-of-the-art technology at our Burdwan plant — delivering oils as nutritious as they are delicious, batch after batch.</p>
+            <p className="body-t rv" data-d="2">Four decades of industry knowledge meet state-of-the-art technology at our Burdwan plant, delivering oils as nutritious as they are delicious, batch after batch.</p>
           </div>
           <div className="why-grid">
             <div className="wcard rv">
               <div className="wc-ico"><svg viewBox="0 0 28 28"><path d="M14 2C7.4 2 2 7.4 2 14s5.4 12 12 12 12-5.4 12-12S20.6 2 14 2zm-1 5h2v7l5 3-1 1.8-6-3.5V7z"/></svg></div>
               <h3>State-of-Art Manufacturing</h3>
-              <p>Our Burdwan facility houses a 300 TPD Solvent Extraction Plant and 150 TPD Physical Refinery — operating to the highest hygiene and quality standards.</p>
+              <p>Our Burdwan facility houses a 300 TPD Solvent Extraction Plant and 150 TPD Physical Refinery, operating to the highest hygiene and quality standards.</p>
             </div>
             <div className="wcard rv" data-d="1">
               <div className="wc-ico"><svg viewBox="0 0 28 28"><path d="M12 2L3 7v5c0 5.6 3.8 10.9 9 12.3C17.2 22.9 21 17.6 21 12V7L12 2zm0 3.2L19 8.7V12c0 4.4-3 8.5-7 9.9-4-1.4-7-5.5-7-9.9V8.7L12 5.2z"/></svg></div>
               <h3>Authentic Sourcing</h3>
-              <p>With 40+ years in the value chain, we partner directly with trusted suppliers across India — relationships built on quality and transparency.</p>
+              <p>With 40+ years in the value chain, we partner directly with trusted suppliers across India; these relationships are built on quality and transparency.</p>
             </div>
             <div className="wcard rv" data-d="2">
               <div className="wc-ico"><svg viewBox="0 0 28 28"><path d="M14 2C7.4 2 2 7.4 2 14s5.4 12 12 12 12-5.4 12-12S20.6 2 14 2zm4.3 8.7L14 18.6l-4.3-4.3 1.4-1.4 2.9 2.9 2.9-5.8 1.8.9-.4.8z"/></svg></div>
               <h3>Atmanirbhar Bharat</h3>
-              <p>We proudly support Make-in-India. We use the same oil in-house that we deliver to customers — genuine quality that makes us a preferred supplier.</p>
+              <p>We proudly support Make-in-India. We use the same oil in-house that we deliver to customers, showcasing the genuine quality that makes us a preferred supplier.</p>
             </div>
           </div>
         </div>
@@ -214,7 +214,7 @@ export default function Home() {
             <div className="bcard rv" data-d="1">
               <div className="b-ico"><svg viewBox="0 0 28 28"><path d="M14 2L4 7v7c0 6.5 4.3 12.6 10 14 5.7-1.4 10-7.5 10-14V7L14 2zm0 3.5L21.5 8V14c0 5-3.2 9.7-8 11.2-4.8-1.5-8-6.2-8-11.2V8l8-4.5z"/></svg></div>
               <h4>Antioxidant Power</h4>
-              <p>Vitamin E tocopherols and Gamma-Oryzanol neutralise free radicals — protecting cells from oxidative stress.</p>
+              <p>Vitamin E tocopherols and Gamma-Oryzanol neutralise free radicals, protecting cells from oxidative stress.</p>
               <span className="b-tag">All Oils</span>
             </div>
             <div className="bcard rv" data-d="2">
@@ -251,7 +251,7 @@ export default function Home() {
           </div>
           <div className="tgrid">
             <div className="tc rv"><div className="t-qm">"</div><div className="t-stars">★★★★★</div><p className="t-txt">Switched to Jeevan Rekha Rice Bran Oil on my cardiologist's advice. My LDL has dropped noticeably and the food tastes so much lighter.</p><div className="t-auth"><div className="t-av av-p">SM</div><div><div className="t-name">Subhashis Mukherjee</div><div className="t-loc">Salt Lake City, Kolkata</div></div></div></div>
-            <div className="tc rv" data-d="1"><div className="t-qm">"</div><div className="t-stars">★★★★★</div><p className="t-txt">The Kacchi Ghani Mustard Oil is extraordinary — that authentic pungency and deep golden colour makes our machher jhol taste just like grandmother's recipe.</p><div className="t-auth"><div className="t-av av-y">RB</div><div><div className="t-name">Rina Biswas</div><div className="t-loc">Ballygunge, Kolkata</div></div></div></div>
+            <div className="tc rv" data-d="1"><div className="t-qm">"</div><div className="t-stars">★★★★★</div><p className="t-txt">The Kacchi Ghani Mustard Oil is extraordinary, with that authentic pungency and deep golden colour making our machher jhol taste just like grandmother's recipe.</p><div className="t-auth"><div className="t-av av-y">RB</div><div><div className="t-name">Rina Biswas</div><div className="t-loc">Ballygunge, Kolkata</div></div></div></div>
             <div className="tc rv" data-d="2"><div className="t-qm">"</div><div className="t-stars">★★★★★</div><p className="t-txt">I run a catering business and switched to Jeevan Rekha bulk packs. The high smoke point means less oil absorption in fried dishes. My clients notice the difference.</p><div className="t-auth"><div className="t-av av-g">AC</div><div><div className="t-name">Animesh Chatterjee</div><div className="t-loc">Tollygunge, Kolkata</div></div></div></div>
           </div>
         </div>
