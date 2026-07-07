@@ -70,7 +70,7 @@ export default function Products() {
             <span className="pb-feat">Heart Friendly</span>
             <span className="pb-feat">Anti-inflammatory</span>
           </div>
-          <p className="pb-desc body-t">Traditional cold-pressed from premium black mustard seeds — no heat, no chemicals, just pure nature. The authentic soul of every Indian kitchen.</p>
+          <p className="pb-desc body-t">Traditional cold-pressed from premium black mustard seeds, prepared with no heat and no chemicals for pure nature. The authentic soul of every Indian kitchen.</p>
           <a href="https://kgmo-spa.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-red" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Mustard Oil</a>
         </div>
       </div>
@@ -147,7 +147,7 @@ export default function Products() {
               <div className="comp-cell">Anti-inflammatory</div>
               <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--y)' }}>✓</div></div>
               <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--r-plumlt)', background: 'rgba(160,130,255,.12)' }}>✓</div></div>
-              <div className="comp-cell"><div className="cc-no" style={{ opacity: 0.3 }}>—</div></div>
+              <div className="comp-cell"><div className="cc-no" style={{ opacity: 0.3 }}>-</div></div>
             </div>
             <div className="comp-row">
               <div className="comp-cell">Neutral Flavour</div>
@@ -182,7 +182,7 @@ export default function Products() {
                 <div className="wt-ico" style={{ background: 'linear-gradient(135deg,var(--p),var(--pm))' }}><Heart style={{ width: '28px', height: '28px', color: '#fff' }} /></div>
               </div>
               <h3 className="wt-name">Rice Bran Oil</h3>
-              <p className="wt-desc">For health-conscious families and professional kitchens. The gold standard of edible oils — light, nutritious, and perfect for high-heat.</p>
+              <p className="wt-desc">For health-conscious families and professional kitchens. The gold standard of edible oils, being light, nutritious, and perfect for high-heat cooking.</p>
             </div>
             <div className="wt-card rv" data-d="2" onClick={() => handleScrollTo('p-soy')}>
               <div className="wt-top">

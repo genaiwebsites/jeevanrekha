@@ -23,7 +23,7 @@ export default function BlogPost() {
           <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Cooking with Rice Bran Oil" className="post-img" />
 
           <h2>The Science of the Smoke Point</h2>
-          <p>Indian cuisine heavily relies on high-heat techniques—whether it's the intense tempering of spices (tadka), deep-frying crispy pakoras, or searing vegetables. This is where many popular cooking oils fail. When an oil reaches its "smoke point," it begins to break down, releasing free radicals and toxic fumes, while simultaneously imparting a bitter, burnt taste to your food.</p>
+          <p>Indian cuisine heavily relies on high-heat techniques, whether it's the intense tempering of spices (tadka), deep-frying crispy pakoras, or searing vegetables. This is where many popular cooking oils fail. When an oil reaches its "smoke point," it begins to break down, releasing free radicals and toxic fumes, while simultaneously imparting a bitter, burnt taste to your food.</p>
           <p>Jeevan Rekha Rice Bran Oil boasts an exceptionally high smoke point of <strong>232°C (450°F)</strong>. This means it remains remarkably stable even at the intense temperatures required for Indian deep-frying. Your food cooks evenly, absorbs up to 20% less oil, and emerges lighter, crispy, and completely grease-free.</p>
 
           <blockquote>"A high smoke point doesn't just prevent your kitchen from filling with smoke; it ensures the molecular integrity of the oil remains intact, protecting your heart."</blockquote>

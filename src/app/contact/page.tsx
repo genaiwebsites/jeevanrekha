@@ -103,7 +103,7 @@ export default function Contact() {
         <div className="ph-orb orb-a"></div>
         <div className="ph-orb orb-b"></div>
 
-        {/* Decorative SVG — communication lines */}
+        {/* Decorative SVG - communication lines */}
         <svg 
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 1, pointerEvents: 'none', opacity: 0.12 }} 
           viewBox="0 0 1440 520" 
@@ -141,7 +141,7 @@ export default function Contact() {
             <em>Conversation</em>
           </h1>
           <p className="ph-lead" id="phLead">
-            Whether you&apos;re a household cook, a distributor, or a food manufacturer — <strong>we&apos;re here</strong>. Reach out for retail enquiries, bulk orders, trade partnerships, or simply to learn more about our oils.
+            Whether you&apos;re a household cook, a distributor, or a food manufacturer, <strong>we&apos;re here</strong>. Reach out for retail enquiries, bulk orders, trade partnerships, or simply to learn more about our oils.
           </p>
         </div>
         <div className="ph-accent"></div>
@@ -210,7 +210,7 @@ export default function Contact() {
             We&apos;re Always <em>Here</em> to <strong>Help You</strong>
           </h2>
           <p className="ci-desc rv" data-d="2">
-            From your first enquiry to long-term partnership — our team responds promptly and personally. We supply to households, retailers, distributors and food manufacturers across India.
+            From your first enquiry to long-term partnership, our team responds promptly and personally. We supply to households, retailers, distributors and food manufacturers across India.
           </p>
         </div>
         <div className="cm-inner">
@@ -499,7 +499,7 @@ export default function Contact() {
                 </button>
                 <div className="faq-a">
                   <div className="faq-a-inner">
-                    Yes — we are one of India&apos;s major suppliers of rice bran oil to the snack and namkeen industry. We offer bulk supply, long-term contracts, and customised packaging. Contact us at <a href="mailto:info@abudyog.in">info@abudyog.in</a> for trade enquiries.
+                    Yes, we are one of India&apos;s major suppliers of rice bran oil to the snack and namkeen industry. We offer bulk supply, long-term contracts, and customised packaging. Contact us at <a href="mailto:info@abudyog.in">info@abudyog.in</a> for trade enquiries.
                   </div>
                 </div>
               </div>
@@ -574,7 +574,7 @@ export default function Contact() {
                 </button>
                 <div className="faq-a">
                   <div className="faq-a-inner">
-                    Rice Bran Oil has a 232°C smoke point, neutral flavour, and is rich in Gamma-Oryzanol — ideal for high-heat frying and health-focused cooking. Mustard Oil is cold-pressed (Kacchi Ghani), naturally pungent, and traditional to Indian cuisine with strong anti-inflammatory properties. See our Products page for a full comparison.
+                    Rice Bran Oil has a 232°C smoke point, neutral flavour, and is rich in Gamma-Oryzanol, which is ideal for high-heat frying and health-focused cooking. Mustard Oil is cold-pressed (Kacchi Ghani), naturally pungent, and traditional to Indian cuisine with strong anti-inflammatory properties. See our Products page for a full comparison.
                   </div>
                 </div>
               </div>
