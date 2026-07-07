@@ -8,1269 +8,1242 @@
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L1",
-      "id": "components",
       "community": 1,
-      "norm_label": "components.json"
+      "norm_label": "components.json",
+      "id": "components"
     },
     {
       "label": "$schema",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L2",
-      "id": "components_schema",
       "community": 1,
-      "norm_label": "$schema"
+      "norm_label": "$schema",
+      "id": "components_schema"
     },
     {
       "label": "style",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L3",
-      "id": "components_style",
       "community": 1,
-      "norm_label": "style"
+      "norm_label": "style",
+      "id": "components_style"
     },
     {
       "label": "rsc",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L4",
-      "id": "components_rsc",
       "community": 1,
-      "norm_label": "rsc"
+      "norm_label": "rsc",
+      "id": "components_rsc"
     },
     {
       "label": "tsx",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L5",
-      "id": "components_tsx",
       "community": 1,
-      "norm_label": "tsx"
+      "norm_label": "tsx",
+      "id": "components_tsx"
     },
     {
       "label": "tailwind",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L6",
-      "id": "components_tailwind",
       "community": 1,
-      "norm_label": "tailwind"
+      "norm_label": "tailwind",
+      "id": "components_tailwind"
     },
     {
       "label": "config",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L7",
-      "id": "components_tailwind_config",
       "community": 1,
-      "norm_label": "config"
+      "norm_label": "config",
+      "id": "components_tailwind_config"
     },
     {
       "label": "css",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L8",
-      "id": "components_tailwind_css",
       "community": 1,
-      "norm_label": "css"
+      "norm_label": "css",
+      "id": "components_tailwind_css"
     },
     {
       "label": "baseColor",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L9",
-      "id": "components_tailwind_basecolor",
       "community": 1,
-      "norm_label": "basecolor"
+      "norm_label": "basecolor",
+      "id": "components_tailwind_basecolor"
     },
     {
       "label": "cssVariables",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L10",
-      "id": "components_tailwind_cssvariables",
       "community": 1,
-      "norm_label": "cssvariables"
+      "norm_label": "cssvariables",
+      "id": "components_tailwind_cssvariables"
     },
     {
       "label": "prefix",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L11",
-      "id": "components_tailwind_prefix",
       "community": 1,
-      "norm_label": "prefix"
+      "norm_label": "prefix",
+      "id": "components_tailwind_prefix"
     },
     {
       "label": "iconLibrary",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L13",
-      "id": "components_iconlibrary",
       "community": 1,
-      "norm_label": "iconlibrary"
+      "norm_label": "iconlibrary",
+      "id": "components_iconlibrary"
     },
     {
       "label": "rtl",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L14",
-      "id": "components_rtl",
       "community": 1,
-      "norm_label": "rtl"
+      "norm_label": "rtl",
+      "id": "components_rtl"
     },
     {
       "label": "aliases",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L15",
-      "id": "components_aliases",
-      "community": 8,
-      "norm_label": "aliases"
-    },
-    {
-      "label": "components",
-      "file_type": "code",
-      "source_file": "components.json",
-      "source_location": "L16",
-      "id": "components_aliases_components",
-      "community": 8,
-      "norm_label": "components"
+      "community": 2,
+      "norm_label": "aliases",
+      "id": "components_aliases"
     },
     {
       "label": "utils",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L17",
-      "id": "components_aliases_utils",
-      "community": 8,
-      "norm_label": "utils"
+      "community": 2,
+      "norm_label": "utils",
+      "id": "components_aliases_utils"
     },
     {
       "label": "ui",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L18",
-      "id": "components_aliases_ui",
-      "community": 8,
-      "norm_label": "ui"
+      "community": 2,
+      "norm_label": "ui",
+      "id": "components_aliases_ui"
     },
     {
       "label": "lib",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L19",
-      "id": "components_aliases_lib",
-      "community": 8,
-      "norm_label": "lib"
+      "community": 2,
+      "norm_label": "lib",
+      "id": "components_aliases_lib"
     },
     {
       "label": "hooks",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L20",
-      "id": "components_aliases_hooks",
-      "community": 8,
-      "norm_label": "hooks"
+      "community": 2,
+      "norm_label": "hooks",
+      "id": "components_aliases_hooks"
     },
     {
       "label": "menuColor",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L22",
-      "id": "components_menucolor",
       "community": 1,
-      "norm_label": "menucolor"
+      "norm_label": "menucolor",
+      "id": "components_menucolor"
     },
     {
       "label": "menuAccent",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L23",
-      "id": "components_menuaccent",
       "community": 1,
-      "norm_label": "menuaccent"
+      "norm_label": "menuaccent",
+      "id": "components_menuaccent"
     },
     {
       "label": "registries",
       "file_type": "code",
       "source_file": "components.json",
       "source_location": "L24",
-      "id": "components_registries",
       "community": 1,
-      "norm_label": "registries"
+      "norm_label": "registries",
+      "id": "components_registries"
     },
     {
       "label": "eslint.config.mjs",
       "file_type": "code",
       "source_file": "eslint.config.mjs",
       "source_location": "L1",
-      "id": "eslint_config",
-      "community": 15,
-      "norm_label": "eslint.config.mjs"
-    },
-    {
-      "label": "eslintConfig",
-      "file_type": "code",
-      "source_file": "eslint.config.mjs",
-      "source_location": "L5",
-      "id": "eslint_config_eslintconfig",
-      "community": 15,
-      "norm_label": "eslintconfig"
+      "community": 7,
+      "norm_label": "eslint.config.mjs",
+      "id": "eslint_config"
     },
     {
       "label": "next.config.ts",
       "file_type": "code",
       "source_file": "next.config.ts",
       "source_location": "L1",
-      "id": "next_config",
-      "community": 18,
-      "norm_label": "next.config.ts"
-    },
-    {
-      "label": "nextConfig",
-      "file_type": "code",
-      "source_file": "next.config.ts",
-      "source_location": "L3",
-      "id": "next_config_nextconfig",
-      "community": 18,
-      "norm_label": "nextconfig"
+      "community": 21,
+      "norm_label": "next.config.ts",
+      "id": "next_config"
     },
     {
       "label": "package.json",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L1",
-      "id": "package",
       "community": 6,
-      "norm_label": "package.json"
+      "norm_label": "package.json",
+      "id": "package"
     },
     {
       "label": "name",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L2",
-      "id": "package_name",
       "community": 6,
-      "norm_label": "name"
+      "norm_label": "name",
+      "id": "package_name"
     },
     {
       "label": "version",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L3",
-      "id": "package_version",
       "community": 6,
-      "norm_label": "version"
+      "norm_label": "version",
+      "id": "package_version"
     },
     {
       "label": "private",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L4",
-      "id": "package_private",
       "community": 6,
-      "norm_label": "private"
+      "norm_label": "private",
+      "id": "package_private"
     },
     {
       "label": "scripts",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L5",
-      "id": "package_scripts",
       "community": 6,
-      "norm_label": "scripts"
+      "norm_label": "scripts",
+      "id": "package_scripts"
     },
     {
       "label": "dev",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L6",
-      "id": "package_scripts_dev",
       "community": 6,
-      "norm_label": "dev"
+      "norm_label": "dev",
+      "id": "package_scripts_dev"
     },
     {
       "label": "build",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L7",
-      "id": "package_scripts_build",
       "community": 6,
-      "norm_label": "build"
+      "norm_label": "build",
+      "id": "package_scripts_build"
     },
     {
       "label": "start",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L8",
-      "id": "package_scripts_start",
       "community": 6,
-      "norm_label": "start"
+      "norm_label": "start",
+      "id": "package_scripts_start"
     },
     {
       "label": "lint",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L9",
-      "id": "package_scripts_lint",
       "community": 6,
-      "norm_label": "lint"
+      "norm_label": "lint",
+      "id": "package_scripts_lint"
     },
     {
       "label": "dependencies",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L11",
-      "id": "package_dependencies",
-      "community": 4,
-      "norm_label": "dependencies"
+      "community": 5,
+      "norm_label": "dependencies",
+      "id": "package_dependencies"
     },
     {
       "label": "@base-ui/react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L12",
-      "id": "package_dependencies_base_ui_react",
-      "community": 4,
-      "norm_label": "@base-ui/react"
+      "community": 5,
+      "norm_label": "@base-ui/react",
+      "id": "package_dependencies_base_ui_react"
     },
     {
       "label": "class-variance-authority",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L13",
-      "id": "package_dependencies_class_variance_authority",
-      "community": 4,
-      "norm_label": "class-variance-authority"
+      "community": 5,
+      "norm_label": "class-variance-authority",
+      "id": "package_dependencies_class_variance_authority"
     },
     {
       "label": "clsx",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L14",
-      "id": "package_dependencies_clsx",
-      "community": 4,
-      "norm_label": "clsx"
+      "community": 5,
+      "norm_label": "clsx",
+      "id": "package_dependencies_clsx"
     },
     {
       "label": "gsap",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L15",
-      "id": "package_dependencies_gsap",
-      "community": 4,
-      "norm_label": "gsap"
+      "community": 5,
+      "norm_label": "gsap",
+      "id": "package_dependencies_gsap"
     },
     {
       "label": "lucide-react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L16",
-      "id": "package_dependencies_lucide_react",
-      "community": 4,
-      "norm_label": "lucide-react"
+      "community": 5,
+      "norm_label": "lucide-react",
+      "id": "package_dependencies_lucide_react"
     },
     {
       "label": "next",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L17",
-      "id": "package_dependencies_next",
-      "community": 4,
-      "norm_label": "next"
+      "community": 5,
+      "norm_label": "next",
+      "id": "package_dependencies_next"
     },
     {
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L18",
-      "id": "package_dependencies_react",
-      "community": 4,
-      "norm_label": "react"
+      "community": 5,
+      "norm_label": "react",
+      "id": "package_dependencies_react"
     },
     {
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L19",
-      "id": "package_dependencies_react_dom",
-      "community": 4,
-      "norm_label": "react-dom"
+      "community": 5,
+      "norm_label": "react-dom",
+      "id": "package_dependencies_react_dom"
     },
     {
       "label": "shadcn",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L20",
-      "id": "package_dependencies_shadcn",
-      "community": 4,
-      "norm_label": "shadcn"
+      "community": 5,
+      "norm_label": "shadcn",
+      "id": "package_dependencies_shadcn"
     },
     {
       "label": "tailwind-merge",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L21",
-      "id": "package_dependencies_tailwind_merge",
-      "community": 4,
-      "norm_label": "tailwind-merge"
+      "community": 5,
+      "norm_label": "tailwind-merge",
+      "id": "package_dependencies_tailwind_merge"
     },
     {
       "label": "tw-animate-css",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L22",
-      "id": "package_dependencies_tw_animate_css",
-      "community": 4,
-      "norm_label": "tw-animate-css"
+      "community": 5,
+      "norm_label": "tw-animate-css",
+      "id": "package_dependencies_tw_animate_css"
     },
     {
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L24",
-      "id": "package_devdependencies",
       "community": 7,
-      "norm_label": "devdependencies"
+      "norm_label": "devdependencies",
+      "id": "package_devdependencies"
     },
     {
       "label": "@tailwindcss/postcss",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L25",
-      "id": "package_devdependencies_tailwindcss_postcss",
       "community": 7,
-      "norm_label": "@tailwindcss/postcss"
+      "norm_label": "@tailwindcss/postcss",
+      "id": "package_devdependencies_tailwindcss_postcss"
     },
     {
       "label": "@types/node",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L26",
-      "id": "package_devdependencies_types_node",
       "community": 7,
-      "norm_label": "@types/node"
+      "norm_label": "@types/node",
+      "id": "package_devdependencies_types_node"
     },
     {
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L27",
-      "id": "package_devdependencies_types_react",
       "community": 7,
-      "norm_label": "@types/react"
-    },
-    {
-      "label": "@types/react-dom",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L28",
-      "id": "package_devdependencies_types_react_dom",
-      "community": 7,
-      "norm_label": "@types/react-dom"
+      "norm_label": "@types/react",
+      "id": "package_devdependencies_types_react"
     },
     {
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L29",
-      "id": "package_devdependencies_eslint",
       "community": 7,
-      "norm_label": "eslint"
-    },
-    {
-      "label": "eslint-config-next",
-      "file_type": "code",
-      "source_file": "package.json",
-      "source_location": "L30",
-      "id": "package_devdependencies_eslint_config_next",
-      "community": 7,
-      "norm_label": "eslint-config-next"
+      "norm_label": "eslint",
+      "id": "package_devdependencies_eslint"
     },
     {
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L31",
-      "id": "package_devdependencies_tailwindcss",
       "community": 7,
-      "norm_label": "tailwindcss"
+      "norm_label": "tailwindcss",
+      "id": "package_devdependencies_tailwindcss"
     },
     {
       "label": "typescript",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L32",
-      "id": "package_devdependencies_typescript",
       "community": 7,
-      "norm_label": "typescript"
+      "norm_label": "typescript",
+      "id": "package_devdependencies_typescript"
     },
     {
       "label": "postcss.config.mjs",
       "file_type": "code",
       "source_file": "postcss.config.mjs",
       "source_location": "L1",
-      "id": "postcss_config",
-      "community": 19,
-      "norm_label": "postcss.config.mjs"
+      "community": 18,
+      "norm_label": "postcss.config.mjs",
+      "id": "postcss_config"
     },
     {
       "label": "config",
       "file_type": "code",
       "source_file": "postcss.config.mjs",
       "source_location": "L1",
-      "id": "postcss_config_config",
-      "community": 19,
-      "norm_label": "config"
+      "community": 18,
+      "norm_label": "config",
+      "id": "postcss_config_config"
     },
     {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "src/app/about/page.tsx",
       "source_location": "L1",
-      "id": "about_page",
-      "community": 11,
-      "norm_label": "page.tsx"
+      "community": 10,
+      "norm_label": "page.tsx",
+      "id": "about_page"
     },
     {
       "label": "About()",
       "file_type": "code",
       "source_file": "src/app/about/page.tsx",
       "source_location": "L4",
-      "id": "about_page_about",
-      "community": 11,
-      "norm_label": "about()"
+      "community": 10,
+      "norm_label": "about()",
+      "id": "about_page_about"
     },
     {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "src/app/blogs/healthy-cooking/page.tsx",
       "source_location": "L1",
-      "id": "healthy_cooking_page",
       "community": 16,
-      "norm_label": "page.tsx"
+      "norm_label": "page.tsx",
+      "id": "healthy_cooking_page"
     },
     {
       "label": "BlogPost()",
       "file_type": "code",
       "source_file": "src/app/blogs/healthy-cooking/page.tsx",
       "source_location": "L3",
-      "id": "healthy_cooking_page_blogpost",
       "community": 16,
-      "norm_label": "blogpost()"
+      "norm_label": "blogpost()",
+      "id": "healthy_cooking_page_blogpost"
     },
     {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "src/app/blogs/page.tsx",
       "source_location": "L1",
-      "id": "blogs_page",
-      "community": 13,
-      "norm_label": "page.tsx"
+      "community": 14,
+      "norm_label": "page.tsx",
+      "id": "blogs_page"
     },
     {
       "label": "Blogs()",
       "file_type": "code",
       "source_file": "src/app/blogs/page.tsx",
       "source_location": "L3",
-      "id": "blogs_page_blogs",
-      "community": 13,
-      "norm_label": "blogs()"
+      "community": 14,
+      "norm_label": "blogs()",
+      "id": "blogs_page_blogs"
     },
     {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "src/app/contact/page.tsx",
       "source_location": "L1",
-      "id": "contact_page",
-      "community": 14,
-      "norm_label": "page.tsx"
+      "community": 15,
+      "norm_label": "page.tsx",
+      "id": "contact_page"
     },
     {
       "label": "Contact()",
       "file_type": "code",
       "source_file": "src/app/contact/page.tsx",
       "source_location": "L6",
-      "id": "contact_page_contact",
-      "community": 14,
-      "norm_label": "contact()"
+      "community": 15,
+      "norm_label": "contact()",
+      "id": "contact_page_contact"
     },
     {
       "label": "layout.tsx",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
       "source_location": "L1",
-      "id": "app_layout",
-      "community": 2,
-      "norm_label": "layout.tsx"
+      "community": 3,
+      "norm_label": "layout.tsx",
+      "id": "app_layout"
     },
     {
       "label": "geist",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
       "source_location": "L10",
-      "id": "app_layout_geist",
-      "community": 2,
-      "norm_label": "geist"
+      "community": 3,
+      "norm_label": "geist",
+      "id": "app_layout_geist"
     },
     {
       "label": "fraunces",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
       "source_location": "L12",
-      "id": "app_layout_fraunces",
-      "community": 2,
-      "norm_label": "fraunces"
+      "community": 3,
+      "norm_label": "fraunces",
+      "id": "app_layout_fraunces"
     },
     {
       "label": "instrumentSans",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
       "source_location": "L19",
-      "id": "app_layout_instrumentsans",
-      "community": 2,
-      "norm_label": "instrumentsans"
+      "community": 3,
+      "norm_label": "instrumentsans",
+      "id": "app_layout_instrumentsans"
     },
     {
       "label": "jetbrainsMono",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
       "source_location": "L26",
-      "id": "app_layout_jetbrainsmono",
-      "community": 2,
-      "norm_label": "jetbrainsmono"
+      "community": 3,
+      "norm_label": "jetbrainsmono",
+      "id": "app_layout_jetbrainsmono"
     },
     {
       "label": "metadata",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
       "source_location": "L32",
-      "id": "app_layout_metadata",
-      "community": 2,
-      "norm_label": "metadata"
+      "community": 3,
+      "norm_label": "metadata",
+      "id": "app_layout_metadata"
     },
     {
       "label": "RootLayout()",
       "file_type": "code",
       "source_file": "src/app/layout.tsx",
       "source_location": "L40",
-      "id": "app_layout_rootlayout",
-      "community": 2,
-      "norm_label": "rootlayout()"
+      "community": 3,
+      "norm_label": "rootlayout()",
+      "id": "app_layout_rootlayout"
     },
     {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "src/app/manufacturing/page.tsx",
       "source_location": "L1",
-      "id": "manufacturing_page",
       "community": 17,
-      "norm_label": "page.tsx"
+      "norm_label": "page.tsx",
+      "id": "manufacturing_page"
     },
     {
       "label": "Manufacturing()",
       "file_type": "code",
       "source_file": "src/app/manufacturing/page.tsx",
       "source_location": "L3",
-      "id": "manufacturing_page_manufacturing",
       "community": 17,
-      "norm_label": "manufacturing()"
+      "norm_label": "manufacturing()",
+      "id": "manufacturing_page_manufacturing"
     },
     {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "src/app/page.tsx",
       "source_location": "L1",
-      "id": "app_page",
       "community": 9,
-      "norm_label": "page.tsx"
+      "norm_label": "page.tsx",
+      "id": "app_page"
     },
     {
       "label": "Home()",
       "file_type": "code",
       "source_file": "src/app/page.tsx",
       "source_location": "L4",
-      "id": "app_page_home",
       "community": 9,
-      "norm_label": "home()"
+      "norm_label": "home()",
+      "id": "app_page_home"
     },
     {
       "label": "page.tsx",
       "file_type": "code",
       "source_file": "src/app/products/page.tsx",
       "source_location": "L1",
-      "id": "products_page",
-      "community": 20,
-      "norm_label": "page.tsx"
+      "community": 19,
+      "norm_label": "page.tsx",
+      "id": "products_page"
     },
     {
       "label": "Products()",
       "file_type": "code",
       "source_file": "src/app/products/page.tsx",
       "source_location": "L5",
-      "id": "products_page_products",
-      "community": 20,
-      "norm_label": "products()"
+      "community": 19,
+      "norm_label": "products()",
+      "id": "products_page_products"
     },
     {
       "label": "AnimatedCounter.tsx",
       "file_type": "code",
       "source_file": "src/components/AnimatedCounter.tsx",
       "source_location": "L1",
-      "id": "components_animatedcounter",
       "community": 9,
-      "norm_label": "animatedcounter.tsx"
-    },
-    {
-      "label": "AnimatedCounterProps",
-      "file_type": "code",
-      "source_file": "src/components/AnimatedCounter.tsx",
-      "source_location": "L12",
-      "id": "components_animatedcounter_animatedcounterprops",
-      "community": 9,
-      "norm_label": "animatedcounterprops"
-    },
-    {
-      "label": "AnimatedCounter()",
-      "file_type": "code",
-      "source_file": "src/components/AnimatedCounter.tsx",
-      "source_location": "L18",
-      "id": "components_animatedcounter_animatedcounter",
-      "community": 9,
-      "norm_label": "animatedcounter()"
+      "norm_label": "animatedcounter.tsx",
+      "id": "components_animatedcounter"
     },
     {
       "label": "CustomCursor.tsx",
       "file_type": "code",
       "source_file": "src/components/CustomCursor.tsx",
       "source_location": "L1",
-      "id": "components_customcursor",
-      "community": 2,
-      "norm_label": "customcursor.tsx"
-    },
-    {
-      "label": "CustomCursor()",
-      "file_type": "code",
-      "source_file": "src/components/CustomCursor.tsx",
-      "source_location": "L5",
-      "id": "components_customcursor_customcursor",
-      "community": 2,
-      "norm_label": "customcursor()"
+      "community": 3,
+      "norm_label": "customcursor.tsx",
+      "id": "components_customcursor"
     },
     {
       "label": "Footer.tsx",
       "file_type": "code",
       "source_file": "src/components/Footer.tsx",
       "source_location": "L1",
-      "id": "components_footer",
-      "community": 2,
-      "norm_label": "footer.tsx"
+      "community": 3,
+      "norm_label": "footer.tsx",
+      "id": "components_footer"
     },
     {
       "label": "Footer()",
       "file_type": "code",
       "source_file": "src/components/Footer.tsx",
       "source_location": "L3",
-      "id": "components_footer_footer",
-      "community": 2,
-      "norm_label": "footer()"
+      "community": 3,
+      "norm_label": "footer()",
+      "id": "components_footer_footer"
     },
     {
       "label": "Navbar.tsx",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
       "source_location": "L1",
-      "id": "components_navbar",
-      "community": 2,
-      "norm_label": "navbar.tsx"
+      "community": 3,
+      "norm_label": "navbar.tsx",
+      "id": "components_navbar"
     },
     {
       "label": "Navbar()",
       "file_type": "code",
       "source_file": "src/components/Navbar.tsx",
       "source_location": "L7",
-      "id": "components_navbar_navbar",
-      "community": 2,
-      "norm_label": "navbar()"
+      "community": 3,
+      "norm_label": "navbar()",
+      "id": "components_navbar_navbar"
     },
     {
       "label": "ScrollRevealObserver.tsx",
       "file_type": "code",
       "source_file": "src/components/ScrollRevealObserver.tsx",
       "source_location": "L1",
-      "id": "components_scrollrevealobserver",
-      "community": 2,
-      "norm_label": "scrollrevealobserver.tsx"
-    },
-    {
-      "label": "ScrollRevealObserver()",
-      "file_type": "code",
-      "source_file": "src/components/ScrollRevealObserver.tsx",
-      "source_location": "L6",
-      "id": "components_scrollrevealobserver_scrollrevealobserver",
-      "community": 2,
-      "norm_label": "scrollrevealobserver()"
+      "community": 3,
+      "norm_label": "scrollrevealobserver.tsx",
+      "id": "components_scrollrevealobserver"
     },
     {
       "label": "button.tsx",
       "file_type": "code",
       "source_file": "src/components/ui/button.tsx",
       "source_location": "L1",
-      "id": "ui_button",
-      "community": 3,
-      "norm_label": "button.tsx"
+      "community": 4,
+      "norm_label": "button.tsx",
+      "id": "ui_button"
     },
     {
       "label": "buttonVariants",
       "file_type": "code",
       "source_file": "src/components/ui/button.tsx",
       "source_location": "L6",
-      "id": "ui_button_buttonvariants",
-      "community": 3,
-      "norm_label": "buttonvariants"
+      "community": 4,
+      "norm_label": "buttonvariants",
+      "id": "ui_button_buttonvariants"
     },
     {
       "label": "Button()",
       "file_type": "code",
       "source_file": "src/components/ui/button.tsx",
       "source_location": "L43",
-      "id": "ui_button_button",
-      "community": 3,
-      "norm_label": "button()"
+      "community": 4,
+      "norm_label": "button()",
+      "id": "ui_button_button"
     },
     {
       "label": "card.tsx",
       "file_type": "code",
       "source_file": "src/components/ui/card.tsx",
       "source_location": "L1",
-      "id": "ui_card",
-      "community": 3,
-      "norm_label": "card.tsx"
+      "community": 4,
+      "norm_label": "card.tsx",
+      "id": "ui_card"
     },
     {
       "label": "Card()",
       "file_type": "code",
       "source_file": "src/components/ui/card.tsx",
       "source_location": "L5",
-      "id": "ui_card_card",
-      "community": 3,
-      "norm_label": "card()"
+      "community": 4,
+      "norm_label": "card()",
+      "id": "ui_card_card"
     },
     {
       "label": "CardHeader()",
       "file_type": "code",
       "source_file": "src/components/ui/card.tsx",
       "source_location": "L23",
-      "id": "ui_card_cardheader",
-      "community": 3,
-      "norm_label": "cardheader()"
+      "community": 4,
+      "norm_label": "cardheader()",
+      "id": "ui_card_cardheader"
     },
     {
       "label": "CardTitle()",
       "file_type": "code",
       "source_file": "src/components/ui/card.tsx",
       "source_location": "L36",
-      "id": "ui_card_cardtitle",
-      "community": 3,
-      "norm_label": "cardtitle()"
+      "community": 4,
+      "norm_label": "cardtitle()",
+      "id": "ui_card_cardtitle"
     },
     {
       "label": "CardDescription()",
       "file_type": "code",
       "source_file": "src/components/ui/card.tsx",
       "source_location": "L49",
-      "id": "ui_card_carddescription",
-      "community": 3,
-      "norm_label": "carddescription()"
+      "community": 4,
+      "norm_label": "carddescription()",
+      "id": "ui_card_carddescription"
     },
     {
       "label": "CardAction()",
       "file_type": "code",
       "source_file": "src/components/ui/card.tsx",
       "source_location": "L59",
-      "id": "ui_card_cardaction",
-      "community": 3,
-      "norm_label": "cardaction()"
+      "community": 4,
+      "norm_label": "cardaction()",
+      "id": "ui_card_cardaction"
     },
     {
       "label": "CardContent()",
       "file_type": "code",
       "source_file": "src/components/ui/card.tsx",
       "source_location": "L72",
-      "id": "ui_card_cardcontent",
-      "community": 3,
-      "norm_label": "cardcontent()"
+      "community": 4,
+      "norm_label": "cardcontent()",
+      "id": "ui_card_cardcontent"
     },
     {
       "label": "CardFooter()",
       "file_type": "code",
       "source_file": "src/components/ui/card.tsx",
       "source_location": "L82",
-      "id": "ui_card_cardfooter",
-      "community": 3,
-      "norm_label": "cardfooter()"
+      "community": 4,
+      "norm_label": "cardfooter()",
+      "id": "ui_card_cardfooter"
     },
     {
       "label": "utils.ts",
       "file_type": "code",
       "source_file": "src/lib/utils.ts",
       "source_location": "L1",
-      "id": "lib_utils",
-      "community": 3,
-      "norm_label": "utils.ts"
+      "community": 4,
+      "norm_label": "utils.ts",
+      "id": "lib_utils"
     },
     {
       "label": "cn()",
       "file_type": "code",
       "source_file": "src/lib/utils.ts",
       "source_location": "L4",
-      "id": "lib_utils_cn",
-      "community": 3,
-      "norm_label": "cn()"
+      "community": 4,
+      "norm_label": "cn()",
+      "id": "lib_utils_cn"
     },
     {
       "label": "tsconfig.json",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L1",
-      "id": "tsconfig",
       "community": 0,
-      "norm_label": "tsconfig.json"
+      "norm_label": "tsconfig.json",
+      "id": "tsconfig"
     },
     {
       "label": "compilerOptions",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L2",
-      "id": "tsconfig_compileroptions",
       "community": 0,
-      "norm_label": "compileroptions"
+      "norm_label": "compileroptions",
+      "id": "tsconfig_compileroptions"
     },
     {
       "label": "target",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L3",
-      "id": "tsconfig_compileroptions_target",
       "community": 0,
-      "norm_label": "target"
+      "norm_label": "target",
+      "id": "tsconfig_compileroptions_target"
     },
     {
       "label": "lib",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L4",
-      "id": "tsconfig_compileroptions_lib",
       "community": 0,
-      "norm_label": "lib"
+      "norm_label": "lib",
+      "id": "tsconfig_compileroptions_lib"
     },
     {
       "label": "allowJs",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L5",
-      "id": "tsconfig_compileroptions_allowjs",
       "community": 0,
-      "norm_label": "allowjs"
+      "norm_label": "allowjs",
+      "id": "tsconfig_compileroptions_allowjs"
     },
     {
       "label": "skipLibCheck",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L6",
-      "id": "tsconfig_compileroptions_skiplibcheck",
       "community": 0,
-      "norm_label": "skiplibcheck"
+      "norm_label": "skiplibcheck",
+      "id": "tsconfig_compileroptions_skiplibcheck"
     },
     {
       "label": "strict",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L7",
-      "id": "tsconfig_compileroptions_strict",
       "community": 0,
-      "norm_label": "strict"
+      "norm_label": "strict",
+      "id": "tsconfig_compileroptions_strict"
     },
     {
       "label": "noEmit",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L8",
-      "id": "tsconfig_compileroptions_noemit",
       "community": 0,
-      "norm_label": "noemit"
+      "norm_label": "noemit",
+      "id": "tsconfig_compileroptions_noemit"
     },
     {
       "label": "esModuleInterop",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L9",
-      "id": "tsconfig_compileroptions_esmoduleinterop",
       "community": 0,
-      "norm_label": "esmoduleinterop"
+      "norm_label": "esmoduleinterop",
+      "id": "tsconfig_compileroptions_esmoduleinterop"
     },
     {
       "label": "module",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L10",
-      "id": "tsconfig_compileroptions_module",
       "community": 0,
-      "norm_label": "module"
+      "norm_label": "module",
+      "id": "tsconfig_compileroptions_module"
     },
     {
       "label": "moduleResolution",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L11",
-      "id": "tsconfig_compileroptions_moduleresolution",
       "community": 0,
-      "norm_label": "moduleresolution"
+      "norm_label": "moduleresolution",
+      "id": "tsconfig_compileroptions_moduleresolution"
     },
     {
       "label": "resolveJsonModule",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L12",
-      "id": "tsconfig_compileroptions_resolvejsonmodule",
       "community": 0,
-      "norm_label": "resolvejsonmodule"
+      "norm_label": "resolvejsonmodule",
+      "id": "tsconfig_compileroptions_resolvejsonmodule"
     },
     {
       "label": "isolatedModules",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L13",
-      "id": "tsconfig_compileroptions_isolatedmodules",
       "community": 0,
-      "norm_label": "isolatedmodules"
+      "norm_label": "isolatedmodules",
+      "id": "tsconfig_compileroptions_isolatedmodules"
     },
     {
       "label": "jsx",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L14",
-      "id": "tsconfig_compileroptions_jsx",
       "community": 0,
-      "norm_label": "jsx"
+      "norm_label": "jsx",
+      "id": "tsconfig_compileroptions_jsx"
     },
     {
       "label": "incremental",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L15",
-      "id": "tsconfig_compileroptions_incremental",
       "community": 0,
-      "norm_label": "incremental"
+      "norm_label": "incremental",
+      "id": "tsconfig_compileroptions_incremental"
     },
     {
       "label": "plugins",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L16",
-      "id": "tsconfig_compileroptions_plugins",
       "community": 0,
-      "norm_label": "plugins"
+      "norm_label": "plugins",
+      "id": "tsconfig_compileroptions_plugins"
     },
     {
       "label": "paths",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L21",
-      "id": "tsconfig_compileroptions_paths",
       "community": 0,
-      "norm_label": "paths"
+      "norm_label": "paths",
+      "id": "tsconfig_compileroptions_paths"
     },
     {
       "label": "@/*",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L22",
-      "id": "tsconfig_paths",
       "community": 0,
-      "norm_label": "@/*"
+      "norm_label": "@/*",
+      "id": "tsconfig_paths"
     },
     {
       "label": "include",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L25",
-      "id": "tsconfig_include",
       "community": 0,
-      "norm_label": "include"
+      "norm_label": "include",
+      "id": "tsconfig_include"
     },
     {
       "label": "exclude",
       "file_type": "code",
       "source_file": "tsconfig.json",
       "source_location": "L33",
-      "id": "tsconfig_exclude",
       "community": 0,
-      "norm_label": "exclude"
+      "norm_label": "exclude",
+      "id": "tsconfig_exclude"
     },
     {
       "label": "AGENTS.md",
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L1",
-      "id": "agents",
-      "community": 12,
-      "norm_label": "agents.md"
+      "community": 11,
+      "norm_label": "agents.md",
+      "id": "agents"
     },
     {
       "label": "This is NOT the Next.js you know",
       "file_type": "document",
       "source_file": "AGENTS.md",
       "source_location": "L2",
-      "id": "agents_this_is_not_the_next_js_you_know",
-      "community": 12,
-      "norm_label": "this is not the next.js you know"
+      "community": 11,
+      "norm_label": "this is not the next.js you know",
+      "id": "agents_this_is_not_the_next_js_you_know"
     },
     {
       "label": "CLAUDE.md",
       "file_type": "document",
       "source_file": "CLAUDE.md",
       "source_location": "L1",
-      "id": "claude",
-      "community": 21,
-      "norm_label": "claude.md"
+      "community": 20,
+      "norm_label": "claude.md",
+      "id": "claude"
     },
     {
       "label": "DESIGN.md",
       "file_type": "document",
       "source_file": "DESIGN.md",
       "source_location": "L1",
-      "id": "design",
-      "community": 5,
-      "norm_label": "design.md"
+      "community": 2,
+      "norm_label": "design.md",
+      "id": "design"
     },
     {
       "label": "Stitch Design Tokens for Jeevan Rekha",
       "file_type": "document",
       "source_file": "DESIGN.md",
       "source_location": "L2",
-      "id": "design_stitch_design_tokens_for_jeevan_rekha",
-      "community": 5,
-      "norm_label": "stitch design tokens for jeevan rekha"
+      "community": 2,
+      "norm_label": "stitch design tokens for jeevan rekha",
+      "id": "design_stitch_design_tokens_for_jeevan_rekha"
     },
     {
       "label": "Jeevan Rekha Design System",
       "file_type": "document",
       "source_file": "DESIGN.md",
       "source_location": "L59",
-      "id": "design_jeevan_rekha_design_system",
-      "community": 5,
-      "norm_label": "jeevan rekha design system"
+      "community": 2,
+      "norm_label": "jeevan rekha design system",
+      "id": "design_jeevan_rekha_design_system"
     },
     {
       "label": "1. Overview",
       "file_type": "document",
       "source_file": "DESIGN.md",
       "source_location": "L61",
-      "id": "design_1_overview",
-      "community": 5,
-      "norm_label": "1. overview"
+      "community": 2,
+      "norm_label": "1. overview",
+      "id": "design_1_overview"
     },
     {
       "label": "2. Colors",
       "file_type": "document",
       "source_file": "DESIGN.md",
       "source_location": "L64",
-      "id": "design_2_colors",
-      "community": 5,
-      "norm_label": "2. colors"
+      "community": 2,
+      "norm_label": "2. colors",
+      "id": "design_2_colors"
     },
     {
       "label": "3. Typography",
       "file_type": "document",
       "source_file": "DESIGN.md",
       "source_location": "L77",
-      "id": "design_3_typography",
-      "community": 5,
-      "norm_label": "3. typography"
+      "community": 2,
+      "norm_label": "3. typography",
+      "id": "design_3_typography"
     },
     {
       "label": "4. Elevation",
       "file_type": "document",
       "source_file": "DESIGN.md",
       "source_location": "L83",
-      "id": "design_4_elevation",
-      "community": 5,
-      "norm_label": "4. elevation"
+      "community": 2,
+      "norm_label": "4. elevation",
+      "id": "design_4_elevation"
     },
     {
       "label": "5. Components",
       "file_type": "document",
       "source_file": "DESIGN.md",
       "source_location": "L91",
-      "id": "design_5_components",
-      "community": 5,
-      "norm_label": "5. components"
+      "community": 2,
+      "norm_label": "5. components",
+      "id": "design_5_components"
     },
     {
       "label": "6. Do's and Don'ts",
       "file_type": "document",
       "source_file": "DESIGN.md",
       "source_location": "L99",
-      "id": "design_6_do_s_and_don_ts",
-      "community": 5,
-      "norm_label": "6. do's and don'ts"
+      "community": 2,
+      "norm_label": "6. do's and don'ts",
+      "id": "design_6_do_s_and_don_ts"
     },
     {
       "label": "Do's",
       "file_type": "document",
       "source_file": "DESIGN.md",
       "source_location": "L100",
-      "id": "design_do_s",
-      "community": 5,
-      "norm_label": "do's"
+      "community": 2,
+      "norm_label": "do's",
+      "id": "design_do_s"
     },
     {
       "label": "Don'ts",
       "file_type": "document",
       "source_file": "DESIGN.md",
       "source_location": "L105",
-      "id": "design_don_ts",
-      "community": 5,
-      "norm_label": "don'ts"
+      "community": 2,
+      "norm_label": "don'ts",
+      "id": "design_don_ts"
     },
     {
       "label": "README.md",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
-      "id": "readme",
-      "community": 10,
-      "norm_label": "readme.md"
+      "community": 8,
+      "norm_label": "readme.md",
+      "id": "readme"
     },
     {
       "label": "Getting Started",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L3",
-      "id": "readme_getting_started",
-      "community": 10,
-      "norm_label": "getting started"
+      "community": 8,
+      "norm_label": "getting started",
+      "id": "readme_getting_started"
     },
     {
       "label": "Learn More",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L23",
-      "id": "readme_learn_more",
-      "community": 10,
-      "norm_label": "learn more"
+      "community": 8,
+      "norm_label": "learn more",
+      "id": "readme_learn_more"
     },
     {
       "label": "Deploy on Vercel",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L32",
-      "id": "readme_deploy_on_vercel",
-      "community": 10,
-      "norm_label": "deploy on vercel"
+      "community": 8,
+      "norm_label": "deploy on vercel",
+      "id": "readme_deploy_on_vercel"
+    },
+    {
+      "label": "robots.ts",
+      "file_type": "code",
+      "source_file": "src/app/robots.ts",
+      "source_location": "L1",
+      "id": "app_robots",
+      "community": 12,
+      "norm_label": "robots.ts"
+    },
+    {
+      "label": "robots()",
+      "file_type": "code",
+      "source_file": "src/app/robots.ts",
+      "source_location": "L5",
+      "id": "app_robots_robots",
+      "community": 12,
+      "norm_label": "robots()"
+    },
+    {
+      "label": "sitemap.ts",
+      "file_type": "code",
+      "source_file": "src/app/sitemap.ts",
+      "source_location": "L1",
+      "id": "app_sitemap",
+      "community": 13,
+      "norm_label": "sitemap.ts"
+    },
+    {
+      "label": "sitemap()",
+      "file_type": "code",
+      "source_file": "src/app/sitemap.ts",
+      "source_location": "L5",
+      "id": "app_sitemap_sitemap",
+      "community": 13,
+      "norm_label": "sitemap()"
+    },
+    {
+      "label": "JsonLd.tsx",
+      "file_type": "code",
+      "source_file": "src/components/JsonLd.tsx",
+      "source_location": "L1",
+      "id": "components_jsonld",
+      "community": 3,
+      "norm_label": "jsonld.tsx"
+    },
+    {
+      "label": "JsonLd()",
+      "file_type": "code",
+      "source_file": "src/components/JsonLd.tsx",
+      "source_location": "L1",
+      "id": "components_jsonld_jsonld",
+      "community": 3,
+      "norm_label": "jsonld()"
     }
   ],
   "links": [
@@ -1438,16 +1411,6 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "components.json",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_aliases",
-      "target": "components_aliases_components"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "components.json",
       "source_location": "L20",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -1487,22 +1450,22 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "eslint.config.mjs",
-      "source_location": "L5",
+      "source_file": "components.json",
+      "source_location": "L16",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "eslint_config",
-      "target": "eslint_config_eslintconfig"
+      "source": "components_aliases",
+      "target": "design_5_components"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "next.config.ts",
-      "source_location": "L3",
+      "source_file": "package.json",
+      "source_location": "L30",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "next_config",
-      "target": "next_config_nextconfig"
+      "source": "package_devdependencies",
+      "target": "eslint_config"
     },
     {
       "relation": "contains",
@@ -1728,16 +1691,6 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_eslint_config_next"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
       "source_location": "L31",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -1768,21 +1721,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
-      "source_location": "L27",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "package.json",
       "source_location": "L28",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_devdependencies",
-      "target": "package_devdependencies_types_react_dom"
+      "target": "package_devdependencies_types_react"
     },
     {
       "relation": "contains",
@@ -1838,7 +1781,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/contact/page.tsx",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "contact_page",
@@ -1848,7 +1791,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L12",
+      "source_location": "L13",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_layout",
@@ -1858,7 +1801,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L10",
+      "source_location": "L11",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_layout",
@@ -1868,7 +1811,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_layout",
@@ -1878,7 +1821,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L26",
+      "source_location": "L27",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_layout",
@@ -1888,7 +1831,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L32",
+      "source_location": "L33",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_layout",
@@ -1898,7 +1841,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L40",
+      "source_location": "L91",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_layout",
@@ -1931,6 +1874,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "app_layout",
+      "target": "components_jsonld",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/layout.tsx",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -1953,7 +1907,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_layout",
@@ -1964,7 +1918,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/app/layout.tsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "app_layout",
@@ -1976,7 +1930,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/app/layout.tsx",
-      "source_location": "L48",
+      "source_location": "L99",
       "weight": 1.0,
       "source": "app_layout_rootlayout",
       "target": "lib_utils_cn"
@@ -1985,7 +1939,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/manufacturing/page.tsx",
-      "source_location": "L3",
+      "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "manufacturing_page",
@@ -2016,41 +1970,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/app/products/page.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "products_page",
       "target": "products_page_products"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/AnimatedCounter.tsx",
-      "source_location": "L18",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_animatedcounter",
-      "target": "components_animatedcounter_animatedcounter"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/AnimatedCounter.tsx",
-      "source_location": "L12",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_animatedcounter",
-      "target": "components_animatedcounter_animatedcounterprops"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/CustomCursor.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_customcursor",
-      "target": "components_customcursor_customcursor"
     },
     {
       "relation": "contains",
@@ -2071,16 +1995,6 @@
       "confidence_score": 1.0,
       "source": "components_navbar",
       "target": "components_navbar_navbar"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/ScrollRevealObserver.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_scrollrevealobserver",
-      "target": "components_scrollrevealobserver_scrollrevealobserver"
     },
     {
       "relation": "imports_from",
@@ -2654,8 +2568,38 @@
       "confidence_score": 1.0,
       "source": "readme",
       "target": "readme_learn_more"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/robots.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_robots",
+      "target": "app_robots_robots",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/app/sitemap.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "app_sitemap",
+      "target": "app_sitemap_sitemap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/JsonLd.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "components_jsonld",
+      "target": "components_jsonld_jsonld",
+      "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "fb24fa6a66506ad4df88934c3a285aac40544fe6"
+  "built_at_commit": "ae0e68bc5a48bf9682f8659f59a25cb1fe860a62"
 }

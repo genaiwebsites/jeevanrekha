@@ -218,5 +218,130 @@
     "mtime": 1780482849.670884,
     "ast_hash": "a2760511c65806022ad20adf74370ff3",
     "semantic_hash": ""
+  },
+  "C:\\Projects\\Jeevan Rekha\\next.config.ts": {
+    "mtime": 1780482849.688886,
+    "ast_hash": "9b77af189a21a7a64e4bd7a426f64176",
+    "semantic_hash": "9b77af189a21a7a64e4bd7a426f64176"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\app\\about\\page.tsx": {
+    "mtime": 1783365123.983178,
+    "ast_hash": "d34a71e01a0c394c686fdd16f3dba9b5",
+    "semantic_hash": "d34a71e01a0c394c686fdd16f3dba9b5"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\app\\blogs\\healthy-cooking\\page.tsx": {
+    "mtime": 1783422797.6782787,
+    "ast_hash": "438b2cbe27d1a1ee14776c9395899c8b",
+    "semantic_hash": "438b2cbe27d1a1ee14776c9395899c8b"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\app\\blogs\\page.tsx": {
+    "mtime": 1783422088.570827,
+    "ast_hash": "1c034d4e9814d70afc6f59747b64f6d9",
+    "semantic_hash": "1c034d4e9814d70afc6f59747b64f6d9"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\app\\contact\\page.tsx": {
+    "mtime": 1783422788.9334774,
+    "ast_hash": "f2f828c527372b24fa2d3ab22a0b8320",
+    "semantic_hash": "f2f828c527372b24fa2d3ab22a0b8320"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\app\\layout.tsx": {
+    "mtime": 1783417260.5110538,
+    "ast_hash": "0b7cd568d4f52fc974863ffa41ec55fd",
+    "semantic_hash": "0b7cd568d4f52fc974863ffa41ec55fd"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\app\\manufacturing\\page.tsx": {
+    "mtime": 1783404552.7561047,
+    "ast_hash": "2a601c772d54d073228e8cf6ed0b5edc",
+    "semantic_hash": "2a601c772d54d073228e8cf6ed0b5edc"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\app\\page.tsx": {
+    "mtime": 1783422780.5316937,
+    "ast_hash": "1bac0c5254ec20d18075371921bb5a1d",
+    "semantic_hash": "1bac0c5254ec20d18075371921bb5a1d"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\app\\products\\page.tsx": {
+    "mtime": 1783422763.7063403,
+    "ast_hash": "774899ed0a6866613ee99c79b633be5b",
+    "semantic_hash": "774899ed0a6866613ee99c79b633be5b"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\app\\robots.ts": {
+    "mtime": 1783417192.335995,
+    "ast_hash": "5b88e3c1506c0a196b36cf829ee0ac0f",
+    "semantic_hash": "5b88e3c1506c0a196b36cf829ee0ac0f"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\app\\sitemap.ts": {
+    "mtime": 1783417180.326803,
+    "ast_hash": "58b306ae7e06f3e932f13a11418943c7",
+    "semantic_hash": "58b306ae7e06f3e932f13a11418943c7"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\components\\AnimatedCounter.tsx": {
+    "mtime": 1780774895.1781557,
+    "ast_hash": "b8a6b6260b9dd8f8e5bee45e23367df5",
+    "semantic_hash": "b8a6b6260b9dd8f8e5bee45e23367df5"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\components\\CustomCursor.tsx": {
+    "mtime": 1783422980.7204566,
+    "ast_hash": "64f36d50352f0cb274b6216d979b7034",
+    "semantic_hash": "64f36d50352f0cb274b6216d979b7034"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\components\\Footer.tsx": {
+    "mtime": 1783422665.5560017,
+    "ast_hash": "1184a584ebbda2ca95a42303dc2886e5",
+    "semantic_hash": "1184a584ebbda2ca95a42303dc2886e5"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\components\\JsonLd.tsx": {
+    "mtime": 1783422747.1265843,
+    "ast_hash": "25e098a8bcd42e8eab855050cc55c456",
+    "semantic_hash": "25e098a8bcd42e8eab855050cc55c456"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\components\\Navbar.tsx": {
+    "mtime": 1783422577.8543196,
+    "ast_hash": "872ed9dfce5201569724c1d5b2b71e0b",
+    "semantic_hash": "872ed9dfce5201569724c1d5b2b71e0b"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\components\\ScrollRevealObserver.tsx": {
+    "mtime": 1780774890.175111,
+    "ast_hash": "f8750b891f0dec80dabb0bd53a380bb1",
+    "semantic_hash": "f8750b891f0dec80dabb0bd53a380bb1"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\components\\ui\\button.tsx": {
+    "mtime": 1780776529.9768133,
+    "ast_hash": "e04ce5251d6b0dd04020988126c905e9",
+    "semantic_hash": "e04ce5251d6b0dd04020988126c905e9"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\components\\ui\\card.tsx": {
+    "mtime": 1780776543.6480832,
+    "ast_hash": "bd5f88ad2d983dd6c4561d63824c80ba",
+    "semantic_hash": "bd5f88ad2d983dd6c4561d63824c80ba"
+  },
+  "C:\\Projects\\Jeevan Rekha\\src\\lib\\utils.ts": {
+    "mtime": 1780776530.026844,
+    "ast_hash": "5a6fd53fdcf2be529e9cc0b718fde352",
+    "semantic_hash": "5a6fd53fdcf2be529e9cc0b718fde352"
+  },
+  "C:\\Projects\\Jeevan Rekha\\AGENTS.md": {
+    "mtime": 1780774840.3740046,
+    "ast_hash": "9e09241799026ac05be315a2f0b50055",
+    "semantic_hash": "9e09241799026ac05be315a2f0b50055"
+  },
+  "C:\\Projects\\Jeevan Rekha\\CLAUDE.md": {
+    "mtime": 1780774840.3745086,
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
+  },
+  "C:\\Projects\\Jeevan Rekha\\DESIGN.md": {
+    "mtime": 1780777275.2616632,
+    "ast_hash": "f16bddddd3cf96b42883754e5d087fcc",
+    "semantic_hash": "f16bddddd3cf96b42883754e5d087fcc"
+  },
+  "C:\\Projects\\Jeevan Rekha\\PRODUCT.md": {
+    "mtime": 1783362918.7900908,
+    "ast_hash": "7ebdc44b2cdd10131e4e9ee86e4a0890",
+    "semantic_hash": "7ebdc44b2cdd10131e4e9ee86e4a0890"
+  },
+  "C:\\Projects\\Jeevan Rekha\\README.md": {
+    "mtime": 1780482849.5886843,
+    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "semantic_hash": "f15aaa42d5d299d091b1171097ea56ad"
   }
 }
