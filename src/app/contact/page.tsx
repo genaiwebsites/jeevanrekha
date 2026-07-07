@@ -497,7 +497,7 @@ export default function Contact() {
                     </svg>
                   </div>
                 </button>
-                <div className="faq-a" style={{ maxHeight: openFaqIndex === 0 ? '500px' : '0' }}>
+                <div className="faq-a">
                   <div className="faq-a-inner">
                     Yes — we are one of India&apos;s major suppliers of rice bran oil to the snack and namkeen industry. We offer bulk supply, long-term contracts, and customised packaging. Contact us at <a href="mailto:info@abudyog.in">info@abudyog.in</a> for trade enquiries.
                   </div>
@@ -512,7 +512,7 @@ export default function Contact() {
                     </svg>
                   </div>
                 </button>
-                <div className="faq-a" style={{ maxHeight: openFaqIndex === 1 ? '500px' : '0' }}>
+                <div className="faq-a">
                   <div className="faq-a-inner">
                     Our oils are available in consumer packs of 500ml, 1L, 2L, 5L and bulk packaging for trade customers. We offer tamper-proof, hygienically sealed bottles clearly labelled for full transparency.
                   </div>
@@ -527,7 +527,7 @@ export default function Contact() {
                     </svg>
                   </div>
                 </button>
-                <div className="faq-a" style={{ maxHeight: openFaqIndex === 2 ? '500px' : '0' }}>
+                <div className="faq-a">
                   <div className="faq-a-inner">
                     Jeevan Rekha oils are available across 500+ retail partners in West Bengal and pan-India. You can also purchase directly through our website at <a href="https://jeevanrekhafoods.com" target="_blank" rel="noopener noreferrer">jeevanrekhafoods.com</a> or reach out to us for nearby distributor info.
                   </div>
@@ -542,7 +542,7 @@ export default function Contact() {
                     </svg>
                   </div>
                 </button>
-                <div className="faq-a" style={{ maxHeight: openFaqIndex === 3 ? '500px' : '0' }}>
+                <div className="faq-a">
                   <div className="faq-a-inner">
                     Absolutely. All Jeevan Rekha products are FSSAI certified and lab-tested every batch. We operate under stringent quality and food safety standards at our Burdwan plant, and each unit is tamper-proof sealed with full labelling compliance.
                   </div>
@@ -557,7 +557,7 @@ export default function Contact() {
                     </svg>
                   </div>
                 </button>
-                <div className="faq-a" style={{ maxHeight: openFaqIndex === 4 ? '500px' : '0' }}>
+                <div className="faq-a">
                   <div className="faq-a-inner">
                     Yes! We&apos;re actively expanding our distribution network across India. If you&apos;re interested in becoming a distributor or trade partner, please fill in the contact form above selecting &quot;Distribution&quot; as your enquiry type, or email us at <a href="mailto:info@abudyog.in">info@abudyog.in</a>.
                   </div>
@@ -572,7 +572,7 @@ export default function Contact() {
                     </svg>
                   </div>
                 </button>
-                <div className="faq-a" style={{ maxHeight: openFaqIndex === 5 ? '500px' : '0' }}>
+                <div className="faq-a">
                   <div className="faq-a-inner">
                     Rice Bran Oil has a 232°C smoke point, neutral flavour, and is rich in Gamma-Oryzanol — ideal for high-heat frying and health-focused cooking. Mustard Oil is cold-pressed (Kacchi Ghani), naturally pungent, and traditional to Indian cuisine with strong anti-inflammatory properties. See our Products page for a full comparison.
                   </div>
