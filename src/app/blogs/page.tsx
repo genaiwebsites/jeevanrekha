@@ -13,14 +13,23 @@ export default function Blogs() {
         justifyContent: 'center',
         borderBottom: '1px solid rgba(255,255,255,0.08)'
       }}>
-        {/* Background Image with Gradient Overlay */}
+        {/* Background Image */}
         <div style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'linear-gradient(rgba(45, 22, 96, 0.88), rgba(75, 38, 133, 0.88)), url("/blogs_hero.png")',
+          backgroundImage: 'url("/blogs_hero.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           zIndex: 1
+        }}></div>
+
+        {/* Glassmorphic Blur Overlay */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          backdropFilter: 'blur(8px) brightness(0.48)',
+          backgroundColor: 'rgba(45, 22, 96, 0.15)',
+          zIndex: 2
         }}></div>
         
         <div className="hero-wrap rv text-center" style={{
@@ -29,7 +38,7 @@ export default function Blogs() {
           alignItems: 'center',
           textAlign: 'center',
           position: 'relative',
-          zIndex: 2
+          zIndex: 3
         }}>
           <div className="h-eyebrow"><span className="pulse"></span><span className="eyebrow-t" style={{ color: 'rgba(255,255,255,0.75)' }}>The Jeevan Rekha Journal</span></div>
           <h1 className="s-h" style={{ fontSize: '3.5rem', color: 'var(--w)' }}>Insights on <strong style={{ color: 'var(--y)' }}>Health</strong>,<br/><em style={{ color: 'var(--y)' }}>Nutrition &amp; Cooking</em></h1>
