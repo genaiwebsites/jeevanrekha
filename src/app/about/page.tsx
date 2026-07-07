@@ -53,7 +53,7 @@ export default function About() {
             <div className="history-left">
               <h2 className="s-h rv" data-d="1">Where We<br /><strong>Come From</strong></h2>
               <p className="body-t rv" data-d="2" style={{ marginTop: '20px' }}>
-                Jeevan Rekha is a brand of AB Udyog Pvt. Ltd., incorporated in February 2019 — guided by our philosophy of Purity, Health, and Happiness. While young in incorporation, we bring over 40 years of deep industry experience through our team's extensive involvement in the Rice Bran sector across India.
+                Jeevan Rekha is a brand of AB Udyog Pvt. Ltd., incorporated in February 2019, guided by our philosophy of Purity, Health, and Happiness. While young in incorporation, we bring over 40 years of deep industry experience through our team's extensive involvement in the Rice Bran sector across India.
               </p>
 
               <div className="history-timeline" style={{ marginTop: '48px' }}>
@@ -78,7 +78,7 @@ export default function About() {
                   <div className="tl-content">
                     <div className="tl-year">Brand Launch</div>
                     <div className="tl-title">Jeevan Rekha Foods is Born</div>
-                    <p className="tl-desc">The Jeevan Rekha brand launched with our flagship Rice Bran Oil and Kacchi Ghani Mustard Oil — taking our expertise directly to consumers through transparent, quality-first packaging and distribution.</p>
+                    <p className="tl-desc">The Jeevan Rekha brand launched with our flagship Rice Bran Oil and Kacchi Ghani Mustard Oil, taking our expertise directly to consumers through transparent, quality-first packaging and distribution.</p>
                   </div>
                 </div>
                 <div className="tl-item rv" data-d="3">
@@ -224,7 +224,7 @@ export default function About() {
                   </div>
                   <div className="pt-text">
                     <h4>Happiness</h4>
-                    <p>Not the fleeting kind — a deeper contentment that radiates from within when body and mind are nourished.</p>
+                    <p>Not the fleeting kind, but a deeper contentment that radiates from within when body and mind are nourished.</p>
                   </div>
                 </div>
               </div>
@@ -234,7 +234,7 @@ export default function About() {
           <div className="phil-body-grid">
             <div className="phil-body-card rv" data-d="1">
               <h4>The Foundation of True Health</h4>
-              <p>When we strip away the artificial and embrace what's genuine, our lives transform. A pure existence — free from toxins, harmful habits, and negative influences — creates the foundation for true health that no medicine can replicate.</p>
+              <p>When we strip away the artificial and embrace what's genuine, our lives transform. A pure existence, free from toxins, harmful habits, and negative influences, creates the foundation for true health that no medicine can replicate.</p>
             </div>
             <div className="phil-body-card rv" data-d="2">
               <h4>Vitality in Every Moment</h4>
@@ -260,13 +260,13 @@ export default function About() {
             <div className="commitment-card cc-light rv" data-d="1">
               <div className="cc-icon cc-icon-bg"><Globe style={{ color: 'var(--p)' }} /></div>
               <h3>Atmanirbhar Bharat Commitment</h3>
-              <p>We proudly support the vision of Atmanirbhar Bharat and the Make-in-India initiative. At AB Udyog, we believe in fully utilising local resources before considering imported alternatives — contributing to India's self-sufficiency and economic strength.</p>
+              <p>We proudly support the vision of Atmanirbhar Bharat and the Make-in-India initiative. At AB Udyog, we believe in fully utilising local resources before considering imported alternatives, contributing to India's self-sufficiency and economic strength.</p>
               <div className="cc-tag cct-w">Make in India →</div>
             </div>
             <div className="commitment-card cc-light rv" data-d="2">
               <div className="cc-icon cc-icon-bg"><Microscope style={{ color: 'var(--p)' }} /></div>
               <h3>In-House Quality Assurance</h3>
-              <p>We use the same rice bran oil in-house that we deliver to our customers. This genuine approach ensures authenticity and quality at every step — we stand behind every batch because we cook with it ourselves.</p>
+              <p>We use the same rice bran oil in-house that we deliver to our customers. This genuine approach ensures authenticity and quality at every step; we stand behind every batch because we cook with it ourselves.</p>
               <div className="cc-tag cct-w">Zero Compromise →</div>
             </div>
             <div className="commitment-card cc-light rv" data-d="3">
@@ -278,7 +278,7 @@ export default function About() {
             <div className="commitment-card cc-light rv" data-d="4">
               <div className="cc-icon cc-icon-bg"><Package style={{ color: 'var(--p)' }} /></div>
               <h3>Transparent, Safe Packaging</h3>
-              <p>Each unit of Jeevan Rekha oil is hygienically packed, tamper-proof sealed, and clearly labelled — ensuring full transparency, safety, and consistent quality from our plant in Burdwan to your kitchen across India.</p>
+              <p>Each unit of Jeevan Rekha oil is hygienically packed, tamper-proof sealed, and clearly labelled, ensuring full transparency, safety, and consistent quality from our plant in Burdwan to your kitchen across India.</p>
               <div className="cc-tag cct-w">Food Safety First →</div>
             </div>
           </div>
@@ -290,14 +290,14 @@ export default function About() {
         <div className="cs-inner">
           <div className="cs-left rv">
             <h2>Let's Build Something<br /><strong>Together</strong></h2>
-            <p>Whether you're a household, retailer, distributor, or food manufacturer — we'd love to hear from you. Reach out to discuss partnerships, bulk orders, or just to learn more about our oils.</p>
+            <p>Whether you're a household, retailer, distributor, or food manufacturer, we'd love to hear from you. Reach out to discuss partnerships, bulk orders, or just to learn more about our oils.</p>
           </div>
           <div className="cs-right rv" data-d="2">
             <a href="tel:+917439289709" className="cs-contact-item">
               <div className="cs-ico"><Phone style={{ width: '18px', height: '18px', color: 'var(--pd)' }} /></div>
               <div className="cs-ctext">
                 <span className="cn">+91 74392 89709</span>
-                <span className="cv">Call us — Mon to Sat, 9am–6pm</span>
+                <span className="cv">Call us, Mon to Sat, 9am–6pm</span>
               </div>
             </a>
             <a href="mailto:info@abudyog.in" className="cs-contact-item">
