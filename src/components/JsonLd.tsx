@@ -34,7 +34,7 @@ export default function JsonLd() {
         {
           '@type': 'Product',
           name: 'Physically Refined Rice Bran Oil',
-          description: 'Physically refined to retain natural antioxidants with a 254°C smoke point. Rich in Gamma-Oryzanol and Vitamin E.',
+          description: 'Physically refined to retain natural antioxidants with a 232°C smoke point. Rich in Gamma-Oryzanol and Vitamin E.',
           brand: { '@type': 'Brand', name: 'Jeevan Rekha' },
           category: 'Edible Oil',
         },

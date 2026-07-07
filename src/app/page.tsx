@@ -36,7 +36,7 @@ export default function Home() {
                   <defs><linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#7540C8"/><stop offset="100%" stopColor="#160840"/></linearGradient></defs>
                 </svg>
               </div>
-              <div className="d-chip dc-a"><div className="dc-n">254°C</div><div className="dc-l">Smoke Point</div></div>
+              <div className="d-chip dc-a"><div className="dc-n">232°C</div><div className="dc-l">Smoke Point</div></div>
               <div className="d-chip dc-b"><div className="dc-n">γ-Oryzanol</div><div className="dc-l">Antioxidant</div></div>
             </div>
           </div>
@@ -219,7 +219,7 @@ export default function Home() {
             </div>
             <div className="bcard rv" data-d="2">
               <div className="b-ico"><svg viewBox="0 0 28 28"><path d="M14 2C7.4 2 2 7.4 2 14s5.4 12 12 12 12-5.4 12-12S20.6 2 14 2zm1 6v6.6l4.5 2.7-1.1 1.7-5.4-3.3V8h2z"/></svg></div>
-              <h4>254°C Smoke Point</h4>
+              <h4>232°C Smoke Point</h4>
               <p>Remarkable smoke point enables safe, high-heat frying. Less oil breakdown, more nutrition retained.</p>
               <span className="b-tag">Rice Bran Oil</span>
             </div>

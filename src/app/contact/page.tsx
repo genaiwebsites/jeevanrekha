@@ -574,7 +574,7 @@ export default function Contact() {
                 </button>
                 <div className="faq-a" style={{ maxHeight: openFaqIndex === 5 ? '500px' : '0' }}>
                   <div className="faq-a-inner">
-                    Rice Bran Oil has a 254°C smoke point, neutral flavour, and is rich in Gamma-Oryzanol — ideal for high-heat frying and health-focused cooking. Mustard Oil is cold-pressed (Kacchi Ghani), naturally pungent, and traditional to Indian cuisine with strong anti-inflammatory properties. See our Products page for a full comparison.
+                    Rice Bran Oil has a 232°C smoke point, neutral flavour, and is rich in Gamma-Oryzanol — ideal for high-heat frying and health-focused cooking. Mustard Oil is cold-pressed (Kacchi Ghani), naturally pungent, and traditional to Indian cuisine with strong anti-inflammatory properties. See our Products page for a full comparison.
                   </div>
                 </div>
               </div>

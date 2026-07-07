@@ -46,10 +46,10 @@ export default function Products() {
           <h2 className="pb-name">Physically Refined <em>Rice Bran Oil</em></h2>
           <div className="pb-feats">
             <span className="pb-feat">Gamma-Oryzanol</span>
-            <span className="pb-feat">254°C Smoke Point</span>
+            <span className="pb-feat">232°C Smoke Point</span>
             <span className="pb-feat">Vitamin E Rich</span>
           </div>
-          <p className="pb-desc body-t">Physically refined to retain natural antioxidants. With a 254°C smoke point, it's India's healthiest choice for high-heat frying and daily cooking.</p>
+          <p className="pb-desc body-t">Physically refined to retain natural antioxidants. With a 232°C smoke point, it's India's healthiest choice for high-heat frying and daily cooking.</p>
           <a href="https://rbo-spa.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-p" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Rice Bran Oil</a>
         </div>
       </div>
@@ -116,7 +116,7 @@ export default function Products() {
             <div className="comp-row">
               <div className="comp-cell">Smoke Point</div>
               <div className="comp-cell"><span style={{ color: 'var(--y)' }}>~160°C</span></div>
-              <div className="comp-cell"><span style={{ color: 'var(--r-plumlt)' }}>254°C</span></div>
+              <div className="comp-cell"><span style={{ color: 'var(--r-plumlt)' }}>232°C</span></div>
               <div className="comp-cell"><span style={{ color: 'var(--s-jadelt)' }}>~240°C</span></div>
             </div>
             <div className="comp-row">
