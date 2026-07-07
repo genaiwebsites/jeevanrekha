@@ -5,6 +5,7 @@ import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollRevealObserver from "@/components/ScrollRevealObserver";
+import JsonLd from "@/components/JsonLd";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -30,11 +31,61 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jeevan Rekha Foods — Purity. Health. Happiness.",
-  description: "A brand of AB Udyog Pvt. Ltd. Bringing 40+ years of industry expertise to every household. Manufactured in Burdwan. Proudly made in India.",
-  icons: {
-    icon: "https://jeevanrekhafoods.com/wp-content/uploads/2025/04/cropped-Fav-Icon-270x270.png",
+  metadataBase: new URL('https://jeevanrekhafoods.com'),
+  title: {
+    default: 'Jeevan Rekha Foods — Purity. Health. Happiness.',
+    template: '%s | Jeevan Rekha Foods',
   },
+  description: 'Jeevan Rekha Foods, a brand of AB Udyog Pvt. Ltd., brings 40+ years of expertise in producing premium Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soyabean Oil. Manufactured in Burdwan, West Bengal. NABL-certified quality. Proudly made in India.',
+  keywords: [
+    'Jeevan Rekha Foods', 'Rice Bran Oil', 'Kacchi Ghani Mustard Oil', 'Soyabean Oil',
+    'edible oil', 'cooking oil', 'cold pressed oil', 'physically refined oil',
+    'AB Udyog', 'Burdwan', 'West Bengal', 'Indian cooking oil', 'healthy cooking oil',
+    'NABL certified', 'Gamma Oryzanol', 'heart healthy oil',
+  ],
+  authors: [{ name: 'AB Udyog Pvt. Ltd.', url: 'https://jeevanrekhafoods.com' }],
+  creator: 'AB Udyog Pvt. Ltd.',
+  publisher: 'Jeevan Rekha Foods',
+  icons: {
+    icon: 'https://jeevanrekhafoods.com/wp-content/uploads/2025/04/cropped-Fav-Icon-270x270.png',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://jeevanrekhafoods.com',
+    siteName: 'Jeevan Rekha Foods',
+    title: 'Jeevan Rekha Foods — Purity. Health. Happiness.',
+    description: 'Premium edible oils crafted with 40+ years of expertise. Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soyabean Oil — NABL-certified, proudly made in India.',
+    images: [
+      {
+        url: 'https://jeevanrekhafoods.com/wp-content/uploads/2024/05/JR-New-Logo-e1744100437370.png',
+        width: 1200,
+        height: 630,
+        alt: 'Jeevan Rekha Foods Logo',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Jeevan Rekha Foods — Purity. Health. Happiness.',
+    description: 'Premium edible oils crafted with 40+ years of expertise. Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soyabean Oil.',
+    images: ['https://jeevanrekhafoods.com/wp-content/uploads/2024/05/JR-New-Logo-e1744100437370.png'],
+  },
+  alternates: {
+    canonical: 'https://jeevanrekhafoods.com',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  category: 'Food & Beverages',
 };
 
 export default function RootLayout({
@@ -47,6 +98,9 @@ export default function RootLayout({
       lang="en"
       className={cn(fraunces.variable, instrumentSans.variable, jetbrainsMono.variable, "font-sans", geist.variable)}
     >
+      <head>
+        <JsonLd />
+      </head>
       <body>
         {/* Universal SVG Marker for all Pipeline Arrows */}
         <svg style={{ width: 0, height: 0, position: 'absolute' }} aria-hidden="true">
