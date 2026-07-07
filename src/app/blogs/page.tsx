@@ -19,7 +19,7 @@ export default function Blogs() {
           inset: 0,
           backgroundImage: 'url("/blogs_hero.png")',
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundPosition: 'top center',
           zIndex: 1
         }}></div>
 
@@ -27,8 +27,8 @@ export default function Blogs() {
         <div style={{
           position: 'absolute',
           inset: 0,
-          backdropFilter: 'blur(2.5px) brightness(0.65)',
-          backgroundColor: 'rgba(45, 22, 96, 0.22)',
+          backdropFilter: 'blur(1.2px) brightness(0.72)',
+          backgroundColor: 'rgba(45, 22, 96, 0.16)',
           zIndex: 2
         }}></div>
         
@@ -41,8 +41,8 @@ export default function Blogs() {
           zIndex: 3
         }}>
           <div className="h-eyebrow"><span className="pulse"></span><span className="eyebrow-t" style={{ color: 'rgba(255,255,255,0.75)' }}>The Jeevan Rekha Journal</span></div>
-          <h1 className="s-h" style={{ fontSize: '3.5rem', color: 'var(--w)' }}>Insights on <strong style={{ color: 'var(--y)' }}>Health</strong>,<br/><em style={{ color: 'var(--y)' }}>Nutrition &amp; Cooking</em></h1>
-          <p className="body-t" style={{ maxWidth: '600px', marginTop: '16px', color: 'rgba(255,255,255,0.75)' }}>Expert advice, debunked myths, and delicious recipes to help you make the healthiest choices for your family.</p>
+          <h1 className="s-h" style={{ fontSize: '3.5rem', color: 'var(--w)', textShadow: '0 4px 16px rgba(0,0,0,0.45)' }}>Insights on <strong style={{ color: 'var(--y)' }}>Health</strong>,<br/><em style={{ color: 'var(--y)' }}>Nutrition &amp; Cooking</em></h1>
+          <p className="body-t" style={{ maxWidth: '600px', marginTop: '16px', color: 'rgba(255,255,255,0.85)', textShadow: '0 2px 8px rgba(0,0,0,0.45)' }}>Expert advice, debunked myths, and delicious recipes to help you make the healthiest choices for your family.</p>
         </div>
       </div>
 
