@@ -34,8 +34,25 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 ::-webkit-scrollbar-thumb { background: var(--p); border-radius: 4px; }
 
 /* ═══════════════════ CUSTOM CURSOR ═══════════════════ */
-#cur-ring { position: fixed; width: 44px; height: 44px; border-radius: 50%; border: 1.5px solid rgba(75,38,133,.5); transform: translate(-50%,-50%); pointer-events: none; z-index: 9999; transition: width .3s, height .3s, border-color .25s; mix-blend-mode: exclusion; }
-#cur-dot { position: fixed; width: 7px; height: 7px; border-radius: 50%; background: var(--y); transform: translate(-50%,-50%); pointer-events: none; z-index: 9999; }
+#cur-follower {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(75, 38, 133, 0.16);
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.3s var(--ease), height 0.3s var(--ease), background-color 0.3s var(--ease);
+  box-shadow: 0 0 10px rgba(75, 38, 133, 0.14);
+}
+#cur-follower.hovered {
+  width: 32px;
+  height: 32px;
+  background: rgba(254, 220, 6, 0.28);
+  box-shadow: 0 0 20px rgba(254, 220, 6, 0.32);
+}
 
 /* ═══════════════════ TYPOGRAPHY & UTILITIES ═══════════════════ */
 .wrap { max-width: 1360px; margin: 0 auto; padding: 0 56px; }

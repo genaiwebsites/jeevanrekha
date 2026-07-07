@@ -3,13 +3,18 @@
 import { useEffect, useRef } from 'react';
 
 export default function CustomCursor() {
-  const ringRef = useRef<HTMLDivElement>(null);
-  const dotRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const ring = ringRef.current;
-    const dot = dotRef.current;
-    if (!ring || !dot) return;
+    const cursor = cursorRef.current;
+    if (!cursor) return;
+
+    // Detect touch device to disable custom cursor completely
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouchDevice) {
+      cursor.style.display = 'none';
+      return;
+    }
 
     let mx = 0;
     let my = 0;
@@ -19,18 +24,16 @@ export default function CustomCursor() {
     const handleMouseMove = (e: MouseEvent) => {
       mx = e.clientX;
       my = e.clientY;
-      dot.style.left = `${mx}px`;
-      dot.style.top = `${my}px`;
     };
 
     window.addEventListener('mousemove', handleMouseMove);
 
     let animationFrameId: number;
     const animCursor = () => {
-      rx += (mx - rx) * 0.15;
-      ry += (my - ry) * 0.15;
-      ring.style.left = `${rx}px`;
-      ring.style.top = `${ry}px`;
+      // Smooth interpolation for follower effect
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      cursor.style.transform = `translate3d(${rx}px, ${ry}px, 0) translate(-50%, -50%)`;
       animationFrameId = requestAnimationFrame(animCursor);
     };
     animCursor();
@@ -41,13 +44,9 @@ export default function CustomCursor() {
       
       const isInteractive = target.closest('a, button, select, input, textarea, .blog-card, .ps-link, .pcard-home, .wt-card, .hs-card');
       if (isInteractive) {
-        ring.style.width = '60px';
-        ring.style.height = '60px';
-        ring.style.borderColor = 'var(--y)';
+        cursor.classList.add('hovered');
       } else {
-        ring.style.width = '44px';
-        ring.style.height = '44px';
-        ring.style.borderColor = 'rgba(75, 38, 133, 0.5)';
+        cursor.classList.remove('hovered');
       }
     };
 
@@ -61,9 +60,6 @@ export default function CustomCursor() {
   }, []);
 
   return (
-    <>
-      <div id="cur-ring" ref={ringRef}></div>
-      <div id="cur-dot" ref={dotRef}></div>
-    </>
+    <div id="cur-follower" ref={cursorRef}></div>
   );
 }
