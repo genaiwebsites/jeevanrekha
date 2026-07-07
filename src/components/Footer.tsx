@@ -39,8 +39,8 @@ export default function Footer() {
           <div className="f-col">
             <h5>Products</h5>
             <ul>
-              <li><Link href="/products">Mustard Oil</Link></li>
               <li><Link href="/products">Rice Bran Oil</Link></li>
+              <li><Link href="/products">Mustard Oil</Link></li>
               <li><Link href="/products">Soyabean Oil</Link></li>
             </ul>
           </div>
