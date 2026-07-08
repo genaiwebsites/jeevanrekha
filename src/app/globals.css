@@ -2629,18 +2629,29 @@ footer {
   inset: 0;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: right center; /* aligns banner content to the right side */
+  display: flex;
+  justify-content: flex-end; /* Aligns the image wrap to the right edge */
 }
 .hero-bg-slide.active {
-  opacity: 0.95; /* high opacity for rich, uncropped visuals */
+  opacity: 0.95;
 }
-.hero-scrim {
+.slide-image-wrap {
+  position: relative;
+  height: 100%;
+  aspect-ratio: 2560 / 1279; /* Exact 2:1 ratio of the banners */
+  overflow: hidden;
+}
+.slide-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fits 100% inside 2:1 frame */
+  display: block;
+}
+.slide-image-mask {
   position: absolute;
   inset: 0;
-  z-index: 2;
   pointer-events: none;
+  z-index: 2;
 }
 
 /* Slider Dots Control */
@@ -2672,15 +2683,20 @@ footer {
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
   .hero-bg-slide {
-    background-size: contain; /* ensures NO cropping on mobile screen widths */
-    background-position: center center;
+    justify-content: center; /* Center the image wrapper on mobile */
   }
-  .hero-scrim {
+  .slide-image-wrap {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2560 / 1279;
+    align-self: center;
+  }
+  .slide-image-mask {
     background: linear-gradient(
       to bottom,
-      rgba(10, 6, 30, 0.6) 0%,
+      rgba(10, 6, 30, 0.5) 0%,
       rgba(10, 6, 30, 0.85) 100%
-    ) !important; /* dark overlay on mobile for clear copy reading */
+    ) !important; /* dark overlay on mobile for absolute readability */
   }
   .slider-dots { bottom: 12px; }
   .slider-dot { width: 8px; height: 8px; }

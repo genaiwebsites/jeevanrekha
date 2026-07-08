@@ -92,18 +92,19 @@ export default function Products() {
             <div 
               key={i} 
               className={`hero-bg-slide ${currentSlide === i ? 'active' : ''}`}
-              style={{ 
-                backgroundImage: `url(${slide.src})`,
-                backgroundColor: slide.bgColor
-              }}
+              style={{ backgroundColor: slide.bgColor }}
             >
-              {/* Dynamic slide-specific scrim that blends the solid left background with the image */}
-              <div 
-                className="hero-scrim" 
-                style={{ 
-                  background: `linear-gradient(to right, ${slide.bgColor} 0%, ${slide.bgColor}cc 40%, ${slide.bgColor}40 70%, transparent 100%)` 
-                }}
-              />
+              {/* Image container aligned to the right edge with 2:1 aspect ratio */}
+              <div className="slide-image-wrap">
+                <img src={slide.src} alt="" className="slide-img" />
+                {/* Mask overlaying the image, starting exactly at the left edge of the image */}
+                <div 
+                  className="slide-image-mask" 
+                  style={{ 
+                    background: `linear-gradient(to right, ${slide.bgColor} 0%, ${slide.bgColor}f2 12%, ${slide.bgColor}80 35%, transparent 70%)` 
+                  }}
+                />
+              </div>
             </div>
           ))}
         </div>
