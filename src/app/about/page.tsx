@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { Factory, Handshake, ShieldCheck, Microscope, Sprout, Package, Phone, Mail, MapPin, Sparkles, Droplet, Heart, Globe } from 'lucide-react';
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 export default function About() {
   return (
@@ -25,22 +26,42 @@ export default function About() {
             </div>
           </div>
 
-          <div className="hero-right rv" data-d="2" style={{ position: 'relative' }}>
-            <div className="ph-visual-card">
-              <img src="/factory.png" alt="Jeevan Rekha Burdwan Factory" loading="lazy" />
-              <div className="ph-visual-overlay"></div>
-              <div className="ph-visual-content-overlay">
-                <div style={{ fontFamily: 'var(--fd)', fontSize: '2rem', fontStyle: 'italic', color: 'var(--w)', fontWeight: 600, lineHeight: 1.1, marginBottom: '4px' }}>Burdwan Plant</div>
-                <div style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--y)' }}>State-Of-The-Art Refining</div>
+          <div className="hero-right rv" data-d="2" style={{ width: '100%', maxWidth: '520px', position: 'relative' }}>
+            {/* Ambient background glow for visual depth */}
+            <div className="s-glow" style={{ opacity: 0.4, width: '450px', height: '450px', pointerEvents: 'none' }}></div>
+            
+            <div className="refinery-spec-card">
+              <div className="refinery-spec-img-wrap">
+                <AspectRatio ratio={16/10}>
+                  <img src="/factory1.webp" alt="Jeevan Rekha Burdwan Plant" loading="lazy" />
+                </AspectRatio>
               </div>
-            </div>
-            <div className="ph-chip ph-chip-1">
-              <div className="cn">2019</div>
-              <div className="cl">Incorporated</div>
-            </div>
-            <div className="ph-chip ph-chip-2">
-              <div className="cn">40+</div>
-              <div className="cl">Yrs Expertise</div>
+              
+              <div className="refinery-spec-grid">
+                <div className="refinery-spec-cell">
+                  <div className="refinery-spec-label">LOCATION</div>
+                  <div className="refinery-spec-value">Burdwan</div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '4px' }}>
+                    <span className="relative flex h-1.5 w-1.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                    </span>
+                    <span className="refinery-spec-desc" style={{ color: 'var(--s-jadelt)' }}>150 TPD active refinery</span>
+                  </div>
+                </div>
+                
+                <div className="refinery-spec-cell">
+                  <div className="refinery-spec-label">ESTABLISHED</div>
+                  <div className="refinery-spec-value">2019</div>
+                  <div className="refinery-spec-desc">AB Udyog Pvt. Ltd.</div>
+                </div>
+                
+                <div className="refinery-spec-cell">
+                  <div className="refinery-spec-label">EXPERTISE</div>
+                  <div className="refinery-spec-value">40+ Years</div>
+                  <div className="refinery-spec-desc">Rice bran pioneers</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

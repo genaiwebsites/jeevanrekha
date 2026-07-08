@@ -1,15 +1,43 @@
 "use client";
 
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Flame, Heart, Sprout } from 'lucide-react';
 
 export default function Products() {
+  const [activeTab, setActiveTab] = useState('p-rice');
+  const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+
   const handleScrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  /* Scroll-spy: update active tab based on which product block is in view */
+  useEffect(() => {
+    const ids = ['p-rice', 'p-mustard', 'p-soy'];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveTab(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-40% 0px -40% 0px', threshold: 0 }
+    );
+
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        sectionRefs.current[id] = el;
+        observer.observe(el);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <section id="view-products" className="view-section active">
@@ -25,10 +53,10 @@ export default function Products() {
 
       <div className="prod-nav">
         <div className="prod-nav-inner">
-          <div className="prod-tabs">
-            <button className="pt-btn rice act" onClick={() => handleScrollTo('p-rice')}>Rice Bran Oil</button>
-            <button className="pt-btn mustard" onClick={() => handleScrollTo('p-mustard')}>Mustard Oil</button>
-            <button className="pt-btn soy" onClick={() => handleScrollTo('p-soy')}>Soyabean Oil</button>
+          <div className="prod-tabs" role="tablist" aria-label="Product navigation">
+            <button className={`pt-btn rice ${activeTab === 'p-rice' ? 'act' : ''}`} role="tab" aria-selected={activeTab === 'p-rice'} onClick={() => handleScrollTo('p-rice')}>Rice Bran Oil</button>
+            <button className={`pt-btn mustard ${activeTab === 'p-mustard' ? 'act' : ''}`} role="tab" aria-selected={activeTab === 'p-mustard'} onClick={() => handleScrollTo('p-mustard')}>Mustard Oil</button>
+            <button className={`pt-btn soy ${activeTab === 'p-soy' ? 'act' : ''}`} role="tab" aria-selected={activeTab === 'p-soy'} onClick={() => handleScrollTo('p-soy')}>Soyabean Oil</button>
           </div>
         </div>
       </div>
@@ -102,94 +130,64 @@ export default function Products() {
           <h2 className="s-h rv light" style={{ marginBottom: '40px' }}>Which Oil is <em>Right for You?</em></h2>
           <div className="comp-table rv">
             <div className="comp-header">
-              <div className="comp-th" style={{ textAlign: 'left' }}>Feature</div>
-              <div className="comp-th" style={{ color: 'var(--y)' }}>Mustard Oil</div>
-              <div className="comp-th" style={{ color: 'var(--r-plumlt)' }}>Rice Bran</div>
-              <div className="comp-th" style={{ color: 'var(--s-jadelt)' }}>Soyabean</div>
+              <div className="comp-th comp-th-label">Feature</div>
+              <div className="comp-th comp-th-mustard">Mustard Oil</div>
+              <div className="comp-th comp-th-rice">Rice Bran</div>
+              <div className="comp-th comp-th-soy">Soyabean</div>
             </div>
             <div className="comp-row">
               <div className="comp-cell">Method</div>
-              <div className="comp-cell"><span style={{ color: 'var(--y)' }}>Kacchi Ghani</span></div>
-              <div className="comp-cell"><span style={{ color: 'var(--r-plumlt)' }}>Physical Refinery</span></div>
-              <div className="comp-cell"><span style={{ color: 'var(--s-jadelt)' }}>Refined</span></div>
+              <div className="comp-cell"><span className="cv-mustard">Kacchi Ghani</span></div>
+              <div className="comp-cell"><span className="cv-rice">Physical Refinery</span></div>
+              <div className="comp-cell"><span className="cv-soy">Refined</span></div>
             </div>
             <div className="comp-row">
               <div className="comp-cell">Smoke Point</div>
-              <div className="comp-cell"><span style={{ color: 'var(--y)' }}>~160°C</span></div>
-              <div className="comp-cell"><span style={{ color: 'var(--r-plumlt)' }}>232°C</span></div>
-              <div className="comp-cell"><span style={{ color: 'var(--s-jadelt)' }}>~240°C</span></div>
+              <div className="comp-cell"><span className="cv-mustard">~160°C</span></div>
+              <div className="comp-cell"><span className="cv-rice">232°C</span></div>
+              <div className="comp-cell"><span className="cv-soy">~240°C</span></div>
             </div>
             <div className="comp-row">
               <div className="comp-cell">Best For</div>
-              <div className="comp-cell" style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>Traditional cooking, marinades, hair & skin</div>
-              <div className="comp-cell" style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>High-heat frying, daily cooking, heart health</div>
-              <div className="comp-cell" style={{ fontSize: '0.8rem', lineHeight: '1.4' }}>Baking, dressings, all-purpose cooking</div>
+              <div className="comp-cell comp-cell-sm">Traditional cooking, marinades, hair &amp; skin</div>
+              <div className="comp-cell comp-cell-sm">High-heat frying, daily cooking, heart health</div>
+              <div className="comp-cell comp-cell-sm">Baking, dressings, all-purpose cooking</div>
             </div>
             <div className="comp-row">
               <div className="comp-cell">Gamma-Oryzanol</div>
               <div className="comp-cell"><div className="cc-no">✕</div></div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--r-plumlt)', background: 'rgba(160,130,255,.12)' }}>✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-rice">✓</div></div>
               <div className="comp-cell"><div className="cc-no">✕</div></div>
             </div>
             <div className="comp-row">
               <div className="comp-cell">Omega-3 Rich</div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--y)' }}>✓</div></div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--r-plumlt)', background: 'rgba(160,130,255,.12)' }}>✓</div></div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--s-jadelt)', background: 'rgba(100,200,100,.12)' }}>✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-mustard">✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-rice">✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-soy">✓</div></div>
             </div>
             <div className="comp-row">
               <div className="comp-cell">Heart Health</div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--y)' }}>✓</div></div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--r-plumlt)', background: 'rgba(160,130,255,.12)' }}>✓</div></div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--s-jadelt)', background: 'rgba(100,200,100,.12)' }}>✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-mustard">✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-rice">✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-soy">✓</div></div>
             </div>
             <div className="comp-row">
               <div className="comp-cell">Anti-inflammatory</div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--y)' }}>✓</div></div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--r-plumlt)', background: 'rgba(160,130,255,.12)' }}>✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-mustard">✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-rice">✓</div></div>
               <div className="comp-cell"><div className="cc-no" style={{ opacity: 0.3 }}>-</div></div>
             </div>
             <div className="comp-row">
               <div className="comp-cell">Neutral Flavour</div>
               <div className="comp-cell"><div className="cc-no">✕</div></div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--r-plumlt)', background: 'rgba(160,130,255,.12)' }}>✓</div></div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--s-jadelt)', background: 'rgba(100,200,100,.12)' }}>✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-rice">✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-soy">✓</div></div>
             </div>
             <div className="comp-row">
               <div className="comp-cell">Vitamin E</div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--y)' }}>✓</div></div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--r-plumlt)', background: 'rgba(160,130,255,.12)' }}>✓</div></div>
-              <div className="comp-cell"><div className="cc-yes" style={{ color: 'var(--s-jadelt)', background: 'rgba(100,200,100,.12)' }}>✓</div></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Why Choose Each (Three Cards) */}
-      <section className="why-three">
-        <div className="wrap">
-          <h2 className="s-h rv" data-d="1">One Brand. <em>Every Kitchen.</em><br/><strong>Every Need.</strong></h2>
-          <div className="wt-grid">
-            <div className="wt-card rv" onClick={() => handleScrollTo('p-mustard')}>
-              <div className="wt-top">
-                <div className="wt-ico wt-ico-mustard"><Flame style={{ width: '28px', height: '28px', color: 'var(--w)' }} /></div>
-              </div>
-              <h3 className="wt-name">Mustard Oil</h3>
-              <p className="wt-desc">For the authentic Indian cook. Traditional pungency, uncompromised nutrition. Perfect for Bengali cuisine and marinades.</p>
-            </div>
-            <div className="wt-card rv" data-d="1" onClick={() => handleScrollTo('p-rice')}>
-              <div className="wt-top">
-                <div className="wt-ico wt-ico-rice"><Heart style={{ width: '28px', height: '28px', color: 'var(--w)' }} /></div>
-              </div>
-              <h3 className="wt-name">Rice Bran Oil</h3>
-              <p className="wt-desc">For health-conscious families and professional kitchens. The gold standard of edible oils, being light, nutritious, and perfect for high-heat cooking.</p>
-            </div>
-            <div className="wt-card rv" data-d="2" onClick={() => handleScrollTo('p-soy')}>
-              <div className="wt-top">
-                <div className="wt-ico wt-ico-soy"><Sprout style={{ width: '28px', height: '28px', color: 'var(--w)' }} /></div>
-              </div>
-              <h3 className="wt-name">Soyabean Oil</h3>
-              <p className="wt-desc">For everyday cooking, baking, and dressings. A light, budget-friendly Omega-3 rich oil that works across every cuisine.</p>
+              <div className="comp-cell"><div className="cc-yes cc-yes-mustard">✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-rice">✓</div></div>
+              <div className="comp-cell"><div className="cc-yes cc-yes-soy">✓</div></div>
             </div>
           </div>
         </div>

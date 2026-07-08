@@ -4,43 +4,30 @@ import AnimatedCounter from '@/components/AnimatedCounter';
 export default function Home() {
   return (
     <section id="view-home" className="view-section active">
-      <div className="hero vh-100">
+      <div className="hero home-hero">
         <div className="hero-bg"></div>
-        <div className="hero-mesh"></div>
-        <div className="hero-wrap grid-2">
-          <div className="hero-left">
-            <div className="h-eyebrow rv"><span className="pulse"></span><span className="eyebrow-t">India's Premium Edible Oils · Est. 2019</span></div>
-            <h1 className="h1 rv" data-d="1">
-              <span className="h1-a">Pure Choice.</span>
-              <span className="h1-b">Healthy Life.</span>
-              <span className="h1-c">Happy Home.</span>
-            </h1>
-            <p className="h-desc rv" data-d="2">Forty years of rice bran expertise, crafted into premium edible oils. Directly from our Burdwan refinery to your kitchen.</p>
-            <div className="h-btns rv" data-d="3">
-              <Link href="/products" className="btn-y">Explore Range</Link>
-              <Link href="/about" className="btn-outline">Our Story</Link>
-            </div>
-          </div>
-          <div className="hero-right rv" data-d="2">
-            <div className="h-scene">
-              <div className="s-glow"></div>
-              <div className="s-ring sr1"></div>
-              <div className="s-ring sr2"></div>
-              <div className="bottle-wrap">
-                <svg width="180" height="380" viewBox="0 0 200 400" fill="none">
-                  <path d="M66 80 C66 66 74 58 82 54 L118 54 C126 58 134 66 134 80 L148 152 C156 168 160 184 160 200 L160 346 C160 360 149 370 136 370 L64 370 C51 370 40 360 40 346 L40 200 C40 184 44 168 52 152 Z" fill="url(#bg1)"/>
-                  <rect x="50" y="212" width="100" height="116" rx="10" fill="#FEDC06"/>
-                  <text x="100" y="254" fontFamily="var(--font-fraunces),Georgia,serif" fontSize="14" fontWeight="600" fill="#2D1660" textAnchor="middle">Jeevan Rekha</text>
-                  <text x="100" y="278" fontFamily="var(--font-instrument-sans),sans-serif" fontSize="10" fontWeight="500" letterSpacing="0.1em" fill="#2D1660" textAnchor="middle">PREMIUM OIL</text>
-                  <rect x="76" y="40" width="48" height="18" rx="9" fill="#FFE84D"/>
-                  <defs><linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stopColor="#7540C8"/><stop offset="100%" stopColor="#160840"/></linearGradient></defs>
-                </svg>
-              </div>
-              <div className="d-chip dc-a"><div className="dc-n">232°C</div><div className="dc-l">Smoke Point</div></div>
-              <div className="d-chip dc-b"><div className="dc-n">γ-Oryzanol</div><div className="dc-l">Antioxidant</div></div>
-            </div>
+        <div className="hero-mesh home-hero-mesh"></div>
+        {/* Desktop: absolutely positioned background div — hidden on mobile via CSS */}
+        <div className="home-hero-img home-hero-img-bg" aria-hidden="true"></div>
+        {/* Copy block: text + buttons */}
+        <div className="hero-wrap home-hero-copy rv">
+          <h1 className="h1">
+            Pure Choice. <em>Healthy Life.</em> Happy Home.
+          </h1>
+          <p className="h-desc">
+            Premium edible oils crafted with 40+ years of rice bran expertise.
+          </p>
+          <div className="h-btns">
+            <Link href="/products" className="btn-y">Explore Range</Link>
+            <Link href="/about" className="btn-outline">Our Story</Link>
           </div>
         </div>
+        {/* Mobile only: inline product image — sits below copy as flex sibling, fills remaining height */}
+        <img
+          src="/jr_products_showcase_transparent.png"
+          alt="Jeevan Rekha product range"
+          className="home-hero-img-mobile"
+        />
       </div>
 
       <div className="ticker">

@@ -440,40 +440,18 @@ export default function Contact() {
             </div>
 
             <div className="factory-right">
-              <div className="plant-capacity-card">
-                <div className="plant-capacity-header">
-                  <span className="capacity-eyebrow">Established 2019</span>
-                  <h3 className="capacity-title">Refinery Processing Capacity</h3>
+              <div className="factory-visual-card">
+                <div className="factory-visual-img-wrap">
+                  <img src="/factory_top_view.jpg" alt="Aerial view of Jeevan Rekha Burdwan Plant" loading="lazy" />
                 </div>
-                <div className="capacity-stats-grid">
-                  <div className="capacity-stat-box">
-                    <div className="stat-value">300<span className="stat-unit">TPD</span></div>
-                    <div className="stat-label">Solvent Extraction Capacity</div>
+                <div className="factory-visual-meta">
+                  <div className="factory-meta-col">
+                    <span className="factory-meta-label">FACILITY LOCATION</span>
+                    <span className="factory-meta-value">Burdwan Hub</span>
                   </div>
-                  <div className="capacity-stat-box">
-                    <div className="stat-value">150<span className="stat-unit">TPD</span></div>
-                    <div className="stat-label">Physical Refining Capacity</div>
-                  </div>
-                </div>
-                <div className="plant-capabilities-list">
-                  <h4 className="capabilities-title">Plant Capabilities</h4>
-                  <div className="capability-items">
-                    <div className="capability-item">
-                      <Check size={14} color="var(--p)" strokeWidth={3} />
-                      <span>Multi-stage physical refining without caustic soda</span>
-                    </div>
-                    <div className="capability-item">
-                      <Check size={14} color="var(--p)" strokeWidth={3} />
-                      <span>Fully automated continuous workflow systems</span>
-                    </div>
-                    <div className="capability-item">
-                      <Check size={14} color="var(--p)" strokeWidth={3} />
-                      <span>Enzymatic degumming for enhanced nutrient retention</span>
-                    </div>
-                    <div className="capability-item">
-                      <Check size={14} color="var(--p)" strokeWidth={3} />
-                      <span>State-of-the-art quality control and testing lab</span>
-                    </div>
+                  <div className="factory-meta-col" style={{ paddingLeft: '24px' }}>
+                    <span className="factory-meta-label">PROCESSING CAPACITY</span>
+                    <span className="factory-meta-value">300 TPD / 150 TPD</span>
                   </div>
                 </div>
               </div>
