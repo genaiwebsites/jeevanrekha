@@ -2624,6 +2624,9 @@ footer {
   aspect-ratio: 2560 / 1279; /* Exact 2:1 ratio of the banners */
   overflow: hidden;
   background: var(--bk);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
 }
 .slider-track {
   display: flex;
