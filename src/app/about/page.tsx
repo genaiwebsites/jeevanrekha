@@ -41,12 +41,12 @@ export default function About() {
                 <div className="refinery-spec-cell">
                   <div className="refinery-spec-label">LOCATION</div>
                   <div className="refinery-spec-value">Burdwan</div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', marginTop: '4px' }}>
-                    <span className="relative flex h-1.5 w-1.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                  <div className="refinery-spec-desc" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <span className="relative flex h-1.5 w-1.5" style={{ transform: 'translateY(1px)' }}>
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ backgroundColor: 'var(--y)' }}></span>
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5" style={{ backgroundColor: 'var(--y)' }}></span>
                     </span>
-                    <span className="refinery-spec-desc" style={{ color: 'var(--s-jadelt)' }}>150 TPD active refinery</span>
+                    <span>150 TPD active refinery</span>
                   </div>
                 </div>
                 

@@ -1992,8 +1992,8 @@ footer {
 }
 .refinery-spec-desc {
   font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.45);
-  font-weight: 400;
+  color: var(--y); /* Accent yellow brand color */
+  font-weight: 500;
   line-height: 1.35;
 }
 
