@@ -2617,71 +2617,40 @@ footer {
   }
 }
 
-/* Products Hero Banner Slider */
-.products-hero-slider {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 2560 / 1279; /* Exact 2:1 ratio of the banners */
-  overflow: hidden;
-  background: var(--bk);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
-}
-.slider-track {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.slide {
-  width: 100%;
-  height: 100%;
-  flex-shrink: 0;
-}
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* ensures NO cropping at all */
-  display: block;
-}
-
-/* Slider Controls */
-.slider-arrow {
+/* Hero Background Banner Slideshow */
+.hero-bg-slider {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(10, 6, 30, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--w);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  transition: all 0.3s var(--ease);
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
 }
-.slider-arrow:hover {
-  background: var(--y);
-  color: var(--pd);
-  border-color: var(--y);
-  box-shadow: 0 0 16px rgba(254, 220, 6, 0.4);
+.hero-bg-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: right center; /* aligns banner content to the right side */
 }
-.slider-arrow svg {
-  width: 24px;
-  height: 24px;
-  fill: currentColor;
+.hero-bg-slide.active {
+  opacity: 0.85; /* high opacity for rich visuals, readability is handled by the scrim */
 }
-.slider-arrow.prev {
-  left: 24px;
-}
-.slider-arrow.next {
-  right: 24px;
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to right,
+    rgba(10, 6, 30, 0.95) 0%,
+    rgba(10, 6, 30, 0.82) 40%,
+    rgba(10, 6, 30, 0.4) 70%,
+    rgba(10, 6, 30, 0.1) 100%
+  );
+  pointer-events: none;
 }
 
+/* Slider Dots Control */
 .slider-dots {
   position: absolute;
   bottom: 20px;
@@ -2707,14 +2676,15 @@ footer {
   box-shadow: 0 0 8px var(--y);
 }
 
-/* Responsive adjustments */
+/* Mobile responsive adjustments */
 @media (max-width: 768px) {
-  .slider-arrow {
-    width: 36px;
-    height: 36px;
+  .hero-bg-slide {
+    background-size: cover; /* cover container on mobile to prevent letterboxing gaps */
+    background-position: center center;
   }
-  .slider-arrow.prev { left: 12px; }
-  .slider-arrow.next { right: 12px; }
+  .hero-scrim {
+    background: rgba(10, 6, 30, 0.75); /* flat dark overlay on mobile for absolute readability */
+  }
   .slider-dots { bottom: 12px; }
   .slider-dot { width: 8px; height: 8px; }
 }
