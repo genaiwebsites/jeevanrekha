@@ -1933,7 +1933,7 @@ footer {
   position: relative;
   width: 100%;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(10, 6, 30, 0.5); /* Matches grid background to hide subpixel gaps */
 }
 .refinery-spec-img-wrap img {
   width: 100%;
