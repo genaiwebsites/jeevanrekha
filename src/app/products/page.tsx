@@ -10,9 +10,9 @@ export default function Products() {
   const autoplayRef = useRef<NodeJS.Timeout | null>(null);
 
   const slides = [
-    '/banners/product_banner_stock1.jpeg',
-    '/banners/product_banner_rbo.jpeg',
-    '/banners/product_banner_kgmo.jpeg'
+    { src: '/banners/product_banner_stock1.jpeg', bgColor: '#030200' },
+    { src: '/banners/product_banner_rbo.jpeg', bgColor: '#3A0674' },
+    { src: '/banners/product_banner_kgmo.jpeg', bgColor: '#9B0D03' }
   ];
 
   const resetAutoplay = () => {
@@ -88,14 +88,24 @@ export default function Products() {
         
         {/* Background Banner Slideshow */}
         <div className="hero-bg-slider">
-          {slides.map((src, i) => (
+          {slides.map((slide, i) => (
             <div 
               key={i} 
               className={`hero-bg-slide ${currentSlide === i ? 'active' : ''}`}
-              style={{ backgroundImage: `url(${src})` }}
-            />
+              style={{ 
+                backgroundImage: `url(${slide.src})`,
+                backgroundColor: slide.bgColor
+              }}
+            >
+              {/* Dynamic slide-specific scrim that blends the solid left background with the image */}
+              <div 
+                className="hero-scrim" 
+                style={{ 
+                  background: `linear-gradient(to right, ${slide.bgColor} 0%, ${slide.bgColor}cc 40%, ${slide.bgColor}40 70%, transparent 100%)` 
+                }}
+              />
+            </div>
           ))}
-          <div className="hero-scrim"></div>
         </div>
 
         <div className="hero-wrap rv">

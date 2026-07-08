@@ -2629,24 +2629,17 @@ footer {
   inset: 0;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
-  background-size: 100% auto;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: right center; /* aligns banner content to the right side */
 }
 .hero-bg-slide.active {
-  opacity: 0.85; /* high opacity for rich visuals, readability is handled by the scrim */
+  opacity: 0.95; /* high opacity for rich, uncropped visuals */
 }
 .hero-scrim {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(
-    to right,
-    rgba(10, 6, 30, 0.95) 0%,
-    rgba(10, 6, 30, 0.82) 40%,
-    rgba(10, 6, 30, 0.4) 70%,
-    rgba(10, 6, 30, 0.1) 100%
-  );
   pointer-events: none;
 }
 
@@ -2679,11 +2672,15 @@ footer {
 /* Mobile responsive adjustments */
 @media (max-width: 768px) {
   .hero-bg-slide {
-    background-size: cover; /* cover container on mobile to prevent letterboxing gaps */
+    background-size: contain; /* ensures NO cropping on mobile screen widths */
     background-position: center center;
   }
   .hero-scrim {
-    background: rgba(10, 6, 30, 0.75); /* flat dark overlay on mobile for absolute readability */
+    background: linear-gradient(
+      to bottom,
+      rgba(10, 6, 30, 0.6) 0%,
+      rgba(10, 6, 30, 0.85) 100%
+    ) !important; /* dark overlay on mobile for clear copy reading */
   }
   .slider-dots { bottom: 12px; }
   .slider-dot { width: 8px; height: 8px; }
