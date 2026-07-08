@@ -5,7 +5,48 @@ import Link from 'next/link';
 
 export default function Products() {
   const [activeTab, setActiveTab] = useState('p-rice');
+  const [currentSlide, setCurrentSlide] = useState(0);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
+  const autoplayRef = useRef<NodeJS.Timeout | null>(null);
+
+  const slides = [
+    '/banners/product_banner_stock1.jpeg',
+    '/banners/product_banner_rbo.jpeg',
+    '/banners/product_banner_kgmo.jpeg'
+  ];
+
+  const resetAutoplay = () => {
+    if (autoplayRef.current) {
+      clearInterval(autoplayRef.current);
+    }
+    autoplayRef.current = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+  };
+
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    resetAutoplay();
+  };
+
+  const handlePrev = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    resetAutoplay();
+  };
+
+  const handleDotClick = (index: number) => {
+    setCurrentSlide(index);
+    resetAutoplay();
+  };
+
+  useEffect(() => {
+    resetAutoplay();
+    return () => {
+      if (autoplayRef.current) {
+        clearInterval(autoplayRef.current);
+      }
+    };
+  }, []);
 
   const handleScrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -41,13 +82,33 @@ export default function Products() {
 
   return (
     <section id="view-products" className="view-section active">
-      <div className="hero vh-auto" style={{ paddingBottom: '60px' }}>
-        <div className="hero-bg"></div>
-        <div className="hero-mesh"></div>
-        <div className="hero-wrap rv">
-          <div className="h-eyebrow"><span className="pulse"></span><span className="eyebrow-t">Our Collection</span></div>
-          <h1 className="h1"><strong>Our</strong> Range of<br/><em>Finest Edible Oils</em></h1>
-          <p className="h-desc">Three oils. One standard of uncompromising purity. Each crafted with 40+ years of expertise for hearts that beat healthier and kitchens that cook happier.</p>
+      <div className="products-hero-slider">
+        <div className="slider-track" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+          {slides.map((src, i) => (
+            <div className="slide" key={i}>
+              <img src={src} alt={`Jeevan Rekha Banner ${i + 1}`} />
+            </div>
+          ))}
+        </div>
+        
+        {/* Navigation Arrows */}
+        <button className="slider-arrow prev" onClick={handlePrev} aria-label="Previous slide">
+          <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        </button>
+        <button className="slider-arrow next" onClick={handleNext} aria-label="Next slide">
+          <svg viewBox="0 0 24 24"><path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/></svg>
+        </button>
+
+        {/* Navigation Dots */}
+        <div className="slider-dots">
+          {slides.map((_, i) => (
+            <button 
+              key={i} 
+              className={`slider-dot ${currentSlide === i ? 'active' : ''}`} 
+              onClick={() => handleDotClick(i)}
+              aria-label={`Go to slide ${i + 1}`}
+            />
+          ))}
         </div>
       </div>
 
