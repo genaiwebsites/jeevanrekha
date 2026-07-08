@@ -110,7 +110,6 @@ export default function Products() {
         </div>
 
         <div className="hero-wrap rv">
-          <div className="h-eyebrow"><span className="pulse"></span><span className="eyebrow-t">Our Collection</span></div>
           <h1 className="h1"><strong>Our</strong> Range of<br/><em>Finest Edible Oils</em></h1>
           <p className="h-desc">Three oils. One standard of uncompromising purity. Each crafted with 40+ years of expertise for hearts that beat healthier and kitchens that cook happier.</p>
         </div>
