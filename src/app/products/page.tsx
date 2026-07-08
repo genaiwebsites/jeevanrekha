@@ -101,7 +101,7 @@ export default function Products() {
                 <div 
                   className="slide-image-mask" 
                   style={{ 
-                    background: `linear-gradient(to right, ${slide.bgColor} 0%, ${slide.bgColor}f2 12%, ${slide.bgColor}80 35%, transparent 70%)` 
+                    background: `linear-gradient(to right, ${slide.bgColor} 0%, ${slide.bgColor}f2 10%, ${slide.bgColor}60 25%, transparent 45%)` 
                   }}
                 />
               </div>
