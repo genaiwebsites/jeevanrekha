@@ -4,6 +4,82 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import AnimatedCounter from '@/components/AnimatedCounter';
 
+const row1Reviews = [
+  {
+    name: "Subhashis Mukherjee",
+    loc: "Salt Lake City, Kolkata",
+    txt: "Switched to Jeevan Rekha Rice Bran Oil on my cardiologist's advice. My LDL has dropped noticeably and the food tastes so much lighter.",
+    initials: "SM",
+    avClass: "av-p"
+  },
+  {
+    name: "Chef Bikramjit Dey",
+    loc: "Owner, 'The Golden Wok', Siliguri",
+    txt: "We use Jeevan Rekha Soyabean Oil for all our Indo-Chinese stir-fries. It doesn't break down at high flame, holds taste perfectly, and is incredibly cost-effective.",
+    initials: "BD",
+    avClass: "av-y"
+  },
+  {
+    name: "Rakesh Sharma",
+    loc: "Catering Manager, Utsav Banquets, Dhanbad",
+    txt: "For our large wedding caterings, Jeevan Rekha Rice Bran Oil is our top choice. The low absorption rate means our pooris and pakoras stay crisp without being greasy.",
+    initials: "RS",
+    avClass: "av-g"
+  },
+  {
+    name: "Rina Biswas",
+    loc: "Ballygunge, Kolkata",
+    txt: "The Kacchi Ghani Mustard Oil is extraordinary, with that authentic pungency and deep golden colour making our machher jhol taste just like grandmother's recipe.",
+    initials: "RB",
+    avClass: "av-y"
+  },
+  {
+    name: "Chef Sneha Maitra",
+    loc: "Cloud Kitchen Operator, Guwahati",
+    txt: "Using Jeevan Rekha Kacchi Ghani Mustard oil in our cloud kitchen has elevated our traditional Assamese and Bengali dishes. Customers love the strong aroma.",
+    initials: "SM",
+    avClass: "av-p"
+  }
+];
+
+const row2Reviews = [
+  {
+    name: "Animesh Chatterjee",
+    loc: "Tollygunge, Kolkata",
+    txt: "I run a catering business and switched to Jeevan Rekha bulk packs. The high smoke point means less oil absorption in fried dishes. My clients notice the difference.",
+    initials: "AC",
+    avClass: "av-g"
+  },
+  {
+    name: "Gurpreet Singh",
+    loc: "Owner, Sher-e-Punjab Dhaba, Asansol",
+    txt: "For our tandoori marinades and daily curries, we trust only Jeevan Rekha Mustard Oil. Purity is 100%, and the pungency is just right for authentic taste.",
+    initials: "GS",
+    avClass: "av-p"
+  },
+  {
+    name: "Mrs. Moushumi Sen",
+    loc: "Home Baker & Café Owner, Ranchi",
+    txt: "Jeevan Rekha Soyabean Oil is so neutral and light. I use it for baking tea cakes and making mayonnaise from scratch. It blends beautifully without any heavy aftertaste.",
+    initials: "MS",
+    avClass: "av-y"
+  },
+  {
+    name: "Rajesh Patel",
+    loc: "F&B Director, Royal Palace Hotel, Durgapur",
+    txt: "Switched our entire kitchen operations to Jeevan Rekha Rice Bran Oil 6 months ago. The consistency across batches is excellent, and it saves us oil consumption.",
+    initials: "RP",
+    avClass: "av-g"
+  },
+  {
+    name: "Tenzing Norbu",
+    loc: "Chef, Himalaya Cafe, Gangtok",
+    txt: "Our momo fry and chowmein require a very neutral, high smoke point oil. Jeevan Rekha Soyabean Oil works perfectly. Extremely light on the stomach!",
+    initials: "TN",
+    avClass: "av-p"
+  }
+];
+
 export default function Home() {
   const bgRef = useRef<HTMLDivElement>(null);
   const copyRef = useRef<HTMLDivElement>(null);
@@ -300,10 +376,75 @@ export default function Home() {
           <div className="testi-hd">
             <h2 className="s-h rv" data-d="1">Trusted by <em>Thousands</em><br/>Across <strong>India</strong></h2>
           </div>
-          <div className="tgrid">
-            <div className="tc rv"><div className="t-qm">"</div><div className="t-stars">★★★★★</div><p className="t-txt">Switched to Jeevan Rekha Rice Bran Oil on my cardiologist's advice. My LDL has dropped noticeably and the food tastes so much lighter.</p><div className="t-auth"><div className="t-av av-p">SM</div><div><div className="t-name">Subhashis Mukherjee</div><div className="t-loc">Salt Lake City, Kolkata</div></div></div></div>
-            <div className="tc rv" data-d="1"><div className="t-qm">"</div><div className="t-stars">★★★★★</div><p className="t-txt">The Kacchi Ghani Mustard Oil is extraordinary, with that authentic pungency and deep golden colour making our machher jhol taste just like grandmother's recipe.</p><div className="t-auth"><div className="t-av av-y">RB</div><div><div className="t-name">Rina Biswas</div><div className="t-loc">Ballygunge, Kolkata</div></div></div></div>
-            <div className="tc rv" data-d="2"><div className="t-qm">"</div><div className="t-stars">★★★★★</div><p className="t-txt">I run a catering business and switched to Jeevan Rekha bulk packs. The high smoke point means less oil absorption in fried dishes. My clients notice the difference.</p><div className="t-auth"><div className="t-av av-g">AC</div><div><div className="t-name">Animesh Chatterjee</div><div className="t-loc">Tollygunge, Kolkata</div></div></div></div>
+        </div>
+        
+        <div className="testi-marquee-wrap">
+          {/* Row 1: Flowing Left */}
+          <div className="marquee-container">
+            <div className="marquee-track-l">
+              {row1Reviews.map((rev, i) => (
+                <div key={`r1-${i}`} className="tc">
+                  <div className="t-qm">"</div>
+                  <div className="t-stars">★★★★★</div>
+                  <p className="t-txt">{rev.txt}</p>
+                  <div className="t-auth">
+                    <div className={`t-av ${rev.avClass}`}>{rev.initials}</div>
+                    <div>
+                      <div className="t-name">{rev.name}</div>
+                      <div className="t-loc">{rev.loc}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {row1Reviews.map((rev, i) => (
+                <div key={`r1-dup-${i}`} className="tc" aria-hidden="true">
+                  <div className="t-qm">"</div>
+                  <div className="t-stars">★★★★★</div>
+                  <p className="t-txt">{rev.txt}</p>
+                  <div className="t-auth">
+                    <div className={`t-av ${rev.avClass}`}>{rev.initials}</div>
+                    <div>
+                      <div className="t-name">{rev.name}</div>
+                      <div className="t-loc">{rev.loc}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Row 2: Flowing Right */}
+          <div className="marquee-container" style={{ marginTop: '24px' }}>
+            <div className="marquee-track-r">
+              {row2Reviews.map((rev, i) => (
+                <div key={`r2-${i}`} className="tc">
+                  <div className="t-qm">"</div>
+                  <div className="t-stars">★★★★★</div>
+                  <p className="t-txt">{rev.txt}</p>
+                  <div className="t-auth">
+                    <div className={`t-av ${rev.avClass}`}>{rev.initials}</div>
+                    <div>
+                      <div className="t-name">{rev.name}</div>
+                      <div className="t-loc">{rev.loc}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {row2Reviews.map((rev, i) => (
+                <div key={`r2-dup-${i}`} className="tc" aria-hidden="true">
+                  <div className="t-qm">"</div>
+                  <div className="t-stars">★★★★★</div>
+                  <p className="t-txt">{rev.txt}</p>
+                  <div className="t-auth">
+                    <div className={`t-av ${rev.avClass}`}>{rev.initials}</div>
+                    <div>
+                      <div className="t-name">{rev.name}</div>
+                      <div className="t-loc">{rev.loc}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

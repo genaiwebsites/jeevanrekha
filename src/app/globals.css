@@ -471,21 +471,78 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 .testi { padding: 116px 0; background: var(--off); }
 .testi-hd { text-align: center; margin-bottom: 68px; }
 .testi-hd .kicker { justify-content: center; }
-.tgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-.tc { background: var(--w); border-radius: 26px; padding: 46px 38px; border: 1px solid rgba(75,38,133,.07); position: relative; overflow: hidden; transition: all .5s var(--ease); }
-.tc:hover { transform: translateY(-10px); box-shadow: 0 48px 120px rgba(75,38,133,.16); border-color: rgba(75,38,133,.14); }
+/* Testimonials Marquee Styling */
+.testi-marquee-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow: hidden;
+  width: 100%;
+}
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  padding: 10px 0;
+  display: flex;
+}
+.marquee-container::before,
+.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 10;
+  pointer-events: none;
+}
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--off) 0%, transparent 100%);
+}
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(-90deg, var(--off) 0%, transparent 100%);
+}
+.marquee-track-l {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  animation: marquee-l 40s linear infinite;
+}
+.marquee-track-r {
+  display: flex;
+  gap: 22px;
+  width: max-content;
+  animation: marquee-r 40s linear infinite;
+}
+.marquee-track-l:hover, .marquee-track-r:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-l {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-r {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.tc { background: var(--w); border-radius: 16px; padding: 24px 28px; border: 1px solid rgba(75,38,133,.05); position: relative; overflow: hidden; width: 320px; flex-shrink: 0; transition: all .4s var(--ease); }
+.tc:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(75,38,133,.08); border-color: rgba(75,38,133,.12); }
 .tc::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--p), var(--y)); transform: scaleX(0); transform-origin: left; transition: transform .5s var(--ease); }
 .tc:hover::after { transform: scaleX(1); }
-.t-qm { font-family: var(--fd); font-size: 5.5rem; line-height: .75; color: var(--y); margin-bottom: 8px; font-style: italic; }
-.t-stars { color: var(--p); font-size: .88rem; letter-spacing: 3px; margin-bottom: 16px; }
-.t-txt { font-size: .91rem; line-height: 1.84; color: var(--g60); font-style: italic; font-weight: 400; margin-bottom: 30px; }
-.t-auth { display: flex; align-items: center; gap: 14px; }
-.t-av { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--fd); font-size: .92rem; font-weight: 400; color: var(--w); flex-shrink: 0; }
+.t-qm { font-family: var(--fd); font-size: 3.5rem; line-height: .75; color: var(--y); margin-bottom: 4px; font-style: italic; }
+.t-stars { color: var(--p); font-size: .75rem; letter-spacing: 2px; margin-bottom: 10px; }
+.t-txt { font-size: .82rem; line-height: 1.6; color: var(--g60); font-style: italic; font-weight: 400; margin-bottom: 18px; }
+.t-auth { display: flex; align-items: center; gap: 12px; }
+.t-av { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--fd); font-size: .8rem; font-weight: 400; color: var(--w); flex-shrink: 0; }
 .av-p { background: linear-gradient(135deg, var(--p), var(--pm)); }
 .av-y { background: linear-gradient(135deg, var(--y), var(--yd)); color: var(--pd); }
 .av-g { background: linear-gradient(135deg, #4CAF50, #1B5E20); }
-.t-name { font-weight: 600; font-size: .9rem; color: var(--bk); }
-.t-loc { font-size: .71rem; color: var(--g60); margin-top: 2px; }
+.t-name { font-weight: 600; font-size: .82rem; color: var(--bk); }
+.t-loc { font-size: .65rem; color: var(--g60); margin-top: 1px; }
 
 /* ═══════════════════ ABOUT MODULES ═══════════════════ */
 .history-section {
