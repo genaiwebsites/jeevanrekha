@@ -1,16 +1,80 @@
+"use client";
+
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import AnimatedCounter from '@/components/AnimatedCounter';
 
 export default function Home() {
+  const bgRef = useRef<HTMLDivElement>(null);
+  const copyRef = useRef<HTMLDivElement>(null);
+  const meshRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    let isDesktop = window.innerWidth > 768;
+    
+    const handleResize = () => {
+      isDesktop = window.innerWidth > 768;
+      if (!isDesktop) {
+        if (bgRef.current) bgRef.current.style.transform = '';
+        if (copyRef.current) {
+          copyRef.current.style.transform = '';
+          copyRef.current.style.opacity = '';
+        }
+        if (meshRef.current) {
+          meshRef.current.style.transform = '';
+          meshRef.current.style.opacity = '';
+        }
+      }
+    };
+    
+    let ticking = false;
+    const handleScroll = () => {
+      if (!isDesktop) return;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollY = window.scrollY;
+          const viewportHeight = window.innerHeight;
+          
+          if (scrollY < viewportHeight) {
+            // Background mesh: moves slow, grows slightly, fades out
+            if (meshRef.current) {
+              meshRef.current.style.transform = `translateY(${scrollY * 0.12}px) scale(${1 + scrollY * 0.0001})`;
+              meshRef.current.style.opacity = String(Math.max(0, 1 - scrollY / (viewportHeight * 0.8)));
+            }
+            // Product image: translates slower to appear physically deeper in the background
+            if (bgRef.current) {
+              bgRef.current.style.transform = `translateY(${scrollY * 0.2}px)`;
+            }
+            // Copy text: floats up faster to overlap the depth layer, fading away gracefully
+            if (copyRef.current) {
+              copyRef.current.style.transform = `translateY(${scrollY * 0.42}px)`;
+              copyRef.current.style.opacity = String(Math.max(0, 1 - scrollY / (viewportHeight * 0.65)));
+            }
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <section id="view-home" className="view-section active">
       <div className="hero home-hero">
         <div className="hero-bg"></div>
-        <div className="hero-mesh home-hero-mesh"></div>
+        <div className="hero-mesh home-hero-mesh" ref={meshRef}></div>
         {/* Desktop: absolutely positioned background div — hidden on mobile via CSS */}
-        <div className="home-hero-img home-hero-img-bg" aria-hidden="true"></div>
+        <div className="home-hero-img home-hero-img-bg" aria-hidden="true" ref={bgRef}></div>
         {/* Copy block: text + buttons */}
-        <div className="hero-wrap home-hero-copy rv">
+        <div className="hero-wrap home-hero-copy rv" ref={copyRef}>
           <h1 className="h1">
             Pure Choice. <em>Healthy Life.</em> Happy Home.
           </h1>
