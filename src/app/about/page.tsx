@@ -41,25 +41,25 @@ export default function About() {
                 <div className="refinery-spec-cell">
                   <div className="refinery-spec-label">LOCATION</div>
                   <div className="refinery-spec-value">Burdwan</div>
-                  <div className="refinery-spec-desc" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                    <span className="relative flex h-1.5 w-1.5" style={{ transform: 'translateY(1px)' }}>
+                  <div className="refinery-spec-desc" style={{ position: 'relative', color: 'var(--y)' }}>
+                    <span className="flex h-1.5 w-1.5" style={{ position: 'absolute', left: '-12px', top: '50%', transform: 'translateY(-50%)' }}>
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75" style={{ backgroundColor: 'var(--y)' }}></span>
                       <span className="relative inline-flex rounded-full h-1.5 w-1.5" style={{ backgroundColor: 'var(--y)' }}></span>
                     </span>
-                    <span>150 TPD active refinery</span>
+                    150 TPD active refinery
                   </div>
                 </div>
                 
                 <div className="refinery-spec-cell">
                   <div className="refinery-spec-label">ESTABLISHED</div>
                   <div className="refinery-spec-value">2019</div>
-                  <div className="refinery-spec-desc">AB Udyog Pvt. Ltd.</div>
+                  <div className="refinery-spec-desc" style={{ color: 'var(--y)' }}>AB Udyog Pvt. Ltd.</div>
                 </div>
                 
                 <div className="refinery-spec-cell">
                   <div className="refinery-spec-label">EXPERTISE</div>
                   <div className="refinery-spec-value">40+ Years</div>
-                  <div className="refinery-spec-desc">Rice bran pioneers</div>
+                  <div className="refinery-spec-desc" style={{ color: 'var(--y)' }}>Rice bran pioneers</div>
                 </div>
               </div>
             </div>

@@ -55,7 +55,7 @@ export default function Navbar() {
         </ul>
         
         <div className="nav-cta-wrap">
-          <Link href="/contact" className="nav-cta">Get in Touch</Link>
+
           <div 
             className="mobile-toggle" 
             onClick={() => setIsMobileOpen(!isMobileOpen)}
