@@ -118,16 +118,15 @@ export default function About() {
                 
                 {/* Burdwan Processing Section */}
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <div className="hist-card-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
-                    <div className="hist-card-icon" style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'var(--pl)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+                    <div className="hist-card-icon" style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'var(--pl)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 0 }}>
                       <Factory style={{ color: 'var(--p)', width: '22px', height: '22px' }} />
                     </div>
-                    <div className="hist-card-num" style={{ textAlign: 'right', fontFamily: 'var(--fd)', fontWeight: 700, fontStyle: 'italic', fontSize: '1.8rem', color: 'var(--p)', lineHeight: 1 }}>
-                      Burdwan<br />
-                      <span style={{ fontSize: '0.85rem', color: 'var(--g60)', fontStyle: 'normal', fontWeight: 500 }}>West Bengal</span>
+                    <div>
+                      <h4 style={{ fontFamily: 'var(--fd)', fontSize: '1.2rem', fontWeight: 700, color: 'var(--bk)', margin: 0 }}>Burdwan Processing Facility</h4>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--g60)', fontWeight: 500 }}>Burdwan, West Bengal</span>
                     </div>
                   </div>
-                  <h4 style={{ fontFamily: 'var(--fd)', fontSize: '1.25rem', fontWeight: 700, color: 'var(--bk)', marginBottom: '8px' }}>Burdwan Processing Facility</h4>
                   <p style={{ fontSize: '0.88rem', lineHeight: '1.6', color: 'var(--g60)', marginBottom: '20px' }}>
                     Our flagship facility houses two world-class refining and extraction units operating under strict quality controls to deliver pure, premium edible oils.
                   </p>
@@ -148,16 +147,15 @@ export default function About() {
 
                 {/* Industrial & Wholesale Supply Section */}
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <div className="hist-card-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
-                    <div className="hist-card-icon" style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'var(--pl)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '20px' }}>
+                    <div className="hist-card-icon" style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'var(--pl)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: 0 }}>
                       <Handshake style={{ color: 'var(--p)', width: '22px', height: '22px' }} />
                     </div>
-                    <div className="hist-card-num" style={{ textAlign: 'right', fontFamily: 'var(--fd)', fontWeight: 700, fontStyle: 'italic', fontSize: '1.8rem', color: 'var(--p)', lineHeight: 1 }}>
-                      Pan-India<br />
-                      <span style={{ fontSize: '0.85rem', color: 'var(--g60)', fontStyle: 'normal', fontWeight: 500 }}>Supply Network</span>
+                    <div>
+                      <h4 style={{ fontFamily: 'var(--fd)', fontSize: '1.2rem', fontWeight: 700, color: 'var(--bk)', margin: 0 }}>Industrial & Wholesale Supply</h4>
+                      <span style={{ fontSize: '0.8rem', color: 'var(--g60)', fontWeight: 500 }}>Pan-India Supply Network</span>
                     </div>
                   </div>
-                  <h4 style={{ fontFamily: 'var(--fd)', fontSize: '1.25rem', fontWeight: 700, color: 'var(--bk)', marginBottom: '8px' }}>Industrial & Wholesale Supply</h4>
                   <p style={{ fontSize: '0.88rem', lineHeight: '1.6', color: 'var(--g60)' }}>
                     We supply bulk edible oils and rice bran derivatives to snack manufacturers, food processing plants, and industrial buyers across the country, supported by efficient logistics.
                   </p>
