@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Cormorant_Garamond, Kumbh_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
@@ -15,11 +15,10 @@ const cormorantGaramond = Cormorant_Garamond({
   style: ["normal", "italic"],
 });
 
-const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
+const kumbhSans = Kumbh_Sans({
+  variable: "--font-kumbh-sans",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  style: ["normal", "italic"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -94,7 +93,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(cormorantGaramond.variable, plusJakartaSans.variable, ibmPlexMono.variable)}
+      className={cn(cormorantGaramond.variable, kumbhSans.variable, ibmPlexMono.variable)}
     >
       <head>
         <JsonLd />

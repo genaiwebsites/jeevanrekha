@@ -35,8 +35,8 @@ tokens:
       family: "Cormorant Garamond, Georgia, serif"
       weights: [300, 400, 500, 600, 700]
     body:
-      family: "Plus Jakarta Sans, system-ui, sans-serif"
-      weights: [400, 500, 600, 700, 800]
+      family: "Kumbh Sans, system-ui, sans-serif"
+      weights: [300, 400, 500, 600, 700, 800, 900]
     mono:
       family: "IBM Plex Mono, monospace"
       weights: [400, 600, 700]
@@ -77,7 +77,7 @@ Our color palette establishes a clear division between rich premium spaces, scie
 ## 3. Typography
 We use typography to reinforce both our traditional heritage and scientific transparency:
 - **Display Typography (`Cormorant Garamond` / `--fd`)**: An elegant, high-contrast serif font utilized for main headers and section titles. We use custom font-style pairings (like *italic* emphasis and **bold** weights) to build a sophisticated, editorial rhythm.
-- **Body Typography (`Plus Jakarta Sans` / `--fb`)**: A crisp, highly legible contemporary sans-serif typeface used for descriptions, benefit details, navigation links, and primary content.
+- **Body Typography (`Kumbh Sans` / `--fb`)**: A crisp, highly legible contemporary sans-serif typeface used for descriptions, benefit details, navigation links, and primary content.
 - **Precision Labeling (`IBM Plex Mono` / `--f-tech`)**: A technical monospaced typeface used for smoke points, molecular formulas (e.g. *γ-Oryzanol*), metrics, and processing capacities. This anchors the engineering side of our production.
 
 ## 4. Elevation
