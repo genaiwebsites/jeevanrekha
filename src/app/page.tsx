@@ -177,7 +177,7 @@ export default function Home() {
         <div className="wrap">
           <div className="why-top">
             <div>
-              <div className="kicker rv"><div className="k-bar"></div><span className="k-txt">Why Jeevan Rekha</span></div>
+
               <h2 className="s-h rv" data-d="1">Built on <em>Science</em>,<br/>Trusted by <strong>India</strong></h2>
             </div>
             <p className="body-t rv" data-d="2">Four decades of industry knowledge meet state-of-the-art technology at our Burdwan plant, delivering oils as nutritious as they are delicious, batch after batch.</p>
@@ -218,7 +218,7 @@ export default function Home() {
             </div>
             <div className="pch-body">
               <div className="pch-badge b-mustard">⭐ Traditional</div>
-              <h3 className="pch-title">Kacchi Ghani <em style={{ color: 'var(--y)' }}>Mustard Oil</em></h3>
+              <h3 className="pch-title">Kacchi Ghani Mustard Oil</h3>
               <p className="pch-desc">Naturally pungent, rich in allyl isothiocyanate and monounsaturated fats. The authentic soul of Indian cooking.</p>
               <div className="pch-link" style={{ color: 'var(--y)' }}>Explore Product <span className="pch-arrow">→</span></div>
             </div>
@@ -232,7 +232,7 @@ export default function Home() {
             </div>
             <div className="pch-body">
               <div className="pch-badge b-rice">❤️ Heart Healthy</div>
-              <h3 className="pch-title">Rice Bran <em style={{ color: 'var(--r-plumlt)' }}>Oil</em></h3>
+              <h3 className="pch-title">Rice Bran Oil</h3>
               <p className="pch-desc">Physically refined, Vitamin E and Gamma-Oryzanol rich. Ideal for high-heat Indian cooking without compromise.</p>
               <div className="pch-link" style={{ color: 'var(--r-plumlt)' }}>Explore Product <span className="pch-arrow">→</span></div>
             </div>
@@ -246,7 +246,7 @@ export default function Home() {
             </div>
             <div className="pch-body">
               <div className="pch-badge b-soy">🌱 All Purpose</div>
-              <h3 className="pch-title">Soyabean <em style={{ color: 'var(--s-jadelt)' }}>Oil</em></h3>
+              <h3 className="pch-title">Soyabean Oil</h3>
               <p className="pch-desc">Neutral-flavoured, packed with Omega-3 fatty acids. Perfect for baking, dressings, and everyday light cooking.</p>
               <div className="pch-link" style={{ color: 'var(--s-jadelt)' }}>Explore Product <span className="pch-arrow">→</span></div>
             </div>
@@ -314,7 +314,7 @@ export default function Home() {
         <div className="wrap">
           <div className="ben-top">
             <div>
-              <div className="kicker rv"><div className="k-bar"></div><span className="k-txt k-txt-lt">Health &amp; Nutrition</span></div>
+
               <h2 className="s-h rv light" data-d="1">Every Drop,<br/><em>a Dose of</em> <span style={{ color: 'var(--y)' }}>Vitality</span></h2>
             </div>
             <p className="body-t light rv" data-d="2">Jeevan Rekha oils are crafted to nourish your body while delivering authentic Indian taste. Each oil carries a precise balance of flavour, nutrition, and high-heat performance.</p>

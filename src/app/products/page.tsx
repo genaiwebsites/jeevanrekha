@@ -147,7 +147,7 @@ export default function Products() {
         </div>
         <div className="pb-content rv sr" data-d="1">
           <div className="pb-badge b-rice">❤️ Heart Healthy</div>
-          <h2 className="pb-name">Physically Refined <em>Rice Bran Oil</em></h2>
+          <h2 className="pb-name">Physically Refined Rice Bran Oil</h2>
           <div className="pb-feats">
             <span className="pb-feat">Gamma-Oryzanol</span>
             <span className="pb-feat">232°C Smoke Point</span>
@@ -168,7 +168,7 @@ export default function Products() {
         </div>
         <div className="pb-content rv sl" data-d="1">
           <div className="pb-badge b-mustard">⭐ Traditional</div>
-          <h2 className="pb-name">Kacchi Ghani <em>Mustard Oil</em></h2>
+          <h2 className="pb-name">Kacchi Ghani Mustard Oil</h2>
           <div className="pb-feats">
             <span className="pb-feat">Cold Pressed</span>
             <span className="pb-feat">Heart Friendly</span>
@@ -189,7 +189,7 @@ export default function Products() {
         </div>
         <div className="pb-content rv sr" data-d="1">
           <div className="pb-badge b-soy">🌱 All Purpose</div>
-          <h2 className="pb-name">Refined <em>Soyabean Oil</em></h2>
+          <h2 className="pb-name">Refined Soyabean Oil</h2>
           <div className="pb-feats">
             <span className="pb-feat">Omega-3 Rich</span>
             <span className="pb-feat">Neutral Flavour</span>
