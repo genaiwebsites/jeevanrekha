@@ -262,22 +262,6 @@ export default function About() {
             </div>
           </div>
 
-          <div className="phil-body-grid">
-            <div className="phil-body-card rv" data-d="1">
-              <h4>The Foundation of True Health</h4>
-              <p>When we strip away the artificial and embrace what's genuine, our lives transform. A pure existence, free from toxins, harmful habits, and negative influences, creates the foundation for true health that no medicine can replicate.</p>
-            </div>
-            <div className="phil-body-card rv" data-d="2">
-              <h4>Vitality in Every Moment</h4>
-              <p>Health is more than the absence of illness. It is vitality flowing through every cell, every thought, every moment. It is the energy to pursue what matters and the resilience for the challenges that life throws at you.</p>
-            </div>
-            <div className="phil-quote-card rv" data-d="3">
-              <div className="pqc-icon"><Sparkles style={{ color: 'var(--y)', width: '36px', height: '36px' }} /></div>
-              <div className="pqc-text">
-                "The pure-hearted person moves through the world with openness. The healthy individual engages life with enthusiasm. The happy soul spreads joy without even trying. <em>Purity. Health. Happiness.</em> Each flows into the next in a beautiful, unbroken circle."
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
