@@ -79,7 +79,7 @@ export default function About() {
 
           <div className="history-grid">
             <div className="history-left">
-              <div className="history-timeline" style={{ marginTop: '0px' }}>
+              <div className="history-timeline">
                 <div className="tl-item rv">
                   <div className="tl-dot">80s</div>
                   <div className="tl-content">
@@ -89,7 +89,7 @@ export default function About() {
                   </div>
                 </div>
                 <div className="tl-item rv" data-d="1">
-                  <div className="tl-dot" style={{ background: 'var(--y)', color: 'var(--pd)' }}>19</div>
+                  <div className="tl-dot tl-dot-y">19</div>
                   <div className="tl-content">
                     <div className="tl-year">February 2019</div>
                     <div className="tl-title">AB Udyog Pvt. Ltd. Incorporated</div>
@@ -105,7 +105,7 @@ export default function About() {
                   </div>
                 </div>
                 <div className="tl-item rv" data-d="3">
-                  <div className="tl-dot" style={{ background: 'var(--y)', color: 'var(--pd)' }}>Now</div>
+                  <div className="tl-dot tl-dot-y">Now</div>
                   <div className="tl-content">
                     <div className="tl-year">Present</div>
                     <div className="tl-title">Growing Across India</div>
@@ -113,47 +113,56 @@ export default function About() {
                   </div>
                 </div>
               </div>
-            </div>            <div className="history-right" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div className="hist-card rv">
-                <div className="hist-card-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
-                  <div className="hist-card-icon" style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'var(--pl)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Factory style={{ color: 'var(--p)', width: '22px', height: '22px' }} />
+            </div>            <div className="history-right">
+              <div className="hist-card rv" style={{ margin: 0, padding: '40px' }}>
+                
+                {/* Burdwan Processing Section */}
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <div className="hist-card-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
+                    <div className="hist-card-icon" style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'var(--pl)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Factory style={{ color: 'var(--p)', width: '22px', height: '22px' }} />
+                    </div>
+                    <div className="hist-card-num" style={{ textAlign: 'right', fontFamily: 'var(--fd)', fontWeight: 700, fontStyle: 'italic', fontSize: '1.8rem', color: 'var(--p)', lineHeight: 1 }}>
+                      Burdwan<br />
+                      <span style={{ fontSize: '0.85rem', color: 'var(--g60)', fontStyle: 'normal', fontWeight: 500 }}>West Bengal</span>
+                    </div>
                   </div>
-                  <div className="hist-card-num" style={{ textAlign: 'right', fontFamily: 'var(--fd)', fontWeight: 700, fontStyle: 'italic', fontSize: '1.8rem', color: 'var(--p)', lineHeight: 1 }}>
-                    Burdwan<br />
-                    <span style={{ fontSize: '0.85rem', color: 'var(--g60)', fontStyle: 'normal', fontWeight: 500 }}>West Bengal</span>
+                  <h4 style={{ fontFamily: 'var(--fd)', fontSize: '1.25rem', fontWeight: 700, color: 'var(--bk)', marginBottom: '8px' }}>Burdwan Processing Facility</h4>
+                  <p style={{ fontSize: '0.88rem', lineHeight: '1.6', color: 'var(--g60)', marginBottom: '20px' }}>
+                    Our flagship facility houses two world-class refining and extraction units operating under strict quality controls to deliver pure, premium edible oils.
+                  </p>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                    <div style={{ background: 'var(--g05)', border: '1px solid var(--g10)', borderRadius: '12px', padding: '14px' }}>
+                      <div style={{ fontFamily: 'var(--fd)', fontSize: '1.35rem', fontWeight: 700, color: 'var(--p)', fontStyle: 'italic', lineHeight: 1 }}>300 TPD</div>
+                      <div style={{ fontSize: '0.65rem', color: 'var(--g60)', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '6px', fontWeight: 600 }}>Solvent Extraction</div>
+                    </div>
+                    <div style={{ background: 'var(--g05)', border: '1px solid var(--g10)', borderRadius: '12px', padding: '14px' }}>
+                      <div style={{ fontFamily: 'var(--fd)', fontSize: '1.35rem', fontWeight: 700, color: 'var(--p)', fontStyle: 'italic', lineHeight: 1 }}>150 TPD</div>
+                      <div style={{ fontSize: '0.65rem', color: 'var(--g60)', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '6px', fontWeight: 600 }}>Physical Refinery</div>
+                    </div>
                   </div>
                 </div>
-                <h4 style={{ fontFamily: 'var(--fd)', fontSize: '1.25rem', fontWeight: 700, color: 'var(--bk)', marginBottom: '8px' }}>Burdwan Processing Facility</h4>
-                <p style={{ fontSize: '0.88rem', lineHeight: '1.6', color: 'var(--g60)', marginBottom: '20px' }}>
-                  Our flagship facility in the Dighirkon area houses two world-class refining and extraction units operating under strict quality controls to deliver pure, premium edible oils.
-                </p>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
-                  <div style={{ background: 'var(--g05)', border: '1px solid var(--g10)', borderRadius: '12px', padding: '14px' }}>
-                    <div style={{ fontFamily: 'var(--fd)', fontSize: '1.35rem', fontWeight: 700, color: 'var(--p)', fontStyle: 'italic', lineHeight: 1 }}>300 TPD</div>
-                    <div style={{ fontSize: '0.65rem', color: 'var(--g60)', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '6px', fontWeight: 600 }}>Solvent Extraction</div>
-                  </div>
-                  <div style={{ background: 'var(--g05)', border: '1px solid var(--g10)', borderRadius: '12px', padding: '14px' }}>
-                    <div style={{ fontFamily: 'var(--fd)', fontSize: '1.35rem', fontWeight: 700, color: 'var(--p)', fontStyle: 'italic', lineHeight: 1 }}>150 TPD</div>
-                    <div style={{ fontSize: '0.65rem', color: 'var(--g60)', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '6px', fontWeight: 600 }}>Physical Refinery</div>
-                  </div>
-                </div>
-              </div>
 
-              <div className="hist-card rv" data-d="1">
-                <div className="hist-card-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
-                  <div className="hist-card-icon" style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'var(--pl)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    <Handshake style={{ color: 'var(--p)', width: '22px', height: '22px' }} />
+                {/* Separator Divider */}
+                <div style={{ height: '1px', background: 'var(--g10)', margin: '36px 0' }}></div>
+
+                {/* Industrial & Wholesale Supply Section */}
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <div className="hist-card-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
+                    <div className="hist-card-icon" style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'var(--pl)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                      <Handshake style={{ color: 'var(--p)', width: '22px', height: '22px' }} />
+                    </div>
+                    <div className="hist-card-num" style={{ textAlign: 'right', fontFamily: 'var(--fd)', fontWeight: 700, fontStyle: 'italic', fontSize: '1.8rem', color: 'var(--p)', lineHeight: 1 }}>
+                      Pan-India<br />
+                      <span style={{ fontSize: '0.85rem', color: 'var(--g60)', fontStyle: 'normal', fontWeight: 500 }}>Supply Network</span>
+                    </div>
                   </div>
-                  <div className="hist-card-num" style={{ textAlign: 'right', fontFamily: 'var(--fd)', fontWeight: 700, fontStyle: 'italic', fontSize: '1.8rem', color: 'var(--p)', lineHeight: 1 }}>
-                    Pan-India<br />
-                    <span style={{ fontSize: '0.85rem', color: 'var(--g60)', fontStyle: 'normal', fontWeight: 500 }}>Supply Network</span>
-                  </div>
+                  <h4 style={{ fontFamily: 'var(--fd)', fontSize: '1.25rem', fontWeight: 700, color: 'var(--bk)', marginBottom: '8px' }}>Industrial & Wholesale Supply</h4>
+                  <p style={{ fontSize: '0.88rem', lineHeight: '1.6', color: 'var(--g60)' }}>
+                    We supply bulk edible oils and rice bran derivatives to snack manufacturers, food processing plants, and industrial buyers across the country, supported by efficient logistics.
+                  </p>
                 </div>
-                <h4 style={{ fontFamily: 'var(--fd)', fontSize: '1.25rem', fontWeight: 700, color: 'var(--bk)', marginBottom: '8px' }}>Industrial & Wholesale Supply</h4>
-                <p style={{ fontSize: '0.88rem', lineHeight: '1.6', color: 'var(--g60)' }}>
-                  We supply bulk edible oils and rice bran derivatives to snack manufacturers, food processing plants, and industrial buyers across the country, supported by efficient logistics.
-                </p>
+
               </div>
             </div>
           </div>
