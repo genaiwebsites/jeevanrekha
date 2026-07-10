@@ -170,19 +170,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="ticker">
-        <div className="ticker-t">
-          <span className="ti">Kacchi Ghani Mustard Oil <span className="ti-sep">◆</span></span>
-          <span className="ti">Rice Bran Oil <span className="ti-sep">◆</span></span>
-          <span className="ti">Soyabean Oil <span className="ti-sep">◆</span></span>
-          <span className="ti">FSSAI Certified <span className="ti-sep">◆</span></span>
-          <span className="ti">Purity · Health · Happiness <span className="ti-sep">◆</span></span>
-          <span className="ti">Burdwan, West Bengal <span className="ti-sep">◆</span></span>
-          <span className="ti">Kacchi Ghani Mustard Oil <span className="ti-sep">◆</span></span>
-          <span className="ti">Rice Bran Oil <span className="ti-sep">◆</span></span>
-          <span className="ti">Soyabean Oil <span className="ti-sep">◆</span></span>
-        </div>
-      </div>
+
 
       {/* Why Choose */}
       <section className="why">
