@@ -561,8 +561,8 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 }
 .history-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 64px;
   align-items: start;
 }
 .history-timeline {

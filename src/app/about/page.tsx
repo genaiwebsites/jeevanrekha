@@ -70,49 +70,15 @@ export default function About() {
       {/* HISTORY SECTION */}
       <section className="history-section">
         <div className="wrap">
+          <div className="history-intro" style={{ marginBottom: '56px', maxWidth: '800px' }}>
+            <h2 className="s-h rv" data-d="1">Where We<br /><strong>Come From</strong></h2>
+            <p className="body-t rv" data-d="2" style={{ marginTop: '20px', fontSize: '1.05rem', lineHeight: '1.75', color: 'var(--g60)' }}>
+              Jeevan Rekha is a brand of AB Udyog Pvt. Ltd., incorporated in February 2019, guided by our philosophy of Purity, Health, and Happiness. While young in incorporation, we bring over 40 years of deep industry experience through our team's extensive involvement in the Rice Bran sector across India.
+            </p>
+          </div>
+
           <div className="history-grid">
             <div className="history-left">
-              <h2 className="s-h rv" data-d="1">Where We<br /><strong>Come From</strong></h2>
-              <p className="body-t rv" data-d="2" style={{ marginTop: '20px' }}>
-                Jeevan Rekha is a brand of AB Udyog Pvt. Ltd., incorporated in February 2019, guided by our philosophy of Purity, Health, and Happiness. While young in incorporation, we bring over 40 years of deep industry experience through our team's extensive involvement in the Rice Bran sector across India.
-              </p>
-
-              <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
-                <div className="hist-card rv">
-                  <div className="hist-card-top">
-                    <div className="hist-card-icon"><Factory style={{ color: 'var(--p)' }} /></div>
-                    <div className="hist-card-num">Burdwan<span>,</span><br /><span style={{ fontSize: '1rem', color: 'var(--g60)' }}>West Bengal</span></div>
-                  </div>
-                  <h4>State-of-Art Manufacturing</h4>
-                  <p>Our flagship production facility in the Dighirkon, Bamunia Road, Uchallan area of Burdwan district houses two world-class processing units operating to the highest hygiene and quality standards.</p>
-                </div>
-
-                <div className="capacity-card rv" data-d="1">
-                  <h4 style={{ color: 'var(--w)' }}>Production Capacity</h4>
-                  <div className="capacity-row">
-                    <div className="cap-item">
-                      <div className="cap-num">300 TPD</div>
-                      <div className="cap-lbl">Solvent Extraction Plant</div>
-                    </div>
-                    <div className="cap-item">
-                      <div className="cap-num">150 TPD</div>
-                      <div className="cap-lbl">Physical Refinery</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="hist-card rv" data-d="2">
-                  <div className="hist-card-top">
-                    <div className="hist-card-icon"><Handshake style={{ color: 'var(--p)' }} /></div>
-                    <div className="hist-card-num">Pan<span>-</span>India</div>
-                  </div>
-                  <h4>Nationwide Distribution</h4>
-                  <p>We supply to solvent extraction units and food manufacturers across India, with long-term relationships built on trust, reliability, and our unwavering commitment to quality.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="history-right">
               <div className="history-timeline" style={{ marginTop: '0px' }}>
                 <div className="tl-item rv">
                   <div className="tl-dot">80s</div>
@@ -146,6 +112,48 @@ export default function About() {
                     <p className="tl-desc">Today Jeevan Rekha is one of the most trusted rice bran oil suppliers to the snack and namkeen industry, with distribution spanning multiple states and a growing family of products.</p>
                   </div>
                 </div>
+              </div>
+            </div>            <div className="history-right" style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+              <div className="hist-card rv">
+                <div className="hist-card-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
+                  <div className="hist-card-icon" style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'var(--pl)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Factory style={{ color: 'var(--p)', width: '22px', height: '22px' }} />
+                  </div>
+                  <div className="hist-card-num" style={{ textAlign: 'right', fontFamily: 'var(--fd)', fontWeight: 700, fontStyle: 'italic', fontSize: '1.8rem', color: 'var(--p)', lineHeight: 1 }}>
+                    Burdwan<br />
+                    <span style={{ fontSize: '0.85rem', color: 'var(--g60)', fontStyle: 'normal', fontWeight: 500 }}>West Bengal</span>
+                  </div>
+                </div>
+                <h4 style={{ fontFamily: 'var(--fd)', fontSize: '1.25rem', fontWeight: 700, color: 'var(--bk)', marginBottom: '8px' }}>Burdwan Processing Facility</h4>
+                <p style={{ fontSize: '0.88rem', lineHeight: '1.6', color: 'var(--g60)', marginBottom: '20px' }}>
+                  Our flagship facility in the Dighirkon area houses two world-class refining and extraction units operating under strict quality controls to deliver pure, premium edible oils.
+                </p>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+                  <div style={{ background: 'var(--g05)', border: '1px solid var(--g10)', borderRadius: '12px', padding: '14px' }}>
+                    <div style={{ fontFamily: 'var(--fd)', fontSize: '1.35rem', fontWeight: 700, color: 'var(--p)', fontStyle: 'italic', lineHeight: 1 }}>300 TPD</div>
+                    <div style={{ fontSize: '0.65rem', color: 'var(--g60)', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '6px', fontWeight: 600 }}>Solvent Extraction</div>
+                  </div>
+                  <div style={{ background: 'var(--g05)', border: '1px solid var(--g10)', borderRadius: '12px', padding: '14px' }}>
+                    <div style={{ fontFamily: 'var(--fd)', fontSize: '1.35rem', fontWeight: 700, color: 'var(--p)', fontStyle: 'italic', lineHeight: 1 }}>150 TPD</div>
+                    <div style={{ fontSize: '0.65rem', color: 'var(--g60)', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '6px', fontWeight: 600 }}>Physical Refinery</div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="hist-card rv" data-d="1">
+                <div className="hist-card-top" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '20px' }}>
+                  <div className="hist-card-icon" style={{ width: '48px', height: '48px', borderRadius: '12px', background: 'var(--pl)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <Handshake style={{ color: 'var(--p)', width: '22px', height: '22px' }} />
+                  </div>
+                  <div className="hist-card-num" style={{ textAlign: 'right', fontFamily: 'var(--fd)', fontWeight: 700, fontStyle: 'italic', fontSize: '1.8rem', color: 'var(--p)', lineHeight: 1 }}>
+                    Pan-India<br />
+                    <span style={{ fontSize: '0.85rem', color: 'var(--g60)', fontStyle: 'normal', fontWeight: 500 }}>Supply Network</span>
+                  </div>
+                </div>
+                <h4 style={{ fontFamily: 'var(--fd)', fontSize: '1.25rem', fontWeight: 700, color: 'var(--bk)', marginBottom: '8px' }}>Industrial & Wholesale Supply</h4>
+                <p style={{ fontSize: '0.88rem', lineHeight: '1.6', color: 'var(--g60)' }}>
+                  We supply bulk edible oils and rice bran derivatives to snack manufacturers, food processing plants, and industrial buyers across the country, supported by efficient logistics.
+                </p>
               </div>
             </div>
           </div>
