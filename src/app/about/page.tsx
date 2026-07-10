@@ -77,7 +77,43 @@ export default function About() {
                 Jeevan Rekha is a brand of AB Udyog Pvt. Ltd., incorporated in February 2019, guided by our philosophy of Purity, Health, and Happiness. While young in incorporation, we bring over 40 years of deep industry experience through our team's extensive involvement in the Rice Bran sector across India.
               </p>
 
-              <div className="history-timeline" style={{ marginTop: '48px' }}>
+              <div style={{ marginTop: '32px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div className="hist-card rv">
+                  <div className="hist-card-top">
+                    <div className="hist-card-icon"><Factory style={{ color: 'var(--p)' }} /></div>
+                    <div className="hist-card-num">Burdwan<span>,</span><br /><span style={{ fontSize: '1rem', color: 'var(--g60)' }}>West Bengal</span></div>
+                  </div>
+                  <h4>State-of-Art Manufacturing</h4>
+                  <p>Our flagship production facility in the Dighirkon, Bamunia Road, Uchallan area of Burdwan district houses two world-class processing units operating to the highest hygiene and quality standards.</p>
+                </div>
+
+                <div className="capacity-card rv" data-d="1">
+                  <h4 style={{ color: 'var(--w)' }}>Production Capacity</h4>
+                  <div className="capacity-row">
+                    <div className="cap-item">
+                      <div className="cap-num">300 TPD</div>
+                      <div className="cap-lbl">Solvent Extraction Plant</div>
+                    </div>
+                    <div className="cap-item">
+                      <div className="cap-num">150 TPD</div>
+                      <div className="cap-lbl">Physical Refinery</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="hist-card rv" data-d="2">
+                  <div className="hist-card-top">
+                    <div className="hist-card-icon"><Handshake style={{ color: 'var(--p)' }} /></div>
+                    <div className="hist-card-num">Pan<span>-</span>India</div>
+                  </div>
+                  <h4>Nationwide Distribution</h4>
+                  <p>We supply to solvent extraction units and food manufacturers across India, with long-term relationships built on trust, reliability, and our unwavering commitment to quality.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="history-right">
+              <div className="history-timeline" style={{ marginTop: '0px' }}>
                 <div className="tl-item rv">
                   <div className="tl-dot">80s</div>
                   <div className="tl-content">
@@ -110,40 +146,6 @@ export default function About() {
                     <p className="tl-desc">Today Jeevan Rekha is one of the most trusted rice bran oil suppliers to the snack and namkeen industry, with distribution spanning multiple states and a growing family of products.</p>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="history-right">
-              <div className="hist-card rv">
-                <div className="hist-card-top">
-                  <div className="hist-card-icon"><Factory style={{ color: 'var(--p)' }} /></div>
-                  <div className="hist-card-num">Burdwan<span>,</span><br /><span style={{ fontSize: '1rem', color: 'var(--g60)' }}>West Bengal</span></div>
-                </div>
-                <h4>State-of-Art Manufacturing</h4>
-                <p>Our flagship production facility in the Dighirkon, Bamunia Road, Uchallan area of Burdwan district houses two world-class processing units operating to the highest hygiene and quality standards.</p>
-              </div>
-
-              <div className="capacity-card rv" data-d="1">
-                <h4 style={{ color: 'var(--w)' }}>Production Capacity</h4>
-                <div className="capacity-row">
-                  <div className="cap-item">
-                    <div className="cap-num">300 TPD</div>
-                    <div className="cap-lbl">Solvent Extraction Plant</div>
-                  </div>
-                  <div className="cap-item">
-                    <div className="cap-num">150 TPD</div>
-                    <div className="cap-lbl">Physical Refinery</div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="hist-card rv" data-d="2">
-                <div className="hist-card-top">
-                  <div className="hist-card-icon"><Handshake style={{ color: 'var(--p)' }} /></div>
-                  <div className="hist-card-num">Pan<span>-</span>India</div>
-                </div>
-                <h4>Nationwide Distribution</h4>
-                <p>We supply to solvent extraction units and food manufacturers across India, with long-term relationships built on trust, reliability, and our unwavering commitment to quality.</p>
               </div>
             </div>
           </div>
