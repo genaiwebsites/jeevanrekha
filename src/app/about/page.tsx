@@ -272,29 +272,33 @@ export default function About() {
             <h2 className="s-h rv" data-d="1">How We Deliver on<br />Our <strong>Promise</strong> to India</h2>
           </div>
           <div className="commitment-grid">
-            <div className="commitment-card cc-light rv" data-d="1">
-              <div className="cc-icon cc-icon-bg"><Globe style={{ color: 'var(--p)' }} /></div>
-              <h3>Atmanirbhar Bharat Commitment</h3>
-              <p>We proudly support the vision of Atmanirbhar Bharat and the Make-in-India initiative. At AB Udyog, we believe in fully utilising local resources before considering imported alternatives, contributing to India's self-sufficiency and economic strength.</p>
-              <div className="cc-tag cct-w">Make in India →</div>
+            <div className="commitment-card rv" data-d="1">
+              <div className="cc-icon"><Globe style={{ color: 'var(--p)', width: '22px', height: '22px' }} /></div>
+              <div>
+                <h3>Atmanirbhar Sourcing</h3>
+                <p>We prioritize sourcing raw materials from local Indian farmers and suppliers, supporting regional agricultural communities and contributing to domestic self-sufficiency.</p>
+              </div>
             </div>
-            <div className="commitment-card cc-light rv" data-d="2">
-              <div className="cc-icon cc-icon-bg"><Microscope style={{ color: 'var(--p)' }} /></div>
-              <h3>In-House Quality Assurance</h3>
-              <p>We use the same rice bran oil in-house that we deliver to our customers. This genuine approach ensures authenticity and quality at every step; we stand behind every batch because we cook with it ourselves.</p>
-              <div className="cc-tag cct-w">Zero Compromise →</div>
+            <div className="commitment-card rv" data-d="2">
+              <div className="cc-icon"><Microscope style={{ color: 'var(--p)', width: '22px', height: '22px' }} /></div>
+              <div>
+                <h3>In-House Quality Control</h3>
+                <p>We use the same edible oils in our own kitchens that we package for our customers. This direct quality assurance ensures every batch meets our strict standards of purity.</p>
+              </div>
             </div>
-            <div className="commitment-card cc-light rv" data-d="3">
-              <div className="cc-icon cc-icon-bg"><Sprout style={{ color: 'var(--p)' }} /></div>
-              <h3>Community & Farmer Welfare</h3>
-              <p>We invest in the communities and rice farmers that make our products possible, creating sustainable livelihoods and building an agricultural ecosystem that benefits everyone in the value chain.</p>
-              <div className="cc-tag cct-w">CSR Initiatives →</div>
+            <div className="commitment-card rv" data-d="3">
+              <div className="cc-icon"><Sprout style={{ color: 'var(--p)', width: '22px', height: '22px' }} /></div>
+              <div>
+                <h3>Community & Farmer Welfare</h3>
+                <p>We work closely with local farming communities in West Bengal, helping sustain reliable agricultural practices and providing fair value for their harvests.</p>
+              </div>
             </div>
-            <div className="commitment-card cc-light rv" data-d="4">
-              <div className="cc-icon cc-icon-bg"><Package style={{ color: 'var(--p)' }} /></div>
-              <h3>Transparent, Safe Packaging</h3>
-              <p>Each unit of Jeevan Rekha oil is hygienically packed, tamper-proof sealed, and clearly labelled, ensuring full transparency, safety, and consistent quality from our plant in Burdwan to your kitchen across India.</p>
-              <div className="cc-tag cct-w">Food Safety First →</div>
+            <div className="commitment-card rv" data-d="4">
+              <div className="cc-icon"><Package style={{ color: 'var(--p)', width: '22px', height: '22px' }} /></div>
+              <div>
+                <h3>Transparent, Safe Packaging</h3>
+                <p>Our packaging process uses tamper-proof seals and clear labeling. Every bottle and container traces back to our Burdwan plant for full safety assurance.</p>
+              </div>
             </div>
           </div>
         </div>

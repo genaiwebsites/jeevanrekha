@@ -2246,35 +2246,43 @@ footer {
 .commitment-section { padding: 100px 0; background: var(--w); }
 .commitment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .commitment-card {
-  border-radius: 24px; padding: 44px 36px;
-  border: 1px solid var(--g10);
+  background: rgba(75, 38, 133, 0.03);
+  border: 1px solid rgba(75, 38, 133, 0.06);
+  border-radius: 20px;
+  padding: 32px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
   transition: all 0.35s var(--ease);
 }
-.commitment-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
-.cc-light { background: var(--off); }
-.cc-purple { background: var(--p); border-color: var(--p); }
-.cc-yellow { background: var(--y); border-color: var(--y); }
-.cc-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; margin-bottom: 24px; }
-.cc-icon-bg { background: var(--pl); }
-.cc-icon-purple { background: rgba(254, 220, 6, 0.2); }
-.cc-icon-yellow { background: rgba(52, 26, 94, 0.12); }
-.commitment-card h3 { font-family: var(--fd); font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; }
-.commitment-card p { font-size: 0.83rem; line-height: 1.72; }
-.cc-light h3, .cc-white h3 { color: var(--bk); }
-.cc-light p, .cc-white p { color: var(--g60); }
-.cc-purple h3, .cc-purple p { color: var(--w); }
-.cc-purple p { color: rgba(255, 255, 255, 0.7); }
-.cc-yellow h3 { color: var(--pd); }
-.cc-yellow p { color: rgba(52, 26, 94, 0.7); }
-.cc-tag {
-  display: inline-flex; align-items: center; gap: 6px;
-  margin-top: 20px; font-size: 0.68rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  padding-bottom: 2px;
+.commitment-card:hover {
+  background: rgba(75, 38, 133, 0.06);
+  border-color: rgba(75, 38, 133, 0.15);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
 }
-.cct-p { color: var(--y); border-bottom: 1px solid rgba(254, 220, 6, 0.4); }
-.cct-y { color: var(--pd); border-bottom: 1px solid rgba(52, 26, 94, 0.3); }
-.cct-w { color: var(--p); border-bottom: 1px solid var(--y); }
+.cc-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--pl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.commitment-card h3 {
+  font-family: var(--fd);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--bk);
+  margin-bottom: 8px;
+}
+.commitment-card p {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: var(--g60);
+}
 
 /* Contact Strip */
 .contact-strip {
