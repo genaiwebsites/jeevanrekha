@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Kumbh_Sans, IBM_Plex_Mono } from "next/font/google";
+import { Lora, Kumbh_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
@@ -8,10 +8,10 @@ import ScrollRevealObserver from "@/components/ScrollRevealObserver";
 import JsonLd from "@/components/JsonLd";
 import { cn } from "@/lib/utils";
 
-const cormorantGaramond = Cormorant_Garamond({
-  variable: "--font-cormorant-garamond",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
 });
 
@@ -93,7 +93,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(cormorantGaramond.variable, kumbhSans.variable, ibmPlexMono.variable)}
+      className={cn(lora.variable, kumbhSans.variable, ibmPlexMono.variable)}
     >
       <head>
         <JsonLd />

@@ -356,7 +356,6 @@ export default function Contact() {
                           <option value="" disabled>Select product</option>
                           <option value="mustard">Kacchi Ghani Mustard Oil</option>
                           <option value="rice-bran">Rice Bran Oil</option>
-                          <option value="rice-bran-lite">Rice Bran Oil Lite</option>
                           <option value="soyabean">Soyabean Oil</option>
                           <option value="all">All / Multiple Products</option>
                         </select>
