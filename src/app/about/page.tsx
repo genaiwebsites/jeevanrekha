@@ -100,7 +100,7 @@ export default function About() {
                   <div className="tl-dot">JR</div>
                   <div className="tl-content">
                     <div className="tl-year">Brand Launch</div>
-                    <div className="tl-title">Jeevan Rekha Foods is Born</div>
+                    <div className="tl-title">Jeevan Rekha is Born</div>
                     <p className="tl-desc">The Jeevan Rekha brand launched with our flagship Rice Bran Oil and Kacchi Ghani Mustard Oil, taking our expertise directly to consumers through transparent, quality-first packaging and distribution.</p>
                   </div>
                 </div>
@@ -346,3 +346,4 @@ export default function About() {
     </section>
   );
 }
+

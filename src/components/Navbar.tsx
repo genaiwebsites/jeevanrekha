@@ -1,5 +1,7 @@
 "use client";
 
+import Image from 'next/image';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from 'react';
@@ -43,7 +45,7 @@ export default function Navbar() {
       <div className="nav-bg"></div>
       <div className="nav-inner">
         <Link href="/" className="nav-logo">
-          <img src="/jr_logo_transparent.png" alt="Jeevan Rekha Foods" />
+          <Image src="/jeevan-rekha-logo.png" alt="Jeevan Rekha Logo - Premium Edible Oils" width={400} height={120} priority />
         </Link>
         <ul className={`nav-links ${isMobileOpen ? 'nav-open' : ''}`} id="navL">
           <li><Link href="/" id="link-home" className={getLinkClass('/')}>Home</Link></li>

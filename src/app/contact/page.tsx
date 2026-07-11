@@ -398,7 +398,7 @@ export default function Contact() {
                   </div>
                   <h4 className="success-title">Message Sent Successfully</h4>
                   <p className="success-desc">
-                    Thank you for reaching out. A representative from Jeevan Rekha Foods will get back to you within 24 hours.
+                    Thank you for reaching out. A representative from Jeevan Rekha will get back to you within 24 hours.
                   </p>
                 </div>
               )}
@@ -575,3 +575,4 @@ export default function Contact() {
     </section>
   );
 }
+

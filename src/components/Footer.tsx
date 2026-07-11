@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -7,7 +8,7 @@ export default function Footer() {
         <div className="f-grid">
           <div>
             <Link href="/" className="f-brand-logo">
-              <img src="/jr_logo_transparent.png" alt="Jeevan Rekha Foods" />
+              <Image src="/jeevan-rekha-logo.png" alt="Jeevan Rekha Logo - Premium Edible Oils" width={400} height={120} />
             </Link>
             <p className="f-desc">A brand of AB Udyog Pvt. Ltd. Bringing 40+ years of industry expertise to every household. Manufactured in Burdwan. Proudly made in India.</p>
             <div className="f-socs">
@@ -57,10 +58,11 @@ export default function Footer() {
       </div>
       <div className="f-bottom-strip">
         <div className="wrap f-bottom-inner">
-          <p>© 2026 Jeevan Rekha Foods. A brand of AB Udyog Pvt. Ltd. All rights reserved.</p>
+          <p>© 2026 Jeevan Rekha. A brand of AB Udyog Pvt. Ltd. All rights reserved.</p>
           <div className="f-cert">FSSAI Licensed · Made in India 🇮🇳</div>
         </div>
       </div>
     </footer>
   );
 }
+
