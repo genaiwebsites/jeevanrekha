@@ -294,14 +294,14 @@ export default function Home() {
               <div className="phil-vis-card">
                 <div className="pvc-grid"></div>
                 <div className="pvc-glow"></div>
-                <span className="p-qmark">"</span>
+                <span className="p-qmark">&quot;</span>
                 <div className="p-quote">Purity. Health. Happiness.<br/><em>Each flows into the next</em><br/>in an unbroken circle.</div>
                 <div className="p-sig">The Jeevan Rekha Promise</div>
               </div>
             </div>
             <div className="rv sr">
               <h2 className="s-h" style={{ marginBottom: '26px' }}>When you choose <em>pure</em>,<br/>you choose <strong>life itself</strong></h2>
-              <p className="body-t" style={{ marginBottom: '20px' }}>When we strip away the artificial and embrace what's genuine, our lives transform. A pure existence creates the foundation for true health that no medicine can replicate.</p>
+              <p className="body-t" style={{ marginBottom: '20px' }}>When we strip away the artificial and embrace what&apos;s genuine, our lives transform. A pure existence creates the foundation for true health that no medicine can replicate.</p>
               <p className="body-t" style={{ marginBottom: '30px' }}>Health is vitality flowing through every cell. From health springs happiness: a deeper contentment that radiates from within.</p>
               <Link href="/about" className="btn-p">Read Our Full Story</Link>
             </div>
@@ -323,7 +323,7 @@ export default function Home() {
             <div className="bcard rv">
               <div className="b-ico"><svg viewBox="0 0 28 28"><path d="M14 3C8 3 3 8 3 14s5 11 11 11 11-5 11-11S20 3 14 3zm-1 15.6l-4.2-4.2 1.4-1.4 2.8 2.8 5.8-5.8 1.4 1.4L13 18.6z"/></svg></div>
               <h4>Heart Protection</h4>
-              <p>Balanced Omega-3, 6 &amp; 9 fatty acids. Rice Bran Oil's Gamma-Oryzanol actively reduces LDL cholesterol.</p>
+              <p>Balanced Omega-3, 6 &amp; 9 fatty acids. Rice Bran Oil&apos;s Gamma-Oryzanol actively reduces LDL cholesterol.</p>
               <span className="b-tag">Rice Bran Oil</span>
             </div>
             <div className="bcard rv" data-d="1">
@@ -341,7 +341,7 @@ export default function Home() {
             <div className="bcard rv" data-d="3">
               <div className="b-ico"><svg viewBox="0 0 28 28"><path d="M14 3C9 3 5 7 5 12c0 6.5 9 15 9 15s9-8.5 9-15c0-5-4-9-9-9zm0 12a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
               <h4>Anti-inflammatory</h4>
-              <p>Mustard Oil's allyl isothiocyanate and Omega-3 fatty acids provide powerful benefits for joints and gut.</p>
+              <p>Mustard Oil&apos;s allyl isothiocyanate and Omega-3 fatty acids provide powerful benefits for joints and gut.</p>
               <span className="b-tag">Mustard Oil</span>
             </div>
           </div>
@@ -372,9 +372,7 @@ export default function Home() {
             <div className="marquee-track-l">
               {row1Reviews.map((rev, i) => (
                 <div key={`r1-${i}`} className="tc">
-                  <div className="t-qm">"</div>
-                  <div className="t-stars">★★★★★</div>
-                  <p className="t-txt">{rev.txt}</p>
+                  <p className="t-txt"><span className="t-qm">&quot;</span> {rev.txt}</p>
                   <div className="t-auth">
                     <div className={`t-av ${rev.avClass}`}>{rev.initials}</div>
                     <div>
@@ -386,9 +384,7 @@ export default function Home() {
               ))}
               {row1Reviews.map((rev, i) => (
                 <div key={`r1-dup-${i}`} className="tc" aria-hidden="true">
-                  <div className="t-qm">"</div>
-                  <div className="t-stars">★★★★★</div>
-                  <p className="t-txt">{rev.txt}</p>
+                  <p className="t-txt"><span className="t-qm">&quot;</span> {rev.txt}</p>
                   <div className="t-auth">
                     <div className={`t-av ${rev.avClass}`}>{rev.initials}</div>
                     <div>
@@ -406,9 +402,7 @@ export default function Home() {
             <div className="marquee-track-r">
               {row2Reviews.map((rev, i) => (
                 <div key={`r2-${i}`} className="tc">
-                  <div className="t-qm">"</div>
-                  <div className="t-stars">★★★★★</div>
-                  <p className="t-txt">{rev.txt}</p>
+                  <p className="t-txt"><span className="t-qm">&quot;</span> {rev.txt}</p>
                   <div className="t-auth">
                     <div className={`t-av ${rev.avClass}`}>{rev.initials}</div>
                     <div>
@@ -420,9 +414,7 @@ export default function Home() {
               ))}
               {row2Reviews.map((rev, i) => (
                 <div key={`r2-dup-${i}`} className="tc" aria-hidden="true">
-                  <div className="t-qm">"</div>
-                  <div className="t-stars">★★★★★</div>
-                  <p className="t-txt">{rev.txt}</p>
+                  <p className="t-txt"><span className="t-qm">&quot;</span> {rev.txt}</p>
                   <div className="t-auth">
                     <div className={`t-av ${rev.avClass}`}>{rev.initials}</div>
                     <div>
@@ -442,7 +434,7 @@ export default function Home() {
         <div className="cta-inner">
           <div className="rv sl">
             <h2 className="s-h">Ready to Cook<br/>the <em>Jeevan Rekha Way?</em></h2>
-            <p className="body-t" style={{ marginTop: '16px' }}>Join thousands of Indian families who've made the switch to purer, healthier cooking.</p>
+            <p className="body-t" style={{ marginTop: '16px' }}>Join thousands of Indian families who&apos;ve made the switch to purer, healthier cooking.</p>
           </div>
           <div className="rv sr" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn-p">Enquire Now</Link>

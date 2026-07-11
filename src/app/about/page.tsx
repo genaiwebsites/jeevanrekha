@@ -315,7 +315,7 @@ export default function About() {
       <section className="contact-strip" id="contact">
         <div className="cs-inner">
           <div className="cs-left rv">
-            <h2>Let's Build Something<br /><strong>Together</strong></h2>
+            <h2>Let&apos;s Build Something<br /><strong>Together</strong></h2>
             <p>Whether you're a household, retailer, distributor, or food manufacturer, we'd love to hear from you. Reach out to discuss partnerships, bulk orders, or just to learn more about our oils.</p>
           </div>
           <div className="cs-right rv" data-d="2">

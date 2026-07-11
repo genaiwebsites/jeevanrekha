@@ -153,7 +153,7 @@ export default function Products() {
             <span className="pb-feat">232°C Smoke Point</span>
             <span className="pb-feat">Vitamin E Rich</span>
           </div>
-          <p className="pb-desc body-t">Physically refined to retain natural antioxidants. With a 232°C smoke point, it's India's healthiest choice for high-heat frying and daily cooking.</p>
+          <p className="pb-desc body-t">Physically refined to retain natural antioxidants. With a 232°C smoke point, it&apos;s India&apos;s healthiest choice for high-heat frying and daily cooking.</p>
           <a href="https://rbo-spa.vercel.app/" target="_blank" rel="noopener noreferrer" className="btn-p" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Rice Bran Oil</a>
         </div>
       </div>

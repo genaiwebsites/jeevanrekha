@@ -10,7 +10,7 @@ export default function Manufacturing() {
         <div className="hero-wrap rv text-center" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
           <div className="h-eyebrow"><span className="pulse"></span><span className="eyebrow-t">Bio-Refined Engineering</span></div>
           <h1 className="h1"><em>Physical Purity,</em><br/>Scientifically Refined</h1>
-          <p className="h-desc" style={{ maxWidth: '650px', textAlign: 'center' }}>Experience the continuous mechanical, thermal, and <strong>enzymatic</strong> workflow that preserves every critical molecule of nature's finest oil across our 150 TPD physical refinery.</p>
+          <p className="h-desc" style={{ maxWidth: '650px', textAlign: 'center' }}>Experience the continuous mechanical, thermal, and <strong>enzymatic</strong> workflow that preserves every critical molecule of nature&apos;s finest oil across our 150 TPD physical refinery.</p>
         </div>
       </div>
 
@@ -236,7 +236,7 @@ export default function Manufacturing() {
                 Grain to<br /><em>Golden Oil</em>
               </h2>
               <p className="body-t" style={{ fontSize: '0.95rem', lineHeight: '1.6', maxWidth: '460px', marginBottom: '1.5rem' }}>
-                Every batch of Jeevan Rekha undergoes strict physical refining. Completely free from caustic soda, our process protects the oil's biological structure and retains essential antioxidants.
+                Every batch of Jeevan Rekha undergoes strict physical refining. Completely free from caustic soda, our process protects the oil&apos;s biological structure and retains essential antioxidants.
               </p>
               
               <div className="guarantee-block-clean" style={{ maxWidth: '460px' }}>
