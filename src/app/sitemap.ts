@@ -41,9 +41,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: `${BASE_URL}/blogs/healthy-cooking`,
+      url: `${BASE_URL}/blogs/why-smoke-point-of-the-cooking-oil-matters`,
       lastModified: new Date(),
-      changeFrequency: 'yearly',
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/blogs/mothers-day-recipes-prepared-with-rice-bran-oil`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/blogs/easy-evening-snacks-recipe-with-rice-bran-oil`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/blogs/avoid-these-myths-about-rice-bran-oil-in-india`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/blogs/4-best-recipes-with-rice-bran-oil`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    {
+      url: `${BASE_URL}/blogs/healthy-cooking-with-rice-bran-oil`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
       priority: 0.6,
     },
   ]

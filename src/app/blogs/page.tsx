@@ -50,59 +50,12 @@ export default function Blogs() {
         <div className="wrap">
           <h2 className="s-h rv" style={{ marginBottom: '40px' }}>Latest <em>Articles</em></h2>
           <div className="blog-grid">
-            
-            <Link href="/blogs/healthy-cooking" className="blog-card rv">
-              <div className="bc-img-wrap">
-                <div className="bc-tag">Cooking</div>
-                <div className="bc-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" }}></div>
-              </div>
-              <div className="bc-body">
-                <div className="bc-date">Jan 12, 2026 • 5 Min Read</div>
-                <h3 className="bc-title">Healthy Cooking with Rice Bran Oil: The Chef's Secret</h3>
-                <p className="bc-desc">Discover why top chefs and nutritionists recommend Rice Bran Oil for everyday Indian cooking, and how its high smoke point transforms your meals.</p>
-                <div className="bc-read">Read Article</div>
-              </div>
-            </Link>
-
-            <Link href="/blogs/healthy-cooking" className="blog-card rv" data-d="1">
-              <div className="bc-img-wrap">
-                <div className="bc-tag">Guide</div>
-                <div className="bc-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" }}></div>
-              </div>
-              <div className="bc-body">
-                <div className="bc-date">Jan 05, 2026 • 8 Min Read</div>
-                <h3 className="bc-title">Ultimate Guide: How to Identify Pure Rice Bran Oil</h3>
-                <p className="bc-desc">Not all oils are created equal. Learn how to read the labels, understand physically refined vs. chemically refined, and choose the best quality for your family.</p>
-                <div className="bc-read">Read Article</div>
-              </div>
-            </Link>
-
-            <Link href="/blogs/healthy-cooking" className="blog-card rv" data-d="2">
-              <div className="bc-img-wrap">
-                <div className="bc-tag">Recipes</div>
-                <div className="bc-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1601050690597-df0568f70950?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" }}></div>
-              </div>
-              <div className="bc-body">
-                <div className="bc-date">Dec 28, 2025 • 4 Min Read</div>
-                <h3 className="bc-title">Guilt-Free Indian Evening Snacks Made with Rice Bran Oil</h3>
-                <p className="bc-desc">Love samosas and pakoras but hate the grease? Rice Bran Oil absorbs up to 20% less into food during deep frying. Here are 3 recipes to try.</p>
-                <div className="bc-read">Read Article</div>
-              </div>
-            </Link>
-
-            <Link href="/blogs/healthy-cooking" className="blog-card rv">
-              <div className="bc-img-wrap">
-                <div className="bc-tag">Nutrition</div>
-                <div className="bc-img" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" }}></div>
-              </div>
-              <div className="bc-body">
-                <div className="bc-date">Dec 15, 2025 • 6 Min Read</div>
-                <h3 className="bc-title">Avoid These Common Myths About Rice Bran Oil</h3>
-                <p className="bc-desc">Is it just for frying? Is it too heavy? We debunk the top 5 myths surrounding Rice Bran Oil in Indian kitchens using scientific facts.</p>
-                <div className="bc-read">Read Article</div>
-              </div>
-            </Link>
-
+<Link href="/blogs/why-smoke-point-of-the-cooking-oil-matters" className="blog-card rv" ><div className="bc-img-wrap"><div className="bc-tag">Blog</div><img src="/blogs/why-smoke-point-of-the-cooking-oil-matters.png" className="bc-img" alt="Blog Image" /></div><div className="bc-body"><div className="bc-date">Apr 25, 2025 • 5 Min Read</div><h3 className="bc-title" dangerouslySetInnerHTML={{ __html: "Why Smoke Point of the Cooking Oil Matters?" }}></h3><p className="bc-desc" dangerouslySetInnerHTML={{ __html: "This topic is of utmost priority and many kitchens can relate to it with certain phrases that explain their cooking oil habits, procedure, and ingredi..." }}></p><div className="bc-read">Read Article</div></div></Link>
+<Link href="/blogs/mothers-day-recipes-prepared-with-rice-bran-oil" className="blog-card rv" data-d="2"><div className="bc-img-wrap"><div className="bc-tag">Blog</div><img src="/blogs/mothers-day-recipes-prepared-with-rice-bran-oil.png" className="bc-img" alt="Blog Image" /></div><div className="bc-body"><div className="bc-date">Apr 25, 2025 • 5 Min Read</div><h3 className="bc-title" dangerouslySetInnerHTML={{ __html: "Mothers Day Recipes prepared with Rice Bran Oil" }}></h3><p className="bc-desc" dangerouslySetInnerHTML={{ __html: "No matter where or with whom you’re celebrating your Mother’s Day, be it your mom, mother figure, or even your aunt—you should always make an extra ef..." }}></p><div className="bc-read">Read Article</div></div></Link>
+<Link href="/blogs/easy-evening-snacks-recipe-with-rice-bran-oil" className="blog-card rv" data-d="3"><div className="bc-img-wrap"><div className="bc-tag">Blog</div><img src="/blogs/easy-evening-snacks-recipe-with-rice-bran-oil.png" className="bc-img" alt="Blog Image" /></div><div className="bc-body"><div className="bc-date">Apr 25, 2025 • 5 Min Read</div><h3 className="bc-title" dangerouslySetInnerHTML={{ __html: "Easy Evening Snacks Recipe with Rice Bran Oil" }}></h3><p className="bc-desc" dangerouslySetInnerHTML={{ __html: "Evenings are incomplete without snacks that can be easily prepared with the help of simple ingredients. Here are some solid and simple-to-make plans t..." }}></p><div className="bc-read">Read Article</div></div></Link>
+<Link href="/blogs/avoid-these-myths-about-rice-bran-oil-in-india" className="blog-card rv" data-d="4"><div className="bc-img-wrap"><div className="bc-tag">Blog</div><img src="/blogs/avoid-these-myths-about-rice-bran-oil-in-india.png" className="bc-img" alt="Blog Image" /></div><div className="bc-body"><div className="bc-date">Apr 30, 2025 • 5 Min Read</div><h3 className="bc-title" dangerouslySetInnerHTML={{ __html: "Avoid these Myths about Rice Bran Oil in India" }}></h3><p className="bc-desc" dangerouslySetInnerHTML={{ __html: "In this era of cutthroat competition the recognition of a product, as well as the quality and its execution, has to be of top priority, otherwise, the..." }}></p><div className="bc-read">Read Article</div></div></Link>
+<Link href="/blogs/4-best-recipes-with-rice-bran-oil" className="blog-card rv" data-d="1"><div className="bc-img-wrap"><div className="bc-tag">Blog</div><img src="/blogs/4-best-recipes-with-rice-bran-oil.png" className="bc-img" alt="Blog Image" /></div><div className="bc-body"><div className="bc-date">Apr 30, 2025 • 5 Min Read</div><h3 className="bc-title" dangerouslySetInnerHTML={{ __html: "4 Best Recipes with Rice Bran Oil" }}></h3><p className="bc-desc" dangerouslySetInnerHTML={{ __html: "Rice Bran oil is regarded as one of the best edible oils in the world. Japanese people who are always honored for their holistic lifestyle find it alm..." }}></p><div className="bc-read">Read Article</div></div></Link>
+<Link href="/blogs/healthy-cooking-with-rice-bran-oil" className="blog-card rv" data-d="2"><div className="bc-img-wrap"><div className="bc-tag">Blog</div><img src="/blogs/healthy-cooking-with-rice-bran-oil.jpeg" className="bc-img" alt="Blog Image" /></div><div className="bc-body"><div className="bc-date">Jun 22, 2025 • 5 Min Read</div><h3 className="bc-title" dangerouslySetInnerHTML={{ __html: "Healthy Cooking with Rice Bran Oil" }}></h3><p className="bc-desc" dangerouslySetInnerHTML={{ __html: "Hidden in the humble grain of rice lies a golden secret. Obtained from the fibrous outer layer of rice grains, rice bran oil offers distinct benefits...." }}></p><div className="bc-read">Read Article</div></div></Link>
           </div>
         </div>
       </div>
