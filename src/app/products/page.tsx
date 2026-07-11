@@ -2,6 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+
+import rboImg from '../../../public/jr_rbo.png';
+import kgmoImg from '../../../public/jr_kgmo.png';
+import sboImg from '../../../public/jr_sbo.png';
 
 export default function Products() {
   const [activeTab, setActiveTab] = useState('p-rice');
@@ -96,7 +101,15 @@ export default function Products() {
             >
               {/* Image container aligned to the right edge with 2:1 aspect ratio */}
               <div className="slide-image-wrap">
-                <img src={slide.src} alt="" className="slide-img" />
+                <Image
+                  src={slide.src}
+                  alt=""
+                  fill
+                  className="slide-img"
+                  style={{ objectFit: 'cover' }}
+                  priority={i === 0}
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
                 {/* Mask overlaying the image, starting exactly at the left edge of the image */}
                 <div 
                   className="slide-image-mask" 
@@ -142,7 +155,11 @@ export default function Products() {
         <div className="pb-visual pv-rice rv sl">
           <div className="pb-vis-bg"></div>
           <div className="pb-bottle-scene">
-            <img src="/jr_rbo.png" alt="Rice Bran Oil" loading="lazy" />
+            <Image
+              src={rboImg}
+              alt="Rice Bran Oil"
+              sizes="(max-width: 768px) 100vw, 450px"
+            />
           </div>
         </div>
         <div className="pb-content rv sr" data-d="1">
@@ -163,7 +180,11 @@ export default function Products() {
         <div className="pb-visual pv-mustard rv sr">
           <div className="pb-vis-bg"></div>
           <div className="pb-bottle-scene">
-            <img src="/jr_kgmo.png" alt="Mustard Oil" loading="lazy" />
+            <Image
+              src={kgmoImg}
+              alt="Mustard Oil"
+              sizes="(max-width: 768px) 100vw, 450px"
+            />
           </div>
         </div>
         <div className="pb-content rv sl" data-d="1">
@@ -184,7 +205,11 @@ export default function Products() {
         <div className="pb-visual pv-soy rv sl">
           <div className="pb-vis-bg"></div>
           <div className="pb-bottle-scene">
-            <img src="/jr_sbo.png" alt="Soyabean Oil" loading="lazy" />
+            <Image
+              src={sboImg}
+              alt="Soyabean Oil"
+              sizes="(max-width: 768px) 100vw, 450px"
+            />
           </div>
         </div>
         <div className="pb-content rv sr" data-d="1">
@@ -276,7 +301,7 @@ export default function Products() {
             <h2 className="s-h">Need Bulk Supply for<br/><em>Your Business?</em></h2>
             <p style={{ marginTop: '16px', color: 'var(--p)', fontSize: '0.97rem', lineHeight: 1.86, maxWidth: '420px' }}>Join 500+ retail partners and snack manufacturers who trust our consistent quality, high-volume capacity, and competitive trade pricing.</p>
           </div>
-          <div className="rv sr" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <div className="cta-btn-group rv sr">
             <Link href="/contact" className="btn-p">Trade Enquiry</Link>
             <Link href="/contact" className="btn-outline dark">Contact Sales</Link>
           </div>

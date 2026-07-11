@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import { Droplet, Wind, Thermometer, Sparkles, Palette, Beaker, FlaskConical, ShieldCheck, CheckCircle2, Eye, Gauge, Compass, Atom, Filter } from 'lucide-react';
+import Image from 'next/image';
+
+import nablLogoImg from '../../../public/nabl_logo.png';
 
 export default function Manufacturing() {
   return (
@@ -257,7 +260,11 @@ export default function Manufacturing() {
                     <span className="nabl-card-eyebrow">Verified Laboratory Analysis</span>
                     <h3 className="nabl-card-title">NABL Batch Certificate</h3>
                   </div>
-                  <img src="/nabl_logo.png" alt="NABL Accredited" className="nabl-card-logo" />
+                  <Image
+                    src={nablLogoImg}
+                    alt="NABL Accredited"
+                    className="nabl-card-logo"
+                  />
                 </div>
 
                 {/* Tables Container */}
@@ -340,7 +347,7 @@ export default function Manufacturing() {
             <h2 className="s-h">Looking for a<br/><em>Reliable Supplier?</em></h2>
             <p className="body-t" style={{ marginTop: '16px' }}>We supply pure, physically refined rice bran oil to snack manufacturers and food processors across India. Consistent quality, batch after batch.</p>
           </div>
-          <div className="rv sr" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <div className="cta-btn-group rv sr">
             <Link href="/contact" className="btn-y">Trade Enquiry</Link>
             <Link href="/products" className="btn-outline dark">View Capacity</Link>
           </div>

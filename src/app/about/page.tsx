@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import { Factory, Handshake, ShieldCheck, Microscope, Sprout, Package, Phone, Mail, MapPin, Sparkles, Droplet, Heart, Globe } from 'lucide-react';
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import Image from 'next/image';
+
+import factory1Img from '../../../public/factory1.webp';
 
 export default function About() {
   return (
@@ -33,7 +36,13 @@ export default function About() {
             <div className="refinery-spec-card">
               <div className="refinery-spec-img-wrap">
                 <AspectRatio ratio={16/10}>
-                  <img src="/factory1.webp" alt="Jeevan Rekha Burdwan Plant" loading="lazy" />
+                  <Image
+                    src={factory1Img}
+                    alt="Jeevan Rekha Burdwan Plant"
+                    className="object-cover w-full h-full"
+                    placeholder="blur"
+                    sizes="(max-width: 768px) 100vw, 520px"
+                  />
                 </AspectRatio>
               </div>
               
@@ -73,7 +82,7 @@ export default function About() {
           <div className="history-intro" style={{ marginBottom: '56px', maxWidth: '800px' }}>
             <h2 className="s-h rv" data-d="1">Where We<br /><strong>Come From</strong></h2>
             <p className="body-t rv" data-d="2" style={{ marginTop: '20px', fontSize: '1.05rem', lineHeight: '1.75', color: 'var(--g60)' }}>
-              Jeevan Rekha is a brand of AB Udyog Pvt. Ltd., incorporated in February 2019, guided by our philosophy of Purity, Health, and Happiness. While young in incorporation, we bring over 40 years of deep industry experience through our team's extensive involvement in the Rice Bran sector across India.
+              Jeevan Rekha is a brand of AB Udyog Pvt. Ltd., incorporated in February 2019, guided by our philosophy of Purity, Health, and Happiness. While young in incorporation, we bring over 40 years of deep industry experience through our team&apos;s extensive involvement in the Rice Bran sector across India.
             </p>
           </div>
 
@@ -85,7 +94,7 @@ export default function About() {
                   <div className="tl-content">
                     <div className="tl-year">1980s–2010s</div>
                     <div className="tl-title">Four Decades of Rice Bran Expertise</div>
-                    <p className="tl-desc">Our founding team spent 40+ years supplying rice bran and its derivatives to solvent extraction units nationwide, building an unmatched understanding of the industry's entire value chain.</p>
+                    <p className="tl-desc">Our founding team spent 40+ years supplying rice bran and its derivatives to solvent extraction units nationwide, building an unmatched understanding of the industry&apos;s entire value chain.</p>
                   </div>
                 </div>
                 <div className="tl-item rv" data-d="1">
@@ -174,7 +183,7 @@ export default function About() {
             <div className="legacy-visual rv">
               <div className="legacy-main-card">
                 <div className="lmc-top">
-                  <div className="lmc-quote">"Our deep-rooted experience in the rice bran value chain has made us one of India's most <em>reliable suppliers</em> of rice bran and its derivatives."</div>
+                  <div className="lmc-quote">&quot;Our deep-rooted experience in the rice bran value chain has made us one of India&apos;s most <em>reliable suppliers</em> of rice bran and its derivatives.&quot;</div>
                   <div className="lmc-divider"></div>
                   <div className="lmc-stats">
                     <div className="lmc-stat">
@@ -207,7 +216,7 @@ export default function About() {
                 Our deep-rooted experience in the rice bran value chain has enabled us to become one of the most reliable suppliers of rice bran and its derivatives in India. We supply to solvent extraction units nationwide and have built long-term relationships based on trust, quality, and our commitment to Purity. Health. Happiness.
               </p>
               <p className="body-t rv" data-d="3">
-                We are proud to be one of the major suppliers of rice bran oil to the snack and namkeen industries across India. As a healthy and indigenous alternative to palm oil, rice bran oil is fast becoming the preferred choice for all food manufacturers who value quality and their customers' wellbeing.
+                We are proud to be one of the major suppliers of rice bran oil to the snack and namkeen industries across India. As a healthy and indigenous alternative to palm oil, rice bran oil is fast becoming the preferred choice for all food manufacturers who value quality and their customers&apos; wellbeing.
               </p>
               <div className="supply-tags rv" data-d="3">
                 <span className="supply-tag">Snack Industry</span>
@@ -244,7 +253,7 @@ export default function About() {
                   </div>
                   <div className="pt-text">
                     <h4>Purity</h4>
-                    <p>Stripping away the artificial to embrace what's genuinely good. No additives. No compromise.</p>
+                    <p>Stripping away the artificial to embrace what&apos;s genuinely good. No additives. No compromise.</p>
                   </div>
                 </div>
                 <div className="pt-item">
@@ -253,7 +262,7 @@ export default function About() {
                   </div>
                   <div className="pt-text">
                     <h4>Health</h4>
-                    <p>Vitality flowing through every cell. The energy to pursue what matters. Resilience for life's challenges.</p>
+                    <p>Vitality flowing through every cell. The energy to pursue what matters. Resilience for life&apos;s challenges.</p>
                   </div>
                 </div>
                 <div className="pt-item">
@@ -316,7 +325,7 @@ export default function About() {
         <div className="cs-inner">
           <div className="cs-left rv">
             <h2>Let&apos;s Build Something<br /><strong>Together</strong></h2>
-            <p>Whether you're a household, retailer, distributor, or food manufacturer, we'd love to hear from you. Reach out to discuss partnerships, bulk orders, or just to learn more about our oils.</p>
+            <p>Whether you&apos;re a household, retailer, distributor, or food manufacturer, we&apos;d love to hear from you. Reach out to discuss partnerships, bulk orders, or just to learn more about our oils.</p>
           </div>
           <div className="cs-right rv" data-d="2">
             <a href="tel:+917439289709" className="cs-contact-item">

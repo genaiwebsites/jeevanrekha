@@ -2,7 +2,13 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import AnimatedCounter from '@/components/AnimatedCounter';
+
+import showcaseImg from '../../public/jr_products_showcase_transparent.png';
+import kgmoImg from '../../public/jr_kgmo.png';
+import rboImg from '../../public/jr_rbo.png';
+import sboImg from '../../public/jr_sbo.png';
 
 const row1Reviews = [
   {
@@ -148,7 +154,16 @@ export default function Home() {
         <div className="hero-bg"></div>
         <div className="hero-mesh home-hero-mesh" ref={meshRef}></div>
         {/* Desktop: absolutely positioned background div — hidden on mobile via CSS */}
-        <div className="home-hero-img home-hero-img-bg" aria-hidden="true" ref={bgRef}></div>
+        <div className="home-hero-img home-hero-img-bg" aria-hidden="true" ref={bgRef}>
+          <Image
+            src={showcaseImg}
+            alt="Jeevan Rekha product range"
+            priority
+            className="pointer-events-none"
+            style={{ width: '100%', height: 'auto', position: 'absolute', bottom: 0, left: 0 }}
+            sizes="(max-width: 768px) 1px, 100vw"
+          />
+        </div>
         {/* Copy block: text + buttons */}
         <div className="hero-wrap home-hero-copy rv" ref={copyRef}>
           <h1 className="h1">
@@ -163,10 +178,12 @@ export default function Home() {
           </div>
         </div>
         {/* Mobile only: inline product image — sits below copy as flex sibling, fills remaining height */}
-        <img
-          src="/jr_products_showcase_transparent.png"
+        <Image
+          src={showcaseImg}
           alt="Jeevan Rekha product range"
+          priority
           className="home-hero-img-mobile"
+          sizes="(max-width: 768px) 100vw, 1px"
         />
       </div>
 
@@ -214,7 +231,12 @@ export default function Home() {
             <div className="pch-bg bg-m"></div>
             <div className="particles"><div className="p-dot"></div><div className="p-dot"></div><div className="p-dot"></div></div>
             <div className="pch-img-wrap">
-              <img src="/jr_kgmo.png" alt="Mustard Oil" className="pch-btl-img" />
+              <Image
+                src={kgmoImg}
+                alt="Mustard Oil"
+                className="pch-btl-img"
+                sizes="(max-width: 768px) 100vw, 340px"
+              />
             </div>
             <div className="pch-body">
               <div className="pch-badge b-mustard">⭐ Traditional</div>
@@ -228,7 +250,12 @@ export default function Home() {
             <div className="pch-bg bg-r"></div>
             <div className="particles"><div className="p-dot"></div><div className="p-dot"></div><div className="p-dot"></div></div>
             <div className="pch-img-wrap">
-              <img src="/jr_rbo.png" alt="Rice Bran Oil" className="pch-btl-img" />
+              <Image
+                src={rboImg}
+                alt="Rice Bran Oil"
+                className="pch-btl-img"
+                sizes="(max-width: 768px) 100vw, 340px"
+              />
             </div>
             <div className="pch-body">
               <div className="pch-badge b-rice">❤️ Heart Healthy</div>
@@ -242,7 +269,12 @@ export default function Home() {
             <div className="pch-bg bg-s"></div>
             <div className="particles"><div className="p-dot"></div><div className="p-dot"></div><div className="p-dot"></div></div>
             <div className="pch-img-wrap">
-              <img src="/jr_sbo.png" alt="Soyabean Oil" className="pch-btl-img" />
+              <Image
+                src={sboImg}
+                alt="Soyabean Oil"
+                className="pch-btl-img"
+                sizes="(max-width: 768px) 100vw, 340px"
+              />
             </div>
             <div className="pch-body">
               <div className="pch-badge b-soy">🌱 All Purpose</div>
@@ -436,7 +468,7 @@ export default function Home() {
             <h2 className="s-h">Ready to Cook<br/>the <em>Jeevan Rekha Way?</em></h2>
             <p className="body-t" style={{ marginTop: '16px' }}>Join thousands of Indian families who&apos;ve made the switch to purer, healthier cooking.</p>
           </div>
-          <div className="rv sr" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          <div className="cta-btn-group rv sr">
             <Link href="/contact" className="btn-p">Enquire Now</Link>
             <Link href="/products" className="btn-outline dark">View Products</Link>
           </div>
