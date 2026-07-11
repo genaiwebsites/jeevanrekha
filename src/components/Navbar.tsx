@@ -43,7 +43,7 @@ export default function Navbar() {
       <div className="nav-bg"></div>
       <div className="nav-inner">
         <Link href="/" className="nav-logo">
-          <img src="https://jeevanrekhafoods.com/wp-content/uploads/2024/05/JR-New-Logo-e1744100437370.png" alt="Jeevan Rekha Foods" />
+          <img src="/jr_logo_transparent.png" alt="Jeevan Rekha Foods" />
         </Link>
         <ul className={`nav-links ${isMobileOpen ? 'nav-open' : ''}`} id="navL">
           <li><Link href="/" id="link-home" className={getLinkClass('/')}>Home</Link></li>

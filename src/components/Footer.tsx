@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="f-grid">
           <div>
             <Link href="/" className="f-brand-logo">
-              <img src="https://jeevanrekhafoods.com/wp-content/uploads/2024/05/JR-New-Logo-e1744100437370.png" alt="Jeevan Rekha Foods" />
+              <img src="/jr_logo_transparent.png" alt="Jeevan Rekha Foods" />
             </Link>
             <p className="f-desc">A brand of AB Udyog Pvt. Ltd. Bringing 40+ years of industry expertise to every household. Manufactured in Burdwan. Proudly made in India.</p>
             <div className="f-socs">

@@ -5,7 +5,7 @@ export default function JsonLd() {
     name: 'Jeevan Rekha Foods',
     alternateName: 'AB Udyog Pvt. Ltd.',
     url: 'https://jeevanrekhafoods.com',
-    logo: 'https://jeevanrekhafoods.com/wp-content/uploads/2024/05/JR-New-Logo-e1744100437370.png',
+    logo: '/jr_logo_transparent.png',
     description:
       'Premium edible oil manufacturer with 40+ years of expertise. Producing NABL-certified Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soyabean Oil.',
     foundingDate: '2019',
@@ -66,7 +66,7 @@ export default function JsonLd() {
       name: 'Jeevan Rekha Foods',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://jeevanrekhafoods.com/wp-content/uploads/2024/05/JR-New-Logo-e1744100437370.png',
+        url: '/jr_logo_transparent.png',
       },
     },
   }
@@ -76,7 +76,7 @@ export default function JsonLd() {
     '@type': 'LocalBusiness',
     '@id': 'https://jeevanrekhafoods.com/#business',
     name: 'Jeevan Rekha Foods — AB Udyog Pvt. Ltd.',
-    image: 'https://jeevanrekhafoods.com/wp-content/uploads/2024/05/JR-New-Logo-e1744100437370.png',
+    image: '/jr_logo_transparent.png',
     telephone: '+91-9434400789',
     email: 'info@jeevanrekhafoods.com',
     url: 'https://jeevanrekhafoods.com',
