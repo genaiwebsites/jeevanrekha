@@ -468,10 +468,15 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 /* Certs Banner */
 .certs { background: linear-gradient(135deg, var(--p) 0%, var(--pm) 50%, var(--pd) 100%); padding: 56px 0; position: relative; overflow: hidden; }
 .certs::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 40px 40px; }
-.certs-row { position: relative; z-index: 1; max-width: 1360px; margin: 0 auto; padding: 0 56px; display: flex; gap: 0; }
-.cert { flex: 1; display: flex; align-items: center; gap: 18px; padding: 0 36px; border-inline-end: 1px solid rgba(255,255,255,.1); }
-.cert:first-child { padding-left: 0; }
-.cert:last-child { border-inline-end: none; }
+.certs-row { position: relative; z-index: 1; max-width: 1360px; margin: 0 auto; padding: 0 56px; display: flex; justify-content: space-between; gap: 24px; }
+.cert { display: flex; align-items: center; gap: 18px; }
+@media (max-width: 768px) {
+  .certs-row {
+    flex-direction: column;
+    gap: 28px;
+    padding: 0 24px;
+  }
+}
 .cert-ico { width: 52px; height: 52px; border-radius: 50%; border: 1.5px solid rgba(254,220,6,.38); display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: rgba(254,220,6,.07); transition: all .3s; }
 .cert:hover .cert-ico { background: var(--y); border-color: var(--y); }
 .cert-ico svg { width: 22px; height: 22px; fill: var(--y); transition: fill .3s; }

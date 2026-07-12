@@ -374,10 +374,57 @@ export default function Home() {
       {/* Certs */}
       <div className="certs">
         <div className="certs-row">
-          <div className="cert rv"><div className="cert-ico"><svg viewBox="0 0 22 22"><path d="M11 2L3 6v5c0 5.3 3.4 10.2 8 11.7C16.6 21.2 20 16.3 20 11V6L11 2zm-1 14.1L5.6 11.7l1.4-1.4L10 13.3l5-5 1.4 1.4L10 16.1z"/></svg></div><div className="cert-t"><strong>FSSAI Certified</strong><span>Food Safety Standards Authority</span></div></div>
-          <div className="cert rv" data-d="1"><div className="cert-ico"><svg viewBox="0 0 22 22"><path d="M11 2C6 2 2 6 2 11s4 9 9 9 9-4 9-9-4-9-9-9zm4 13l-4-2.3V6h2v5.7l3.5 2L15 15z"/></svg></div><div className="cert-t"><strong>Kacchi Ghani</strong><span>Traditional Cold Press</span></div></div>
-          <div className="cert rv" data-d="2"><div className="cert-ico"><svg viewBox="0 0 22 22"><path d="M11 1L3 5v6c0 5.6 3.4 10.7 8 12 4.6-1.3 8-6.4 8-12V5L11 1z"/></svg></div><div className="cert-t"><strong>Lab Tested</strong><span>Every Single Batch</span></div></div>
-          <div className="cert rv" data-d="3"><div className="cert-ico"><svg viewBox="0 0 22 22"><path d="M11 2a9 9 0 100 18A9 9 0 0011 2zm0 16a7 7 0 110-14 7 7 0 010 14zm-1-9v6l5-3-5-3z"/></svg></div><div className="cert-t"><strong>Make in India</strong><span>Manufactured at Burdwan</span></div></div>
+          <div className="cert rv">
+            <div className="cert-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '22px', height: '22px', stroke: 'var(--y)' }}>
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <div className="cert-t">
+              <strong>FSSAI Certified</strong>
+              <span>Central License Compliance</span>
+            </div>
+          </div>
+          
+          <div className="cert rv" data-d="1">
+            <div className="cert-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '22px', height: '22px', stroke: 'var(--y)' }}>
+                <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.78 4.78 4 4 0 0 1-6.74 0 4 4 0 0 1-4.78-4.78 4 4 0 0 1 0-6.74z"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+            </div>
+            <div className="cert-t">
+              <strong>HACCP Certified</strong>
+              <span>Global Food Safety Standards</span>
+            </div>
+          </div>
+          
+          <div className="cert rv" data-d="2">
+            <div className="cert-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '22px', height: '22px', stroke: 'var(--y)' }}>
+                <circle cx="12" cy="8" r="7"/>
+                <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/>
+              </svg>
+            </div>
+            <div className="cert-t">
+              <strong>ISO 9001:2015</strong>
+              <span>Quality Management Systems</span>
+            </div>
+          </div>
+          
+          <div className="cert rv" data-d="3">
+            <div className="cert-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '22px', height: '22px', stroke: 'var(--y)' }}>
+                <path d="M2 20h20"/>
+                <path d="M5 17V8l4 4V8l4 4V8l6 5v4H5z"/>
+              </svg>
+            </div>
+            <div className="cert-t">
+              <strong>Make in India</strong>
+              <span>Domestic Economic Growth</span>
+            </div>
+          </div>
         </div>
       </div>
 
