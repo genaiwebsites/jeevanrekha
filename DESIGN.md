@@ -51,7 +51,8 @@ tokens:
       padding: "16px 42px"
       transition: "all .4s cubic-bezier(.16, 1, .3, 1)"
     cards:
-      borderRadius: "26px"
+      borderRadius: "16px"
+      borderRadiusChip: "12px"
       border: "1px solid rgba(75, 38, 133, 0.07)"
       shadow: "0 12px 32px rgba(75, 38, 133, 0.12)"
 ---
@@ -92,6 +93,7 @@ Jeevan Rekha employs a flat-at-rest design style that transitions into rich, sta
 Our custom components focus on clean layouts, structured column flows, and precise animations:
 - **Product Cards**: A unified 3-column container system (`min-height: 590px`) featuring centered high-resolution product bottles (`340px` height limit) that remain separate from textual labels. Underneath, a clean column flow places the badge, title, product description, and call-to-action link in proper sequence without overlapping elements.
 - **Stats Cards**: Dark grid cards built with responsive column wrapping. Each card features a custom thematic SVG icon container (with individual colored borders and backgrounds for Factory, Filter, Store, and Award tags), a prominent italicized count, and monospaced technical labels.
+- **Card Corner Rounding**: All primary cards, grids, boxes, and table containers across the website use a streamlined, uniform `border-radius: 16px` (`--br-card`). Floating sub-components, background icons, and floating details chips nested within cards use `border-radius: 12px` (`--br-chip`) to ensure consistent visual framing and balance.
 - **Buttons**:
   - **Pill Buttons (`.btn-y` / `.btn-p`)**: Fully rounded edges (`border-radius: 50px`), heavy font weight (`700`), uppercase lettering with wide letter-spacing (`0.1em`), and translation hover animations with glowing colored shadows.
   - **Outline Buttons (`.btn-outline`)**: Transparent backings with subtle white borders that transition to brand/accent highlights, maintaining visibility without clutter.
