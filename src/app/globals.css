@@ -692,8 +692,8 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 }
 .sh-orbit-path {
   position: absolute;
-  width: 360px;
-  height: 360px;
+  width: 60%;
+  height: 60%;
   border-radius: 50%;
   border: 1.5px dashed rgba(255, 255, 255, 0.12);
   pointer-events: none;
@@ -706,8 +706,8 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 }
 .sh-center {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 30%;
+  height: 30%;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -735,8 +735,8 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 }
 .sh-bottle-wrap {
   position: relative;
-  width: 100px;
-  height: 200px;
+  width: 17%;
+  height: 34%;
   z-index: 12;
   transition: transform 0.4s var(--ease);
 }
@@ -748,25 +748,26 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
   z-index: 15;
   cursor: pointer;
 }
-.sh-item-top { top: 120px; left: 50%; transform: translate(-50%, -50%); }
-.sh-item-tr { top: 173px; left: 427px; transform: translate(-50%, -50%); }
-.sh-item-right { top: 50%; right: 120px; transform: translate(50%, -50%); }
-.sh-item-br { top: 427px; left: 427px; transform: translate(-50%, -50%); }
-.sh-item-bottom { bottom: 120px; left: 50%; transform: translate(-50%, 50%); }
-.sh-item-bl { top: 427px; left: 173px; transform: translate(-50%, -50%); }
-.sh-item-left { top: 50%; left: 120px; transform: translate(-50%, -50%); }
-.sh-item-tl { top: 173px; left: 173px; transform: translate(-50%, -50%); }
+/* % positions: orbit radius is 20% from each edge (cardinal) and ~29% (diagonal) */
+.sh-item-top    { top: 20%;  left: 50%;  transform: translate(-50%, -50%); }
+.sh-item-tr     { top: 29%;  left: 71%;  transform: translate(-50%, -50%); }
+.sh-item-right  { top: 50%;  left: 80%;  transform: translate(-50%, -50%); }
+.sh-item-br     { top: 71%;  left: 71%;  transform: translate(-50%, -50%); }
+.sh-item-bottom { top: 80%;  left: 50%;  transform: translate(-50%, -50%); }
+.sh-item-bl     { top: 71%;  left: 29%;  transform: translate(-50%, -50%); }
+.sh-item-left   { top: 50%;  left: 20%;  transform: translate(-50%, -50%); }
+.sh-item-tl     { top: 29%;  left: 29%;  transform: translate(-50%, -50%); }
 
 .sh-circle {
-  width: 90px;
-  height: 90px;
+  width: clamp(52px, 15%, 90px);
+  height: clamp(52px, 15%, 90px);
   border-radius: 50%;
   background: #ffffff;
   border: 2px solid rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 8px;
+  padding: clamp(4px, 1%, 8px);
   transition: transform 0.4s var(--ease), border-color 0.4s var(--ease), background-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.18);
   position: relative;
@@ -905,44 +906,40 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
   transform: translateX(-50%) translateY(0);
 }
 
-@media (max-width: 540px) {
-  .sh-orbit-path {
-    width: 200px;
-    height: 200px;
+/* Tablet (up to 768px) — snack hub stacks below text, gets narrower max-width */
+@media (max-width: 768px) {
+  .snack-hub {
+    max-width: 480px;
+    margin: 0 auto;
   }
-  .sh-center {
-    width: 105px;
-    height: 105px;
+  .sh-label {
+    width: 170px;
+    padding: 10px 14px;
   }
-  .sh-center-glow {
-    inset: -10px;
-  }
-  .sh-bottle-wrap {
-    width: 55px;
-    height: 110px;
-  }
-  .sh-circle {
-    width: 48px;
-    height: 48px;
-    padding: 3px;
-  }
-  .sh-item-top { top: 70px; }
-  .sh-item-tr { top: 99px; left: 241px; }
-  .sh-item-right { right: 70px; }
-  .sh-item-br { top: 241px; left: 241px; }
-  .sh-item-bottom { bottom: 70px; }
-  .sh-item-bl { top: 241px; left: 99px; }
-  .sh-item-left { left: 70px; }
-  .sh-item-tl { top: 99px; left: 99px; }
+  .sh-label-name { font-size: 0.78rem; }
+  .sh-label-desc { font-size: 0.68rem; }
+}
 
+/* Mobile (up to 480px) — compact orbit, smaller labels, disable animation for perf */
+@media (max-width: 480px) {
+  .snack-hub {
+    max-width: 360px;
+    margin: 0 auto;
+  }
   .sh-label {
     animation: none !important;
-    width: 160px;
+    width: 148px;
     padding: 8px 12px;
-    font-size: 0.7rem;
   }
-  .sh-label-name { font-size: 0.74rem; }
-  .sh-label-desc { font-size: 0.65rem; }
+  .sh-label-name { font-size: 0.72rem; }
+  .sh-label-desc { font-size: 0.62rem; }
+  /* On very small screens, hide labels entirely and show name only on tap */
+}
+
+/* Extra small (up to 360px) — minimal orbit view */
+@media (max-width: 360px) {
+  .snack-hub { max-width: 300px; }
+  .sh-label { display: none; } /* Too cramped — hide labels entirely */
 }
 
 /* ═══════════════════ RESPONSIVE ═══════════════════ */
@@ -2695,6 +2692,13 @@ footer {
   .history-grid { grid-template-columns: 1fr; gap: 40px; }
   .history-right { position: static; }
   .legacy-grid { grid-template-columns: 1fr; gap: 40px; }
+  .legacy-section { padding: 60px 0; }
+  /* Give the orbit card breathing room so overflowing circles don't clip */
+  .legacy-visual {
+    padding: 48px 56px;
+    display: flex;
+    justify-content: center;
+  }
   .phil-banner { grid-template-columns: 1fr; gap: 32px; padding: 40px 32px; }
   .phil-body-grid { grid-template-columns: 1fr; }
   .phil-quote-card { grid-column: span 1; }
