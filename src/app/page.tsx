@@ -194,26 +194,48 @@ export default function Home() {
         <div className="wrap">
           <div className="why-top">
             <div>
-
               <h2 className="s-h rv" data-d="1">Built on <em>Science</em>,<br/>Trusted by <strong>India</strong></h2>
             </div>
             <p className="body-t rv" data-d="2">Four decades of industry knowledge meet state-of-the-art technology at our Burdwan plant, delivering oils as nutritious as they are delicious, batch after batch.</p>
           </div>
-          <div className="why-grid">
-            <div className="wcard rv">
+          <div className="why-grid bento-why-grid">
+            {/* Tile 1: Manufacturing (2 cols on desktop) */}
+            <div className="wcard rv wcard-2col">
               <div className="wc-ico"><svg viewBox="0 0 28 28"><path d="M14 2C7.4 2 2 7.4 2 14s5.4 12 12 12 12-5.4 12-12S20.6 2 14 2zm-1 5h2v7l5 3-1 1.8-6-3.5V7z"/></svg></div>
               <h3>State-of-Art Manufacturing</h3>
               <p>Our Burdwan facility houses a 300 TPD Solvent Extraction Plant and 150 TPD Physical Refinery, operating to the highest hygiene and quality standards.</p>
             </div>
-            <div className="wcard rv" data-d="1">
+            
+            {/* Tile 2: 40+ Years Stat (1 col on desktop) */}
+            <div className="wcard rv wcard-stat">
+              <div className="hs-num">
+                <AnimatedCounter target={40} suffix="+" />
+              </div>
+              <div className="hs-label">Years of Expertise</div>
+              <p className="wcard-stat-desc">Four decades of trusted presence in India's edible oil value chain.</p>
+            </div>
+
+            {/* Tile 3: Capacity Stat (1 col on desktop) */}
+            <div className="wcard rv wcard-stat" data-d="1">
+              <div className="hs-num">
+                <AnimatedCounter target={150} suffix=" TPD" />
+              </div>
+              <div className="hs-label">Refinery Capacity</div>
+              <p className="wcard-stat-desc">Ensuring a steady, reliable supply of physically refined oil.</p>
+            </div>
+
+            {/* Tile 4: Sourcing (1 col on desktop) */}
+            <div className="wcard rv" data-d="2">
               <div className="wc-ico"><svg viewBox="0 0 28 28"><path d="M12 2L3 7v5c0 5.6 3.8 10.9 9 12.3C17.2 22.9 21 17.6 21 12V7L12 2zm0 3.2L19 8.7V12c0 4.4-3 8.5-7 9.9-4-1.4-7-5.5-7-9.9V8.7L12 5.2z"/></svg></div>
               <h3>Authentic Sourcing</h3>
               <p>With 40+ years in the value chain, we partner directly with trusted suppliers across India; these relationships are built on quality and transparency.</p>
             </div>
-            <div className="wcard rv" data-d="2">
+
+            {/* Tile 5: Atmanirbhar (1 col on desktop) */}
+            <div className="wcard rv" data-d="3">
               <div className="wc-ico"><svg viewBox="0 0 28 28"><path d="M14 2C7.4 2 2 7.4 2 14s5.4 12 12 12 12-5.4 12-12S20.6 2 14 2zm4.3 8.7L14 18.6l-4.3-4.3 1.4-1.4 2.9 2.9 2.9-5.8 1.8.9-.4.8z"/></svg></div>
               <h3>Atmanirbhar Bharat</h3>
-              <p>We proudly support Make-in-India. We use the same oil in-house that we deliver to customers, showcasing the genuine quality that makes us a preferred supplier.</p>
+              <p>Supporting Make-in-India with NABL-accredited labs and an active network of over 500+ retail partners nationwide.</p>
             </div>
           </div>
         </div>
@@ -239,7 +261,7 @@ export default function Home() {
               />
             </div>
             <div className="pch-body">
-              <div className="pch-badge b-mustard">⭐ Traditional</div>
+              <div className="pch-badge b-mustard">Traditional</div>
               <h3 className="pch-title">Kacchi Ghani Mustard Oil</h3>
               <p className="pch-desc">Naturally pungent, rich in allyl isothiocyanate and monounsaturated fats. The authentic soul of Indian cooking.</p>
               <div className="pch-link" style={{ color: 'var(--y)' }}>Explore Product <span className="pch-arrow">→</span></div>
@@ -258,7 +280,7 @@ export default function Home() {
               />
             </div>
             <div className="pch-body">
-              <div className="pch-badge b-rice">❤️ Heart Healthy</div>
+              <div className="pch-badge b-rice">Heart Healthy</div>
               <h3 className="pch-title">Rice Bran Oil</h3>
               <p className="pch-desc">Physically refined, Vitamin E and Gamma-Oryzanol rich. Ideal for high-heat Indian cooking without compromise.</p>
               <div className="pch-link" style={{ color: 'var(--r-plumlt)' }}>Explore Product <span className="pch-arrow">→</span></div>
@@ -277,7 +299,7 @@ export default function Home() {
               />
             </div>
             <div className="pch-body">
-              <div className="pch-badge b-soy">🌱 All Purpose</div>
+              <div className="pch-badge b-soy">All Purpose</div>
               <h3 className="pch-title">Soyabean Oil</h3>
               <p className="pch-desc">Neutral-flavoured, packed with Omega-3 fatty acids. Perfect for baking, dressings, and everyday light cooking.</p>
               <div className="pch-link" style={{ color: 'var(--s-jadelt)' }}>Explore Product <span className="pch-arrow">→</span></div>
@@ -286,37 +308,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Animated Stats Section */}
-      <section className="home-stats">
-        <div className="wrap">
-          <div className="hs-grid">
-            <div className="hs-card rv">
-              <div className="hs-num">
-                <AnimatedCounter target={300} suffix=" TPD" />
-              </div>
-              <div className="hs-label">Solvent Extraction</div>
-            </div>
-            <div className="hs-card rv" data-d="1">
-              <div className="hs-num">
-                <AnimatedCounter target={150} suffix=" TPD" />
-              </div>
-              <div className="hs-label">Physical Refinery</div>
-            </div>
-            <div className="hs-card rv" data-d="2">
-              <div className="hs-num">
-                <AnimatedCounter target={500} suffix="+" />
-              </div>
-              <div className="hs-label">Retail Partners</div>
-            </div>
-            <div className="hs-card rv" data-d="3">
-              <div className="hs-num">
-                <AnimatedCounter target={40} suffix="+" />
-              </div>
-              <div className="hs-label">Years of Expertise</div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Philosophy */}
       <section className="phil">
