@@ -390,39 +390,40 @@ export default function Home() {
           <div className="cert rv" data-d="1">
             <div className="cert-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '22px', height: '22px', stroke: 'var(--y)' }}>
-                <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.78 4.78 4 4 0 0 1-6.74 0 4 4 0 0 1-4.78-4.78 4 4 0 0 1 0-6.74z"/>
-                <path d="m9 12 2 2 4-4"/>
+                <circle cx="12" cy="8" r="6"/>
+                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
               </svg>
             </div>
             <div className="cert-t">
-              <strong>HACCP Certified</strong>
-              <span>Global Food Safety Standards</span>
+              <strong>AGMARK Grade-1</strong>
+              <span>Agricultural Produce Standards</span>
             </div>
           </div>
           
           <div className="cert rv" data-d="2">
             <div className="cert-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '22px', height: '22px', stroke: 'var(--y)' }}>
-                <circle cx="12" cy="8" r="7"/>
-                <path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/>
+                <rect width="20" height="12" x="2" y="3" rx="2"/>
+                <path d="M12 15v5"/>
+                <path d="M5 21h14"/>
               </svg>
             </div>
             <div className="cert-t">
-              <strong>ISO 9001:2015</strong>
-              <span>Quality Management Systems</span>
+              <strong>SCADA Automated</strong>
+              <span>Fully Integrated Processing</span>
             </div>
           </div>
           
           <div className="cert rv" data-d="3">
             <div className="cert-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '22px', height: '22px', stroke: 'var(--y)' }}>
-                <path d="M2 20h20"/>
-                <path d="M5 17V8l4 4V8l4 4V8l6 5v4H5z"/>
+                <path d="M12 2a5 5 0 0 0-5 5v5a5 5 0 0 0 10 0V7a5 5 0 0 0-5-5z"/>
+                <path d="M12 22a7 7 0 0 0 7-7h-2a5 5 0 0 1-5 5 5 5 0 0 1-5-5H5a7 7 0 0 0 7 7z"/>
               </svg>
             </div>
             <div className="cert-t">
-              <strong>Make in India</strong>
-              <span>Domestic Economic Growth</span>
+              <strong>ZLD Compliant</strong>
+              <span>Zero Liquid Discharge Plant</span>
             </div>
           </div>
         </div>
