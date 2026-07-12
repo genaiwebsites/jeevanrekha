@@ -181,31 +181,107 @@ export default function About() {
         <div className="wrap">
           <div className="legacy-grid">
             <div className="legacy-visual rv">
-              <div className="legacy-main-card">
-                <div className="lmc-top">
-                  <div className="lmc-quote">&quot;Our deep-rooted experience in the rice bran value chain has made us one of India&apos;s most <em>reliable suppliers</em> of rice bran and its derivatives.&quot;</div>
-                  <div className="lmc-divider"></div>
-                  <div className="lmc-stats">
-                    <div className="lmc-stat">
-                      <div className="lmc-stat-n">40+</div>
-                      <div className="lmc-stat-l">Years in Industry</div>
-                    </div>
-                    <div className="lmc-stat">
-                      <div className="lmc-stat-n">100%</div>
-                      <div className="lmc-stat-l">Indigenous</div>
-                    </div>
-                    <div className="lmc-stat">
-                      <div className="lmc-stat-n">∞</div>
-                      <div className="lmc-stat-l">Trust, Always</div>
-                    </div>
+              <div className="snack-hub">
+                {/* Orbit Path & Center */}
+                <div className="sh-orbit-path"></div>
+                
+                <div className="sh-center">
+                  <div className="sh-center-glow"></div>
+                  <div className="sh-bottle-wrap">
+                    <Image
+                      src="/jr_rbo.png"
+                      alt="Jeevan Rekha Rice Bran Oil"
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      sizes="(max-width: 600px) 160px, 160px"
+                      priority
+                    />
                   </div>
                 </div>
-              </div>
-              <div className="legacy-float">
-                <div className="lf-icon">🌾</div>
-                <div className="lf-text">
-                  <div className="lfn">Supplier of Choice</div>
-                  <div className="lfl">Snack & Namkeen Industry</div>
+
+                {/* Orbiting Items Wrapper */}
+                <div className="sh-orbit-wrapper">
+
+                  <div className="sh-item sh-item-top">
+                    <div className="sh-circle">
+                      <Image src="/snacks/rice-bran-oil-potato-chips.png" alt="Potato Chips" width={68} height={68} style={{ objectFit: 'contain' }} />
+                    </div>
+                    <div className="sh-label">
+                      <span className="sh-label-name">Potato Chips</span>
+                      <span className="sh-label-desc">High smoke point keeps chips golden-crisp with zero burnt aftertaste.</span>
+                    </div>
+                  </div>
+
+                  <div className="sh-item sh-item-tr">
+                    <div className="sh-circle">
+                      <Image src="/snacks/rice-bran-oil-samosa.png" alt="Samosa" width={68} height={68} style={{ objectFit: 'contain' }} />
+                    </div>
+                    <div className="sh-label">
+                      <span className="sh-label-name">Golden Samosa</span>
+                      <span className="sh-label-desc">Lower oil absorption keeps pastry crust dry, flaky, and light.</span>
+                    </div>
+                  </div>
+
+                  <div className="sh-item sh-item-right">
+                    <div className="sh-circle">
+                      <Image src="/snacks/rice-bran-oil-jalebi.png" alt="Sweet Jalebi" width={68} height={68} style={{ objectFit: 'contain' }} />
+                    </div>
+                    <div className="sh-label">
+                      <span className="sh-label-name">Sweet Jalebi</span>
+                      <span className="sh-label-desc">Fries evenly at high heat for light, hollow, syrup-filled coils.</span>
+                    </div>
+                  </div>
+
+                  <div className="sh-item sh-item-br">
+                    <div className="sh-circle">
+                      <Image src="/snacks/rice-bran-oil-vada-pav.png" alt="Vada Pav" width={68} height={68} style={{ objectFit: 'contain' }} />
+                    </div>
+                    <div className="sh-label">
+                      <span className="sh-label-name">Spicy Vada Pav</span>
+                      <span className="sh-label-desc">Clean heat transfer for perfectly battered, crispy potato dumplings.</span>
+                    </div>
+                  </div>
+
+                  <div className="sh-item sh-item-bottom">
+                    <div className="sh-circle">
+                      <Image src="/snacks/rice-bran-oil-indian-sweets.png" alt="Traditional Sweets" width={68} height={68} style={{ objectFit: 'contain' }} />
+                    </div>
+                    <div className="sh-label">
+                      <span className="sh-label-name">Traditional Sweets</span>
+                      <span className="sh-label-desc">Neutral taste preserves delicate aromatic milk solids and peda flavors.</span>
+                    </div>
+                  </div>
+
+                  <div className="sh-item sh-item-bl">
+                    <div className="sh-circle">
+                      <Image src="/snacks/rice-bran-oil-biryani.png" alt="Clay Pot Biryani" width={68} height={68} style={{ objectFit: 'contain' }} />
+                    </div>
+                    <div className="sh-label">
+                      <span className="sh-label-name">Clay Pot Biryani</span>
+                      <span className="sh-label-desc">Light texture keeps long-grain rice separate, non-greasy, and aromatic.</span>
+                    </div>
+                  </div>
+
+                  <div className="sh-item sh-item-left">
+                    <div className="sh-circle">
+                      <Image src="/snacks/rice-bran-oil-roasted-nuts.png" alt="Roasted Nuts" width={68} height={68} style={{ objectFit: 'contain' }} />
+                    </div>
+                    <div className="sh-label">
+                      <span className="sh-label-name">Roasted Nuts</span>
+                      <span className="sh-label-desc">Thin coating profile covers almonds and cashews evenly with no grease.</span>
+                    </div>
+                  </div>
+
+                  <div className="sh-item sh-item-tl">
+                    <div className="sh-circle">
+                      <Image src="/snacks/rice-bran-oil-pani-puri.png" alt="Crisp Pani Puri" width={68} height={68} style={{ objectFit: 'contain' }} />
+                    </div>
+                    <div className="sh-label">
+                      <span className="sh-label-name">Crisp Pani Puri</span>
+                      <span className="sh-label-desc">Rapid expansion ensures thin, crisp, and perfectly hollow shells.</span>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -219,8 +295,8 @@ export default function About() {
                 We are proud to be one of the major suppliers of rice bran oil to the snack and namkeen industries across India. As a healthy and indigenous alternative to palm oil, rice bran oil is fast becoming the preferred choice for all food manufacturers who value quality and their customers&apos; wellbeing.
               </p>
               <div className="supply-tags rv" data-d="3">
-                <span className="supply-tag">Snack Industry</span>
-                <span className="supply-tag">Namkeen Manufacturers</span>
+                <span className="supply-tag" style={{ background: 'var(--y)', color: 'var(--pd)', borderColor: 'var(--y)', fontWeight: 700 }}>🌾 Supplier of Choice</span>
+                <span className="supply-tag">Snack & Namkeen Industry</span>
                 <span className="supply-tag">Food Processing Units</span>
                 <span className="supply-tag">Solvent Extraction Units</span>
                 <span className="supply-tag">Retail Distribution</span>
