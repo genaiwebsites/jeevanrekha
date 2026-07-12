@@ -227,8 +227,8 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 .wcard.wcard-stat:hover .hs-label { color: var(--w); }
 .wcard-stat-desc { font-size: 0.82rem; line-height: 1.6; color: var(--g60); margin: 0; transition: color 0.3s; position: relative; z-index: 1; }
 .wcard.wcard-stat:hover .wcard-stat-desc { color: rgba(255, 255, 255, 0.65); }
-.wcard { background: var(--w); border-radius: 26px; padding: 50px 40px; border: 1px solid rgba(75,38,133,.07); position: relative; overflow: hidden; transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease); cursor: default; }
-.wcard::before { content: ''; position: absolute; inset: 0; border-radius: 26px; background: linear-gradient(140deg, var(--p), var(--pm)); opacity: 0; transition: opacity .4s; }
+.wcard { background: var(--w); border-radius: 16px; padding: 50px 40px; border: 1px solid rgba(75,38,133,.07); position: relative; overflow: hidden; transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease); cursor: default; }
+.wcard::before { content: ''; position: absolute; inset: 0; border-radius: 16px; background: linear-gradient(140deg, var(--p), var(--pm)); opacity: 0; transition: opacity .4s; }
 .wcard:hover::before { opacity: 1; }
 .wcard:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
 .wc-bg-n { position: absolute; top: 16px; right: 24px; font-family: var(--fd); font-size: 6.5rem; line-height: 1; color: rgba(75,38,133,.05); font-style: italic; transition: color .4s; }
@@ -429,7 +429,7 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 .phil { padding: 130px 0; background: var(--off); position: relative; overflow: hidden; }
 .phil::before { content: ''; position: absolute; right: -180px; top: -200px; width: 650px; height: 650px; border-radius: 50%; background: radial-gradient(ellipse, rgba(75,38,133,.055) 0%, transparent 70%); pointer-events: none; }
 .phil-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 110px; align-items: center; }
-.phil-vis-card { background: linear-gradient(150deg, var(--p) 0%, var(--pm) 52%, #180840 100%); border-radius: 34px; padding: 76px 60px; position: relative; overflow: hidden; box-shadow: var(--shadow-lg); }
+.phil-vis-card { background: linear-gradient(150deg, var(--p) 0%, var(--pm) 52%, #180840 100%); border-radius: 16px; padding: 76px 60px; position: relative; overflow: hidden; box-shadow: var(--shadow-lg); }
 .pvc-grid { position: absolute; inset: 0; opacity: .12; background-image: linear-gradient(rgba(255,255,255,.12) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.12) 1px, transparent 1px); background-size: 44px 44px; }
 .pvc-glow { position: absolute; top: -80px; right: -80px; width: 340px; height: 340px; border-radius: 50%; background: radial-gradient(ellipse, rgba(254,220,6,.2) 0%, transparent 70%); }
 .p-qmark { font-family: var(--fd); font-size: 8.5rem; line-height: .62; color: rgba(254,220,6,.28); position: relative; z-index: 1; margin-bottom: 22px; display: block; }
@@ -437,10 +437,10 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 .p-quote em { color: var(--y); }
 .p-sig { font-size: .67rem; font-weight: 700; letter-spacing: .24em; text-transform: uppercase; color: rgba(255,255,255,.38); position: relative; z-index: 1; display: flex; align-items: center; gap: 14px; }
 .p-sig::before { content: ''; width: 32px; height: 1px; background: var(--y); }
-.p-chip1 { position: absolute; bottom: -22px; right: -18px; background: var(--y); border-radius: 18px; padding: 20px 26px; box-shadow: 0 16px 48px rgba(75,38,133,.2); display: flex; align-items: center; gap: 14px; }
+.p-chip1 { position: absolute; bottom: -22px; right: -18px; background: var(--y); border-radius: 12px; padding: 20px 26px; box-shadow: 0 16px 48px rgba(75,38,133,.2); display: flex; align-items: center; gap: 14px; }
 .p-chip1 .pcn { font-family: var(--fd); font-size: 1.5rem; color: var(--pd); line-height: 1; font-style: italic; }
 .p-chip1 .pcl { font-size: .58rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: rgba(51,25,104,.52); margin-top: 2px; }
-.p-chip2 { position: absolute; top: -18px; left: -18px; background: var(--w); border-radius: 16px; padding: 18px 22px; box-shadow: 0 12px 36px rgba(75,38,133,.14); }
+.p-chip2 { position: absolute; top: -18px; left: -18px; background: var(--w); border-radius: 12px; padding: 18px 22px; box-shadow: 0 12px 36px rgba(75,38,133,.14); }
 .p-chip2 .pcn { font-family: var(--fd); font-size: 1.4rem; color: var(--p); line-height: 1; font-style: italic; }
 .p-chip2 .pcl { font-size: .58rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--g60); margin-top: 2px; }
 .p-chip-ico { width: 44px; height: 44px; background: var(--pd); border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
