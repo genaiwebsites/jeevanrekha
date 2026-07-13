@@ -135,7 +135,11 @@
     
     html[data-theme="colorful"] #nav { --text-dark: #FFFFFF; }
     html[data-theme="colorful"] #nav.scrolled { background: rgba(0, 75, 35, 0.95); }
-    html[data-theme="colorful"] html[data-theme="colorful"] html[data-theme="colorful"] html[data-theme="colorful"] #hero .data-pill { 
+    html[data-theme="colorful"] .theme-toggle { background: rgba(255, 255, 255, 0.15); }
+    html[data-theme="colorful"] .theme-btn:hover { background: rgba(255, 255, 255, 0.25); }
+    html[data-theme="colorful"] .theme-btn.active { background: rgba(255, 255, 255, 0.35); box-shadow: inset 0 0 0 1px var(--gold); }
+    
+    html[data-theme="colorful"] #hero .data-pill { 
       background: rgba(255, 255, 255, 0.1); 
       color: #FFFFFF; 
       border: 1px solid rgba(255, 255, 255, 0.15); 
@@ -191,6 +195,18 @@
     /* ============================================================
        THEME TOGGLE WIDGET
     ============================================================ */
+    .theme-toggle {
+      display: flex; gap: 4px; background: rgba(var(--warm-white-rgb), 0.7); backdrop-filter: blur(10px);
+      padding: 4px 6px; border-radius: 100px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .theme-btn {
+      background: transparent; border: none; font-size: 1rem; cursor: pointer;
+      width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s ease; opacity: 0.5;
+    }
+    .theme-btn:hover { opacity: 1; transform: scale(1.1); background: rgba(128,128,128,0.1); }
+    .theme-btn.active { opacity: 1; background: rgba(128,128,128,0.2); box-shadow: inset 0 0 0 1px var(--gold); }
+
     /* ============================================================
        NAVIGATION & LOGO 
     ============================================================ */
@@ -596,44 +612,7 @@
     .footer-tagline-center { font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; color: var(--text-dark); text-align: center; position: relative; z-index: 2; }
     .footer-copy { font-family: var(--sans); font-size: 0.75rem; color: var(--text-mid); text-align: right; line-height: 1.6; position: relative; z-index: 2; }
 
-  
-    /* Back-to-site link */
-    .back-to-site {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-family: var(--sans);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: var(--hero-nav-link, var(--text-dark));
-      border: 1px solid rgba(255,255,255,0.25);
-      background: rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
-      padding: 7px 16px;
-      border-radius: 100px;
-      transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-      white-space: nowrap;
-    }
-    .back-to-site:hover {
-      background: rgba(255,255,255,0.22);
-      border-color: rgba(255,255,255,0.5);
-      transform: translateX(-3px);
-    }
-    /* Invert colours when nav is scrolled (solid bg) */
-    #nav.scrolled .back-to-site {
-      color: var(--text-dark);
-      border-color: rgba(0,0,0,0.12);
-      background: rgba(0,0,0,0.04);
-    }
-    #nav.scrolled .back-to-site:hover {
-      border-color: rgba(0,0,0,0.25);
-      background: rgba(0,0,0,0.08);
-    }
-
-    </style>
+  </style>
 </head>
 <body>
 
@@ -649,11 +628,12 @@
       <li><a href="#comparison">Compare</a></li>
     </ul>
 
-        <div class="nav-spacer">
-      <a href="/products" class="back-to-site" title="Back to Jeevan Rekha" onclick="window.parent.location.href='/products'; return false;">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
-        All Products
-      </a>
+    <div class="nav-spacer">
+      <div class="theme-toggle">
+        <button class="theme-btn" data-set-theme="light" aria-label="Light Theme">☀️</button>
+        <button class="theme-btn" data-set-theme="dark" aria-label="Dark Theme">🌙</button>
+        <button class="theme-btn active" data-set-theme="colorful" aria-label="Colorful Theme">🎨</button>
+      </div>
     </div>
   </nav>
 
@@ -1007,7 +987,13 @@
     }
 
     /* Theme Toggle */
-    document.querySelectorAll(');
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const theme = btn.getAttribute('data-set-theme');
+        document.documentElement.setAttribute('data-theme', theme);
+        document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
     });
 
     gsap.registerPlugin(ScrollTrigger);
