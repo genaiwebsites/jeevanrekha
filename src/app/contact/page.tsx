@@ -359,7 +359,7 @@ export default function Contact() {
                           <option value="" disabled>Select product</option>
                           <option value="mustard">Kacchi Ghani Mustard Oil</option>
                           <option value="rice-bran">Rice Bran Oil</option>
-                          <option value="soyabean">Soyabean Oil</option>
+                          <option value="soybean">Soybean Oil</option>
                           <option value="all">All / Multiple Products</option>
                         </select>
                       </div>

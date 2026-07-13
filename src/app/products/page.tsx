@@ -145,7 +145,7 @@ export default function Products() {
           <div className="prod-tabs" role="tablist" aria-label="Product navigation">
             <button className={`pt-btn rice ${activeTab === 'p-rice' ? 'act' : ''}`} role="tab" aria-selected={activeTab === 'p-rice'} onClick={() => handleScrollTo('p-rice')}>Rice Bran Oil</button>
             <button className={`pt-btn mustard ${activeTab === 'p-mustard' ? 'act' : ''}`} role="tab" aria-selected={activeTab === 'p-mustard'} onClick={() => handleScrollTo('p-mustard')}>Mustard Oil</button>
-            <button className={`pt-btn soy ${activeTab === 'p-soy' ? 'act' : ''}`} role="tab" aria-selected={activeTab === 'p-soy'} onClick={() => handleScrollTo('p-soy')}>Soyabean Oil</button>
+            <button className={`pt-btn soy ${activeTab === 'p-soy' ? 'act' : ''}`} role="tab" aria-selected={activeTab === 'p-soy'} onClick={() => handleScrollTo('p-soy')}>Soybean Oil</button>
           </div>
         </div>
       </div>
@@ -200,28 +200,28 @@ export default function Products() {
         </div>
       </div>
 
-      {/* Product 3: Soyabean */}
+      {/* Product 3: Soybean */}
       <div className="prod-block" id="p-soy">
         <div className="pb-visual pv-soy rv sl">
           <div className="pb-vis-bg"></div>
           <div className="pb-bottle-scene">
             <Image
               src={sboImg}
-              alt="Soyabean Oil"
+              alt="Soybean Oil"
               sizes="(max-width: 768px) 100vw, 450px"
             />
           </div>
         </div>
         <div className="pb-content rv sr" data-d="1">
           <div className="pb-badge b-soy">🌱 All Purpose</div>
-          <h2 className="pb-name">Refined Soyabean Oil</h2>
+          <h2 className="pb-name">Refined Soybean Oil</h2>
           <div className="pb-feats">
             <span className="pb-feat">Omega-3 Rich</span>
             <span className="pb-feat">Neutral Flavour</span>
             <span className="pb-feat">Baking Friendly</span>
           </div>
           <p className="pb-desc body-t">Light, neutral-flavoured and packed with Omega-3 fatty acids. A versatile all-purpose oil for baking, dressings, and light cooking.</p>
-          <Link href="/products/soyabean-oil" target="_blank" rel="noopener noreferrer" className="btn-green" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Soyabean Oil</Link>
+          <Link href="/products/soybean-oil" target="_blank" rel="noopener noreferrer" className="btn-green" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Soybean Oil</Link>
         </div>
       </div>
 
@@ -234,7 +234,7 @@ export default function Products() {
               <div className="comp-th comp-th-label">Feature</div>
               <div className="comp-th comp-th-mustard">Mustard Oil</div>
               <div className="comp-th comp-th-rice">Rice Bran</div>
-              <div className="comp-th comp-th-soy">Soyabean</div>
+              <div className="comp-th comp-th-soy">Soybean</div>
             </div>
             <div className="comp-row">
               <div className="comp-cell">Method</div>

@@ -95,16 +95,14 @@ export default function MustardOilPage() {
       });
 
       // Hero Entrance Animations
-      const tl = gsap.timeline({ defaults: { ease: "expo.out" } });
-      tl.to(".hero-ring", { opacity: 0.6, rotate: 15, duration: 2.4 }, 0);
-      tl.fromTo(".hero-eyebrow", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9 }, 0.3);
-      tl.fromTo(".hero-title", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1.1 }, 0.5);
-      tl.fromTo(".hero-divider", { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.7 }, 0.85);
-      tl.fromTo(".hero-tagline-item", { opacity: 0, y: 16 }, { opacity: 1, y: 0, stagger: 0.12, duration: 0.7 }, 1.0);
-      tl.fromTo(".hero-cta", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6 }, 1.4);
-      tl.fromTo("#productWrap", { opacity: 0, scale: 0.88, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 1.4 }, 0.4);
-      tl.fromTo(".data-pill", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, stagger: 0.15, duration: 0.7, ease: "back.out(1.5)" }, 1.2);
-      tl.fromTo("#scrollIndicator", { opacity: 0 }, { opacity: 1, duration: 0.6 }, 1.8);
+      const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+      tl.to('.hero-ring', { opacity: 1, duration: 3 }, 0);
+      tl.fromTo('.hero-title', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1.1 }, 0.3);
+      tl.fromTo('.hero-tagline-item', { opacity: 0, y: 16 }, { opacity: 1, y: 0, stagger: 0.12, duration: 0.7 }, 0.8);
+      tl.fromTo('.hero-desc', { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.8 }, 1.0);
+      tl.fromTo('.hero-cta', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6 }, 1.2);
+      tl.fromTo('#productWrap', { opacity: 0, scale: 0.88, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 1.4 }, 0.3);
+      tl.fromTo('.data-pill', { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, stagger: 0.15, duration: 0.7, ease: 'back.out(1.5)' }, 1.0);
 
       // Parallax scroll effect
       ScrollTrigger.create({
@@ -175,47 +173,51 @@ export default function MustardOilPage() {
 
   {/* HERO */}
   <section id="hero" aria-label="Hero">
-    <div className="hero-bg-art"></div>
+    <div className="section-bg-art"></div>
     
-    <svg className="hero-ring" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{stroke: 'var(--hero-ring-stroke)'}}>
-      <circle cx="300" cy="300" r="280" style={{stroke: 'var(--hero-ring-accent)'}} strokeWidth="0.8" strokeDasharray="6 18"/>
-      <circle cx="300" cy="300" r="240" strokeWidth="0.5" strokeDasharray="3 14" opacity="0.4"/>
-      <circle cx="300" cy="300" r="200" style={{stroke: 'var(--hero-ring-accent)'}} strokeWidth="0.3" opacity="0.3"/>
+    <svg className="hero-ring" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{stroke: 'var(--hero-ring-stroke)'}}>
+      <circle cx="400" cy="400" r="380" style={{stroke: 'var(--hero-ring-accent)'}} strokeWidth="0.8" strokeDasharray="6 18"/>
+      <circle cx="400" cy="400" r="340" strokeWidth="0.5" strokeDasharray="3 14" opacity="0.4"/>
+      <circle cx="400" cy="400" r="300" style={{stroke: 'var(--hero-ring-accent)'}} strokeWidth="0.3" opacity="0.3"/>
       <g style={{stroke: 'var(--hero-ring-accent)'}} strokeWidth="1.2" opacity="0.6">
-        <line x1="300" y1="18" x2="300" y2="36"/> <line x1="291" y1="27" x2="309" y2="27"/>
-        <line x1="300" y1="564" x2="300" y2="582"/> <line x1="291" y1="573" x2="309" y2="573"/>
-        <line x1="18" y1="300" x2="36" y2="300"/> <line x1="27" y1="291" x2="27" y2="309"/>
-        <line x1="564" y1="300" x2="582" y2="300"/> <line x1="573" y1="291" x2="573" y2="309"/>
+        <line x1="400" y1="18" x2="400" y2="36"/> <line x1="391" y1="27" x2="409" y2="27"/>
+        <line x1="400" y1="764" x2="400" y2="782"/> <line x1="391" y1="773" x2="409" y2="773"/>
+        <line x1="18" y1="400" x2="36" y2="400"/> <line x1="27" y1="391" x2="27" y2="409"/>
+        <line x1="764" y1="400" x2="782" y2="400"/> <line x1="773" y1="391" x2="773" y2="409"/>
       </g>
-      <path d="M300 60 Q330 120 300 180 Q270 120 300 60Z" fill="none" strokeWidth="0.6" opacity="0.3"/>
-      <path d="M300 420 Q330 480 300 540 Q270 480 300 420Z" fill="none" strokeWidth="0.6" opacity="0.3"/>
-      <path d="M60 300 Q120 270 180 300 Q120 330 60 300Z" fill="none" strokeWidth="0.6" opacity="0.3"/>
-      <path d="M420 300 Q480 270 540 300 Q480 330 420 300Z" fill="none" strokeWidth="0.6" opacity="0.3"/>
     </svg>
 
     <div className="hero-inner">
       <div className="hero-text-col">
-        <div className="hero-eyebrow">AB Udyog presents</div>
-        <h1 className="hero-title">Jeevan<br/><em>Rekha</em><br/>Mustard Oil</h1>
-        <div className="hero-divider"></div>
+        <h1 className="hero-title">Jeevan Rekha<br/><em>Mustard Oil</em></h1>
+
         <div className="hero-taglines">
           <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Kachi Ghani Cold-Pressed</div>
           <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Rich in Natural Antioxidants</div>
-          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Cholesterol Free & FSSAI Certified</div>
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Cholesterol Free &amp; FSSAI Certified</div>
         </div>
-        <a className="hero-cta" href="#benefits">Discover the Oil
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+
+        <p className="hero-desc">Experience the authentic pungency and richness of Jeevan Rekha Kachi Ghani Mustard Oil — cold-pressed the traditional way to preserve every drop of natural flavour, Omega-3 fatty acids, and natural antioxidants. The trusted choice of Indian kitchens for generations.</p>
+
+        <a className="hero-cta" href="#benefits">
+          <span className="cta-text">Discover the Oil</span>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2"/>
           </svg>
         </a>
       </div>
 
       <div className="hero-product-col">
         <div className="hero-product-wrap" id="productWrap">
-          <div className="product-halo"></div>
-          <div className="hero-product-shadow"></div>
-          
-          <img className="hero-product-img" src="/jr_kgmo.png" alt="Jeevan Rekha Mustard Oil" />
+          <img className="hero-product-img"
+               src="/jr_kgmo.png"
+               alt="Jeevan Rekha Kachi Ghani Mustard Oil Pouch"
+                />
+
+          <div className="hero-product-fallback" style={{display: 'none', width: '280px', height: '380px', background: 'linear-gradient(145deg,var(--beige),var(--beige-mid))', borderRadius: '16px', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '16px', boxShadow: '0 24px 48px rgba(0,0,0,0.12)', position: 'relative', zIndex: 2}}>
+            <div style={{fontFamily: 'var(--fd)', fontSize: '3rem', fontWeight: 300, color: 'var(--text-dark)', lineHeight: 1, textAlign: 'center'}}>Jeevan<br />Rekha</div>
+            <div style={{fontFamily: 'var(--fb)', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-light)'}}>Mustard Oil</div>
+          </div>
 
           <div className="pill-orbit-ring">
             <div className="pill-anchor top-left">
@@ -245,10 +247,6 @@ export default function MustardOilPage() {
           </div>
         </div>
       </div>
-    </div>
-    <div className="scroll-indicator" id="scrollIndicator">
-      <div className="scroll-line"></div>
-      <span>Scroll</span>
     </div>
   </section>
 

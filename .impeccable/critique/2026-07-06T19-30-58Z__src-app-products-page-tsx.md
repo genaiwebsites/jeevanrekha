@@ -15,18 +15,18 @@ slug: src-app-products-page-tsx
 | 1 | Visibility of System Status | 4/4 | Static page with clear sections and smooth-scroll navigation. |
 | 2 | Match System / Real World | 4/4 | Clear descriptions of oil varieties, smoke points, and cooking applications. |
 | 3 | User Control and Freedom | 4/4 | Smooth scroll to product sections, standard browser navigation. |
-| 4 | Consistency and Standards | 3/4 | The Rice Bran content card uses a white background, which looks mismatched compared to the transparent backgrounds on the Mustard and Soyabean cards. |
+| 4 | Consistency and Standards | 3/4 | The Rice Bran content card uses a white background, which looks mismatched compared to the transparent backgrounds on the Mustard and Soybean cards. |
 | 5 | Error Prevention | 4/4 | No interactive forms or inputs. |
 | 6 | Recognition Rather Than Recall | 4/4 | Clear side-by-side comparison table detailing features and benefits. |
 | 7 | Flexibility and Efficiency | 3/4 | Standard scroll and tab links. |
-| 8 | Aesthetic and Minimalist Design | 2/4 | Repeated section kickers ("Side by Side", "Find Your Oil") clutter the typography; low contrast text in the yellow B2B CTA strip; random and unrelated SVG icons (location pin for Mustard, clock for Soyabean) in the recommendation cards. |
+| 8 | Aesthetic and Minimalist Design | 2/4 | Repeated section kickers ("Side by Side", "Find Your Oil") clutter the typography; low contrast text in the yellow B2B CTA strip; random and unrelated SVG icons (location pin for Mustard, clock for Soybean) in the recommendation cards. |
 | 9 | Error Recovery | 4/4 | N/A |
 | 10 | Help and Documentation | 3/4 | Navigation and contact links are clearly visible. |
 | **Total** | | **35/40** | **[Needs Improvement]** |
 
 ## Anti-Patterns Verdict
 
-* **LLM Assessment**: Several anti-patterns are present. Repetitive uppercase section kickers are used, which is a common AI scaffolding reflex. The bottom B2B CTA has low-contrast paragraph text (`rgba(51,25,104,.62)`) on a solid yellow background. The "Find Your Oil" recommendation cards contain mismatched/placeholder-like SVG paths (a map location pin for Mustard Oil and a clock for Soyabean Oil). Finally, the Rice Bran product card features an ad-hoc inline white background that makes it stand out inconsistently from the other cards.
+* **LLM Assessment**: Several anti-patterns are present. Repetitive uppercase section kickers are used, which is a common AI scaffolding reflex. The bottom B2B CTA has low-contrast paragraph text (`rgba(51,25,104,.62)`) on a solid yellow background. The "Find Your Oil" recommendation cards contain mismatched/placeholder-like SVG paths (a map location pin for Mustard Oil and a clock for Soybean Oil). Finally, the Rice Bran product card features an ad-hoc inline white background that makes it stand out inconsistently from the other cards.
 * **Deterministic Scan**: The automated detector found `0` issues in `src/app/products/page.tsx`.
 * **Visual Overlays**: No console errors.
 

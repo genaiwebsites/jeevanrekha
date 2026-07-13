@@ -21,7 +21,7 @@ const row1Reviews = [
   {
     name: "Chef Bikramjit Dey",
     loc: "Owner, 'The Golden Wok', Siliguri",
-    txt: "We use Jeevan Rekha Soyabean Oil for all our Indo-Chinese stir-fries. It doesn't break down at high flame, holds taste perfectly, and is incredibly cost-effective.",
+    txt: "We use Jeevan Rekha Soybean Oil for all our Indo-Chinese stir-fries. It doesn't break down at high flame, holds taste perfectly, and is incredibly cost-effective.",
     initials: "BD",
     avClass: "av-y"
   },
@@ -66,7 +66,7 @@ const row2Reviews = [
   {
     name: "Mrs. Moushumi Sen",
     loc: "Home Baker & Café Owner, Ranchi",
-    txt: "Jeevan Rekha Soyabean Oil is so neutral and light. I use it for baking tea cakes and making mayonnaise from scratch. It blends beautifully without any heavy aftertaste.",
+    txt: "Jeevan Rekha Soybean Oil is so neutral and light. I use it for baking tea cakes and making mayonnaise from scratch. It blends beautifully without any heavy aftertaste.",
     initials: "MS",
     avClass: "av-y"
   },
@@ -80,7 +80,7 @@ const row2Reviews = [
   {
     name: "Tenzing Norbu",
     loc: "Chef, Himalaya Cafe, Gangtok",
-    txt: "Our momo fry and chowmein require a very neutral, high smoke point oil. Jeevan Rekha Soyabean Oil works perfectly. Extremely light on the stomach!",
+    txt: "Our momo fry and chowmein require a very neutral, high smoke point oil. Jeevan Rekha Soybean Oil works perfectly. Extremely light on the stomach!",
     initials: "TN",
     avClass: "av-p"
   }
@@ -286,21 +286,21 @@ export default function Home() {
               <div className="pch-link" style={{ color: 'var(--r-plumlt)' }}>Explore Product <span className="pch-arrow">→</span></div>
             </div>
           </Link>
-          {/* Soyabean */}
+          {/* Soybean */}
           <Link href="/products#p-soy" className="pcard-home rv" data-d="2">
             <div className="pch-bg bg-s"></div>
             <div className="particles"><div className="p-dot"></div><div className="p-dot"></div><div className="p-dot"></div></div>
             <div className="pch-img-wrap">
               <Image
                 src={sboImg}
-                alt="Soyabean Oil"
+                alt="Soybean Oil"
                 className="pch-btl-img"
                 sizes="(max-width: 768px) 100vw, 340px"
               />
             </div>
             <div className="pch-body">
               <div className="pch-badge b-soy">All Purpose</div>
-              <h3 className="pch-title">Soyabean Oil</h3>
+              <h3 className="pch-title">Soybean Oil</h3>
               <p className="pch-desc">Neutral-flavoured, packed with Omega-3 fatty acids. Perfect for baking, dressings, and everyday light cooking.</p>
               <div className="pch-link" style={{ color: 'var(--s-jadelt)' }}>Explore Product <span className="pch-arrow">→</span></div>
             </div>

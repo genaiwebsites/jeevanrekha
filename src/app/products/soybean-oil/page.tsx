@@ -8,9 +8,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "Jeevan Rekha Soyabean Oil",
+  "name": "Jeevan Rekha Soybean Oil",
   "image": "https://jeevanrekhafoods.com/jr_sbo.png",
-  "description": "Light and neutral soyabean oil rich in omega-6 linoleic acid, Vitamin E, and phytosterols. Versatile for frying, baking, and everyday cooking. FSSAI certified.",
+  "description": "Light and neutral soybean oil rich in omega-6 linoleic acid, Vitamin E, and phytosterols. Versatile for frying, baking, and everyday cooking. FSSAI certified.",
   "brand": { "@type": "Brand", "name": "Jeevan Rekha" },
   "manufacturer": {
     "@type": "Organization",
@@ -21,7 +21,7 @@ const productSchema = {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
     "priceCurrency": "INR",
-    "url": "https://jeevanrekhafoods.com/products/soyabean-oil"
+    "url": "https://jeevanrekhafoods.com/products/soybean-oil"
   }
 };
 
@@ -31,7 +31,7 @@ const breadcrumbSchema = {
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jeevanrekhafoods.com" },
     { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://jeevanrekhafoods.com/products" },
-    { "@type": "ListItem", "position": 3, "name": "Soyabean Oil", "item": "https://jeevanrekhafoods.com/products/soyabean-oil" }
+    { "@type": "ListItem", "position": 3, "name": "Soybean Oil", "item": "https://jeevanrekhafoods.com/products/soybean-oil" }
   ]
 };
 
@@ -41,32 +41,32 @@ const faqSchema = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is Jeevan Rekha Soyabean Oil suitable for deep frying?",
+      "name": "Is Jeevan Rekha Soybean Oil suitable for deep frying?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. With a smoke point around 232°C, Jeevan Rekha Soyabean Oil handles high-heat frying without breaking down into harmful compounds."
+        "text": "Yes. With a smoke point around 232°C, Jeevan Rekha Soybean Oil handles high-heat frying without breaking down into harmful compounds."
       }
     },
     {
       "@type": "Question",
-      "name": "What are the nutritional benefits of soyabean oil?",
+      "name": "What are the nutritional benefits of soybean oil?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Soyabean oil is high in omega-6 linoleic acid, Vitamin E tocopherols, and phytosterols, which together support cardiovascular health and healthy cholesterol levels."
+        "text": "Soybean oil is high in omega-6 linoleic acid, Vitamin E tocopherols, and phytosterols, which together support cardiovascular health and healthy cholesterol levels."
       }
     },
     {
       "@type": "Question",
-      "name": "What makes Jeevan Rekha Soyabean Oil different?",
+      "name": "What makes Jeevan Rekha Soybean Oil different?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Jeevan Rekha Soyabean Oil is produced under FSSAI-certified processes by AB Udyog Pvt. Ltd., a manufacturer with 40+ years of expertise in edible oil production in West Bengal."
+        "text": "Jeevan Rekha Soybean Oil is produced under FSSAI-certified processes by AB Udyog Pvt. Ltd., a manufacturer with 40+ years of expertise in edible oil production in West Bengal."
       }
     }
   ]
 };
 
-export default function SoyabeanOilPage() {
+export default function SoybeanOilPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
@@ -161,7 +161,7 @@ export default function SoyabeanOilPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="soyabean-page-container">
+      <div className="soybean-page-container">
         
 
   <nav id="nav" role="navigation">
@@ -370,7 +370,7 @@ export default function SoyabeanOilPage() {
           
           <ul className="nutri-list">
             <li className="nutri-list-item">
-              <span className="nutri-icon">✨</span> Refined Soyabean Oil
+              <span className="nutri-icon">✨</span> Refined Soybean Oil
             </li>
             <li className="nutri-list-item">
               <span className="nutri-icon">🛡️</span> Antioxidant TBHQ (E 319)
@@ -495,7 +495,7 @@ export default function SoyabeanOilPage() {
         </button>
         <div className="faq-content">
           <div className="faq-content-inner">
-            <p>The product contains 100% pure Refined Soyabean Oil, Antioxidant TBHQ (E 319) to maintain freshness and stability during high-heat cooking, and is fortified with Vitamin A and Vitamin D. It is strictly free from Argemone Oil.</p>
+            <p>The product contains 100% pure Refined Soybean Oil, Antioxidant TBHQ (E 319) to maintain freshness and stability during high-heat cooking, and is fortified with Vitamin A and Vitamin D. It is strictly free from Argemone Oil.</p>
           </div>
         </div>
       </div>

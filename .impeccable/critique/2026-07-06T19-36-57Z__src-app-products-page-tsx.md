@@ -15,7 +15,7 @@ slug: src-app-products-page-tsx
 | 1 | Visibility of System Status | 4/4 | Static page with clear sections and smooth-scroll navigation. |
 | 2 | Match System / Real World | 4/4 | Clear descriptions of oil varieties, smoke points, and cooking applications. |
 | 3 | User Control and Freedom | 4/4 | Smooth scroll to product sections, standard browser navigation. |
-| 4 | Consistency and Standards | 4/4 | Rice Bran block background is uniform and transparent, matching Mustard and Soyabean cards. |
+| 4 | Consistency and Standards | 4/4 | Rice Bran block background is uniform and transparent, matching Mustard and Soybean cards. |
 | 5 | Error Prevention | 4/4 | No interactive forms or inputs. |
 | 6 | Recognition Rather Than Recall | 4/4 | Clear side-by-side comparison table detailing features and benefits. |
 | 7 | Flexibility and Efficiency | 3/4 | Standard scroll and tab links. |

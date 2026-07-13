@@ -26,7 +26,7 @@ tokens:
         - radial-gradient(ellipse 55% 55% at 55% 85%, rgba(45,22,96,.8) 0%, transparent 55%)
       mustardProduct: "radial-gradient(ellipse at center, #d8a018 0%, #8c6808 60%, #302000 100%)"
       riceBranProduct: "radial-gradient(ellipse at center, #7b51c1 0%, #522d94 60%, #1c093e 100%)"
-      soyabeanProduct: "radial-gradient(ellipse at center, #5bb55b 0%, #2d822d 60%, #082d08 100%)"
+      soybeanProduct: "radial-gradient(ellipse at center, #5bb55b 0%, #2d822d 60%, #082d08 100%)"
       linearAccent: "linear-gradient(135deg, var(--p) 0%, var(--pm) 50%, var(--pd) 100%)"
       footerBackground: "linear-gradient(180deg, var(--off) 0%, #e6dff0 100%)"
       subFooterBackground: "linear-gradient(135deg, var(--p) 0%, var(--pd) 100%)"
@@ -72,7 +72,7 @@ Our color palette establishes a clear division between rich premium spaces, scie
   - **Product Showcases**: High-contrast, center-weighted radial gradients representing the soul of each product.
     - *Mustard*: Gold-bronze (`.bg-m`) mimicking the rich mustard seed.
     - *Rice Bran*: Plum-violet (`.bg-r`) signaling scientific physical refining.
-    - *Soyabean*: Green-emerald (`.bg-s`) reflecting plant-based organic health.
+    - *Soybean*: Green-emerald (`.bg-s`) reflecting plant-based organic health.
   - **Linear Accent**: Used on testimonial lines, background cards, and banner dividers to smoothly transition across brand hues.
 
 ## 3. Typography

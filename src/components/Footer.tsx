@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 export default function Footer() {
   const pathname = usePathname();
 
-  if (pathname.startsWith('/products/mustard-oil') || pathname.startsWith('/products/rice-bran-oil') || pathname.startsWith('/products/soyabean-oil')) {
+  if (pathname.startsWith('/products/mustard-oil') || pathname.startsWith('/products/rice-bran-oil') || pathname.startsWith('/products/soybean-oil')) {
     return null;
   }
 
@@ -51,7 +51,7 @@ export default function Footer() {
             <ul>
               <li><Link href="/products">Rice Bran Oil</Link></li>
               <li><Link href="/products">Mustard Oil</Link></li>
-              <li><Link href="/products">Soyabean Oil</Link></li>
+              <li><Link href="/products">Soybean Oil</Link></li>
             </ul>
           </div>
           <div className="f-col">

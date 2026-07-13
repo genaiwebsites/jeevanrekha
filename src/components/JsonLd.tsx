@@ -7,7 +7,7 @@ export default function JsonLd() {
     url: 'https://jeevanrekhafoods.com',
     logo: '/jeevan-rekha-logo.png',
     description:
-      'Premium edible oil manufacturer with 40+ years of expertise. Producing NABL-certified Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soyabean Oil.',
+      'Premium edible oil manufacturer with 40+ years of expertise. Producing NABL-certified Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soybean Oil.',
     foundingDate: '2019',
     address: {
       '@type': 'PostalAddress',
@@ -49,11 +49,11 @@ export default function JsonLd() {
         },
         {
           '@type': 'Product',
-          name: 'Refined Soyabean Oil',
+          name: 'Refined Soybean Oil',
           description: 'Light, neutral-flavoured and packed with Omega-3 fatty acids. A versatile all-purpose oil.',
           brand: { '@type': 'Brand', name: 'Jeevan Rekha' },
           category: 'Edible Oil',
-          url: 'https://jeevanrekhafoods.com/products/soyabean-oil',
+          url: 'https://jeevanrekhafoods.com/products/soybean-oil',
         },
       ],
     },

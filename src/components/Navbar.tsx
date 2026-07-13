@@ -25,7 +25,7 @@ export default function Navbar() {
     setIsMobileOpen(false);
   }, [pathname]);
 
-  if (pathname.startsWith('/products/mustard-oil') || pathname.startsWith('/products/rice-bran-oil') || pathname.startsWith('/products/soyabean-oil')) {
+  if (pathname.startsWith('/products/mustard-oil') || pathname.startsWith('/products/rice-bran-oil') || pathname.startsWith('/products/soybean-oil')) {
     return null;
   }
 

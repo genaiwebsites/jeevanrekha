@@ -3,7 +3,7 @@ import { Lora, Kumbh_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import "./products/mustard-oil/mustard-oil.css";
 import "./products/rice-bran-oil/rice-bran-oil.css";
-import "./products/soyabean-oil/soyabean-oil.css";
+import "./products/soybean-oil/soybean-oil.css";
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     default: 'Jeevan Rekha | Purity. Health. Happiness.',
     template: '%s | Jeevan Rekha',
   },
-  description: 'Jeevan Rekha, a brand of AB Udyog Pvt. Ltd., brings 40+ years of expertise in producing premium Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soyabean Oil. Manufactured in Burdwan, West Bengal. NABL-certified quality. Proudly made in India.',
+  description: 'Jeevan Rekha, a brand of AB Udyog Pvt. Ltd., brings 40+ years of expertise in producing premium Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soybean Oil. Manufactured in Burdwan, West Bengal. NABL-certified quality. Proudly made in India.',
   keywords: [
-    'Jeevan Rekha', 'Rice Bran Oil', 'Kacchi Ghani Mustard Oil', 'Soyabean Oil',
+    'Jeevan Rekha', 'Rice Bran Oil', 'Kacchi Ghani Mustard Oil', 'Soybean Oil',
     'edible oil', 'cooking oil', 'cold pressed oil', 'physically refined oil',
     'AB Udyog', 'Burdwan', 'West Bengal', 'Indian cooking oil', 'healthy cooking oil',
     'NABL certified', 'Gamma Oryzanol', 'heart healthy oil',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     url: 'https://jeevanrekhafoods.com',
     siteName: 'Jeevan Rekha',
     title: 'Jeevan Rekha | Purity. Health. Happiness.',
-    description: 'Premium edible oils crafted with 40+ years of expertise. Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soyabean Oil. Quality is NABL-certified, and our products are proudly made in India.',
+    description: 'Premium edible oils crafted with 40+ years of expertise. Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soybean Oil. Quality is NABL-certified, and our products are proudly made in India.',
     images: [
       {
         url: '/jeevan-rekha-logo.png',
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Jeevan Rekha | Purity. Health. Happiness.',
-    description: 'Premium edible oils crafted with 40+ years of expertise. Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soyabean Oil.',
+    description: 'Premium edible oils crafted with 40+ years of expertise. Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soybean Oil.',
     images: ['/jeevan-rekha-logo.png'],
   },
   alternates: {
