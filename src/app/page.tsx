@@ -323,7 +323,7 @@ export default function Home() {
               </div>
             </div>
             <div className="rv sr">
-              <h2 className="s-h" style={{ marginBottom: '26px' }}>When you choose <em>pure</em>,<br/>you choose <strong>life itself</strong></h2>
+              <h2 className="s-h" style={{ marginBottom: '26px' }}>When you choose pure, you choose <strong>life itself</strong></h2>
               <p className="body-t" style={{ marginBottom: '20px' }}>When we strip away the artificial and embrace what&apos;s genuine, our lives transform. A pure existence creates the foundation for true health that no medicine can replicate.</p>
               <p className="body-t" style={{ marginBottom: '30px' }}>Health is vitality flowing through every cell. From health springs happiness: a deeper contentment that radiates from within.</p>
               <Link href="/about" className="btn-p">Read Our Full Story</Link>
