@@ -47,7 +47,6 @@ export default function Blogs() {
           position: 'relative',
           zIndex: 3
         }}>
-          <div className="h-eyebrow"><span className="pulse"></span><span className="eyebrow-t" style={{ color: 'rgba(255,255,255,0.75)' }}>The Jeevan Rekha Journal</span></div>
           <h1 className="s-h" style={{ fontSize: '3.5rem', color: 'var(--w)', textShadow: '0 4px 16px rgba(0,0,0,0.45)' }}>Insights on <strong style={{ color: 'var(--y)' }}>Health</strong>,<br/><em style={{ color: 'var(--y)' }}>Nutrition &amp; Cooking</em></h1>
           <p className="body-t" style={{ maxWidth: '600px', marginTop: '16px', color: 'rgba(255,255,255,0.85)', textShadow: '0 2px 8px rgba(0,0,0,0.45)' }}>Expert advice, debunked myths, and delicious recipes to help you make the healthiest choices for your family.</p>
         </div>
