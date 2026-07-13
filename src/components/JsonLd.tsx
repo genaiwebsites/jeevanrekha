@@ -37,6 +37,7 @@ export default function JsonLd() {
           description: 'Physically refined to retain natural antioxidants with a 232°C smoke point. Rich in Gamma-Oryzanol and Vitamin E.',
           brand: { '@type': 'Brand', name: 'Jeevan Rekha' },
           category: 'Edible Oil',
+          url: 'https://jeevanrekhafoods.com/products/rice-bran-oil',
         },
         {
           '@type': 'Product',
@@ -44,6 +45,7 @@ export default function JsonLd() {
           description: 'Traditional cold-pressed from premium black mustard seeds. No heat, no chemicals, just pure nature.',
           brand: { '@type': 'Brand', name: 'Jeevan Rekha' },
           category: 'Edible Oil',
+          url: 'https://jeevanrekhafoods.com/products/mustard-oil',
         },
         {
           '@type': 'Product',
@@ -51,6 +53,7 @@ export default function JsonLd() {
           description: 'Light, neutral-flavoured and packed with Omega-3 fatty acids. A versatile all-purpose oil.',
           brand: { '@type': 'Brand', name: 'Jeevan Rekha' },
           category: 'Edible Oil',
+          url: 'https://jeevanrekhafoods.com/products/soyabean-oil',
         },
       ],
     },

@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "FSSAI certified mustard oil",
   ],
   alternates: {
-    canonical: "https://jeevanrekhafoods.com/products/kgmo",
+    canonical: "https://jeevanrekhafoods.com/products/mustard-oil",
   },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://jeevanrekhafoods.com/products/kgmo",
+    url: "https://jeevanrekhafoods.com/products/mustard-oil",
     siteName: "Jeevan Rekha",
     title: "Kacchi Ghani Mustard Oil | Jeevan Rekha",
     description:
@@ -65,7 +65,7 @@ const productSchema = {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
     priceCurrency: "INR",
-    url: "https://jeevanrekhafoods.com/products/kgmo",
+    url: "https://jeevanrekhafoods.com/products/mustard-oil",
   },
 };
 
@@ -75,7 +75,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://jeevanrekhafoods.com" },
     { "@type": "ListItem", position: 2, name: "Products", item: "https://jeevanrekhafoods.com/products" },
-    { "@type": "ListItem", position: 3, name: "Kacchi Ghani Mustard Oil", item: "https://jeevanrekhafoods.com/products/kgmo" },
+    { "@type": "ListItem", position: 3, name: "Kacchi Ghani Mustard Oil", item: "https://jeevanrekhafoods.com/products/mustard-oil" },
   ],
 };
 

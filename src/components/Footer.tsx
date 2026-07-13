@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 export default function Footer() {
   const pathname = usePathname();
 
-  if (pathname.startsWith('/products/kgmo') || pathname.startsWith('/products/rbo') || pathname.startsWith('/products/sbo')) {
+  if (pathname.startsWith('/products/mustard-oil') || pathname.startsWith('/products/rice-bran-oil') || pathname.startsWith('/products/soyabean-oil')) {
     return null;
   }
 

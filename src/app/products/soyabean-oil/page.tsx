@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "FSSAI certified soyabean oil",
   ],
   alternates: {
-    canonical: "https://jeevanrekhafoods.com/products/sbo",
+    canonical: "https://jeevanrekhafoods.com/products/soyabean-oil",
   },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://jeevanrekhafoods.com/products/sbo",
+    url: "https://jeevanrekhafoods.com/products/soyabean-oil",
     siteName: "Jeevan Rekha",
     title: "Soyabean Oil — Heart of Every Healthy Meal | Jeevan Rekha",
     description:
@@ -65,7 +65,7 @@ const productSchema = {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
     priceCurrency: "INR",
-    url: "https://jeevanrekhafoods.com/products/sbo",
+    url: "https://jeevanrekhafoods.com/products/soyabean-oil",
   },
 };
 
@@ -75,7 +75,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://jeevanrekhafoods.com" },
     { "@type": "ListItem", position: 2, name: "Products", item: "https://jeevanrekhafoods.com/products" },
-    { "@type": "ListItem", position: 3, name: "Soyabean Oil", item: "https://jeevanrekhafoods.com/products/sbo" },
+    { "@type": "ListItem", position: 3, name: "Soyabean Oil", item: "https://jeevanrekhafoods.com/products/soyabean-oil" },
   ],
 };
 

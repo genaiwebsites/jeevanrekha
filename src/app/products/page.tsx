@@ -171,7 +171,7 @@ export default function Products() {
             <span className="pb-feat">Vitamin E Rich</span>
           </div>
           <p className="pb-desc body-t">Physically refined to retain natural antioxidants. With a 232°C smoke point, it&apos;s India&apos;s healthiest choice for high-heat frying and daily cooking.</p>
-          <Link href="/products/rbo" target="_blank" rel="noopener noreferrer" className="btn-p" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Rice Bran Oil</Link>
+          <Link href="/products/rice-bran-oil" target="_blank" rel="noopener noreferrer" className="btn-p" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Rice Bran Oil</Link>
         </div>
       </div>
 
@@ -196,7 +196,7 @@ export default function Products() {
             <span className="pb-feat">Anti-inflammatory</span>
           </div>
           <p className="pb-desc body-t">Traditional cold-pressed from premium black mustard seeds, prepared with no heat and no chemicals for pure nature. The authentic soul of every Indian kitchen.</p>
-          <Link href="/products/kgmo" target="_blank" rel="noopener noreferrer" className="btn-red" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Mustard Oil</Link>
+          <Link href="/products/mustard-oil" target="_blank" rel="noopener noreferrer" className="btn-red" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Mustard Oil</Link>
         </div>
       </div>
 
@@ -221,7 +221,7 @@ export default function Products() {
             <span className="pb-feat">Baking Friendly</span>
           </div>
           <p className="pb-desc body-t">Light, neutral-flavoured and packed with Omega-3 fatty acids. A versatile all-purpose oil for baking, dressings, and light cooking.</p>
-          <Link href="/products/sbo" target="_blank" rel="noopener noreferrer" className="btn-green" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Soyabean Oil</Link>
+          <Link href="/products/soyabean-oil" target="_blank" rel="noopener noreferrer" className="btn-green" style={{ width: 'fit-content', marginTop: '30px' }}>Explore Soyabean Oil</Link>
         </div>
       </div>
 

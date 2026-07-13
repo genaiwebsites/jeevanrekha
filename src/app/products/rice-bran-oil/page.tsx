@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     "FSSAI certified edible oil",
   ],
   alternates: {
-    canonical: "https://jeevanrekhafoods.com/products/rbo",
+    canonical: "https://jeevanrekhafoods.com/products/rice-bran-oil",
   },
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://jeevanrekhafoods.com/products/rbo",
+    url: "https://jeevanrekhafoods.com/products/rice-bran-oil",
     siteName: "Jeevan Rekha",
     title: "Rice Bran Oil — Purity, Health & Happiness | Jeevan Rekha",
     description:
@@ -65,7 +65,7 @@ const productSchema = {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
     priceCurrency: "INR",
-    url: "https://jeevanrekhafoods.com/products/rbo",
+    url: "https://jeevanrekhafoods.com/products/rice-bran-oil",
   },
 };
 
@@ -75,7 +75,7 @@ const breadcrumbSchema = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://jeevanrekhafoods.com" },
     { "@type": "ListItem", position: 2, name: "Products", item: "https://jeevanrekhafoods.com/products" },
-    { "@type": "ListItem", position: 3, name: "Rice Bran Oil", item: "https://jeevanrekhafoods.com/products/rbo" },
+    { "@type": "ListItem", position: 3, name: "Rice Bran Oil", item: "https://jeevanrekhafoods.com/products/rice-bran-oil" },
   ],
 };
 
