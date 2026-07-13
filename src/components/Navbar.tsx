@@ -11,10 +11,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
-  if (pathname.startsWith('/products/mustard-oil') || pathname.startsWith('/products/rice-bran-oil') || pathname.startsWith('/products/soyabean-oil')) {
-    return null;
-  }
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 60);
@@ -26,9 +22,12 @@ export default function Navbar() {
 
   // Close mobile nav on route change
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setIsMobileOpen(false);
   }, [pathname]);
+
+  if (pathname.startsWith('/products/mustard-oil') || pathname.startsWith('/products/rice-bran-oil') || pathname.startsWith('/products/soyabean-oil')) {
+    return null;
+  }
 
   // Determine if we should force solid styling based on the path
   const isLightPage = pathname === '/blogs' || pathname.startsWith('/blogs/');
