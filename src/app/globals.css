@@ -2279,12 +2279,10 @@ footer {
   position: relative; z-index: 2;
 }
 .f-bottom-inner {
-  display: flex; justify-content: space-between; align-items: center;
+  display: flex; justify-content: center; align-items: center; text-align: center;
   color: rgba(255,255,255,0.7); font-size: 0.85rem; font-weight: 500;
 }
 .f-bottom-inner p { margin: 0; }
-.f-bottom-inner .f-cert { color: var(--y); font-weight: 700; letter-spacing: 0.05em; font-size: 0.75rem; text-transform: uppercase; display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 6px 16px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.15); }
-.f-bottom-inner .f-cert::before { content: '✓'; font-size: 0.9rem; color: var(--s-jadelt); font-weight: 700; }
 
 /* ═══════════════════ RESPONSIVE ═══════════════════ */
 @media(max-width: 1024px) {
