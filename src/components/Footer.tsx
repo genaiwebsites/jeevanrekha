@@ -1,7 +1,16 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (pathname.startsWith('/products/kgmo') || pathname.startsWith('/products/rbo') || pathname.startsWith('/products/sbo')) {
+    return null;
+  }
+
   return (
     <footer>
       <div className="wrap">

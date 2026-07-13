@@ -11,6 +11,10 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
+  if (pathname.startsWith('/products/kgmo') || pathname.startsWith('/products/rbo') || pathname.startsWith('/products/sbo')) {
+    return null;
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 60);

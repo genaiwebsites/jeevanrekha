@@ -1,0 +1,1068 @@
+"use client";
+
+import { useEffect } from 'react';
+import Link from 'next/link';
+import Script from 'next/script';
+
+export default function Page() {
+  useEffect(() => {
+    // Custom Vanilla JS script from the original page
+    const runPageScript = () => {
+      // FAQ Toggles
+      document.querySelectorAll('.faq-q, .faq-btn').forEach(btn => {
+        const newBtn = btn.cloneNode(true) as HTMLElement;
+        btn.parentNode?.replaceChild(newBtn, btn);
+        
+        newBtn.addEventListener('click', () => {
+          const item = newBtn.closest('.faq-item');
+          if (item) {
+            item.classList.toggle('open');
+            item.classList.toggle('active');
+          }
+        });
+      });
+
+      // 3-State Theme Toggle
+      document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const theme = btn.getAttribute('data-set-theme');
+          if (theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+          }
+        });
+      });
+
+      // Intersection Observer for fade-up reveal elements
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+      // GSAP Animations trigger
+      if (typeof window !== 'undefined' && (window as any).gsap && (window as any).ScrollTrigger) {
+        const gsap = (window as any).gsap;
+        const ScrollTrigger = (window as any).ScrollTrigger;
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Entrance
+        const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+        tl.to('.hero-ring', { opacity: 0.6, rotate: 15, duration: 2.4 }, 0);
+        tl.fromTo('.hero-eyebrow', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9 }, 0.3);
+        tl.fromTo('.hero-title', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1.1 }, 0.5);
+        tl.fromTo('.hero-divider', { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.7 }, 0.85);
+        tl.fromTo('.hero-tagline-item', { opacity: 0, y: 16 }, { opacity: 1, y: 0, stagger: 0.12, duration: 0.7 }, 1.0);
+        tl.fromTo('.hero-cta', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6 }, 1.4);
+        
+        tl.fromTo('#productWrap', { opacity: 0, scale: 0.88, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 1.4 }, 0.4);
+        tl.fromTo('.data-pill', { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, stagger: 0.15, duration: 0.7, ease: 'back.out(1.5)' }, 1.2);
+        tl.fromTo('#scrollIndicator', { opacity: 0 }, { opacity: 1, duration: 0.6 }, 1.8);
+
+        // Infinite Rotation on Hero Ring
+        gsap.to('.hero-ring', { rotate: '+=360', duration: 80, repeat: -1, ease: 'none' });
+
+        // Scroll Parallax
+        ScrollTrigger.create({
+          trigger: '#hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+          onUpdate: (self: any) => {
+            const prog = self.progress;
+            gsap.set('#productWrap', { y: prog * -80 });
+            gsap.set('.hero-ring', { rotate: 15 + prog * 40 });
+          }
+        });
+
+        // Sticky Nav on scroll
+        ScrollTrigger.create({
+          trigger: 'body',
+          start: '100px top',
+          onEnter: () => document.getElementById('nav')?.classList.add('scrolled'),
+          onLeaveBack: () => document.getElementById('nav')?.classList.remove('scrolled'),
+        });
+      }
+    };
+
+    // Poll for GSAP loading
+    const interval = setInterval(() => {
+      if ((window as any).gsap && (window as any).ScrollTrigger) {
+        runPageScript();
+        clearInterval(interval);
+      }
+    }, 100);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  return (
+    <div className="sbo-page-wrapper">
+      <style dangerouslySetInnerHTML={{ __html: `
+    /* ============================================================
+       DESIGN TOKENS & CSS VARIABLES (3-WAY THEME SYSTEM)
+    ============================================================ */
+    :root {
+      /* LIGHT THEME (Based on New Palette) */
+      --cream:        #F9FBF7; /* Tertiary */
+      --warm-white:   #FFFFFF;
+      --warm-white-rgb: 255, 255, 255;
+      --beige:        #E8EFEA;
+      --beige-rgb:    232, 239, 234;
+      --beige-mid:    #D1DFD6;
+      --gold:         #FDB813; /* Secondary */
+      --gold-light:   #FEE291;
+      --gold-pale:    #FFF9E6;
+      --green-muted:  #00803B;
+      --green-pale:   #E5F0E9;
+      --green-pale-rgb: 229, 240, 233;
+      --green-deep:   #004B23; /* Primary */
+      --text-dark:    #0E1712;
+      --text-mid:     #3B4D42;
+      --text-light:   #758C7F;
+      --footer-bg-end: #D1DFD6;
+      --art-opacity:  0.2;
+      --marquee-bg:   #004B23;
+      --marquee-text: #FDB813;
+
+      /* Clean, subtle alternating section backgrounds */
+      --bg-hero: linear-gradient(to bottom, #F9FBF7 0%, #FFFFFF 100%);
+      --bg-app: #E5F0E9;
+      --bg-phil: #FFF9E6;
+      --bg-nutri: #FFFFFF;
+      --bg-comp: #E5F0E9;
+      --bg-faq: #FFF9E6;
+      --bg-foot: linear-gradient(to bottom, #E5F0E9 0%, #D1DFD6 100%);
+
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'DM Sans', system-ui, sans-serif;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      /* DARK THEME - Premium Charcoal with Green Undertones */
+      --cream:        #101412; 
+      --warm-white:   #181E1B;
+      --warm-white-rgb: 24, 30, 27;
+      --beige:        #1F2924;
+      --beige-rgb:    31, 41, 36;
+      --beige-mid:    #2C3B33;
+      --gold:         #FDB813;
+      --gold-light:   #FEE291;
+      --gold-pale:    #262112;
+      --green-muted:  #00803B;
+      --green-pale:   #16211B;
+      --green-pale-rgb: 22, 33, 27;
+      --green-deep:   #00A84E; /* Lightened primary for visibility */
+      --text-dark:    #EAF2ED;
+      --text-mid:     #B0C4B8;
+      --text-light:   #82998C;
+      --footer-bg-end: #0B0E0C;
+      --art-opacity:  0.08;
+      --marquee-bg:   #181E1B;
+      --marquee-text: #FDB813;
+
+      /* Clean, subtle alternating dark section backgrounds */
+      --bg-hero: linear-gradient(to bottom, #101412 0%, #181E1B 100%);
+      --bg-app: #151E19; 
+      --bg-phil: #1C190D; 
+      --bg-nutri: #101412; 
+      --bg-comp: #151E19; 
+      --bg-faq: #1C190D; 
+      --bg-foot: linear-gradient(to bottom, #16211B 0%, #0B0E0C 100%);
+    }
+
+    [data-theme="colorful"] {
+      /* COLORFUL THEME - Rich Forest Green Hero & Footer */
+      --cream:        #F4F9F6; 
+      --warm-white:   #FFFFFF; 
+      --warm-white-rgb: 255, 255, 255;
+      --beige:        #E2EFE7; 
+      --beige-rgb:    226, 239, 231;
+      --beige-mid:    #C8DFCF; 
+      --gold:         #FDB813; 
+      --gold-light:   #FEE291;
+      --gold-pale:    #FFF9E6;
+      --green-muted:  #00803B; 
+      --green-pale:   #D9EBE0; 
+      --green-pale-rgb: 217, 235, 224;
+      --green-deep:   #004B23; /* Brand Green */
+      --text-dark:    #002B14; 
+      --text-mid:     #1E4D34;
+      --text-light:   #547A65;
+      --footer-bg-end: #002210;
+      --art-opacity:  0.35;
+      --marquee-bg:   #FDB813; /* Strong Brand Yellow separator */
+      --marquee-text: #004B23;
+
+      /* Clean, subtle alternating section backgrounds */
+      --bg-hero: linear-gradient(to bottom, #004B23 0%, #003318 100%);
+      --bg-app: #E5F0E9; 
+      --bg-phil: #FFF9E6; 
+      --bg-nutri: #FFFFFF; 
+      --bg-comp: #E5F0E9; 
+      --bg-faq: #FFF9E6; 
+      --bg-foot: linear-gradient(to bottom, #004B23 0%, #002210 100%);
+    }
+
+    /* ==========================================================
+       THEME OVERRIDES
+    ========================================================== */
+    .sbo-page-wrapper[data-theme="colorful"] #hero {
+      --text-dark: #FFFFFF;
+      --text-mid: #C8DFCF;
+      --green-deep: var(--gold);
+    }
+    
+    .sbo-page-wrapper[data-theme="colorful"] #nav { --text-dark: #FFFFFF; }
+    .sbo-page-wrapper[data-theme="colorful"] #nav.scrolled { background: rgba(0, 75, 35, 0.95); }
+    .sbo-page-wrapper[data-theme="colorful"] .theme-toggle { background: rgba(255, 255, 255, 0.15); }
+    .sbo-page-wrapper[data-theme="colorful"] .theme-btn:hover { background: rgba(255, 255, 255, 0.25); }
+    .sbo-page-wrapper[data-theme="colorful"] .theme-btn.active { background: rgba(255, 255, 255, 0.35); box-shadow: inset 0 0 0 1px var(--gold); }
+    
+    .sbo-page-wrapper[data-theme="colorful"] #hero .data-pill { 
+      background: rgba(255, 255, 255, 0.1); 
+      color: #FFFFFF; 
+      border: 1px solid rgba(255, 255, 255, 0.15); 
+    }
+    .sbo-page-wrapper[data-theme="colorful"] #hero .data-pill-label { color: #FFFFFF; }
+    .sbo-page-wrapper[data-theme="colorful"] #hero .data-pill-sub { color: rgba(255, 255, 255, 0.8); }
+    .sbo-page-wrapper[data-theme="colorful"] #hero .data-pill:hover { 
+      border-color: var(--gold); 
+      box-shadow: 0 0 20px rgba(253, 184, 19, 0.4), 0 12px 25px rgba(0,0,0,0.25); 
+    }
+    
+    .sbo-page-wrapper[data-theme="colorful"] .hero-title em { color: var(--gold); }
+
+    .sbo-page-wrapper[data-theme="colorful"] #footer .footer-tagline-center { color: #FFFFFF; }
+    .sbo-page-wrapper[data-theme="colorful"] #footer .footer-copy { color: rgba(255,255,255,0.7); }
+
+    /* GLOBAL TRANSITIONS */
+    .sbo-page-wrapper, section, div, h1, h2, h3, h4, p, a, span, article, nav, footer {
+      transition: background 0.6s ease, background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease, border-color 0.6s ease;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .sbo-page-wrapper { scroll-behavior: smooth; background: var(--cream); }
+    .sbo-page-wrapper {
+      font-family: var(--sans); color: var(--text-dark); background: var(--cream);
+      overflow-x: hidden; line-height: 1.6; position: relative;
+    }
+    img { display: block; max-width: 100%; }
+
+    /* ============================================================
+       GLOBAL NOISE & SPARSE ART PATTERN
+    ============================================================ */
+    .sbo-page-wrapper::before {
+      content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 9999; opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 128px;
+    }
+
+    /* Sparse Background Illustration - Green/Gold strokes */
+    .section-bg-art {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: var(--art-opacity); 
+      background-image: url("data:image/svg+xml,%3Csvg width='800' height='800' viewBox='0 0 800 800' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23FDB813' stroke-width='1.5' opacity='0.6'%3E%3C!-- Minimal Beans/Leaves --%3E%3Cpath d='M 150,150 C 170,140 180,160 160,180 C 140,160 130,140 150,150 Z' transform='rotate(25 150 170)'/%3E%3Cpath d='M 650,650 C 670,640 680,660 660,680 C 640,660 630,640 650,650 Z' transform='rotate(-40 650 670)'/%3E%3Cpath d='M 200,500 C 215,495 220,510 205,520 C 190,510 185,495 200,500 Z' transform='rotate(80 200 510)'/%3E%3C!-- Elegant Crosshairs --%3E%3Cpath d='M 700,200 L 700,220 M 690,210 L 710,210'/%3E%3Cpath d='M 300,700 L 300,720 M 290,710 L 310,710'/%3E%3Cpath d='M 100,300 L 100,310 M 95,305 L 105,305'/%3E%3C!-- Tiny Dots --%3E%3Ccircle cx='400' cy='400' r='1.5' fill='%23FDB813'/%3E%3Ccircle cx='750' cy='550' r='1.5' fill='%23FDB813'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 800px 800px;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+    /* ============================================================
+       THEME TOGGLE WIDGET
+    ============================================================ */
+    .theme-toggle {
+      display: flex; gap: 4px; background: rgba(var(--warm-white-rgb), 0.7); backdrop-filter: blur(10px);
+      padding: 4px 6px; border-radius: 100px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    .theme-btn {
+      background: transparent; border: none; font-size: 1rem; cursor: pointer;
+      width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s ease; opacity: 0.5;
+    }
+    .theme-btn:hover { opacity: 1; transform: scale(1.1); background: rgba(128,128,128,0.1); }
+    .theme-btn.active { opacity: 1; background: rgba(128,128,128,0.2); box-shadow: inset 0 0 0 1px var(--gold); }
+
+    /* ============================================================
+       NAVIGATION & LOGO 
+    ============================================================ */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center;
+      padding: clamp(16px, 2vh, 20px) clamp(24px, 5vw, 48px); background: transparent; transition: all 0.4s ease;
+    }
+    #nav.scrolled {
+      background: rgba(var(--cream-rgb), 0.95); backdrop-filter: blur(12px);
+      padding: clamp(10px, 1.5vh, 12px) clamp(24px, 5vw, 48px); box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .nav-logo, .footer-logo-wrap { flex: 1; display: flex; justify-content: flex-start; align-items: center; }
+    /* Locked in Logo styling to prevent any filtering overrides */
+    .nav-logo img, .footer-logo-wrap img { 
+      height: clamp(40px, 4.5vh, 50px); width: auto; object-fit: contain; 
+      filter: none !important; mix-blend-mode: normal !important; opacity: 1 !important; 
+    }
+
+    .nav-links { flex: 1.5; display: flex; justify-content: center; gap: clamp(24px, 3vw, 48px); list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--text-dark); font-family: var(--sans);
+      font-size: 0.85rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em;
+      position: relative; padding: 4px 0; transition: color 0.3s ease;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
+      background: var(--green-deep); transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--green-deep); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-spacer { flex: 1; display: flex; justify-content: flex-end; align-items: center; }
+    
+    @media (max-width: 1024px) { 
+      .nav-links { gap: clamp(12px, 2vw, 24px); }
+      .nav-links a { font-size: 0.75rem; }
+    }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* ============================================================
+       HERO SECTION 
+    ============================================================ */
+    #hero {
+      position: relative; min-height: 100svh; display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: var(--bg-hero); z-index: 2; 
+      padding: clamp(90px, 12vh, 120px) 0 clamp(30px, 5vh, 60px) 0; box-sizing: border-box;
+    }
+
+    .hero-ring {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: min(90vw, 800px); aspect-ratio: 1; pointer-events: none; opacity: 0; z-index: 1;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 3; display: grid; grid-template-columns: 1.1fr 0.9fr; align-items: center;
+      gap: clamp(30px, 5vw, 80px); width: 100%; max-width: 1400px; padding: 0 clamp(24px, 5vw, 80px); margin: 0 auto;
+    }
+
+    .hero-text-col { display: flex; flex-direction: column; gap: 0; max-width: 650px; }
+
+    .hero-title {
+      font-family: var(--serif); font-size: clamp(3.2rem, 5.5vw, 5.5rem); font-weight: 300;
+      line-height: 0.95; color: var(--text-dark); letter-spacing: -0.01em; margin-bottom: clamp(16px, 2.5vh, 24px); opacity: 0; 
+    }
+    .hero-title em { font-style: italic; color: var(--green-deep); display: block; margin-top: 8px;}
+
+    .hero-desc {
+      font-family: var(--sans); font-size: clamp(0.95rem, 1.2vw, 1.05rem); font-weight: 300; line-height: 1.7;
+      color: var(--text-mid); margin-bottom: 32px; opacity: 0; max-width: 90%;
+    }
+
+    .hero-taglines { display: flex; flex-direction: column; gap: 12px; margin-bottom: clamp(24px, 3.5vh, 32px); }
+    .hero-tagline-item { display: flex; align-items: center; gap: 12px; font-family: var(--sans); font-size: clamp(0.9rem, 1.5vw, 1rem); font-weight: 500; color: var(--text-dark); opacity: 0; }
+    .hero-tagline-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+    .hero-cta {
+      display: inline-flex; align-items: center; justify-content: center; gap: 12px; 
+      background: var(--gold); padding: 16px 36px; border-radius: 12px;
+      text-decoration: none; width: fit-content; opacity: 0;
+      transition: all 0.4s var(--ease-out-expo);
+      box-shadow: 0 8px 25px rgba(253, 184, 19, 0.25);
+    }
+    .hero-cta:hover { gap: 18px; transform: translateY(-4px); box-shadow: 0 12px 35px rgba(253, 184, 19, 0.4); }
+    .cta-text { font-family: var(--sans); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: #121C16 !important; }
+    .hero-cta svg { width: 20px; height: 20px; stroke: #121C16 !important; }
+
+    /* Ensure product section doesn't overflow horizontally on mobile */
+    .hero-product-col { display: flex; align-items: center; justify-content: center; position: relative; overflow: visible; }
+    
+    .hero-product-wrap {
+      position: relative; width: min(100%, 480px); height: clamp(400px, 60vh, 650px);
+      display: flex; align-items: center; justify-content: center; opacity: 0; z-index: 2;
+    }
+
+    .hero-product-shadow {
+      position: absolute; bottom: 2%; left: 50%; transform: translateX(-50%); width: 60%; height: 20px;
+      background: radial-gradient(ellipse at center, rgba(0,0,0,0.15) 0%, transparent 70%); z-index: 1; border-radius: 50%;
+      transition: width 0.6s var(--ease-out-expo), opacity 0.6s ease, transform 0.6s var(--ease-out-expo); pointer-events: none;
+    }
+
+    .hero-product-img {
+      position: relative; z-index: 2; max-height: 100%; width: auto; object-fit: contain;
+      transition: transform 0.6s var(--ease-out-expo); cursor: pointer;
+    }
+
+    .hero-product-wrap:hover .hero-product-img { transform: translateY(-15px) scale(1.03); }
+    .hero-product-wrap:hover .hero-product-shadow { width: 45%; opacity: 0.6; transform: translateX(-50%) translateY(10px); }
+
+    .pill-orbit-ring {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: 140%; max-width: 560px; aspect-ratio: 1; border-radius: 50%;
+      animation: spinOrbit 50s linear infinite; pointer-events: none; z-index: 3;
+    }
+
+    .pill-anchor { position: absolute; width: 0; height: 0; display: flex; align-items: center; justify-content: center; animation: counterSpinOrbit 50s linear infinite; }
+    .pill-anchor.top-left  { top: 14.6%; left: 14.6%; }
+    .pill-anchor.top-right { top: 14.6%; left: 85.4%; }
+    .pill-anchor.bot-left  { top: 85.4%; left: 14.6%; }
+    .pill-anchor.bot-right { top: 85.4%; left: 85.4%; }
+
+    @keyframes spinOrbit { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+    @keyframes counterSpinOrbit { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+
+    .data-pill {
+      position: relative; pointer-events: auto; background: rgba(var(--warm-white-rgb), 0.95); backdrop-filter: blur(8px);
+      border-radius: 100px; padding: clamp(6px, 1.5vw, 10px) clamp(12px, 2.5vw, 18px);
+      display: flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: clamp(0.65rem, 1.2vw, 0.8rem);
+      color: var(--text-dark); white-space: nowrap; 
+      box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+      border: 1px solid transparent;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease; cursor: default; opacity: 0; 
+    }
+    .data-pill:hover { 
+      transform: translateY(-4px) scale(1.04); 
+      border-color: var(--gold);
+      box-shadow: 0 0 15px rgba(253, 184, 19, 0.4), 0 12px 25px rgba(0,0,0,0.1); 
+    }
+    
+    [data-theme="dark"] .data-pill {
+      border-color: rgba(255,255,255,0.05);
+    }
+    [data-theme="dark"] .data-pill:hover {
+      border-color: var(--gold);
+      box-shadow: 0 0 15px rgba(253, 184, 19, 0.3), 0 12px 25px rgba(0,0,0,0.4);
+    }
+
+    /* Mobile specifically tuned to prevent horizontal overflow */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; gap: clamp(24px, 4vh, 40px); }
+      .hero-text-col { align-items: center; margin: 0 auto; max-width: 100%; }
+      .hero-title { font-size: clamp(3rem, 8vw, 4.5rem); margin-bottom: 12px; }
+      .hero-desc { max-width: 100%; }
+      .hero-taglines { margin-bottom: 20px; gap: 8px; }
+      .hero-tagline-item { justify-content: center; font-size: 0.85rem; }
+      .cta-text { text-align: center; }
+      .hero-cta { margin: 0 auto; padding: 12px 30px; }
+      
+      .hero-product-wrap { margin: 0 auto; max-width: clamp(200px, 45vw, 320px); height: clamp(260px, 35vh, 380px); }
+      .pill-orbit-ring { width: 120%; max-width: 380px; }
+      .data-pill { padding: 6px 10px; font-size: 0.65rem; gap: 6px; }
+    }
+
+    /* ============================================================
+       SECTION SHARED STYLES
+    ============================================================ */
+    .section-label {
+      font-family: var(--sans); font-size: clamp(0.65rem, 1.5vw, 0.75rem); font-weight: 600;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--green-deep); margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 300;
+      line-height: 1.1; color: var(--text-dark); word-break: break-word;
+    }
+
+    /* ============================================================
+       MARQUEE STRIP
+    ============================================================ */
+    #about-strip { background: var(--marquee-bg); padding: clamp(24px, 4vw, 40px) 0; display: flex; align-items: center; overflow: hidden; position: relative; z-index: 2; }
+    .strip-marquee-track { display: flex; gap: clamp(30px, 6vw, 60px); white-space: nowrap; animation: marquee 20s linear infinite; padding-left: clamp(30px, 6vw, 60px); }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .strip-item { font-family: var(--serif); font-size: clamp(0.9rem, 2vw, 1.1rem); font-style: italic; font-weight: 300; color: var(--marquee-text); display: flex; align-items: center; gap: clamp(16px, 3vw, 30px); }
+    .strip-item::after { content: '✦'; font-style: normal; font-size: 0.6rem; color: var(--marquee-text); opacity: 0.5; }
+
+    /* ============================================================
+       CUISINES & APPLICATIONS SECTION
+    ============================================================ */
+    #applications { padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 60px); background: var(--bg-app); position: relative; z-index: 2; }
+    .applications-inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 2; }
+    
+    .applications-header { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 4vw, 40px); align-items: end; margin-bottom: clamp(30px, 6vw, 60px); }
+    .applications-header p { font-size: clamp(0.9rem, 2vw, 1rem); color: var(--text-mid); font-weight: 300; line-height: 1.7; }
+    @media (max-width: 1024px) { .applications-header { grid-template-columns: 1fr; align-items: start; } .applications-header p { max-width: 100%; } }
+
+    .feed-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 2vw, 24px); }
+    @media (max-width: 1024px) { .feed-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; } }
+    @media (max-width: 640px) { .feed-grid { grid-template-columns: 1fr; } }
+
+    .feed-card {
+      background: var(--warm-white); border-radius: 24px; padding: clamp(28px, 3vw, 40px) clamp(24px, 2vw, 32px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02); border: 1px solid rgba(0, 75, 35, 0.08);
+      position: relative; overflow: hidden; cursor: default; opacity: 0; display: flex; flex-direction: column; z-index: 1;
+      transition: all 0.4s var(--ease-out-expo);
+    }
+    [data-theme="dark"] .feed-card { border-color: rgba(255,255,255,0.05); box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .feed-card:hover { box-shadow: 0 20px 40px rgba(0, 75, 35, 0.12); transform: translateY(-8px); border-color: var(--gold); }
+    [data-theme="dark"] .feed-card:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.4); border-color: var(--gold); }
+
+    .feed-card-number { 
+      position: absolute; top: -16px; right: -12px; font-family: var(--serif); font-size: 8.5rem; letter-spacing: -0.05em; font-weight: 600; 
+      color: rgba(0, 75, 35, 0.03); line-height: 1; z-index: 0; transition: all 0.5s var(--ease-out-expo); pointer-events: none;
+    }
+    [data-theme="dark"] .feed-card-number { color: rgba(255,255,255,0.02); }
+    .feed-card:hover .feed-card-number { color: rgba(253, 184, 19, 0.15); transform: scale(1.05) rotate(-4deg); }
+
+    .feed-card-content { position: relative; z-index: 2; display: flex; flex-direction: column; height: 100%; }
+    
+    .feed-card-icon-wrap {
+      width: clamp(48px, 5vw, 56px); height: clamp(48px, 5vw, 56px); background: var(--green-deep); color: var(--gold);
+      border-radius: 14px; display: flex; align-items: center; justify-content: center; 
+      font-size: clamp(1.4rem, 2vw, 1.6rem); margin-bottom: 24px; transition: all 0.4s var(--ease-out-expo);
+      box-shadow: 0 8px 16px rgba(0, 75, 35, 0.15);
+    }
+    [data-theme="dark"] .feed-card-icon-wrap { box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
+    .feed-card:hover .feed-card-icon-wrap { transform: scale(1.1) rotate(6deg); background: var(--gold); color: #121C16; box-shadow: 0 12px 24px rgba(253, 184, 19, 0.3); }
+
+    .feed-card-title { font-family: var(--serif); font-size: clamp(1.5rem, 2vw, 1.7rem); font-weight: 600; color: var(--text-dark); margin-bottom: 12px; line-height: 1.15; }
+    .feed-card-desc { font-size: clamp(0.9rem, 1vw, 1rem); color: var(--text-mid); font-weight: 300; line-height: 1.6; margin-bottom: 32px; flex-grow: 1; }
+
+    .feed-card-bar { margin-top: auto; height: 4px; background: rgba(0, 75, 35, 0.08); border-radius: 4px; overflow: hidden; position: relative; width: 40px; transition: width 0.5s var(--ease-out-expo); }
+    [data-theme="dark"] .feed-card-bar { background: rgba(255,255,255,0.06); }
+    .feed-card-bar-fill { position: absolute; top: 0; left: 0; bottom: 0; width: 100%; background: var(--gold); transform: translateX(-100%); transition: transform 0.6s var(--ease-out-expo); }
+    .feed-card:hover .feed-card-bar { width: 100%; }
+    .feed-card:hover .feed-card-bar-fill { transform: translateX(0); }
+
+    /* ============================================================
+       CORE PHILOSOPHY
+    ============================================================ */
+    #core-philosophy { padding: clamp(50px, 8vw, 70px) clamp(20px, 5vw, 80px); position: relative; z-index: 2; background: var(--bg-phil); }
+    .stats-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(24px, 4vw, 40px); text-align: center; }
+    @media (max-width: 1024px) { .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 40px 24px; } }
+    @media (max-width: 480px) { .stats-inner { grid-template-columns: 1fr; } }
+
+    .stat-item { display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; transition: transform 0.4s ease; }
+    .stat-item:hover { transform: translateY(-6px); }
+    .stat-icon { font-size: 2.2rem; color: var(--green-deep); margin-bottom: 8px; transition: all 0.3s ease; }
+    .stat-item:hover .stat-icon { color: var(--gold); transform: scale(1.1); }
+    .stat-label { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--text-dark); line-height: 1.2; }
+    .stat-sub { font-family: var(--sans); font-size: 0.85rem; font-weight: 300; color: var(--text-mid); margin-top: 4px; }
+
+    /* ============================================================
+       NUTRITION & DIETICIAN (ASYMMETRICAL CARDS)
+    ============================================================ */
+    #nutrition { background: var(--bg-nutri); padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 80px); position: relative; overflow: hidden; z-index: 2; }
+    .nutrition-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+    .nutrition-header { text-align: center; margin-bottom: clamp(40px, 6vw, 60px); }
+    
+    .nutrition-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 32px); align-items: stretch; }
+    @media (max-width: 900px) { .nutrition-grid { grid-template-columns: 1fr; } }
+
+    .nutri-card { border-radius: 24px; padding: clamp(32px, 5vw, 48px) clamp(24px, 4vw, 40px); position: relative; overflow: hidden; opacity: 0; transition: box-shadow 0.4s ease, transform 0.4s ease; display: flex; flex-direction: column; }
+    
+    /* Card 1: Deep Green */
+    .nutri-card-dark { background: var(--green-deep); color: var(--warm-white); }
+    .nutri-card-dark::before { content: ''; position: absolute; top: -80px; right: -80px; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, var(--gold) 0%, transparent 70%); opacity: 0.15; }
+    .nutri-card-dark .nutri-card-label { color: var(--gold); }
+    .nutri-card-dark .nutri-card-title { color: var(--warm-white); }
+    .nutri-card-dark:hover { box-shadow: 0 15px 40px rgba(0, 75, 35, 0.25); transform: translateY(-5px); }
+
+    /* Card 2: Clean White */
+    .nutri-card-light { background: var(--warm-white); box-shadow: 0 10px 30px rgba(0,0,0,0.03); color: var(--text-dark); border: 1px solid rgba(0, 75, 35, 0.05); }
+    [data-theme="dark"] .nutri-card-light { border: 1px solid rgba(255,255,255,0.05); }
+    .nutri-card-light .nutri-card-label { color: var(--text-light); }
+    .nutri-card-light .nutri-card-title { color: var(--green-deep); }
+    .nutri-card-light:hover { box-shadow: 0 15px 40px rgba(0,0,0,0.08); transform: translateY(-5px); }
+
+    .nutri-card-label { font-family: var(--sans); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; margin-bottom: 16px; }
+    .nutri-card-title { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.2rem); font-weight: 400; margin-bottom: 24px; line-height: 1.1; }
+    .nutri-desc { font-family: var(--sans); font-size: 0.95rem; font-weight: 300; line-height: 1.6; margin-bottom: 30px; opacity: 0.9;}
+
+    .nutri-list { list-style: none; display: flex; flex-direction: column; gap: 16px; margin-top: auto;}
+    .nutri-list-item { display: flex; align-items: center; gap: 12px; font-size: 0.95rem; font-weight: 400; padding-top: 16px; border-top: 1px solid rgba(128,128,128,0.15); }
+    .nutri-list-item:first-child { padding-top: 0; border-top: none; }
+    .nutri-icon { font-size: 1.2rem; }
+    .nutri-val { margin-left: auto; font-family: var(--serif); font-size: 1.2rem; font-weight: 600; }
+    .nutri-card-dark .nutri-val { color: var(--gold); }
+    .nutri-card-light .nutri-val { color: var(--green-deep); }
+
+    /* ============================================================
+       COMPARATIVE STUDY (Refined Mobile View)
+    ============================================================ */
+    #comparison { padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 60px); background: var(--bg-comp); position: relative; z-index: 2; }
+    .comparison-inner { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+    
+    .compare-grid { display: flex; flex-direction: column; gap: 12px; }
+    .cg-row {
+      display: grid; grid-template-columns: 1.2fr 1.3fr 1fr 1fr; background: var(--warm-white);
+      border-radius: 20px; align-items: stretch; transition: all 0.4s var(--ease-out-expo); box-shadow: 0 8px 25px rgba(0,0,0,0.03); position: relative;
+    }
+    .cg-header-row { background: transparent; box-shadow: none; align-items: end; margin-bottom: 8px; }
+    .cg-row:not(.cg-header-row):hover { transform: scale(1.02); box-shadow: 0 16px 40px rgba(0,0,0,0.06); z-index: 10; }
+    .cg-row:not(.cg-header-row):hover .cg-winner { background: rgba(253, 184, 19, 0.15); }
+    
+    .cg-cell { padding: 24px; font-family: var(--sans); font-size: 0.95rem; color: var(--text-mid); display: flex; align-items: center; line-height: 1.5; min-width: 0; overflow-wrap: break-word; }
+    .cg-header-row .cg-cell { padding: 12px 24px; font-family: var(--serif); font-size: 1.4rem; color: var(--text-dark); font-weight: 600; display: block; }
+    
+    .cg-header-winner { background: var(--green-deep); color: var(--warm-white) !important; border-radius: 16px 16px 0 0; position: relative; padding-top: 32px !important; }
+    .cg-badge {
+      position: absolute; top: -14px; left: 24px; background: var(--gold); color: #121C16;
+      font-family: var(--sans); font-size: 0.7rem; font-weight: 700; padding: 6px 14px; border-radius: 100px;
+      letter-spacing: 0.1em; text-transform: uppercase; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    
+    .cg-feature { font-weight: 600; color: var(--text-dark); font-family: var(--serif); font-size: 1.25rem; }
+    .cg-winner { background: rgba(0, 75, 35, 0.04); color: var(--text-dark); font-weight: 500; transition: background 0.4s ease; }
+    [data-theme="dark"] .cg-winner { background: rgba(0, 75, 35, 0.15); color: #FFF; }
+    [data-theme="colorful"] .cg-winner { background: rgba(253, 184, 19, 0.1); }
+    [data-theme="colorful"] .cg-header-winner { background: var(--green-deep); color: var(--warm-white) !important; }
+    
+    .cg-icon { color: var(--gold); margin-right: 10px; font-size: 1.2rem; }
+    [data-theme="colorful"] .cg-icon { color: var(--green-deep); }
+    [data-theme="light"] .cg-icon { color: var(--green-deep); }
+
+    @media (max-width: 1200px) { .cg-cell { padding: 16px 12px; font-size: 0.85rem; } .cg-header-row .cg-cell { padding: 12px; font-size: 1.1rem; } .cg-feature { font-size: 1.1rem; } }
+    
+    /* Completely overhauled Mobile Specs List for Comparison */
+    @media (max-width: 1024px) {
+      .compare-grid { gap: 24px; }
+      .cg-row { display: flex; flex-direction: column; padding: 24px 20px; border-radius: 20px; box-shadow: 0 8px 25px rgba(0,0,0,0.04); gap: 6px; }
+      .cg-row:not(.cg-header-row):hover { transform: translateY(-3px); border-radius: 20px; }
+      .cg-header-row { display: none; }
+      
+      .cg-feature { 
+        font-size: 1.5rem; font-family: var(--serif); color: var(--green-deep); 
+        margin-bottom: 12px; padding-bottom: 16px; border-bottom: 2px solid rgba(128,128,128,0.1); 
+        justify-content: flex-start; text-align: left;
+      }
+      
+      .cg-cell { 
+        padding: 12px 16px; border-radius: 12px; border: none; 
+        display: flex; justify-content: space-between; align-items: center; text-align: right; 
+      }
+      .cg-cell::before { 
+        content: attr(data-label); font-weight: 700; opacity: 0.8; margin-right: 16px; 
+        color: var(--text-dark); text-align: left; font-family: var(--sans); width: 120px; flex-shrink: 0;
+      }
+      .cg-feature::before { display: none; }
+      
+      .cg-winner { background: rgba(0, 75, 35, 0.08); transform: scale(1.02); }
+      [data-theme="dark"] .cg-winner { background: rgba(0, 75, 35, 0.2); }
+      [data-theme="colorful"] .cg-winner { background: rgba(253, 184, 19, 0.15); }
+    }
+
+    .compare-source { text-align: center; font-family: var(--sans); font-size: 0.75rem; color: var(--text-light); margin-top: 32px; font-style: italic; }
+
+    /* ============================================================
+       FAQ ACCORDION
+    ============================================================ */
+    #faq { background: var(--bg-faq); padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 60px); position: relative; z-index: 2; }
+    .faq-inner { max-width: 800px; margin: 0 auto; }
+    
+    .faq-item {
+      background: var(--warm-white); border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+      margin-bottom: 16px; overflow: hidden; transition: box-shadow 0.3s ease, transform 0.3s ease, border-left 0.3s ease, background 0.3s ease;
+      border-left: 4px solid transparent; border: 1px solid rgba(0, 75, 35, 0.05);
+    }
+    .faq-item:hover { box-shadow: 0 12px 30px rgba(0,0,0,0.08); transform: translateY(-2px); border-left-color: var(--gold-light); }
+    .faq-item.active { border-left-color: var(--gold); background: linear-gradient(to right, rgba(253, 184, 19, 0.05), var(--warm-white) 40%); }
+    
+    .faq-btn {
+      width: 100%; text-align: left; background: transparent; border: none; padding: 24px;
+      font-family: var(--serif); font-size: 1.25rem; font-weight: 600; color: var(--text-dark);
+      display: flex; justify-content: space-between; align-items: center; cursor: pointer;
+    }
+    .faq-icon {
+      width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.05); color: var(--green-deep);
+      display: flex; align-items: center; justify-content: center; font-family: var(--sans); font-size: 1.4rem;
+      transition: transform 0.3s ease, background 0.3s ease; flex-shrink: 0;
+    }
+    .faq-item.active .faq-icon { transform: rotate(45deg); background: var(--gold); color: #121C16; }
+    
+    .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out-expo); }
+    .faq-content-inner { padding: 0 24px 24px 24px; font-family: var(--sans); font-size: 0.95rem; font-weight: 300; color: var(--text-mid); line-height: 1.7; }
+
+    /* ============================================================
+       FOOTER 
+    ============================================================ */
+    #footer {
+      background: var(--bg-foot); padding: clamp(30px, 4vw, 40px) clamp(24px, 5vw, 80px);
+      display: grid; grid-template-columns: 1fr auto 1fr; gap: clamp(20px, 3vw, 40px);
+      align-items: center; position: relative; overflow: hidden; z-index: 2; transition: background 0.5s ease;
+    }
+    #footer::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(253, 184, 19, 0.15) 0%, transparent 50%, rgba(0, 75, 35, 0.25) 100%);
+      opacity: 0; z-index: 1; pointer-events: none; transition: opacity 0.6s var(--ease-out-expo);
+    }
+    #footer:hover::after { opacity: 1; }
+
+    @media (max-width: 900px) { #footer { grid-template-columns: 1fr; text-align: center; gap: 20px; } .footer-brand { align-items: center !important; } .footer-copy { text-align: center !important; } }
+
+    .footer-brand { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 2; align-items: flex-start; }
+    .footer-tagline-center { font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; color: var(--text-dark); text-align: center; position: relative; z-index: 2; }
+    .footer-copy { font-family: var(--sans); font-size: 0.75rem; color: var(--text-mid); text-align: right; line-height: 1.6; position: relative; z-index: 2; }
+
+  
+    /* Standalone overrides to hide global layout Nav/Footer */
+    #nav:not(.sbo-page-wrapper #nav) { display: none !important; }
+    footer:not(.sbo-page-wrapper footer) { display: none !important; }
+  ` }} />
+      
+      {/* Load GSAP + ScrollTrigger */}
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" strategy="lazyOnload" />
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" strategy="lazyOnload" />
+
+      {/* Page HTML Structure */}
+      <div dangerouslySetInnerHTML={{ __html: `
+
+  <nav id="nav" role="navigation">
+    <div className="nav-logo">
+      <img src="/abu_logo.png" alt="AB Udyog Logo"  />
+    </div>
+    
+    <ul className="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#applications">Cuisines</a></li>
+      <li><a href="#nutrition">Nutrition</a></li>
+      <li><a href="#comparison">Compare</a></li>
+    </ul>
+
+    <div className="nav-spacer">
+      <div className="theme-toggle">
+        <button className="theme-btn" data-set-theme="light" aria-label="Light Theme">☀️</button>
+        <button className="theme-btn" data-set-theme="dark" aria-label="Dark Theme">🌙</button>
+        <button className="theme-btn active" data-set-theme="colorful" aria-label="Colorful Theme">🎨</button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="hero" aria-label="Hero">
+    <div className="section-bg-art"></div>
+    
+    <svg className="hero-ring" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="400" cy="400" r="360" stroke="var(--gold)" strokeWidth="1" strokeDasharray="6 30" opacity="0.4"/>
+      <circle cx="400" cy="400" r="260" stroke="var(--green-muted)" strokeWidth="1.5" strokeDasharray="4 20" opacity="0.5"/>
+      <circle cx="400" cy="400" r="160" stroke="var(--gold)" strokeWidth="0.5" strokeDasharray="2 12" opacity="0.3"/>
+      
+      <g stroke="var(--gold)" strokeWidth="1.5" opacity="0.7">
+        <path d="M 600,200 C 615,210 615,230 600,240 C 585,230 585,210 600,200 Z" transform="rotate(45 600 220)"/>
+        <path d="M 200,600 C 215,610 215,630 200,640 C 185,630 185,610 200,600 Z" transform="rotate(-30 200 620)"/>
+      </g>
+    </svg>
+
+    <div className="hero-inner">
+      <div className="hero-text-col">
+        <h1 className="hero-title">Jeevan Rekha<br/><em>Soybean Oil</em></h1>
+        
+        <div className="hero-taglines">
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Contains Omega 3 & 6 fatty acids</div>
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Contains Vitamin D & A</div>
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Linoleic Acid helps maintain normal blood cholesterol</div>
+        </div>
+
+        <p className="hero-desc">Discover the purity of Jeevan Rekha Refined Soybean Oil. Naturally rich in Omega 3 & 6 fatty acids and Linoleic Acid to help maintain normal blood cholesterol levels. Fortified with Vitamins A & D, and packed with natural anti-oxidants (Tocopherols), it offers a high smoke point perfectly suitable for all your varied cooking applications.</p>
+
+        <a className="hero-cta" href="#nutrition">
+          <span className="cta-text">Explore Benefits</span>
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2"/>
+          </svg>
+        </a>
+      </div>
+
+      <div className="hero-product-col">
+        <div className="hero-product-wrap" id="productWrap">
+          <img className="hero-product-img" src="/jr_sbo.png" alt="Jeevan Rekha Soybean Oil Pouch"  />
+
+          <div className="hero-product-fallback" style={{ display: 'none', width: '280px', height: '380px', background: 'linear-gradient(145deg,var(--beige),var(--beige-mid))', borderRadius: '16px', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '16px', boxShadow: '0 24px 48px rgba(0,0,0,0.12)', position: 'relative', zIndex: '2' }}>
+            <div style={{ fontFamily: 'var(--serif)', fontSize: '3rem', fontWeight: '300', color: 'var(--text-dark)', lineHeight: '1', textAlign: 'center' }}>Jeevan<br />Rekha</div>
+            <div style={{ fontFamily: 'var(--sans)', fontSize: '0.7rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-light)' }}>Soybean Oil</div>
+          </div>
+
+          <div className="pill-orbit-ring">
+            <div className="pill-anchor top-left">
+              <div className="data-pill" aria-label="Free from Argemone Oil">
+                <span className="data-pill-icon" aria-hidden="true">✦</span>
+                <span><span className="data-pill-label">No Argemone</span> <span className="data-pill-sub">Oil</span></span>
+              </div>
+            </div>
+            <div className="pill-anchor top-right">
+              <div className="data-pill" aria-label="Fortified A & D">
+                <span className="data-pill-icon" aria-hidden="true">☀️</span>
+                <span><span className="data-pill-label">Fortified</span> <span className="data-pill-sub">Vit A&D</span></span>
+              </div>
+            </div>
+            <div className="pill-anchor bot-left">
+              <div className="data-pill" aria-label="Linoleic Acid">
+                <span className="data-pill-icon" aria-hidden="true">❤️</span>
+                <span><span className="data-pill-label">Linoleic</span> <span className="data-pill-sub">Acid</span></span>
+              </div>
+            </div>
+            <div className="pill-anchor bot-right">
+              <div className="data-pill" aria-label="High Smoke Point">
+                <span className="data-pill-icon" aria-hidden="true">🔥</span>
+                <span><span className="data-pill-label">High Smoke</span> <span className="data-pill-sub">Point</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="about-strip" aria-hidden="true">
+    <div className="strip-marquee-track" id="marqueeTrack">
+      <span className="strip-item">Fortified with Vitamin A & D</span>
+      <span className="strip-item">Contains Omega 3 & 6 fatty acids</span>
+      <span className="strip-item">Free from Argemone Oil</span>
+      <span className="strip-item">High Smoke Point</span>
+      <span className="strip-item">Natural anti-oxidants (Tocopherols)</span>
+      <span className="strip-item">Fortified with Vitamin A & D</span>
+      <span className="strip-item">Contains Omega 3 & 6 fatty acids</span>
+      <span className="strip-item">Free from Argemone Oil</span>
+      <span className="strip-item">High Smoke Point</span>
+      <span className="strip-item">Natural anti-oxidants (Tocopherols)</span>
+    </div>
+  </div>
+
+  <section id="applications" aria-labelledby="applications-heading">
+    <div className="section-bg-art"></div>
+    <div className="applications-inner">
+      <div className="applications-header">
+        <div>
+          <div className="section-label">Unmatched Versatility</div>
+          <h2 id="applications-heading" className="section-title">Suitable for various<br/>cooking applications</h2>
+        </div>
+        <p>Jeevan Rekha Soybean Oil is celebrated for its incredibly light texture and high smoke point. It naturally adapts to your cooking without overpowering the dish, making it the ultimate everyday oil for diverse culinary needs.</p>
+      </div>
+
+      <div className="feed-grid">
+        <article className="feed-card">
+          <div className="feed-card-number">01</div>
+          <div className="feed-card-content">
+            <div className="feed-card-icon-wrap">🍛</div>
+            <h3 className="feed-card-title">Indian Curries</h3>
+            <p className="feed-card-desc">Its odourless and neutral profile ensures that the authentic aromas and complex flavours of traditional Indian spices shine through brilliantly.</p>
+            <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
+          </div>
+        </article>
+
+        <article className="feed-card">
+          <div className="feed-card-number">02</div>
+          <div className="feed-card-content">
+            <div className="feed-card-icon-wrap">🍟</div>
+            <h3 className="feed-card-title">Deep Frying</h3>
+            <p className="feed-card-desc">Boasting a high smoke point, it guarantees crispier, non-greasy fried foods while maintaining complete thermal stability.</p>
+            <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
+          </div>
+        </article>
+
+        <article className="feed-card">
+          <div className="feed-card-number">03</div>
+          <div className="feed-card-content">
+            <div className="feed-card-icon-wrap">🥗</div>
+            <h3 className="feed-card-title">Dressings & Sautéing</h3>
+            <p className="feed-card-desc">The extremely light consistency makes it perfect for tossing fresh salads or quickly sautéing vegetables, helping them retain vibrant colours and snap.</p>
+            <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
+          </div>
+        </article>
+
+        <article className="feed-card">
+          <div className="feed-card-number">04</div>
+          <div className="feed-card-content">
+            <div className="feed-card-icon-wrap">🧁</div>
+            <h3 className="feed-card-title">Baking</h3>
+            <p className="feed-card-desc">A superb alternative to solid fats. It lends a superior moistness and tender crumb to cakes and pastries without altering the intended taste.</p>
+            <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="core-philosophy">
+    <div className="section-bg-art"></div>
+    <div className="stats-inner">
+      <div className="stat-item">
+        <div className="stat-icon">🌱</div>
+        <div className="stat-label">Omega 3 & 6</div>
+        <div className="stat-sub">Rich in essential ALA (6-8g) and Omega 6</div>
+      </div>
+      <div className="stat-item">
+        <div className="stat-icon">🔥</div>
+        <div className="stat-label">High Smoke Point</div>
+        <div className="stat-sub">Stable for various cooking applications</div>
+      </div>
+      <div className="stat-item">
+        <div className="stat-icon">⚖️</div>
+        <div className="stat-label">Linoleic Acid</div>
+        <div className="stat-sub">Helps to maintain normal blood cholesterol levels</div>
+      </div>
+      <div className="stat-item">
+        <div className="stat-icon">✨</div>
+        <div className="stat-label">Natural Antioxidants</div>
+        <div className="stat-sub">Contains Tocopherols and Fortified Vit A & D</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="nutrition">
+    <div className="section-bg-art"></div>
+    <div className="nutrition-inner">
+      <div className="nutrition-header">
+        <div className="section-label">Nutritional Purity</div>
+        <h2 className="section-title">The Foundation<br/>of Health</h2>
+      </div>
+
+      <div className="nutrition-grid">
+        <div className="nutri-card nutri-card-dark">
+          <div className="nutri-card-label">Pure Ingredients</div>
+          <div className="nutri-card-title">Meticulously Refined</div>
+          <p className="nutri-desc">A premium formulation crafted to deliver a naturally balanced fatty acid profile that actively supports long-term heart health and family wellness.</p>
+          
+          <ul className="nutri-list">
+            <li className="nutri-list-item">
+              <span className="nutri-icon">✨</span> Refined Soyabean Oil
+            </li>
+            <li className="nutri-list-item">
+              <span className="nutri-icon">🛡️</span> Antioxidant TBHQ (E 319)
+            </li>
+            <li className="nutri-list-item">
+              <span className="nutri-icon">☀️</span> Vitamin A and Vitamin D
+            </li>
+          </ul>
+        </div>
+
+        <div className="nutri-card nutri-card-light">
+          <div className="nutri-card-label">Nutritional Information (Approx per 100g)</div>
+          <div className="nutri-card-title">Vital Dietary Payback</div>
+          <p className="nutri-desc">Naturally abundant in heart-healthy unsaturated fats while remaining completely free from cholesterol, supporting an active lifestyle.</p>
+          
+          <ul className="nutri-list">
+            <li className="nutri-list-item">Polyunsaturated Fatty Acids (PUFA) <span className="nutri-val">52.5 - 70g</span></li>
+            <li className="nutri-list-item">Monounsaturated Fatty Acids (MUFA) <span className="nutri-val">17 - 30g</span></li>
+            <li className="nutri-list-item">Saturated Fat <span className="nutri-val">20g</span></li>
+            <li className="nutri-list-item">Omega 3 (ALA) / Omega 6 <span className="nutri-val">6-8g / 48-60g</span></li>
+            <li className="nutri-list-item">Added Vitamin A / D <span className="nutri-val">2500 IU / 450 IU</span></li>
+            <li className="nutri-list-item">Energy / Cholesterol <span className="nutri-val">900 Kcal / 0 mg</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARATIVE STUDY -->
+  <section id="comparison">
+    <div className="section-bg-art"></div>
+    <div className="comparison-inner">
+      <div className="advantage-header">
+        <div className="section-label">Fact Check</div>
+        <h2 className="section-title">Know Your Cooking Oil<br/><em>A Comparative Study</em></h2>
+      </div>
+
+      <div className="compare-grid">
+        <div className="cg-row cg-header-row">
+          <div className="cg-cell">Features</div>
+          <div className="cg-cell cg-header-winner">
+            <span className="cg-badge">Top Choice</span>
+            Soybean Oil
+          </div>
+          <div className="cg-cell">Palm Oil</div>
+          <div className="cg-cell">Sunflower Oil</div>
+        </div>
+
+        <div className="cg-row">
+          <div className="cg-cell cg-feature">Smoke Point</div>
+          <div className="cg-cell cg-winner" data-label="Soybean Oil"><span className="cg-icon">✦</span> High (Suitable for all cooking)</div>
+          <div className="cg-cell" data-label="Palm Oil">Moderate</div>
+          <div className="cg-cell" data-label="Sunflower Oil">High</div>
+        </div>
+
+        <div className="cg-row">
+          <div className="cg-cell cg-feature">Flavour Profile</div>
+          <div className="cg-cell cg-winner" data-label="Soybean Oil"><span className="cg-icon">✦</span> Extremely Neutral</div>
+          <div className="cg-cell" data-label="Palm Oil">Heavy, noticeable taste</div>
+          <div className="cg-cell" data-label="Sunflower Oil">Neutral</div>
+        </div>
+
+        <div className="cg-row">
+          <div className="cg-cell cg-feature">PUFA Content</div>
+          <div className="cg-cell cg-winner" data-label="Soybean Oil"><span className="cg-icon">✦</span> High (52.5 - 70g per 100g)</div>
+          <div className="cg-cell" data-label="Palm Oil">Very Low (~9%)</div>
+          <div className="cg-cell" data-label="Sunflower Oil">High (~65%)</div>
+        </div>
+
+        <div className="cg-row">
+          <div className="cg-cell cg-feature">Omega 3 Source</div>
+          <div className="cg-cell cg-winner" data-label="Soybean Oil"><span className="cg-icon">✦</span> Excellent source (ALA 6-8g)</div>
+          <div className="cg-cell" data-label="Palm Oil">Negligible</div>
+          <div className="cg-cell" data-label="Sunflower Oil">Negligible</div>
+        </div>
+
+        <div className="cg-row">
+          <div className="cg-cell cg-feature">Saturated Fat Level</div>
+          <div className="cg-cell cg-winner" data-label="Soybean Oil"><span className="cg-icon">✦</span> Low (20g per 100g)</div>
+          <div className="cg-cell" data-label="Palm Oil">High (~50%)</div>
+          <div className="cg-cell" data-label="Sunflower Oil">Low (~10%)</div>
+        </div>
+      </div>
+      
+      <div className="compare-source">Note: Values are approximate and can vary based on specific refining processes and sourcing.</div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE FAQ ACCORDION -->
+  <section id="faq">
+    <div className="faq-inner">
+      <div className="advantage-header">
+        <div className="section-label">Discover More</div>
+        <h2 className="section-title">Frequently Asked Questions</h2>
+      </div>
+
+      <div className="faq-item">
+        <button className="faq-btn" >
+          Why is Soybean Oil considered heart-healthy? <span className="faq-icon">+</span>
+        </button>
+        <div className="faq-content">
+          <div className="faq-content-inner">
+            <p>Jeevan Rekha Soybean oil contains mostly polyunsaturated fats (PUFAs) and monounsaturated fats (MUFAs). It is a rare, excellent source of Alpha-Linolenic Acid (Omega-3) and Linoleic Acid (Omega-6), which helps maintain normal blood cholesterol levels. It is also packed with natural anti-oxidants (Tocopherols).</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="faq-item">
+        <button className="faq-btn" >
+          What does "Fortified with Vitamin A & D" mean? <span className="faq-icon">+</span>
+        </button>
+        <div className="faq-content">
+          <div className="faq-content-inner">
+            <p>Jeevan Rekha Soybean Oil is enriched with essential fat-soluble vitamins. It contains added Vitamin A (2500 IU per 100g), which supports healthy vision and immunity, and Vitamin D (450 IU per 100g), which is crucial for strong bones and calcium absorption.</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="faq-item">
+        <button className="faq-btn" >
+          What are the main ingredients in Jeevan Rekha Soybean Oil? <span className="faq-icon">+</span>
+        </button>
+        <div className="faq-content">
+          <div className="faq-content-inner">
+            <p>The product contains 100% pure Refined Soyabean Oil, Antioxidant TBHQ (E 319) to maintain freshness and stability during high-heat cooking, and is fortified with Vitamin A and Vitamin D. It is strictly free from Argemone Oil.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <div className="footer-brand">
+      <div className="footer-logo-wrap">
+        <img src="/abu_logo.png" alt="AB Udyog Logo"  />
+      </div>
+    </div>
+    <div className="footer-tagline-center">"At the heart of every healthy meal."</div>
+    <div className="footer-copy">© AB Udyog. All rights reserved.</div>
+  </footer>
+
+  
+` }} />
+    </div>
+  );
+}

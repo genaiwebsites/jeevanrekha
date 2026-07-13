@@ -1,0 +1,1039 @@
+"use client";
+
+import { useEffect } from 'react';
+import Link from 'next/link';
+import Script from 'next/script';
+
+export default function Page() {
+  useEffect(() => {
+    // Custom Vanilla JS script from the original page
+    const runPageScript = () => {
+      // FAQ Toggles
+      document.querySelectorAll('.faq-q, .faq-btn').forEach(btn => {
+        const newBtn = btn.cloneNode(true) as HTMLElement;
+        btn.parentNode?.replaceChild(newBtn, btn);
+        
+        newBtn.addEventListener('click', () => {
+          const item = newBtn.closest('.faq-item');
+          if (item) {
+            item.classList.toggle('open');
+            item.classList.toggle('active');
+          }
+        });
+      });
+
+      // 3-State Theme Toggle
+      document.querySelectorAll('.theme-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const theme = btn.getAttribute('data-set-theme');
+          if (theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+          }
+        });
+      });
+
+      // Intersection Observer for fade-up reveal elements
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+      // GSAP Animations trigger
+      if (typeof window !== 'undefined' && (window as any).gsap && (window as any).ScrollTrigger) {
+        const gsap = (window as any).gsap;
+        const ScrollTrigger = (window as any).ScrollTrigger;
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Entrance
+        const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+        tl.to('.hero-ring', { opacity: 0.6, rotate: 15, duration: 2.4 }, 0);
+        tl.fromTo('.hero-eyebrow', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9 }, 0.3);
+        tl.fromTo('.hero-title', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1.1 }, 0.5);
+        tl.fromTo('.hero-divider', { opacity: 0, scaleX: 0 }, { opacity: 1, scaleX: 1, duration: 0.7 }, 0.85);
+        tl.fromTo('.hero-tagline-item', { opacity: 0, y: 16 }, { opacity: 1, y: 0, stagger: 0.12, duration: 0.7 }, 1.0);
+        tl.fromTo('.hero-cta', { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6 }, 1.4);
+        
+        tl.fromTo('#productWrap', { opacity: 0, scale: 0.88, y: 30 }, { opacity: 1, scale: 1, y: 0, duration: 1.4 }, 0.4);
+        tl.fromTo('.data-pill', { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, stagger: 0.15, duration: 0.7, ease: 'back.out(1.5)' }, 1.2);
+        tl.fromTo('#scrollIndicator', { opacity: 0 }, { opacity: 1, duration: 0.6 }, 1.8);
+
+        // Infinite Rotation on Hero Ring
+        gsap.to('.hero-ring', { rotate: '+=360', duration: 80, repeat: -1, ease: 'none' });
+
+        // Scroll Parallax
+        ScrollTrigger.create({
+          trigger: '#hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+          onUpdate: (self: any) => {
+            const prog = self.progress;
+            gsap.set('#productWrap', { y: prog * -80 });
+            gsap.set('.hero-ring', { rotate: 15 + prog * 40 });
+          }
+        });
+
+        // Sticky Nav on scroll
+        ScrollTrigger.create({
+          trigger: 'body',
+          start: '100px top',
+          onEnter: () => document.getElementById('nav')?.classList.add('scrolled'),
+          onLeaveBack: () => document.getElementById('nav')?.classList.remove('scrolled'),
+        });
+      }
+    };
+
+    // Poll for GSAP loading
+    const interval = setInterval(() => {
+      if ((window as any).gsap && (window as any).ScrollTrigger) {
+        runPageScript();
+        clearInterval(interval);
+      }
+    }, 100);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  return (
+    <div className="kgmo-page-wrapper">
+      <style dangerouslySetInnerHTML={{ __html: `
+    /* ============================================================
+       DESIGN TOKENS (Merged Magik Architecture with KGMO Palette)
+    ============================================================ */
+    :root, [data-theme="colorful"] {
+      /* KGMO Core Colors */
+      --red:        #C8102E;
+      --red-dark:   #8B0A1F;
+      --red-deep:   #4A0510;
+      --red-light:  #F5D0D8;
+      --red-pale:   #FDF0F2;
+      --gold:       #D4A017;
+      --gold-light: #F0D880;
+      --cream:      #FEFAF5;
+      --cream-rgb:  254, 250, 245;
+      --white:      #FFFFFF;
+      --white-rgb:  255, 255, 255;
+      --ink:        #1A0A0D;
+      --ink-muted:  #5A3340;
+
+      /* Mapped Design Tokens */
+      --warm-white: var(--white);
+      --warm-white-rgb: var(--white-rgb);
+      --beige: var(--red-pale);
+      --beige-mid: var(--red-light);
+      --gold-pale: #FFFDF8;
+      --green-muted: var(--red);
+      --green-pale: var(--red-pale);
+      --green-deep: var(--red-dark);
+      --text-dark: var(--ink);
+      --text-mid: var(--ink-muted);
+      --text-light: #9B707B;
+      --footer-bg-end: var(--red-pale);
+      --art-opacity: 0.12;
+
+      /* HERO SPECIFIC - COLORFUL THEME (Red background) */
+      --hero-bg: var(--red);
+      --hero-text: var(--white);
+      --hero-text-muted: rgba(255, 255, 255, 0.9);
+      --hero-accent: var(--gold-light);
+      --hero-accent-text: var(--gold-light);
+      
+      --hero-pill-bg: rgba(255, 255, 255, 0.1);
+      --hero-pill-border: rgba(255, 255, 255, 0.2);
+      --hero-pill-text: var(--white);
+      --hero-pill-icon: var(--gold-light);
+      --hero-pill-sub: rgba(255, 255, 255, 0.7);
+      
+      --hero-nav-link: rgba(255, 255, 255, 0.9);
+      --hero-nav-link-hover: var(--white);
+      
+      --hero-halo: rgba(255, 255, 255, 0.15);
+      --hero-shadow: rgba(0, 0, 0, 0.25);
+      
+      --hero-ring-stroke: var(--white);
+      --hero-ring-accent: var(--gold-light);
+
+      /* MARQUEE SPECIFIC - Alternating with Hero */
+      --marquee-bg: var(--cream);
+      --marquee-text: var(--red);
+      --marquee-star: var(--red-light);
+
+      --hero-art-url: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23F0D880' stroke-width='1.5' opacity='0.35'%3E%3Cpath d='M40,250 C50,220 70,200 60,170' /%3E%3Cpath d='M50,220 Q35,210 40,190 Q55,200 50,220' /%3E%3Cpath d='M55,200 Q70,190 65,170 Q50,180 55,200' /%3E%3Ccircle cx='200' cy='80' r='2' fill='%23FFFFFF' stroke='none' /%3E%3Ccircle cx='215' cy='95' r='1.5' fill='%23F0D880' stroke='none' /%3E%3Cpath d='M220,240 Q250,210 260,240 Q230,270 220,240' stroke='%23FFFFFF' stroke-width='1.2' /%3E%3Cpath d='M100,100 L102,108 L110,110 L102,112 L100,120 L98,112 L90,110 L98,108 Z' fill='%23F0D880' stroke='none' opacity='0.6' /%3E%3C/g%3E%3C/svg%3E");
+
+      /* Typography */
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="light"] {
+      --hero-bg: var(--warm-white);
+      --hero-text: var(--text-dark);
+      --hero-text-muted: var(--text-mid);
+      --hero-accent: var(--red);
+      --hero-accent-text: var(--red);
+      
+      --hero-pill-bg: rgba(255, 255, 255, 0.95);
+      --hero-pill-border: var(--beige-mid);
+      --hero-pill-text: var(--text-dark);
+      --hero-pill-icon: var(--gold);
+      --hero-pill-sub: var(--text-light);
+      
+      --hero-nav-link: var(--text-dark);
+      --hero-nav-link-hover: var(--red);
+      
+      --hero-halo: rgba(200, 16, 46, 0.1);
+      --hero-shadow: rgba(0, 0, 0, 0.12);
+      
+      --hero-ring-stroke: var(--red);
+      --hero-ring-accent: var(--gold);
+      
+      /* MARQUEE SPECIFIC - Alternating with Hero */
+      --marquee-bg: var(--red);
+      --marquee-text: var(--gold-light);
+      --marquee-star: rgba(255, 255, 255, 0.5);
+
+      --hero-art-url: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4A017' stroke-width='1.5' opacity='0.35'%3E%3Cpath d='M40,250 C50,220 70,200 60,170' /%3E%3Cpath d='M50,220 Q35,210 40,190 Q55,200 50,220' /%3E%3Cpath d='M55,200 Q70,190 65,170 Q50,180 55,200' /%3E%3Ccircle cx='200' cy='80' r='2' fill='%23C8102E' stroke='none' /%3E%3Ccircle cx='215' cy='95' r='1.5' fill='%23D4A017' stroke='none' /%3E%3Cpath d='M220,240 Q250,210 260,240 Q230,270 220,240' stroke='%23C8102E' stroke-width='1.2' /%3E%3Cpath d='M100,100 L102,108 L110,110 L102,112 L100,120 L98,112 L90,110 L98,108 Z' fill='%23D4A017' stroke='none' opacity='0.6' /%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    [data-theme="dark"] {
+      --cream: #120A0B;
+      --cream-rgb: 18, 10, 11;
+      --warm-white: #1A0D0F;
+      --warm-white-rgb: 26, 13, 15;
+      --beige: #241417;
+      --beige-mid: #3A2025;
+      --text-dark: #FDF0F2;
+      --text-mid: #CBA4AE;
+      --art-opacity: 0.05;
+      --footer-bg-end: #120A0B;
+      --ink: #FDF0F2;
+      --white: #1A0D0F;
+      --red-pale: #241417;
+
+      /* HERO SPECIFIC - Dark Mode */
+      --hero-bg: #1A0D0F;
+      --hero-text: #FDF0F2;
+      --hero-text-muted: #CBA4AE;
+      --hero-accent: var(--red);
+      --hero-accent-text: var(--red);
+      
+      --hero-pill-bg: rgba(26, 13, 15, 0.95);
+      --hero-pill-border: #3A2025;
+      --hero-pill-text: #FDF0F2;
+      --hero-pill-icon: var(--gold);
+      --hero-pill-sub: #CBA4AE;
+      
+      --hero-nav-link: #FDF0F2;
+      --hero-nav-link-hover: var(--red);
+      
+      --hero-halo: rgba(200, 16, 46, 0.15);
+      --hero-shadow: rgba(0, 0, 0, 0.5);
+      
+      --hero-ring-stroke: var(--red);
+      --hero-ring-accent: var(--gold);
+      
+      /* MARQUEE SPECIFIC - Alternating with Hero */
+      --marquee-bg: var(--red-deep);
+      --marquee-text: var(--gold-light);
+      --marquee-star: rgba(255, 255, 255, 0.3);
+
+      --hero-art-url: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4A017' stroke-width='1.5' opacity='0.35'%3E%3Cpath d='M40,250 C50,220 70,200 60,170' /%3E%3Cpath d='M50,220 Q35,210 40,190 Q55,200 50,220' /%3E%3Cpath d='M55,200 Q70,190 65,170 Q50,180 55,200' /%3E%3Ccircle cx='200' cy='80' r='2' fill='%23C8102E' stroke='none' /%3E%3Ccircle cx='215' cy='95' r='1.5' fill='%23D4A017' stroke='none' /%3E%3Cpath d='M220,240 Q250,210 260,240 Q230,270 220,240' stroke='%23C8102E' stroke-width='1.2' /%3E%3Cpath d='M100,100 L102,108 L110,110 L102,112 L100,120 L98,112 L90,110 L98,108 Z' fill='%23D4A017' stroke='none' opacity='0.6' /%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .kgmo-page-wrapper, section, div, h1, h2, h3, h4, p, a, span, article, nav, footer, .data-pill {
+      transition: background 0.6s ease, background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    .kgmo-page-wrapper { scroll-behavior: smooth; background: var(--cream); }
+    .kgmo-page-wrapper {
+      font-family: var(--sans);
+      color: var(--text-dark);
+      background: var(--cream);
+      overflow-x: hidden;
+      line-height: 1.6;
+      position: relative;
+    }
+    img { display: block; max-width: 100%; }
+
+    /* ============================================================
+       GLOBAL NOISE & CONTINUOUS ART PATTERN
+    ============================================================ */
+    .kgmo-page-wrapper::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-size: 128px;
+    }
+
+    .section-bg-art {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: var(--art-opacity); 
+      background-image: url("data:image/svg+xml,%3Csvg width='300' height='300' viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4A017' stroke-width='1.5' opacity='0.35'%3E%3C!-- Stalk --%3E%3Cpath d='M40,250 C50,220 70,200 60,170' /%3E%3Cpath d='M50,220 Q35,210 40,190 Q55,200 50,220' /%3E%3Cpath d='M55,200 Q70,190 65,170 Q50,180 55,200' /%3E%3C!-- Seeds --%3E%3Ccircle cx='200' cy='80' r='2' fill='%23C8102E' stroke='none' /%3E%3Ccircle cx='215' cy='95' r='1.5' fill='%23D4A017' stroke='none' /%3E%3C!-- Organic Leaf --%3E%3Cpath d='M220,240 Q250,210 260,240 Q230,270 220,240' stroke='%23C8102E' stroke-width='1.2' /%3E%3C!-- Sparkle --%3E%3Cpath d='M100,100 L102,108 L110,110 L102,112 L100,120 L98,112 L90,110 L98,108 Z' fill='%23D4A017' stroke='none' opacity='0.6' /%3E%3C/g%3E%3C/svg%3E");
+      background-size: 350px 350px; background-attachment: fixed;
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--beige); }
+    ::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center;
+      padding: clamp(16px, 2vh, 20px) clamp(24px, 5vw, 48px);
+      background: transparent; transition: all 0.4s ease;
+    }
+
+    /* INVERT NAV TEXT OVER HERO ONLY - NO LOGO FILTER */
+    #nav:not(.scrolled) .nav-links a { color: var(--hero-nav-link); }
+    #nav:not(.scrolled) .nav-links a:hover { color: var(--hero-nav-link-hover); }
+    #nav:not(.scrolled) .nav-links a::after { background: var(--hero-nav-link-hover); }
+
+    #nav.scrolled {
+      background: rgba(var(--cream-rgb), 0.92); backdrop-filter: blur(12px);
+      padding: clamp(10px, 1.5vh, 12px) clamp(24px, 5vw, 48px);
+      box-shadow: 0 1px 0 rgba(200,16,46,0.1);
+    }
+
+    .nav-logo { flex: 1; display: flex; justify-content: flex-start; align-items: center; }
+    .nav-logo img { height: clamp(40px, 4.5vh, 48px); width: auto; object-fit: contain; }
+
+    .nav-links { flex: 1; display: flex; justify-content: center; gap: clamp(24px, 3vw, 48px); list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--text-dark); font-family: var(--sans);
+      font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em;
+      position: relative; padding: 4px 0;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px;
+      background: var(--red); transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--red); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-spacer { flex: 1; display: flex; justify-content: flex-end; align-items: center; }
+
+    .theme-toggle {
+      display: flex; gap: 4px; background: rgba(var(--warm-white-rgb), 0.7);
+      backdrop-filter: blur(10px); padding: 4px 6px; border-radius: 100px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid var(--beige-mid);
+    }
+    .theme-btn {
+      background: transparent; border: none; font-size: 0.85rem; cursor: pointer;
+      width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      transition: all 0.3s ease; opacity: 0.5;
+    }
+    .theme-btn:hover { opacity: 1; transform: scale(1.1); background: var(--beige); }
+    .theme-btn.active { opacity: 1; background: var(--gold-pale); box-shadow: inset 0 0 0 1px var(--gold); }
+
+    @media (max-width: 1024px) { .nav-links { gap: clamp(12px, 2vw, 24px); } }
+    @media (max-width: 768px) { .nav-links { display: none; } }
+
+    /* ============================================================
+       HERO SECTION
+    ============================================================ */
+    #hero {
+      position: relative; min-height: 100svh; height: auto; display: flex;
+      align-items: center; justify-content: center; overflow: hidden;
+      background: var(--hero-bg); z-index: 2; 
+      padding: clamp(100px, 15vh, 140px) 0 clamp(60px, 10vh, 100px) 0; box-sizing: border-box;
+    }
+
+    .hero-bg-art {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0; opacity: 0.15;
+      background-image: var(--hero-art-url); background-size: 350px 350px; background-attachment: fixed;
+    }
+
+    .hero-ring {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+      width: min(90vw, 800px); aspect-ratio: 1; pointer-events: none; opacity: 0; z-index: 1;
+    }
+
+    .hero-inner {
+      position: relative; z-index: 3; display: grid; grid-template-columns: 1.1fr 0.9fr;
+      align-items: center; gap: clamp(30px, 4vw, 60px); width: 100%; max-width: 1400px;
+      padding: 0 clamp(24px, 5vw, 80px); margin: 0 auto;
+    }
+
+    .hero-text-col { display: flex; flex-direction: column; gap: 0; min-width: 0; }
+
+    .hero-eyebrow { font-family: var(--sans); font-size: clamp(0.65rem, 1.5vw, 0.72rem); font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--hero-accent-text); margin-bottom: 16px; opacity: 0; }
+    .hero-title { font-family: var(--serif); font-size: clamp(3rem, 7vw, 7rem); font-weight: 400; line-height: 0.95; color: var(--hero-text); letter-spacing: -0.01em; margin-bottom: clamp(24px, 3vh, 32px); opacity: 0; word-break: break-word; }
+    .hero-title em { font-style: italic; color: var(--hero-accent-text); }
+    .hero-divider { width: 60px; height: 2px; background: var(--hero-accent); margin-bottom: clamp(20px, 3vh, 28px); opacity: 0; transform-origin: left; }
+    
+    .hero-taglines { display: flex; flex-direction: column; gap: 12px; margin-bottom: clamp(28px, 4vh, 40px); }
+    .hero-tagline-item { display: flex; align-items: center; gap: 12px; font-family: var(--sans); font-size: clamp(0.9rem, 1.5vw, 1.05rem); font-weight: 300; color: var(--hero-text-muted); opacity: 0; line-height: 1.4; }
+    .hero-tagline-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--hero-accent); flex-shrink: 0; }
+
+    .hero-cta { display: inline-flex; align-items: center; gap: 12px; font-family: var(--sans); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--hero-text); border-bottom: 1px solid var(--hero-accent); padding-bottom: 4px; text-decoration: none; width: fit-content; opacity: 0; transition: color 0.3s ease, gap 0.3s ease, padding 0.3s ease, border-color 0.3s ease; }
+    .hero-cta:hover { color: var(--hero-accent); gap: 18px; padding-bottom: 8px; border-color: var(--hero-text); }
+    .hero-cta svg { width: 18px; height: 18px; }
+
+    .hero-product-col { display: flex; align-items: center; justify-content: center; position: relative; }
+    .hero-product-wrap { position: relative; width: min(100%, 420px); height: clamp(300px, 50vh, 550px); display: flex; align-items: center; justify-content: center; opacity: 0; }
+
+    .product-halo { position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(ellipse at center, var(--hero-halo) 0%, transparent 65%); opacity: 0.8; z-index: 1; transition: transform 0.6s var(--ease-out-expo), opacity 0.6s ease; }
+    .hero-product-shadow { position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); width: 60%; height: 20px; background: radial-gradient(ellipse at center, var(--hero-shadow) 0%, transparent 70%); z-index: 1; border-radius: 50%; transition: width 0.6s var(--ease-out-expo), opacity 0.6s ease, transform 0.6s var(--ease-out-expo); pointer-events: none; }
+    .hero-product-img { position: relative; z-index: 2; max-height: 100%; width: auto; object-fit: contain; transition: transform 0.6s var(--ease-out-expo); cursor: pointer; }
+    
+    [data-theme="light"] .hero-product-img { mix-blend-mode: multiply; }
+
+    .hero-product-wrap:hover .hero-product-img { transform: translateY(-15px) scale(1.05); }
+    .hero-product-wrap:hover .hero-product-shadow { width: 45%; opacity: 0.6; transform: translateX(-50%) translateY(10px); }
+    .hero-product-wrap:hover .product-halo { transform: scale(1.08); opacity: 1; }
+
+    .pill-orbit-ring { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 110%; max-width: 440px; aspect-ratio: 1; border-radius: 50%; animation: spinOrbit 45s linear infinite; pointer-events: none; z-index: 3; }
+    .pill-anchor { position: absolute; width: 0; height: 0; display: flex; align-items: center; justify-content: center; animation: counterSpinOrbit 45s linear infinite; }
+    .pill-anchor.top-left  { top: 14.6%; left: 14.6%; }
+    .pill-anchor.top-right { top: 14.6%; left: 85.4%; }
+    .pill-anchor.bot-left  { top: 85.4%; left: 14.6%; }
+    .pill-anchor.bot-right { top: 85.4%; left: 85.4%; }
+    @keyframes spinOrbit { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
+    @keyframes counterSpinOrbit { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+
+    .data-pill { position: relative; pointer-events: auto; background: var(--hero-pill-bg); backdrop-filter: blur(12px); border: 1px solid var(--hero-pill-border); border-radius: 100px; padding: clamp(6px, 1.5vw, 10px) clamp(12px, 2.5vw, 18px); display: flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: clamp(0.65rem, 1vw, 0.75rem); color: var(--hero-pill-text); white-space: nowrap; box-shadow: 0 4px 15px rgba(0,0,0,0.1); cursor: default; opacity: 0; }
+    .data-pill:hover { transform: translateY(-4px) scale(1.04); box-shadow: 0 12px 30px rgba(0,0,0,0.2); border-color: var(--hero-accent); }
+    .data-pill-icon { font-size: 1rem; color: var(--hero-pill-icon); }
+    .data-pill-label { font-weight: 600; }
+    .data-pill-sub { color: var(--hero-pill-sub); font-weight: 300; }
+
+    .scroll-indicator { position: absolute; bottom: clamp(10px, 3vh, 30px); left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 8px; opacity: 0; font-family: var(--sans); font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--hero-text-muted); }
+    .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--hero-text), transparent); animation: scrollLine 2s ease-in-out infinite; }
+    @keyframes scrollLine { 0%, 100% { transform: scaleY(1); opacity: 1; } 50% { transform: scaleY(0.4); opacity: 0.3; } }
+
+    @media (max-width: 1024px) { .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 50px; } .hero-text-col { align-items: center; } .hero-divider { margin-left: auto; margin-right: auto; } .hero-tagline-item { justify-content: center; } .hero-cta { margin: 0 auto; } .hero-product-wrap { margin: 0 auto; max-width: 320px; height: clamp(260px, 40vh, 380px); } .pill-orbit-ring { width: 100%; max-width: 400px; } }
+    @media (max-width: 480px) { .pill-orbit-ring { width: 95%; max-width: 260px; } .data-pill { padding: 4px 8px; font-size: 0.55rem; gap: 4px; } }
+    
+    /* ============================================================
+       ABOUT STRIP (Marquee)
+    ============================================================ */
+    #about-strip {
+      background: var(--marquee-bg); padding: clamp(20px, 3vw, 36px) 0;
+      display: flex; align-items: center; overflow: hidden; position: relative; z-index: 2;
+    }
+    .strip-marquee-track {
+      display: flex; gap: clamp(30px, 6vw, 60px); white-space: nowrap;
+      animation: marquee 25s linear infinite; padding-left: clamp(30px, 6vw, 60px);
+    }
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .strip-item {
+      font-family: var(--serif); font-size: clamp(1rem, 2vw, 1.2rem);
+      font-style: italic; font-weight: 300; color: var(--marquee-text);
+      display: flex; align-items: center; gap: clamp(16px, 3vw, 30px);
+    }
+    .strip-item::after { content: '✦'; font-style: normal; font-size: 0.7rem; color: var(--marquee-star); }
+
+    /* ============================================================
+       MIDDLE SECTIONS
+    ============================================================ */
+    section { padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 60px); position: relative; z-index: 2; }
+    
+    .section-label {
+      font-family: var(--sans); font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+      font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--red); margin-bottom: 16px; display:flex; align-items:center; gap:10px;
+    }
+    .section-label::before{content:'';width:24px;height:1px;background:var(--red)}
+
+    .section-title {
+      font-family: var(--serif); font-size: clamp(2.4rem, 6vw, 4.5rem);
+      font-weight: 300; line-height: 1.1; color: var(--text-dark); margin-bottom: 24px;
+    }
+    .section-title em { color: var(--red); font-style: italic; }
+
+    /* BENEFITS */
+    #benefits { background: var(--white); }
+    .benefits-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 48px; }
+    .benefit-card {
+      padding: 32px 24px; border: 1px solid var(--beige-mid); border-radius: 16px;
+      background: var(--beige); position: relative; overflow: hidden;
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+    }
+    .benefit-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(200,16,46,0.08); border-color: var(--red-light); }
+    .benefit-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--red); }
+    .benefit-num { font-family: var(--serif); font-size: 3rem; color: rgba(200,16,46,0.08); font-weight: 400; position: absolute; top: 12px; right: 20px; line-height: 1; }
+    .benefit-icon { font-size: 2rem; margin-bottom: 20px; }
+    .benefit-card h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 500; margin-bottom: 10px; color: var(--text-dark); line-height: 1.2; }
+    .benefit-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; font-weight: 300; }
+
+    /* STATS */
+    #stats {
+      background: var(--red);
+      padding: clamp(50px, 8vw, 70px) clamp(20px, 5vw, 80px);
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; text-align: center;
+    }
+    .stat { color: var(--white); }
+    .stat-num { font-family: var(--serif); font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 300; color: var(--gold-light); display: block; line-height: 1; }
+    .stat-label { font-family: var(--sans); font-size: clamp(0.65rem, 1.5vw, 0.78rem); font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; margin-top: 8px; }
+
+    /* ADVANTAGE */
+    #advantage { background: linear-gradient(to bottom, rgba(var(--cream-rgb), 0.85) 0%, rgba(var(--beige-rgb), 0.92) 15%, rgba(var(--beige-rgb), 0.92) 100%); }
+    .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 48px; }
+    .compare-card { border-radius: 20px; overflow: hidden; border: 1px solid var(--beige-mid); transition: transform 0.4s ease, box-shadow 0.4s ease; }
+    .compare-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+    .compare-header { padding: 32px; display: flex; align-items: center; justify-content: space-between; }
+    .compare-card.winner .compare-header { background: var(--text-dark); color: var(--white); }
+    .compare-card.loser .compare-header { background: var(--white); color: var(--text-dark); }
+    .compare-header h3 { font-family: var(--serif); font-size: 1.8rem; font-weight: 400; }
+    .compare-badge { font-family: var(--sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 16px; border-radius: 100px; }
+    .winner .compare-badge { background: var(--gold); color: var(--ink); }
+    .loser .compare-badge { background: var(--beige); color: var(--text-mid); }
+    .compare-.kgmo-page-wrapper { padding: 32px; background: var(--white); display: flex; flex-direction: column; gap: 16px; }
+    .compare-row { display: flex; align-items: flex-start; gap: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--beige-mid); }
+    .compare-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .cicon { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .winner .cicon { background: rgba(200,16,46,0.08); color: var(--red); }
+    .loser .cicon { background: rgba(0,0,0,0.04); color: #888; }
+    .compare-row h4 { font-family: var(--serif); font-size: 1.15rem; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; line-height: 1.2; }
+    .compare-row p { font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; font-weight: 300; }
+
+    /* NUTRITION */
+    #nutrition { background: var(--white); }
+    .nutrition-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 48px; align-items: center; }
+    .nutrition-intro p { font-size: 1rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 32px; font-weight: 300; }
+    .ingredients-list { display: flex; flex-direction: column; gap: 16px; }
+    .ingredient { display: flex; align-items: center; gap: 20px; padding: 20px; border-radius: 12px; background: var(--beige); border: 1px solid var(--beige-mid); transition: background 0.3s ease; }
+    .ingredient:hover { background: var(--white); border-color: var(--red-light); }
+    .ingredient-icon { font-size: 1.8rem; width: 44px; text-align: center; }
+    .ingredient h4 { font-family: var(--serif); font-size: 1.2rem; font-weight: 500; color: var(--text-dark); margin-bottom: 4px; }
+    .ingredient p { font-size: 0.8rem; color: var(--text-mid); font-weight: 300; line-height: 1.4; }
+    
+    .nutrition-facts { background: var(--text-dark); border-radius: 20px; padding: 40px; color: var(--white); position: relative; overflow: hidden; }
+    .nutrition-facts::before { content:''; position:absolute; top:-100px; right:-100px; width:300px; height:300px; background:radial-gradient(circle, rgba(212,160,23,0.15) 0%, transparent 70%); border-radius:50%; pointer-events:none; }
+    .nf-title { font-family: var(--serif); font-size: 2.2rem; font-weight: 400; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 12px; margin-bottom: 8px; }
+    .nf-serving { font-family: var(--sans); font-size: 0.75rem; opacity: 0.6; margin-bottom: 24px; letter-spacing: 0.05em; }
+    .nf-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 0.9rem; font-weight: 300; }
+    .nf-row:last-child { border-bottom: none; }
+    .nf-label { opacity: 0.8; }
+    .nf-value { font-weight: 500; color: var(--gold-light); }
+    .nf-bold { font-weight: 500; opacity: 1; }
+
+    /* QUALITY */
+    #quality { background: var(--beige); }
+    .quality-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+    .quality-card { background: var(--white); border-radius: 16px; padding: 40px 32px; border: 1px solid var(--beige-mid); text-align: center; transition: transform 0.4s ease, box-shadow 0.4s ease; }
+    .quality-card:hover { transform: translateY(-8px); box-shadow: 0 16px 40px rgba(0,0,0,0.05); border-color: var(--red-light); }
+    .quality-icon { width: 80px; height: 80px; border-radius: 50%; background: rgba(200,16,46,0.05); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 24px; border: 1px solid rgba(200,16,46,0.1); transition: transform 0.4s ease, background 0.4s ease; }
+    .quality-card:hover .quality-icon { transform: scale(1.1) rotate(5deg); background: rgba(200,16,46,0.1); border-color: var(--red); }
+    .quality-card h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 500; margin-bottom: 12px; color: var(--text-dark); }
+    .quality-card p { font-size: 0.85rem; color: var(--text-mid); line-height: 1.6; font-weight: 300; }
+
+    /* COMPARATIVE STUDY */
+    #compare-study { background: var(--white); }
+    .study-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 40px; border-radius: 16px; overflow: hidden; border: 1px solid var(--beige-mid); box-shadow: 0 10px 30px rgba(0,0,0,0.02); }
+    .study-col { border-right: 1px solid var(--beige-mid); }
+    .study-col:last-child { border-right: none; }
+    .study-head { padding: 20px; font-family: var(--sans); font-size: 0.85rem; font-weight: 600; text-align: center; border-bottom: 1px solid var(--beige-mid); text-transform: uppercase; letter-spacing: 0.05em; }
+    .study-head.topic { background: var(--text-dark); color: var(--white); border-bottom-color: var(--text-dark); }
+    .study-head.mustard { background: var(--red); color: var(--white); border-bottom-color: var(--red); }
+    .study-head.other { background: var(--beige); color: var(--text-mid); }
+    .study-cell { padding: 20px; font-size: 0.85rem; font-weight: 300; line-height: 1.6; border-bottom: 1px solid rgba(0,0,0,0.04); color: var(--text-mid); }
+    .study-cell:last-child { border-bottom: none; }
+    .study-cell.topic-cell { font-weight: 500; color: var(--text-dark); background: rgba(0,0,0,0.02); }
+    .study-cell.mustard-cell { color: var(--red-dark); background: rgba(200,16,46,0.02); font-weight: 400; }
+    .check-icon { display: inline-block; margin-right: 6px; color: var(--red); font-weight: 600; }
+
+    /* FAQ */
+    #faq { background: var(--cream); }
+    .faq-list { margin-top: 48px; max-width: 800px; }
+    .faq-item { border-bottom: 1px solid var(--beige-mid); }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; cursor: pointer; font-family: var(--serif); font-size: 1.25rem; font-weight: 500; color: var(--text-dark); transition: color 0.3s ease; }
+    .faq-q:hover { color: var(--red); }
+    .faq-icon { width: 32px; height: 32px; border-radius: 50%; border: 1px solid var(--beige-mid); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--red); flex-shrink: 0; transition: transform 0.4s ease, background 0.3s ease; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: var(--beige); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease; font-size: 0.9rem; color: var(--text-mid); line-height: 1.8; font-weight: 300; }
+    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 24px; }
+
+    /* ============================================================
+       FOOTER (Sleek 1-Row Layout)
+    ============================================================ */
+    #footer {
+      background: linear-gradient(145deg, rgba(200,16,46,0.05) 0%, var(--beige) 20%, var(--footer-bg-end) 100%);
+      padding: 2rem 4rem; /* Matching the low-profile height in the reference image */
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid var(--beige-mid);
+      z-index: 2;
+    }
+    
+    [data-theme="dark"] #footer { border-top-color: transparent; }
+
+    #footer::before {
+      content: ''; position: absolute; inset: -20%;
+      background: radial-gradient(circle at center, rgba(212,160,23,0.12) 0%, transparent 60%);
+      opacity: 0; z-index: 1; pointer-events: none;
+      transition: opacity 0.8s ease, transform 0.8s var(--ease-out-expo);
+      transform: scale(0.8);
+    }
+    #footer:hover::before {
+      opacity: 1; transform: scale(1.2);
+      animation: subtlePulse 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes subtlePulse {
+      0% { transform: scale(1.2); }
+      100% { transform: scale(1.25) translate(1%, 1%); }
+    }
+
+    .footer-left { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; position: relative; z-index: 2; }
+    .footer-center { position: relative; z-index: 2; }
+    .footer-right { display: flex; flex-direction: column; gap: 16px; align-items: flex-end; text-align: right; position: relative; z-index: 2; }
+
+    .footer-logo { height: 48px; width: auto; object-fit: contain; } /* Restored natural colors */
+    
+    .footer-address { font-family: var(--sans); font-size: 0.8rem; color: var(--text-mid); line-height: 1.5; font-weight: 400; }
+    .footer-copy { font-family: var(--sans); font-size: 0.75rem; color: var(--text-light); margin-top: 8px; }
+
+    .footer-tagline-center { font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--text-dark); text-align: center; }
+
+    .footer-contact { display: flex; flex-direction: column; gap: 4px; font-family: var(--sans); font-size: 0.85rem; color: var(--text-mid); }
+    .footer-contact a { color: var(--text-mid); text-decoration: none; transition: color 0.3s ease; }
+    .footer-contact a:hover { color: var(--red); }
+    
+    .footer-social { display: flex; gap: 16px; }
+    .footer-social a { font-family: var(--sans); font-size: 0.75rem; color: var(--text-mid); text-decoration: none; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; transition: color 0.3s ease; }
+    .footer-social a:hover { color: var(--red); }
+    
+    @media (max-width: 1024px) {
+      #footer { grid-template-columns: 1fr; text-align: center; gap: 24px; padding: 3rem 2rem; }
+      .footer-left, .footer-right { align-items: center; text-align: center; }
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s var(--ease-out-expo); }
+    .fade-up.visible { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.3s; }
+
+    @media(max-width:900px){
+      section { padding: 4rem 1.5rem; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      #stats { grid-template-columns: 1fr 1fr; gap: 40px 20px; }
+      .compare-grid { grid-template-columns: 1fr; }
+      .nutrition-layout { grid-template-columns: 1fr; gap: 40px; }
+      .quality-grid { grid-template-columns: 1fr; }
+      .study-grid { grid-template-columns: 1fr; }
+    }
+    @media(max-width:480px) {
+      .benefits-grid { grid-template-columns: 1fr; }
+    }
+  
+    /* Standalone overrides to hide global layout Nav/Footer */
+    #nav:not(.kgmo-page-wrapper #nav) { display: none !important; }
+    footer:not(.kgmo-page-wrapper footer) { display: none !important; }
+  ` }} />
+      
+      {/* Load GSAP + ScrollTrigger */}
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" strategy="lazyOnload" />
+      <Script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" strategy="lazyOnload" />
+
+      {/* Page HTML Structure */}
+      <div dangerouslySetInnerHTML={{ __html: `
+
+  <!-- NAV -->
+  <nav id="nav" role="navigation">
+    <div className="nav-logo">
+      <img src="/abu_logo.png" alt="AB Udyog Logo" />
+    </div>
+    
+    <ul className="nav-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+      <li><a href="#advantage">Advantage</a></li>
+      <li><a href="#nutrition">Nutrition</a></li>
+      <li><a href="#quality">Quality</a></li>
+    </ul>
+
+    <div className="nav-spacer">
+      <!-- 3-State Theme Toggle Widget -->
+      <div className="theme-toggle">
+        <button className="theme-btn active" data-set-theme="colorful" aria-label="Colorful Theme">🔴</button>
+        <button className="theme-btn" data-set-theme="light" aria-label="Light Theme">☀️</button>
+        <button className="theme-btn" data-set-theme="dark" aria-label="Dark Theme">🌙</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" aria-label="Hero">
+    <div className="hero-bg-art"></div>
+    
+    <svg className="hero-ring" viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style={{ stroke: 'var(--hero-ring-stroke)' }}>
+      <circle cx="300" cy="300" r="280" style={{ stroke: 'var(--hero-ring-accent)' }} strokeWidth="0.8" strokeDasharray="6 18"/>
+      <circle cx="300" cy="300" r="240" strokeWidth="0.5" strokeDasharray="3 14" opacity="0.4"/>
+      <circle cx="300" cy="300" r="200" style={{ stroke: 'var(--hero-ring-accent)' }} strokeWidth="0.3" opacity="0.3"/>
+      <g style={{ stroke: 'var(--hero-ring-accent)' }} strokeWidth="1.2" opacity="0.6">
+        <line x1="300" y1="18" x2="300" y2="36"/> <line x1="291" y1="27" x2="309" y2="27"/>
+        <line x1="300" y1="564" x2="300" y2="582"/> <line x1="291" y1="573" x2="309" y2="573"/>
+        <line x1="18" y1="300" x2="36" y2="300"/> <line x1="27" y1="291" x2="27" y2="309"/>
+        <line x1="564" y1="300" x2="582" y2="300"/> <line x1="573" y1="291" x2="573" y2="309"/>
+      </g>
+      <path d="M300 60 Q330 120 300 180 Q270 120 300 60Z" fill="none" strokeWidth="0.6" opacity="0.3"/>
+      <path d="M300 420 Q330 480 300 540 Q270 480 300 420Z" fill="none" strokeWidth="0.6" opacity="0.3"/>
+      <path d="M60 300 Q120 270 180 300 Q120 330 60 300Z" fill="none" strokeWidth="0.6" opacity="0.3"/>
+      <path d="M420 300 Q480 270 540 300 Q480 330 420 300Z" fill="none" strokeWidth="0.6" opacity="0.3"/>
+    </svg>
+
+    <div className="hero-inner">
+      <div className="hero-text-col">
+        <div className="hero-eyebrow">AB Udyog presents</div>
+        <h1 className="hero-title">Jeevan<br/><em>Rekha</em><br/>Mustard Oil</h1>
+        <div className="hero-divider"></div>
+        <div className="hero-taglines">
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Kachi Ghani Cold-Pressed</div>
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Rich in Natural Antioxidants</div>
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Cholesterol Free & FSSAI Certified</div>
+        </div>
+        <a className="hero-cta" href="#benefits">Discover the Oil
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+
+      <div className="hero-product-col">
+        <div className="hero-product-wrap" id="productWrap">
+          <div className="product-halo"></div>
+          <div className="hero-product-shadow"></div>
+          
+          <img className="hero-product-img" src="/jr_kgmo.png" alt="Jeevan Rekha Mustard Oil" />
+
+          <div className="pill-orbit-ring">
+            <div className="pill-anchor top-left">
+              <div className="data-pill" aria-label="Cold Pressed">
+                <span className="data-pill-icon" aria-hidden="true">✦</span>
+                <span><span className="data-pill-label">Cold Pressed</span> <span className="data-pill-sub">Kachi Ghani</span></span>
+              </div>
+            </div>
+            <div className="pill-anchor top-right">
+              <div className="data-pill" aria-label="High Smoke Point">
+                <span className="data-pill-icon" aria-hidden="true">⬡</span>
+                <span><span className="data-pill-label">~250°C</span> <span className="data-pill-sub">Smoke Point</span></span>
+              </div>
+            </div>
+            <div className="pill-anchor bot-left">
+              <div className="data-pill" aria-label="Pure & Natural">
+                <span className="data-pill-icon" aria-hidden="true">◑</span>
+                <span><span className="data-pill-label">Pure</span> <span className="data-pill-sub">No Additives</span></span>
+              </div>
+            </div>
+            <div className="pill-anchor bot-right">
+              <div className="data-pill" aria-label="Lab Tested">
+                <span className="data-pill-icon" aria-hidden="true">↑</span>
+                <span><span className="data-pill-label">Certified</span> <span className="data-pill-sub">Lab Tested</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div className="scroll-indicator" id="scrollIndicator">
+      <div className="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- TICKER MARQUEE -->
+  <div id="about-strip" aria-hidden="true">
+    <div className="strip-marquee-track" id="marqueeTrack">
+      <span className="strip-item">Kachi Ghani Mustard Oil</span>
+      <span className="strip-item">FSSAI Certified</span>
+      <span className="strip-item">Omega-3 PUFA Rich</span>
+      <span className="strip-item">Natural Antioxidants</span>
+      <span className="strip-item">Cholesterol Free</span>
+      <span className="strip-item">Manufactured in India</span>
+      <span className="strip-item">Kachi Ghani Mustard Oil</span>
+      <span className="strip-item">FSSAI Certified</span>
+      <span className="strip-item">Omega-3 PUFA Rich</span>
+      <span className="strip-item">Natural Antioxidants</span>
+      <span className="strip-item">Cholesterol Free</span>
+      <span className="strip-item">Manufactured in India</span>
+    </div>
+  </div>
+
+  <!-- BENEFITS -->
+  <section id="benefits">
+    <div className="section-bg-art" style={{ transform: 'scaleY(-1)' }}></div>
+    <div className="section-label">Core Benefits</div>
+    <h2 className="section-title">Pure Goodness,<br /><em>Every Drop</em></h2>
+    <div className="benefits-grid">
+      <div className="benefit-card fade-up">
+        <div className="benefit-num">01</div>
+        <div className="benefit-icon">🌶️</div>
+        <h3>Distinct Flavour</h3>
+        <p>A strong, pungent character from allyl isothiocyanate adds an unmistakable depth to Indian cuisine — from curries to pickles.</p>
+      </div>
+      <div className="benefit-card fade-up delay-1">
+        <div className="benefit-num">02</div>
+        <div className="benefit-icon">❤️</div>
+        <h3>Heart Health</h3>
+        <p>Rich in monounsaturated and polyunsaturated fats, Jeevan Rekha Mustard Oil helps reduce the risk of cardiovascular disease.</p>
+      </div>
+      <div className="benefit-card fade-up delay-2">
+        <div className="benefit-num">03</div>
+        <div className="benefit-icon">🛡️</div>
+        <h3>Natural Antioxidants</h3>
+        <p>Contains Vitamin E and natural antioxidants that protect cells from free radical damage, promoting skin and hair health.</p>
+      </div>
+      <div className="benefit-card fade-up delay-3">
+        <div className="benefit-num">04</div>
+        <div className="benefit-icon">🍳</div>
+        <h3>Versatile Cooking</h3>
+        <p>High smoke point of ~250°C makes it ideal for frying, sautéing, and tempering — without losing nutritional value at high heat.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div id="stats">
+    <div className="section-bg-art" style={{ opacity: '0.2' }}></div>
+    <div className="stat fade-up">
+      <span className="stat-num" id="s1">250°C</span>
+      <div className="stat-label">Smoke Point</div>
+    </div>
+    <div className="stat fade-up delay-1">
+      <span className="stat-num" id="s2">36g</span>
+      <div className="stat-label">Mono Unsaturated Fat</div>
+    </div>
+    <div className="stat fade-up delay-2">
+      <span className="stat-num" id="s3">900</span>
+      <div className="stat-label">kcal Energy / 100g</div>
+    </div>
+    <div className="stat fade-up delay-3">
+      <span className="stat-num" id="s4">0g</span>
+      <div className="stat-label">Cholesterol</div>
+    </div>
+  </div>
+
+  <!-- ADVANTAGE -->
+  <section id="advantage">
+    <div className="section-label">The Advantage</div>
+    <h2 className="section-title">Why Mustard Oil<br /><em>Outperforms</em></h2>
+    <div className="compare-grid">
+      <div className="compare-card winner fade-up">
+        <div className="compare-header">
+          <h3>Jeevan Rekha</h3>
+          <span className="compare-badge">✦ Best Choice</span>
+        </div>
+        <div className="compare-body">
+          <div className="compare-row winner">
+            <div className="cicon">🔥</div>
+            <div>
+              <h4>High Smoke Point ~250°C</h4>
+              <p>Perfect for high-heat Indian cooking without breaking down or losing nutritional value.</p>
+            </div>
+          </div>
+          <div className="compare-row winner">
+            <div className="cicon">💪</div>
+            <div>
+              <h4>Balanced Fatty Acid Profile</h4>
+              <p>High in omega-3, omega-6, and monounsaturated fats — a complete and heart-friendly profile.</p>
+            </div>
+          </div>
+          <div className="compare-row winner">
+            <div className="cicon">✨</div>
+            <div>
+              <h4>Rich Natural Antioxidants</h4>
+              <p>Vitamin E and natural compounds from the cold press process, retained fully in extraction.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="compare-card loser fade-up delay-2">
+        <div className="compare-header">
+          <h3>Other Refined Oils</h3>
+          <span className="compare-badge">Standard Option</span>
+        </div>
+        <div className="compare-body">
+          <div className="compare-row loser">
+            <div className="cicon">⚠️</div>
+            <div>
+              <h4>Palm Oil ~235°C</h4>
+              <p>Slightly lower smoke point, high in saturated fat — a known risk factor for bad cholesterol.</p>
+            </div>
+          </div>
+          <div className="compare-row loser">
+            <div className="cicon">📉</div>
+            <div>
+              <h4>Soybean Oil ~230°C</h4>
+              <p>Moderate smoke point, prone to forming trans fats at higher temperatures.</p>
+            </div>
+          </div>
+          <div className="compare-row loser">
+            <div className="cicon">🔬</div>
+            <div>
+              <h4>Low Natural Antioxidants</h4>
+              <p>Extensive refining strips away natural antioxidants and beneficial compounds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUTRITION -->
+  <section id="nutrition">
+    <div className="section-bg-art"></div>
+    <div className="section-label">Nutritional Value</div>
+    <h2 className="section-title">Dietician's<br /><em>Recommended</em></h2>
+    <div className="nutrition-layout">
+      <div className="nutrition-intro">
+        <p>Jeevan Rekha Mustard Oil is extracted using the Kachi Ghani (cold press) method — the first press of the finest mustard seeds. This ensures all natural goodness is retained without heat-induced degradation.</p>
+        <div className="ingredients-list">
+          <div className="ingredient fade-up">
+            <div className="ingredient-icon">🌿</div>
+            <div>
+              <h4>Kachi Ghani Cold-Pressed</h4>
+              <p>First press extraction preserving maximum nutrients</p>
+            </div>
+          </div>
+          <div className="ingredient fade-up delay-1">
+            <div className="ingredient-icon">🐟</div>
+            <div>
+              <h4>Best Source of Omega-3</h4>
+              <p>Supports cardiovascular health and reduces inflammation</p>
+            </div>
+          </div>
+          <div className="ingredient fade-up delay-2">
+            <div className="ingredient-icon">☀️</div>
+            <div>
+              <h4>Loaded with Vitamins A, D & E</h4>
+              <p>Essential fat-soluble vitamins for immunity and skin health</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="nutrition-facts fade-up delay-2">
+        <div className="nf-title">Nutrition Facts</div>
+        <div className="nf-serving">Serving size: 100g | Per 100g of product</div>
+        <div className="nf-row"><span className="nf-label nf-bold">Energy</span><span className="nf-value">900 kcal</span></div>
+        <div className="nf-row"><span className="nf-label nf-bold">Total Fat</span><span className="nf-value">100g</span></div>
+        <div className="nf-row" style={{ paddingLeft: '1rem' }}><span className="nf-label">Saturated Fat</span><span className="nf-value">12g</span></div>
+        <div className="nf-row" style={{ paddingLeft: '1rem' }}><span className="nf-label">Mono Unsaturated Fat</span><span className="nf-value">36g</span></div>
+        <div className="nf-row" style={{ paddingLeft: '1rem' }}><span className="nf-label">Poly Unsaturated Fat</span><span className="nf-value">16g</span></div>
+        <div className="nf-row" style={{ paddingLeft: '1rem' }}><span className="nf-label">Trans Fat (Max)</span><span className="nf-value">1g</span></div>
+        <div className="nf-row"><span className="nf-label nf-bold">Carbohydrates</span><span className="nf-value">0g</span></div>
+        <div className="nf-row"><span className="nf-label nf-bold">Protein</span><span className="nf-value">0g</span></div>
+        <div className="nf-row"><span className="nf-label nf-bold">Cholesterol</span><span className="nf-value" style={{ color: '#A3C9A0' }}>0g</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY -->
+  <section id="quality">
+    <div className="section-label">What Makes It Premium</div>
+    <h2 className="section-title">Crafted for<br /><em>Purity</em></h2>
+    <div className="quality-grid">
+      <div className="quality-card fade-up">
+        <div className="quality-icon">🧪</div>
+        <h3>Lab Tested Every Batch</h3>
+        <p>Every production batch is independently lab-tested to verify purity, fatty acid profile, and absence of adulterants before dispatch.</p>
+      </div>
+      <div className="quality-card fade-up delay-1">
+        <div className="quality-icon">🌾</div>
+        <h3>First-Press Kachi Ghani</h3>
+        <p>Cold-pressed using traditional stone grinding techniques, preserving the natural aroma, flavour, and nutritional integrity of mustard seeds.</p>
+      </div>
+      <div className="quality-card fade-up delay-2">
+        <div className="quality-icon">🏛️</div>
+        <h3>FSSAI Certified</h3>
+        <p>Fully compliant with India's Food Safety and Standards Authority regulations — your assurance of safe, authentic, quality cooking oil.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div className="section-bg-art" style={{ transform: 'rotate(180deg)' }}></div>
+    <div className="section-label">Questions</div>
+    <h2 className="section-title">Frequently<br /><em>Asked</em></h2>
+    <div className="faq-list">
+      <div className="faq-item open fade-up">
+        <div className="faq-q" >
+          What are the health benefits of mustard oil?
+          <div className="faq-icon">+</div>
+        </div>
+        <div className="faq-a">Mustard oil is rich in monounsaturated fats, omega-3 fatty acids, and antioxidants, which can support heart health, reduce inflammation, and promote skin and hair health. Its anti-inflammatory properties also make it beneficial as a massage oil for joint pain.</div>
+      </div>
+      <div className="faq-item fade-up">
+        <div className="faq-q" >
+          Why does mustard oil have a strong smell and taste?
+          <div className="faq-icon">+</div>
+        </div>
+        <div className="faq-a">Mustard oil has a pungent aroma and flavour due to compounds like allyl isothiocyanate. This unique taste enhances flavours in cooking, particularly in spicy and savoury dishes — it is this character that makes it irreplaceable in traditional Indian cuisine.</div>
+      </div>
+      <div className="faq-item fade-up">
+        <div className="faq-q" >
+          What is mustard oil's smoke point?
+          <div className="faq-icon">+</div>
+        </div>
+        <div className="faq-a">Mustard oil has a high smoke point of around 250°C (482°F). This makes it suitable for high-heat cooking methods like frying, sautéing, and deep-frying without breaking down or forming harmful compounds.</div>
+      </div>
+      <div className="faq-item fade-up">
+        <div className="faq-q" >
+          How should mustard oil be stored?
+          <div className="faq-icon">+</div>
+        </div>
+        <div className="faq-a">Store mustard oil in a cool, dark place, ideally in an airtight container to prevent it from going rancid and to preserve its flavour and nutritional value. Jeevan Rekha packages its oil in airtight, food-grade containers that protect it from light and air.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div className="footer-left">
+      <img src="/abu_logo.png" alt="AB Udyog Logo" className="footer-logo"  />
+      <div className="footer-address">
+        AB Udyog Pvt. Ltd.<br />
+        55/1B, Strand Road, 3rd Floor, Kolkata – 700006
+      </div>
+      <div className="footer-copy">© 2026 AB Udyog Pvt. Ltd. All rights reserved.</div>
+    </div>
+    
+    <div className="footer-center">
+      <div className="footer-tagline-center">"Pure Mustard Oil — Kachi Ghani Cold Pressed."</div>
+    </div>
+    
+    <div className="footer-right">
+      <div className="footer-contact">
+        <span>(+91) 74392 89709</span>
+        <a href="mailto:info@abudyog.in">info@abudyog.in</a>
+      </div>
+      <div className="footer-social">
+        <a href="https://www.instagram.com/jeevanrekhafoods/">INSTAGRAM</a>
+        <a href="https://www.facebook.com/JeevanRekhaFoods/">FACEBOOK</a>
+        <a href="https://www.linkedin.com/company/jeevanrekha/">LINKEDIN</a>
+      </div>
+    </div>
+  </footer>
+
+  
+` }} />
+    </div>
+  );
+}
