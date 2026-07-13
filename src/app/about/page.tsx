@@ -98,7 +98,9 @@ export default function About() {
                   </div>
                 </div>
                 <div className="tl-item rv" data-d="1">
-                  <div className="tl-dot tl-dot-y">19</div>
+                  <div className="tl-dot" style={{ background: '#ffffff', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '4px' }}>
+                    <Image src="/abu_logo.png" alt="AB Udyog Logo" width={32} height={32} style={{ objectFit: 'contain' }} />
+                  </div>
                   <div className="tl-content">
                     <div className="tl-year">February 2019</div>
                     <div className="tl-title">AB Udyog Pvt. Ltd. Incorporated</div>
