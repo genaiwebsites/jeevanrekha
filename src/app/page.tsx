@@ -337,34 +337,33 @@ export default function Home() {
         <div className="wrap">
           <div className="ben-top">
             <div>
-
-              <h2 className="s-h rv light" data-d="1">Every Drop,<br/><em>a Dose of</em> <span style={{ color: 'var(--y)' }}>Vitality</span></h2>
+              <h2 className="s-h rv" data-d="1">Every Drop,<br/><em>a Dose of</em> <span style={{ color: 'var(--p)' }}>Vitality</span></h2>
             </div>
-            <p className="body-t light rv" data-d="2">Jeevan Rekha oils are crafted to nourish your body while delivering authentic Indian taste. Each oil carries a precise balance of flavour, nutrition, and high-heat performance.</p>
+            <p className="body-t rv" data-d="2">Jeevan Rekha oils are crafted to nourish your body while delivering authentic Indian taste. Each oil carries a precise balance of flavour, nutrition, and high-heat performance.</p>
           </div>
           <div className="ben-grid">
             <div className="bcard rv">
               <div className="b-ico"><svg viewBox="0 0 28 28"><path d="M14 3C8 3 3 8 3 14s5 11 11 11 11-5 11-11S20 3 14 3zm-1 15.6l-4.2-4.2 1.4-1.4 2.8 2.8 5.8-5.8 1.4 1.4L13 18.6z"/></svg></div>
-              <h4>Heart Protection</h4>
-              <p>Balanced Omega-3, 6 &amp; 9 fatty acids. Rice Bran Oil&apos;s Gamma-Oryzanol actively reduces LDL cholesterol.</p>
+              <h4>Cardio-Protective</h4>
+              <p>14,000 PPM Gamma-Oryzanol helps manage cholesterol levels by actively reducing LDL absorption.</p>
               <span className="b-tag">Rice Bran Oil</span>
             </div>
             <div className="bcard rv" data-d="1">
               <div className="b-ico"><svg viewBox="0 0 28 28"><path d="M14 2L4 7v7c0 6.5 4.3 12.6 10 14 5.7-1.4 10-7.5 10-14V7L14 2zm0 3.5L21.5 8V14c0 5-3.2 9.7-8 11.2-4.8-1.5-8-6.2-8-11.2V8l8-4.5z"/></svg></div>
-              <h4>Antioxidant Power</h4>
-              <p>Vitamin E tocopherols and Gamma-Oryzanol neutralise free radicals, protecting cells from oxidative stress.</p>
+              <h4>Antioxidant Shield</h4>
+              <p>Rich in Tocotrienols (Super Vitamin E) that neutralize free radicals and protect cellular integrity.</p>
               <span className="b-tag">All Oils</span>
             </div>
             <div className="bcard rv" data-d="2">
               <div className="b-ico"><svg viewBox="0 0 28 28"><path d="M14 2C7.4 2 2 7.4 2 14s5.4 12 12 12 12-5.4 12-12S20.6 2 14 2zm1 6v6.6l4.5 2.7-1.1 1.7-5.4-3.3V8h2z"/></svg></div>
-              <h4>232°C Smoke Point</h4>
-              <p>Remarkable smoke point enables safe, high-heat frying. Less oil breakdown, more nutrition retained.</p>
+              <h4>Thermal Stability</h4>
+              <p>A high 232°C smoke point prevents molecular breakdown, ensuring safety and nutrient retention during deep frying.</p>
               <span className="b-tag">Rice Bran Oil</span>
             </div>
             <div className="bcard rv" data-d="3">
               <div className="b-ico"><svg viewBox="0 0 28 28"><path d="M14 3C9 3 5 7 5 12c0 6.5 9 15 9 15s9-8.5 9-15c0-5-4-9-9-9zm0 12a3 3 0 110-6 3 3 0 010 6z"/></svg></div>
-              <h4>Anti-inflammatory</h4>
-              <p>Mustard Oil&apos;s allyl isothiocyanate and Omega-3 fatty acids provide powerful benefits for joints and gut.</p>
+              <h4>Biological Actives</h4>
+              <p>Omega-3 fatty acids and naturally occurring active compounds support joint health and digestive wellness.</p>
               <span className="b-tag">Mustard Oil</span>
             </div>
           </div>
