@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Lora, Kumbh_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
+import "./products/mustard-oil/mustard-oil.css";
+import "./products/rice-bran-oil/rice-bran-oil.css";
+import "./products/soyabean-oil/soyabean-oil.css";
 import CustomCursor from "@/components/CustomCursor";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
