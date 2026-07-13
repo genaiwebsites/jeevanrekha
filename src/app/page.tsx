@@ -390,27 +390,26 @@ export default function Home() {
           <div className="cert rv" data-d="1">
             <div className="cert-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '22px', height: '22px', stroke: 'var(--y)' }}>
-                <circle cx="12" cy="8" r="6"/>
-                <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <path d="M14 2v6h6"/>
+                <path d="m9 15 2 2 4-4"/>
               </svg>
             </div>
             <div className="cert-t">
-              <strong>AGMARK Grade-1</strong>
-              <span>Agricultural Produce Standards</span>
+              <strong>NABL Standards</strong>
+              <span>Verified Laboratory Analysis</span>
             </div>
           </div>
           
           <div className="cert rv" data-d="2">
             <div className="cert-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '22px', height: '22px', stroke: 'var(--y)' }}>
-                <rect width="20" height="12" x="2" y="3" rx="2"/>
-                <path d="M12 15v5"/>
-                <path d="M5 21h14"/>
+                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
               </svg>
             </div>
             <div className="cert-t">
-              <strong>SCADA Automated</strong>
-              <span>Fully Integrated Processing</span>
+              <strong>FRC Fortified</strong>
+              <span>Vitamin A & D2 Enriched</span>
             </div>
           </div>
           
