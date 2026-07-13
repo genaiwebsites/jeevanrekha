@@ -108,7 +108,9 @@ export default function About() {
                   </div>
                 </div>
                 <div className="tl-item rv" data-d="2">
-                  <div className="tl-dot">JR</div>
+                  <div className="tl-dot" style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '6px' }}>
+                    <Image src="/jeevan-rekha-logo-transparent.png" alt="Jeevan Rekha Logo" width={28} height={28} style={{ objectFit: 'contain' }} />
+                  </div>
                   <div className="tl-content">
                     <div className="tl-year">Brand Launch</div>
                     <div className="tl-title">Jeevan Rekha is Born</div>
