@@ -337,7 +337,7 @@ export default function Home() {
         <div className="wrap">
           <div className="ben-top">
             <div>
-              <h2 className="s-h rv" data-d="1">Every Drop,<br/><em>a Dose of</em> <span style={{ color: 'var(--p)' }}>Vitality</span></h2>
+              <h2 className="s-h rv" data-d="1">Every Drop,<br/><em>a Dose of</em> <span style={{ color: 'var(--pd)' }}>Vitality</span></h2>
             </div>
             <p className="body-t rv" data-d="2">Jeevan Rekha oils are crafted to nourish your body while delivering authentic Indian taste. Each oil carries a precise balance of flavour, nutrition, and high-heat performance.</p>
           </div>

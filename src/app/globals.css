@@ -447,21 +447,24 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 .p-chip-ico svg { width: 22px; height: 22px; fill: var(--y); }
 
 /* Home: Benefits */
-.bens { padding: 116px 0; background: var(--w); position: relative; overflow: hidden; }
-.bens::before { content: ''; position: absolute; left: -220px; bottom: -220px; width: 580px; height: 580px; border-radius: 50%; background: radial-gradient(ellipse, rgba(75,38,133,.045) 0%, transparent 70%); pointer-events: none; }
+.bens { padding: 116px 0; background: var(--y); position: relative; overflow: hidden; }
+.bens::before { content: ''; position: absolute; left: -220px; bottom: -220px; width: 580px; height: 580px; border-radius: 50%; background: radial-gradient(ellipse, rgba(75,38,133,.1) 0%, transparent 70%); pointer-events: none; }
 .ben-top { display: grid; grid-template-columns: 1fr 1fr; gap: 76px; align-items: end; margin-bottom: 72px; }
-.ben-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--g10); border: 1px solid var(--g10); border-radius: 16px; overflow: hidden; }
+.ben-top h2 { color: var(--pd); }
+.ben-top h2 em, .ben-top h2 span { color: var(--p) !important; }
+.ben-top p { color: rgba(16, 11, 40, 0.82); }
+.ben-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(75,38,133,.12); border: 1px solid rgba(75,38,133,.12); border-radius: 16px; overflow: hidden; }
 .bcard { background: var(--w); padding: 46px 34px; position: relative; overflow: hidden; transition: background .4s; }
-.bcard::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(254,220,6,.06), transparent); transform: scaleY(0); transform-origin: bottom; transition: transform .55s var(--ease); }
+.bcard::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(75,38,133,.06), transparent); transform: scaleY(0); transform-origin: bottom; transition: transform .55s var(--ease); }
 .bcard:hover::before { transform: scaleY(1); }
 .bcard:hover { background: var(--g05); }
 .b-ico { width: 62px; height: 62px; border-radius: 12px; background: var(--pl); border: 1.5px solid var(--g20); display: flex; align-items: center; justify-content: center; margin-bottom: 26px; transition: all .45s var(--ease); position: relative; z-index: 1; }
-.bcard:hover .b-ico { background: var(--y); border-color: var(--y); transform: scale(1.1) rotate(-5deg); box-shadow: 0 12px 24px rgba(254,220,6,.24); }
+.bcard:hover .b-ico { background: var(--p); border-color: var(--p); transform: scale(1.1) rotate(-5deg); box-shadow: 0 12px 24px rgba(75,38,133,.2); }
 .b-ico svg { width: 26px; height: 26px; fill: var(--p); transition: fill .3s; }
-.bcard:hover .b-ico svg { fill: var(--pd); }
-.bcard h4 { font-family: var(--fd); font-size: 1.12rem; color: var(--bk); margin-bottom: 12px; position: relative; z-index: 1; transition: color .3s; }
+.bcard:hover .b-ico svg { fill: var(--w); }
+.bcard h4 { font-family: var(--fd); font-size: 1.12rem; color: var(--pd); margin-bottom: 12px; position: relative; z-index: 1; transition: color .3s; }
 .bcard:hover h4 { color: var(--p); }
-.bcard p { font-size: .83rem; line-height: 1.76; color: var(--g60); position: relative; z-index: 1; font-weight: 400; transition: color .3s; }
+.bcard p { font-size: .83rem; line-height: 1.76; color: var(--g80); position: relative; z-index: 1; font-weight: 400; transition: color .3s; }
 .bcard:hover p { color: var(--bk); }
 .b-tag { display: inline-block; margin-top: 18px; font-size: .58rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--p); background: var(--pl); border: 1px solid var(--g20); border-radius: 50px; padding: 4px 12px; position: relative; z-index: 1; }
 @media (max-width: 1024px) {
