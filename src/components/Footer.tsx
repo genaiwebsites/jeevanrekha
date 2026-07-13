@@ -59,7 +59,6 @@ export default function Footer() {
       <div className="f-bottom-strip">
         <div className="wrap f-bottom-inner">
           <p>© 2026 Jeevan Rekha. A brand of AB Udyog Pvt. Ltd. All rights reserved.</p>
-          <div className="f-cert">FSSAI Licensed · Made in India 🇮🇳</div>
         </div>
       </div>
     </footer>
