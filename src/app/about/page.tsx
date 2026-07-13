@@ -301,7 +301,7 @@ export default function About() {
                 <span className="supply-tag">Solvent Extraction Units</span>
                 <span className="supply-tag">Retail Distribution</span>
               </div>
-              <div className="rv" data-d="4" style={{ background: 'var(--g05)', borderRadius: '24px', padding: '20px 24px', display: 'flex', alignItems: 'center', gap: '14px', border: '1px solid var(--g10)' }}>
+              <div className="rv" data-d="4" style={{ background: 'var(--g05)', borderRadius: '16px', padding: '20px 24px', display: 'flex', alignItems: 'center', gap: '14px', border: '1px solid var(--g10)' }}>
                 <div style={{ color: 'var(--p)' }}><ShieldCheck style={{ width: '24px', height: '24px' }} /></div>
                 <p className="body-t" style={{ fontSize: '0.82rem', lineHeight: '1.65' }}>
                   Each unit of Jeevan Rekha oil is <strong style={{ color: 'var(--bk)' }}>hygienically packed, tamper-proof sealed</strong>, and clearly labelled for full transparency, safety, and quality assurance.
