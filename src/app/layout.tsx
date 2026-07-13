@@ -45,11 +45,10 @@ export const metadata: Metadata = {
   publisher: 'Jeevan Rekha',
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/jeevan-rekha-favicon.jpg', type: 'image/jpeg' },
+      { url: '/jeevan-rekha-logo-transparent.png', type: 'image/png' },
     ],
     apple: [
-      { url: '/jeevan-rekha-apple-icon.jpg', type: 'image/jpeg' },
+      { url: '/jeevan-rekha-logo-transparent.png', type: 'image/png' },
     ],
   },
   openGraph: {
