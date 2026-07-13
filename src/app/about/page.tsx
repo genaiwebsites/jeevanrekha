@@ -98,7 +98,7 @@ export default function About() {
                   </div>
                 </div>
                 <div className="tl-item rv" data-d="1">
-                  <div className="tl-dot" style={{ background: '#ffffff', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '4px' }}>
+                  <div className="tl-dot" style={{ overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '4px' }}>
                     <Image src="/abu_logo.png" alt="AB Udyog Logo" width={32} height={32} style={{ objectFit: 'contain' }} />
                   </div>
                   <div className="tl-content">
