@@ -17,7 +17,11 @@ export default function Footer() {
         <div className="f-grid">
           <div>
             <Link href="/" className="f-brand-logo">
-              <Image src="/jeevan-rekha-logo.png" alt="Jeevan Rekha Logo - Premium Edible Oils" width={400} height={120} />
+              <img 
+                src="/jeevan-rekha-logo.png" 
+                alt="Jeevan Rekha Logo - Premium Edible Oils" 
+                style={{ height: '50px', width: 'auto', objectFit: 'contain' }} 
+              />
             </Link>
             <p className="f-desc">A brand of <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'underline' }}>AB Udyog Pvt. Ltd.</a> Bringing 40+ years of industry expertise to every household. Manufactured in Burdwan. Proudly made in India.</p>
             <div className="f-socs">
