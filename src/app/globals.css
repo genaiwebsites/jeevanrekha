@@ -2162,14 +2162,35 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 
 /* ═══════════════════ VIEW: INDIVIDUAL BLOG POST ═══════════════════ */
 .post-main { background: var(--w); min-height: 100vh; padding-bottom: 100px; }
-.post-hero { padding: 180px 0 100px; background: var(--off); border-bottom: 1px solid var(--g10); text-align: center; }
+.post-hero { 
+  position: relative;
+  overflow: hidden;
+  padding: 180px 24px 100px; 
+  background: var(--bk); 
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
+  text-align: center; 
+}
+.post-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 320px at 0% 0%, rgba(254, 220, 6, 0.05) 0%, transparent 100%), 
+              radial-gradient(ellipse 90% 80% at 15% 55%, rgba(75, 38, 133, 0.6) 0%, transparent 65%), 
+              radial-gradient(ellipse 65% 65% at 78% 25%, rgba(111, 36, 150, 0.5) 0%, transparent 60%);
+  z-index: 1;
+  pointer-events: none;
+}
+.post-hero > * {
+  position: relative;
+  z-index: 2;
+}
 .post-meta { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 24px; }
 .pm-tag { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--p); background: var(--pl); padding: 6px 14px; border-radius: 50px; }
-.pm-date { font-size: .85rem; color: var(--g60); }
-.post-h1 { font-family: var(--fd); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--bk); max-width: 900px; margin: 0 auto 32px; letter-spacing: -.02em; }
+.pm-date { font-size: .85rem; color: rgba(255, 255, 255, 0.6); }
+.post-h1 { font-family: var(--fd); font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--w); max-width: 900px; margin: 0 auto 32px; letter-spacing: -.02em; }
 .post-author { display: flex; align-items: center; justify-content: center; gap: 12px; }
 .pa-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--p); color: var(--y); display: flex; align-items: center; justify-content: center; font-family: var(--fd); font-weight: 700; font-size: 1.2rem; }
-.pa-name { font-size: .9rem; font-weight: 600; color: var(--bk); }
+.pa-name { font-size: .9rem; font-weight: 600; color: rgba(255, 255, 255, 0.85); }
 
 .post-layout { display: grid; grid-template-columns: 1fr 340px; gap: 80px; max-width: 1200px; margin: 0 auto; padding: 80px 56px; align-items: start; }
 .post-content { font-size: 1.05rem; line-height: 1.9; color: var(--g80); font-weight: 400; }

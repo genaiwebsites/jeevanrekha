@@ -29,13 +29,7 @@ export default function Navbar() {
     return null;
   }
 
-  // Determine if we should force solid styling based on the path
-  const isLightPage = pathname === '/blogs' || pathname.startsWith('/blogs/');
-
-  const navClass = [
-    scrolled ? 'scrolled' : '',
-    isLightPage ? 'force-solid' : ''
-  ].filter(Boolean).join(' ');
+  const navClass = scrolled ? 'scrolled' : '';
 
   const getLinkClass = (path: string) => {
     if (path === '/') {

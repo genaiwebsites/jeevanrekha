@@ -5,8 +5,9 @@ export default function Blogs() {
   return (
     <section id="view-blogs" className="view-section active">
       <div className="hero vh-auto" style={{
-        minHeight: '400px',
-        paddingBottom: '40px',
+        minHeight: '440px',
+        paddingTop: '130px',
+        paddingBottom: '50px',
         position: 'relative',
         overflow: 'hidden',
         display: 'flex',
