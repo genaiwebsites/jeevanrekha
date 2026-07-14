@@ -43,7 +43,13 @@ export default function Navbar() {
       <div className="nav-bg"></div>
       <div className="nav-inner">
         <Link href="/" className="nav-logo">
-          <Image src="/jeevan-rekha-logo.png" alt="Jeevan Rekha Logo - Premium Edible Oils" width={400} height={120} priority />
+          <Image 
+            src={scrolled ? "/jeevan-rekha-logo.png" : "/jeevan-rekha-logo-white.png"} 
+            alt="Jeevan Rekha Logo - Premium Edible Oils" 
+            width={400} 
+            height={120} 
+            priority 
+          />
         </Link>
         <ul className={`nav-links ${isMobileOpen ? 'nav-open' : ''}`} id="navL">
           <li><Link href="/" id="link-home" className={getLinkClass('/')}>Home</Link></li>

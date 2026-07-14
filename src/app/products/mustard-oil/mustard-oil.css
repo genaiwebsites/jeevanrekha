@@ -164,7 +164,7 @@
       background: rgba(var(--cream-rgb), 0.92); backdrop-filter: blur(12px);
       padding: clamp(10px, 1.5vh, 12px) clamp(24px, 5vw, 48px);
       box-shadow: 0 1px 0 rgba(200,16,46,0.1);
-    }.mustard-page-container .nav-logo { flex: 1; display: flex; justify-content: flex-start; align-items: center; }.mustard-page-container .nav-logo img { height: clamp(40px, 4.5vh, 48px); width: auto; object-fit: contain; }.mustard-page-container .nav-links { flex: 1; display: flex; justify-content: center; gap: clamp(24px, 3vw, 48px); list-style: none; }.mustard-page-container .nav-links a {
+    }.mustard-page-container .nav-logo { flex: 1; display: flex; justify-content: flex-start; align-items: center; }.mustard-page-container .nav-logo img { height: clamp(40px, 4.5vh, 48px); width: auto; object-fit: contain; }.mustard-page-container #nav:not(.scrolled) .nav-logo img { content: url("/jeevan-rekha-logo-white.png"); }.mustard-page-container .nav-links { flex: 1; display: flex; justify-content: center; gap: clamp(24px, 3vw, 48px); list-style: none; }.mustard-page-container .nav-links a {
       text-decoration: none; color: var(--text-dark); font-family: var(--fb);
       font-size: 0.8rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.15em;
       position: relative; padding: 4px 0;
