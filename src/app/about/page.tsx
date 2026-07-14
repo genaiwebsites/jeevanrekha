@@ -366,6 +366,9 @@ export default function About() {
         <div className="wrap">
           <div className="section-head" style={{ marginBottom: '48px' }}>
             <h2 className="s-h rv" data-d="1">How We Deliver on<br />Our <strong>Promise</strong> to India</h2>
+            <p className="body-t rv" data-d="2" style={{ marginTop: '16px', maxWidth: '700px', color: 'var(--g60)' }}>
+              We strive to bring pure, healthy happiness to your kitchen without a high price—because quality should be accessible to all, enriching every meal with state-of-the-art technology without any compromise for West Bengal and beyond.
+            </p>
           </div>
           <div className="commitment-grid">
             <div className="commitment-card rv" data-d="1">
@@ -425,8 +428,8 @@ export default function About() {
             <div className="cs-contact-item" style={{ cursor: 'default' }}>
               <div className="cs-ico"><MapPin style={{ width: '18px', height: '18px', color: 'var(--pd)' }} /></div>
               <div className="cs-ctext">
-                <span className="cn">55/1B, Strand Road, Kolkata 700006</span>
-                <span className="cv">Factory: Dighirkon, Burdwan 713427</span>
+                <span className="cn">55/1B, Strand Road, 3rd Floor, Room No. 05, Kolkata - 700006</span>
+                <span className="cv">Factory: Dighirkon, Bamunia Road, Uchallan, Burdwan - 713427</span>
               </div>
             </div>
           </div>

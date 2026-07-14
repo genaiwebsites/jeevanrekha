@@ -12,10 +12,10 @@ import sboImg from '../../public/jr_sbo.png';
 
 const row1Reviews = [
   {
-    name: "Subhashis Mukherjee",
-    loc: "Salt Lake City, Kolkata",
-    txt: "Switched to Jeevan Rekha Rice Bran Oil on my cardiologist's advice. My LDL has dropped noticeably and the food tastes so much lighter.",
-    initials: "SM",
+    name: "Priya Kar",
+    loc: "Homemaker, Howrah",
+    txt: "I've chosen Jeevan Rekha Mustard Oil as my go-to cooking oil for its quality, health benefits, and great taste every time always.",
+    initials: "PK",
     avClass: "av-p"
   },
   {
@@ -64,10 +64,10 @@ const row2Reviews = [
     avClass: "av-p"
   },
   {
-    name: "Mrs. Moushumi Sen",
-    loc: "Home Baker & Café Owner, Ranchi",
-    txt: "Jeevan Rekha Soybean Oil is so neutral and light. I use it for baking tea cakes and making mayonnaise from scratch. It blends beautifully without any heavy aftertaste.",
-    initials: "MS",
+    name: "Sunita Pal",
+    loc: "Retired Teacher, Belur",
+    txt: "As someone who's very conscious about what I eat, finding the right cooking oil was crucial. Jeevan Rekha Mustard Oil has become my go-to.",
+    initials: "SP",
     avClass: "av-y"
   },
   {
@@ -78,10 +78,10 @@ const row2Reviews = [
     avClass: "av-g"
   },
   {
-    name: "Tenzing Norbu",
-    loc: "Chef, Himalaya Cafe, Gangtok",
-    txt: "Our momo fry and chowmein require a very neutral, high smoke point oil. Jeevan Rekha Soybean Oil works perfectly. Extremely light on the stomach!",
-    initials: "TN",
+    name: "Ravi Kumar",
+    loc: "Fitness Enthusiast, Newtown",
+    txt: "As someone who's very conscious about what I eat, finding the right cooking oil was crucial. Jeevan Rekha Mustard Oil has become my go-to.",
+    initials: "RK",
     avClass: "av-p"
   }
 ];
