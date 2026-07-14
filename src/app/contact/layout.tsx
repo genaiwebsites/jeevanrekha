@@ -1,0 +1,29 @@
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us & Trade Enquiries',
+  description: 'Get in touch with AB Udyog Pvt. Ltd. regarding retail distribution, trade enquiries, bulk orders, or customer support. Offices in Kolkata, factory in Burdwan.',
+  openGraph: {
+    title: 'Contact Us & Trade Enquiries | Jeevan Rekha',
+    description: 'Get in touch with AB Udyog Pvt. Ltd. regarding retail distribution, trade enquiries, bulk orders, or customer support. Offices in Kolkata, factory in Burdwan.',
+    url: 'https://jeevanrekhafoods.com/contact',
+    images: [
+      {
+        url: '/product_range.jpeg',
+        width: 1200,
+        height: 600,
+        alt: 'Jeevan Rekha Contact Us & Trade Enquiries',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us & Trade Enquiries | Jeevan Rekha',
+    description: 'Get in touch with AB Udyog Pvt. Ltd. regarding retail distribution, trade enquiries, or bulk orders.',
+    images: ['/product_range.jpeg'],
+  },
+};
+
+export default function ContactLayout({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
+}

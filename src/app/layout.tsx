@@ -30,8 +30,14 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ["400", "600", "700"],
 });
 
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
+  ? process.env.NEXT_PUBLIC_SITE_URL
+  : process.env.VERCEL_URL
+    ? `https://${process.env.VERCEL_URL}`
+    : 'https://jeevanrekhafoods.com';
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://jeevanrekhafoods.com'),
+  metadataBase: new URL(baseUrl),
   title: {
     default: 'Jeevan Rekha | Purity. Health. Happiness.',
     template: '%s | Jeevan Rekha',
@@ -63,10 +69,10 @@ export const metadata: Metadata = {
     description: 'Premium edible oils crafted with 40+ years of expertise. Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soybean Oil. Quality is NABL-certified, and our products are proudly made in India.',
     images: [
       {
-        url: '/jeevan-rekha-logo.png',
+        url: '/product_range.jpeg',
         width: 1200,
-        height: 630,
-        alt: 'Jeevan Rekha Logo',
+        height: 600,
+        alt: 'Jeevan Rekha Premium Edible Oils Product Range',
       },
     ],
   },
@@ -74,7 +80,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Jeevan Rekha | Purity. Health. Happiness.',
     description: 'Premium edible oils crafted with 40+ years of expertise. Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soybean Oil.',
-    images: ['/jeevan-rekha-logo.png'],
+    images: ['/product_range.jpeg'],
   },
   alternates: {
     canonical: 'https://jeevanrekhafoods.com',
