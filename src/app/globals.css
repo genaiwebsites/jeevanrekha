@@ -2305,6 +2305,35 @@ footer {
 }
 .f-bottom-inner p { margin: 0; }
 
+/* ═══════════════════ AB UDYOG HYPERLINK STYLES ═══════════════════ */
+.ab-link {
+  text-decoration: none !important;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Main Footer (Light Lavender Background) */
+.f-desc .ab-link {
+  color: var(--p) !important;
+}
+.f-desc .ab-link:hover {
+  color: #c59b27 !important;
+  text-shadow: 0 0 8px rgba(197, 155, 39, 0.4);
+}
+
+/* Subfooter & Product Footer (Dark Backgrounds) */
+.f-bottom-inner .ab-link,
+.footer-copy .ab-link,
+.footer-address .ab-link {
+  color: var(--y) !important;
+}
+.f-bottom-inner .ab-link:hover,
+.footer-copy .ab-link:hover,
+.footer-address .ab-link:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+
 /* ═══════════════════ RESPONSIVE ═══════════════════ */
 @media(max-width: 1024px) {
   .wrap, .nav-inner, .sd-row, .certs-row, .cta-inner, .phd-top { padding-left: 28px; padding-right: 28px; }
