@@ -33,6 +33,19 @@ body { font-family: var(--fb); background: var(--off); color: var(--bk); overflo
 ::-webkit-scrollbar-track { background: var(--bk); }
 ::-webkit-scrollbar-thumb { background: var(--p); border-radius: 4px; }
 
+/* ═══════════════════ PRODUCT PAGE VIEWPORT SCROLLBAR OVERRIDES ═══════════════════ */
+html:has(.rice-bran-page-container) ::-webkit-scrollbar-thumb,
+html:has(.soybean-page-container) ::-webkit-scrollbar-thumb,
+html:has(.mustard-page-container) ::-webkit-scrollbar-thumb {
+  background: var(--y) !important;
+}
+
+html:has(.rice-bran-page-container) ::-webkit-scrollbar-track,
+html:has(.soybean-page-container) ::-webkit-scrollbar-track,
+html:has(.mustard-page-container) ::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
 /* ═══════════════════ CUSTOM CURSOR ═══════════════════ */
 #cur-follower {
   position: fixed;
