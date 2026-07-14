@@ -45,6 +45,7 @@ export default function Products() {
   };
 
   useEffect(() => {
+    document.title = "Our Edible Oils | Jeevan Rekha";
     resetAutoplay();
     return () => {
       if (autoplayRef.current) {

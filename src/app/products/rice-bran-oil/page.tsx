@@ -75,6 +75,7 @@ export default function RiceBranOilPage() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      document.title = "Physically Refined Rice Bran Oil | Jeevan Rekha";
       const prevTheme = document.documentElement.getAttribute("data-theme");
       document.documentElement.setAttribute("data-theme", "colorful");
 

@@ -75,6 +75,7 @@ export default function SoybeanOilPage() {
 
   useEffect(() => {
     if (typeof window !== "undefined") {
+      document.title = "Refined Soybean Oil | Jeevan Rekha";
       const prevTheme = document.documentElement.getAttribute("data-theme");
       document.documentElement.setAttribute("data-theme", "colorful");
 
