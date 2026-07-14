@@ -498,32 +498,14 @@ export default function MustardOilPage() {
     </div>
   </section>
 
-  {/* FOOTER */}
   <footer id="footer">
-    <div className="footer-left">
-      <img src="/jeevan-rekha-logo-white.png" alt="Jeevan Rekha — Premium Edible Oils" className="footer-logo" />
-      <div className="footer-address">
-        <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog Pvt. Ltd.</a><br />
-        55/1B, Strand Road, 3rd Floor, Kolkata – 700006
-      </div>
-      <div className="footer-copy">&copy; 2026 <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog Pvt. Ltd.</a> All rights reserved.</div>
-    </div>
-    
-    <div className="footer-center">
-      <div className="footer-tagline-center">"Pure Mustard Oil — Kachi Ghani Cold Pressed."</div>
-    </div>
-    
-    <div className="footer-right">
-      <div className="footer-contact">
-        <span>(+91) 74392 89709</span>
-        <a href="mailto:info@abudyog.in">info@abudyog.in</a>
-      </div>
-      <div className="footer-social">
-        <a href="https://www.instagram.com/jeevanrekhafoods/">INSTAGRAM</a>
-        <a href="https://www.facebook.com/JeevanRekhaFoods/">FACEBOOK</a>
-        <a href="https://www.linkedin.com/company/jeevanrekha/">LINKEDIN</a>
+    <div className="footer-brand">
+      <div className="footer-logo-wrap">
+        <img src="/jeevan-rekha-logo-white.png" alt="Jeevan Rekha — Premium Edible Oils" style={{height: '48px', width: 'auto', objectFit: 'contain'}} />
       </div>
     </div>
+    <div className="footer-tagline-center">"Pure Mustard Oil — Kacchi Ghani Cold Pressed."</div>
+    <div className="footer-copy">&copy; <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog</a>. All rights reserved.</div>
   </footer>
 
   
