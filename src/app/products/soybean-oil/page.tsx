@@ -510,7 +510,7 @@ export default function SoybeanOilPage() {
   <footer id="footer">
     <div className="footer-brand">
       <div className="footer-logo-wrap">
-        <img src="/jeevan-rekha-logo.png" alt="Jeevan Rekha — Premium Edible Oils" style={{height: '48px', width: 'auto', objectFit: 'contain'}} />
+        <img src="/jeevan-rekha-logo-white.png" alt="Jeevan Rekha — Premium Edible Oils" style={{height: '48px', width: 'auto', objectFit: 'contain'}} />
       </div>
     </div>
     <div className="footer-tagline-center">"At the heart of every healthy meal."</div>

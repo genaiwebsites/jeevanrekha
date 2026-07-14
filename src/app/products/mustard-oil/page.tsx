@@ -501,7 +501,7 @@ export default function MustardOilPage() {
   {/* FOOTER */}
   <footer id="footer">
     <div className="footer-left">
-      <img src="/jeevan-rekha-logo.png" alt="Jeevan Rekha — Premium Edible Oils" className="footer-logo" />
+      <img src="/jeevan-rekha-logo-white.png" alt="Jeevan Rekha — Premium Edible Oils" className="footer-logo" />
       <div className="footer-address">
         <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog Pvt. Ltd.</a><br />
         55/1B, Strand Road, 3rd Floor, Kolkata – 700006

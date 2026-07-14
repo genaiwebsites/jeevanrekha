@@ -542,7 +542,7 @@ export default function RiceBranOilPage() {
   <footer id="footer">
     <div className="footer-brand">
       <div className="footer-logo-wrap">
-        <img src="/jeevan-rekha-logo.png" alt="Jeevan Rekha — Premium Edible Oils" style={{height: '48px', width: 'auto', objectFit: 'contain'}} />
+        <img src="/jeevan-rekha-logo-white.png" alt="Jeevan Rekha — Premium Edible Oils" style={{height: '48px', width: 'auto', objectFit: 'contain'}} />
       </div>
     </div>
     <div className="footer-tagline-center">"Purity. Health. Happiness."</div>
