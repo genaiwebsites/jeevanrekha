@@ -275,7 +275,7 @@
     }.rice-bran-page-container .compare-source { text-align: center; font-family: var(--fb); font-size: 0.75rem; color: var(--text-light); margin-top: 32px; font-style: italic; }.rice-bran-page-container #faq {
       background: var(--bg-faq);
       padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 60px); position: relative; z-index: 2;
-    }.rice-bran-page-container .faq-inner { max-width: 800px; margin: 0 auto; }.rice-bran-page-container .faq-item {
+    }.rice-bran-page-container .faq-inner { max-width: 1200px; margin: 0 auto; }.rice-bran-page-container .faq-item {
       background: var(--warm-white); border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
       margin-bottom: 16px; overflow: hidden; transition: box-shadow 0.3s ease, transform 0.3s ease, border-left 0.3s ease, background 0.3s ease;
       border-left: 4px solid transparent;

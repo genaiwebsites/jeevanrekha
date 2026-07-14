@@ -461,41 +461,45 @@ export default function SoybeanOilPage() {
 
   {/* INTERACTIVE FAQ ACCORDION */}
   <section id="faq">
-    <div className="faq-inner">
-      <div className="advantage-header">
+     <div className="faq-inner">
+      <div className="faq-left">
         <div className="section-label">Discover More</div>
         <h2 className="section-title">Frequently Asked Questions</h2>
       </div>
 
-      <div className={`faq-item ${openFaq === 0 ? "active" : ""}`}>
-        <button className="faq-btn" onClick={ () => toggleFaq(0) }>
-          Why is Soybean Oil considered heart-healthy? <span className="faq-icon">+</span>
-        </button>
-        <div className="faq-content">
-          <div className="faq-content-inner">
-            <p>Jeevan Rekha Soybean oil contains mostly polyunsaturated fats (PUFAs) and monounsaturated fats (MUFAs). It is a rare, excellent source of Alpha-Linolenic Acid (Omega-3) and Linoleic Acid (Omega-6), which helps maintain normal blood cholesterol levels. It is also packed with natural anti-oxidants (Tocopherols).</p>
+      <div className="faq-right">
+        <div className="faq-list">
+          <div className={`faq-item ${openFaq === 0 ? "active" : ""}`}>
+            <button className="faq-btn" onClick={ () => toggleFaq(0) }>
+              Why is Soybean Oil considered heart-healthy? <span className="faq-icon">+</span>
+            </button>
+            <div className="faq-content">
+              <div className="faq-content-inner">
+                <p>Jeevan Rekha Soybean oil contains mostly polyunsaturated fats (PUFAs) and monounsaturated fats (MUFAs). It is a rare, excellent source of Alpha-Linolenic Acid (Omega-3) and Linoleic Acid (Omega-6), which helps maintain normal blood cholesterol levels. It is also packed with natural anti-oxidants (Tocopherols).</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div className={`faq-item ${openFaq === 1 ? "active" : ""}`}>
-        <button className="faq-btn" onClick={ () => toggleFaq(1) }>
-          What does "Fortified with Vitamin A & D" mean? <span className="faq-icon">+</span>
-        </button>
-        <div className="faq-content">
-          <div className="faq-content-inner">
-            <p>Jeevan Rekha Soybean Oil is enriched with essential fat-soluble vitamins. It contains added Vitamin A (2500 IU per 100g), which supports healthy vision and immunity, and Vitamin D (450 IU per 100g), which is crucial for strong bones and calcium absorption.</p>
+          <div className={`faq-item ${openFaq === 1 ? "active" : ""}`}>
+            <button className="faq-btn" onClick={ () => toggleFaq(1) }>
+              What does "Fortified with Vitamin A & D" mean? <span className="faq-icon">+</span>
+            </button>
+            <div className="faq-content">
+              <div className="faq-content-inner">
+                <p>Jeevan Rekha Soybean Oil is enriched with essential fat-soluble vitamins. It contains added Vitamin A (2500 IU per 100g), which supports healthy vision and immunity, and Vitamin D (450 IU per 100g), which is crucial for strong bones and calcium absorption.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div className={`faq-item ${openFaq === 2 ? "active" : ""}`}>
-        <button className="faq-btn" onClick={ () => toggleFaq(2) }>
-          What are the main ingredients in Jeevan Rekha Soybean Oil? <span className="faq-icon">+</span>
-        </button>
-        <div className="faq-content">
-          <div className="faq-content-inner">
-            <p>The product contains 100% pure Refined Soybean Oil, Antioxidant TBHQ (E 319) to maintain freshness and stability during high-heat cooking, and is fortified with Vitamin A and Vitamin D. It is strictly free from Argemone Oil.</p>
+          <div className={`faq-item ${openFaq === 2 ? "active" : ""}`}>
+            <button className="faq-btn" onClick={ () => toggleFaq(2) }>
+              What are the main ingredients in Jeevan Rekha Soybean Oil? <span className="faq-icon">+</span>
+            </button>
+            <div className="faq-content">
+              <div className="faq-content-inner">
+                <p>The product contains 100% pure Refined Soybean Oil, Antioxidant TBHQ (E 319) to maintain freshness and stability during high-heat cooking, and is fortified with Vitamin A and Vitamin D. It is strictly free from Argemone Oil.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

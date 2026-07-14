@@ -494,40 +494,44 @@ export default function RiceBranOilPage() {
   {/* INTERACTIVE FAQ ACCORDION */}
   <section id="faq">
     <div className="faq-inner">
-      <div className="advantage-header">
+      <div className="faq-left">
         <div className="section-label">Our Process</div>
         <h2 className="section-title">Frequently Asked Questions</h2>
       </div>
 
-      <div className={`faq-item ${openFaq === 0 ? "active" : ""}`}>
-        <button className="faq-btn" onClick={ () => toggleFaq(0) }>
-          How is Jeevan Rekha Rice Bran Oil produced? <span className="faq-icon">+</span>
-        </button>
-        <div className="faq-content">
-          <div className="faq-content-inner">
-            <p>Jeevan Rekha Rice Bran Oil is produced from the bran layer of rice, which is separated during the milling process. Physical refining is a natural process that removes free fatty acids and impurities without using chemicals, maintaining the oil’s natural nutrients. The quality is ensured through stringent quality control measures at every stage of production, including regular testing for contaminants and nutrient content.</p>
+      <div className="faq-right">
+        <div className="faq-list">
+          <div className={`faq-item ${openFaq === 0 ? "active" : ""}`}>
+            <button className="faq-btn" onClick={ () => toggleFaq(0) }>
+              How is Jeevan Rekha Rice Bran Oil produced? <span className="faq-icon">+</span>
+            </button>
+            <div className="faq-content">
+              <div className="faq-content-inner">
+                <p>Jeevan Rekha Rice Bran Oil is produced from the bran layer of rice, which is separated during the milling process. Physical refining is a natural process that removes free fatty acids and impurities without using chemicals, maintaining the oil’s natural nutrients. The quality is ensured through stringent quality control measures at every stage of production, including regular testing for contaminants and nutrient content.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div className={`faq-item ${openFaq === 1 ? "active" : ""}`}>
-        <button className="faq-btn" onClick={ () => toggleFaq(1) }>
-          What pack sizes are available? <span className="faq-icon">+</span>
-        </button>
-        <div className="faq-content">
-          <div className="faq-content-inner">
-            <p>It is available in various sizes, including 1-litre Lite Pouches, 1-litre Bottles, and 5-litre Tins, as well as larger containers for bulk use. The oil is packaged in airtight, food-grade containers that protect it from light and air, preserving its purity, freshness and nutritional value.</p>
+          <div className={`faq-item ${openFaq === 1 ? "active" : ""}`}>
+            <button className="faq-btn" onClick={ () => toggleFaq(1) }>
+              What pack sizes are available? <span className="faq-icon">+</span>
+            </button>
+            <div className="faq-content">
+              <div className="faq-content-inner">
+                <p>It is available in various sizes, including 1-litre Lite Pouches, 1-litre Bottles, and 5-litre Tins, as well as larger containers for bulk use. The oil is packaged in airtight, food-grade containers that protect it from light and air, preserving its purity, freshness and nutritional value.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div className={`faq-item ${openFaq === 2 ? "active" : ""}`}>
-        <button className="faq-btn" onClick={ () => toggleFaq(2) }>
-          Where can consumers purchase it? <span className="faq-icon">+</span>
-        </button>
-        <div className="faq-content">
-          <div className="faq-content-inner">
-            <p>Consumers can purchase Jeevan Rekha Rice Bran Oil following direct to consumer method, directly from the factory, official website, or from online platforms like Amazon, Flipkart, and Jiomart. Retailers are not involved in the sale or purchase of Jeevan Rekha Rice Bran Oil.</p>
+          <div className={`faq-item ${openFaq === 2 ? "active" : ""}`}>
+            <button className="faq-btn" onClick={ () => toggleFaq(2) }>
+              Where can consumers purchase it? <span className="faq-icon">+</span>
+            </button>
+            <div className="faq-content">
+              <div className="faq-content-inner">
+                <p>Consumers can purchase Jeevan Rekha Rice Bran Oil following direct to consumer method, directly from the factory, official website, or from online platforms like Amazon, Flipkart, and Jiomart. Retailers are not involved in the sale or purchase of Jeevan Rekha Rice Bran Oil.</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
