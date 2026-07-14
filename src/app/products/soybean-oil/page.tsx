@@ -514,7 +514,7 @@ export default function SoybeanOilPage() {
       </div>
     </div>
     <div className="footer-tagline-center">"At the heart of every healthy meal."</div>
-    <div className="footer-copy">&copy; <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>AB Udyog</a>. All rights reserved.</div>
+    <div className="footer-copy">&copy; <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog</a>. All rights reserved.</div>
   </footer>
 
   

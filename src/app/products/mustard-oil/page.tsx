@@ -503,10 +503,10 @@ export default function MustardOilPage() {
     <div className="footer-left">
       <img src="/jeevan-rekha-logo.png" alt="Jeevan Rekha — Premium Edible Oils" className="footer-logo" />
       <div className="footer-address">
-        <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>AB Udyog Pvt. Ltd.</a><br />
+        <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog Pvt. Ltd.</a><br />
         55/1B, Strand Road, 3rd Floor, Kolkata – 700006
       </div>
-      <div className="footer-copy">&copy; 2026 <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>AB Udyog Pvt. Ltd.</a> All rights reserved.</div>
+      <div className="footer-copy">&copy; 2026 <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog Pvt. Ltd.</a> All rights reserved.</div>
     </div>
     
     <div className="footer-center">

@@ -546,7 +546,7 @@ export default function RiceBranOilPage() {
       </div>
     </div>
     <div className="footer-tagline-center">"Purity. Health. Happiness."</div>
-    <div className="footer-copy">&copy; <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>AB Udyog</a>. All rights reserved.</div>
+    <div className="footer-copy">&copy; <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog</a>. All rights reserved.</div>
   </footer>
 
   
