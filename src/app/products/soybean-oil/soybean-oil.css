@@ -1,6 +1,7 @@
 .soybean-page-container {
       /* LIGHT THEME (Based on New Palette) */
       --cream:        #F9FBF7; /* Tertiary */
+      --cream-rgb:    249, 251, 247;
       --warm-white:   #FFFFFF;
       --warm-white-rgb: 255, 255, 255;
       --beige:        #E8EFEA;
@@ -30,12 +31,16 @@
       --bg-faq: #FFF9E6;
       --bg-foot: linear-gradient(to bottom, #E5F0E9 0%, #D1DFD6 100%);
 
+      --hero-nav-link: var(--text-dark);
+      --hero-nav-link-hover: var(--green-deep);
+
       --serif: var(--fd);
       --sans: var(--fb);
       --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     }[data-theme="dark"] .soybean-page-container {
       /* DARK THEME - Premium Charcoal with Green Undertones */
       --cream:        #101412; 
+      --cream-rgb:    16, 20, 18;
       --warm-white:   #181E1B;
       --warm-white-rgb: 24, 30, 27;
       --beige:        #1F2924;
@@ -64,6 +69,9 @@
       --bg-comp: #151E19; 
       --bg-faq: #1C190D; 
       --bg-foot: linear-gradient(to bottom, #16211B 0%, #0B0E0C 100%);
+
+      --hero-nav-link: var(--text-dark);
+      --hero-nav-link-hover: var(--green-deep);
     }[data-theme="colorful"] .soybean-page-container {
       /* COLORFUL THEME - Rich Forest Green Hero & Footer */
       --cream:        #F4F9F6; 
@@ -99,7 +107,7 @@
       --text-dark: #FFFFFF;
       --text-mid: #C8DFCF;
       --green-deep: var(--gold);
-    }[data-theme="colorful"] .soybean-page-container #nav { --text-dark: #FFFFFF; }[data-theme="colorful"] .soybean-page-container .nav-links a:hover { color: var(--gold); }[data-theme="colorful"] .soybean-page-container .nav-links a:hover::after { background: var(--gold); }[data-theme="colorful"] .soybean-page-container #nav.scrolled { background: rgba(0, 75, 35, 0.95); }[data-theme="colorful"] .soybean-page-container .theme-toggle { background: rgba(255, 255, 255, 0.15); }[data-theme="colorful"] .soybean-page-container .theme-btn:hover { background: rgba(255, 255, 255, 0.25); }[data-theme="colorful"] .soybean-page-container .theme-btn.active { background: rgba(255, 255, 255, 0.35); box-shadow: inset 0 0 0 1px var(--gold); }[data-theme="colorful"] .soybean-page-container #hero .data-pill { 
+    }[data-theme="colorful"] .soybean-page-container #nav { --hero-nav-link: rgba(255, 255, 255, 0.9); --hero-nav-link-hover: var(--gold); }[data-theme="colorful"] .soybean-page-container .theme-toggle { background: rgba(255, 255, 255, 0.15); }[data-theme="colorful"] .soybean-page-container .theme-btn:hover { background: rgba(255, 255, 255, 0.25); }[data-theme="colorful"] .soybean-page-container .theme-btn.active { background: rgba(255, 255, 255, 0.35); box-shadow: inset 0 0 0 1px var(--gold); }[data-theme="colorful"] .soybean-page-container #hero .data-pill { 
       background: rgba(255, 255, 255, 0.1); 
       color: #FFFFFF; 
       border: 1px solid rgba(255, 255, 255, 0.15); 
@@ -129,9 +137,9 @@
     }.soybean-page-container .theme-btn:hover { opacity: 1; transform: scale(1.1); background: rgba(128,128,128,0.1); }.soybean-page-container .theme-btn.active { opacity: 1; background: rgba(128,128,128,0.2); box-shadow: inset 0 0 0 1px var(--gold); }.soybean-page-container #nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center;
       padding: clamp(16px, 2vh, 20px) clamp(24px, 5vw, 48px); background: transparent; transition: all 0.4s ease;
-    }.soybean-page-container #nav.scrolled {
-      background: rgba(var(--cream-rgb), 0.95); backdrop-filter: blur(12px);
-      padding: clamp(10px, 1.5vh, 12px) clamp(24px, 5vw, 48px); box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }.soybean-page-container #nav:not(.scrolled) .nav-links a { color: var(--hero-nav-link); }.soybean-page-container #nav:not(.scrolled) .nav-links a:hover { color: var(--hero-nav-link-hover); }.soybean-page-container #nav:not(.scrolled) .nav-links a::after { background: var(--hero-nav-link-hover); }.soybean-page-container #nav.scrolled {
+      background: rgba(var(--cream-rgb), 0.92); backdrop-filter: blur(12px);
+      padding: clamp(10px, 1.5vh, 12px) clamp(24px, 5vw, 48px); box-shadow: 0 1px 0 rgba(0, 75, 35, 0.1);
     }.soybean-page-container .nav-logo, .soybean-page-container .footer-logo-wrap { flex: 1; display: flex; justify-content: flex-start; align-items: center; }.soybean-page-container .nav-logo img, .soybean-page-container .footer-logo-wrap img { 
       height: clamp(40px, 4.5vh, 50px); width: auto; object-fit: contain; 
       filter: none !important; mix-blend-mode: normal !important; opacity: 1 !important; 
