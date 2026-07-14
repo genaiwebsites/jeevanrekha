@@ -49,9 +49,9 @@ export default function Footer() {
           <div className="f-col">
             <h5>Products</h5>
             <ul>
-              <li><Link href="/products">Rice Bran Oil</Link></li>
-              <li><Link href="/products">Mustard Oil</Link></li>
-              <li><Link href="/products">Soybean Oil</Link></li>
+              <li><Link href="/products/rice-bran-oil">Rice Bran Oil</Link></li>
+              <li><Link href="/products/mustard-oil">Mustard Oil</Link></li>
+              <li><Link href="/products/soybean-oil">Soybean Oil</Link></li>
             </ul>
           </div>
           <div className="f-col">
