@@ -22,7 +22,6 @@ const productSchema = {
   "offers": {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
-    "priceCurrency": "INR",
     "url": "https://jeevanrekhafoods.com/products/mustard-oil"
   }
 };
