@@ -1,9 +1,48 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Why Smoke Point of Cooking Oil Matters | Jeevan Rekha',
+  description: 'Understand the science behind high smoke point oils and why cooking fats affect your health. Learn why physically refined Rice Bran Oil is ideal for Indian cooking.',
+  openGraph: {
+    title: 'Why Smoke Point of Cooking Oil Matters | Jeevan Rekha',
+    description: 'Understand the science behind high smoke point oils and why cooking fats affect your health. Learn why physically refined Rice Bran Oil is ideal for Indian cooking.',
+    url: 'https://jeevanrekhafoods.com/blogs/why-smoke-point-of-the-cooking-oil-matters',
+    images: [{ url: '/blogs/why-smoke-point-of-the-cooking-oil-matters.png', alt: 'Why Smoke Point of the Cooking Oil Matters' }]
+  }
+};
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Why Smoke Point of the Cooking Oil Matters?",
+  "image": "https://jeevanrekhafoods.com/blogs/why-smoke-point-of-the-cooking-oil-matters.png",
+  "datePublished": "2025-04-25T00:00:00Z",
+  "dateModified": "2025-04-25T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "Jeevan Rekha"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AB Udyog Pvt. Ltd.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jeevanrekhafoods.com/jeevan-rekha-logo.png"
+    }
+  },
+  "description": "Understand the science behind high smoke point oils and why cooking fats affect your health. Learn why physically refined Rice Bran Oil is ideal for Indian cooking."
+};
 
 export default function BlogPost() {
   return (
-    <section id="view-blog-post" className="view-section post-main active">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <section id="view-blog-post" className="view-section post-main active">
       <div className="post-hero rv">
         <div className="post-meta">
           <span className="pm-tag">Blog</span>
@@ -62,5 +101,6 @@ export default function BlogPost() {
         <Link href="/blogs" className="btn-outline dark" style={{ borderRadius: '50px' }}>← Back to All Articles</Link>
       </div>
     </section>
+    </>
   );
 }

@@ -1,9 +1,48 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Avoid These Myths About Rice Bran Oil in India | Jeevan Rekha',
+  description: 'Debunk 7 common myths surrounding Rice Bran Oil in India, from extraction concerns to gluten content, and explore its true heart-health benefits.',
+  openGraph: {
+    title: 'Avoid These Myths About Rice Bran Oil in India | Jeevan Rekha',
+    description: 'Debunk 7 common myths surrounding Rice Bran Oil in India, from extraction concerns to gluten content, and explore its true heart-health benefits.',
+    url: 'https://jeevanrekhafoods.com/blogs/avoid-these-myths-about-rice-bran-oil-in-india',
+    images: [{ url: '/blogs/avoid-these-myths-about-rice-bran-oil-in-india.png', alt: 'Avoid These Myths About Rice Bran Oil in India' }]
+  }
+};
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Avoid these Myths about Rice Bran Oil in India",
+  "image": "https://jeevanrekhafoods.com/blogs/avoid-these-myths-about-rice-bran-oil-in-india.png",
+  "datePublished": "2025-04-30T00:00:00Z",
+  "dateModified": "2025-04-30T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "Jeevan Rekha"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AB Udyog Pvt. Ltd.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jeevanrekhafoods.com/jeevan-rekha-logo.png"
+    }
+  },
+  "description": "Debunk 7 common myths surrounding Rice Bran Oil in India, from extraction concerns to gluten content, and explore its true heart-health benefits."
+};
 
 export default function BlogPost() {
   return (
-    <section id="view-blog-post" className="view-section post-main active">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <section id="view-blog-post" className="view-section post-main active">
       <div className="post-hero rv">
         <div className="post-meta">
           <span className="pm-tag">Blog</span>
@@ -63,5 +102,6 @@ export default function BlogPost() {
         <Link href="/blogs" className="btn-outline dark" style={{ borderRadius: '50px' }}>← Back to All Articles</Link>
       </div>
     </section>
+    </>
   );
 }

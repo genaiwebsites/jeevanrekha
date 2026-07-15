@@ -1,15 +1,54 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Healthy Cooking with Rice Bran Oil: Benefits & Facts | Jeevan Rekha',
+  description: 'Discover the health benefits of physically refined Rice Bran Oil, rich in Gamma Oryzanol, Vitamin E, and perfect omega balance for everyday cooking.',
+  openGraph: {
+    title: 'Healthy Cooking with Rice Bran Oil: Benefits & Facts | Jeevan Rekha',
+    description: 'Discover the health benefits of physically refined Rice Bran Oil, rich in Gamma Oryzanol, Vitamin E, and perfect omega balance for everyday cooking.',
+    url: 'https://jeevanrekhafoods.com/blogs/healthy-cooking-with-rice-bran-oil',
+    images: [{ url: '/blogs/healthy-cooking-with-rice-bran-oil.jpeg', alt: 'Healthy Cooking with Rice Bran Oil' }]
+  }
+};
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Healthy Cooking with Rice Bran Oil",
+  "image": "https://jeevanrekhafoods.com/blogs/healthy-cooking-with-rice-bran-oil.jpeg",
+  "datePublished": "2025-06-22T00:00:00Z",
+  "dateModified": "2025-06-22T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "Jeevan Rekha"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AB Udyog Pvt. Ltd.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jeevanrekhafoods.com/jeevan-rekha-logo.png"
+    }
+  },
+  "description": "Discover the health benefits of physically refined Rice Bran Oil, rich in Gamma Oryzanol, Vitamin E, and perfect omega balance for everyday cooking."
+};
 
 export default function BlogPost() {
   return (
-    <section id="view-blog-post" className="view-section post-main active">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <section id="view-blog-post" className="view-section post-main active">
       <div className="post-hero rv">
         <div className="post-meta">
           <span className="pm-tag">Blog</span>
           <span className="pm-date">Jun 22, 2025 • 5 Min Read</span>
         </div>
-        <h1 className="post-h1" dangerouslySetInnerHTML={{ __html: `Easy Indian Snacks with Rice Bran Oil` }}></h1>
+        <h1 className="post-h1" dangerouslySetInnerHTML={{ __html: `Healthy Cooking with Rice Bran Oil` }}></h1>
         <div className="post-author">
           <div className="pa-avatar">JR</div>
           <div className="pa-name">By Jeevan Rekha Editorial Team</div>
@@ -22,7 +61,7 @@ export default function BlogPost() {
         <div className="post-content rv sl" data-d="1">
           <Image
             src="/blogs/healthy-cooking-with-rice-bran-oil.jpeg"
-            alt="Easy Indian Snacks with Rice Bran Oil"
+            alt="Healthy Cooking with Rice Bran Oil"
             width={1200}
             height={630}
             className="post-img h-auto"
@@ -62,5 +101,6 @@ export default function BlogPost() {
         <Link href="/blogs" className="btn-outline dark" style={{ borderRadius: '50px' }}>← Back to All Articles</Link>
       </div>
     </section>
+    </>
   );
 }

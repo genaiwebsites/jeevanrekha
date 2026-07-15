@@ -1,9 +1,48 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Easy Evening Snacks Recipe with Rice Bran Oil | Jeevan Rekha',
+  description: 'Learn how to prepare 5 simple and delicious Indian evening snacks like Samosa and Aloo Tikki with healthy, light physically refined Rice Bran Oil.',
+  openGraph: {
+    title: 'Easy Evening Snacks Recipe with Rice Bran Oil | Jeevan Rekha',
+    description: 'Learn how to prepare 5 simple and delicious Indian evening snacks like Samosa and Aloo Tikki with healthy, light physically refined Rice Bran Oil.',
+    url: 'https://jeevanrekhafoods.com/blogs/easy-evening-snacks-recipe-with-rice-bran-oil',
+    images: [{ url: '/blogs/easy-evening-snacks-recipe-with-rice-bran-oil.png', alt: 'Easy Evening Snacks Recipe with Rice Bran Oil' }]
+  }
+};
+
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Easy Evening Snacks Recipe with Rice Bran Oil",
+  "image": "https://jeevanrekhafoods.com/blogs/easy-evening-snacks-recipe-with-rice-bran-oil.png",
+  "datePublished": "2025-04-25T00:00:00Z",
+  "dateModified": "2025-04-25T00:00:00Z",
+  "author": {
+    "@type": "Organization",
+    "name": "Jeevan Rekha"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "AB Udyog Pvt. Ltd.",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://jeevanrekhafoods.com/jeevan-rekha-logo.png"
+    }
+  },
+  "description": "Learn how to prepare 5 simple and delicious Indian evening snacks like Samosa and Aloo Tikki with healthy, light physically refined Rice Bran Oil."
+};
 
 export default function BlogPost() {
   return (
-    <section id="view-blog-post" className="view-section post-main active">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <section id="view-blog-post" className="view-section post-main active">
       <div className="post-hero rv">
         <div className="post-meta">
           <span className="pm-tag">Blog</span>
@@ -62,5 +101,6 @@ export default function BlogPost() {
         <Link href="/blogs" className="btn-outline dark" style={{ borderRadius: '50px' }}>← Back to All Articles</Link>
       </div>
     </section>
+    </>
   );
 }
