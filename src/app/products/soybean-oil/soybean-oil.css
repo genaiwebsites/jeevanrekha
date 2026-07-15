@@ -242,36 +242,401 @@
         content: attr(data-label); font-weight: 700; opacity: 0.8; margin-right: 16px; 
         color: var(--text-dark); text-align: left; font-family: var(--fb); width: 120px; flex-shrink: 0;
       }.soybean-page-container .cg-feature::before { display: none; }.soybean-page-container .cg-winner { background: rgba(0, 75, 35, 0.08); transform: scale(1.02); }[data-theme="dark"] .soybean-page-container .cg-winner { background: rgba(0, 75, 35, 0.2); }[data-theme="colorful"] .soybean-page-container .cg-winner { background: rgba(253, 184, 19, 0.15); }
-    }.soybean-page-container .compare-source { text-align: center; font-family: var(--fb); font-size: 0.75rem; color: var(--text-light); margin-top: 32px; font-style: italic; }.soybean-page-container #faq { background: var(--bg-faq); padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 60px); position: relative; z-index: 2; }.soybean-page-container .faq-inner { max-width: 1200px; margin: 0 auto; }.soybean-page-container .faq-item {
-      background: var(--warm-white); border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-      margin-bottom: 16px; overflow: hidden; transition: box-shadow 0.3s ease, transform 0.3s ease, border-left 0.3s ease, background 0.3s ease;
-      border-left: 4px solid transparent; border: 1px solid rgba(0, 75, 35, 0.05);
-    }.soybean-page-container .faq-item:hover { box-shadow: 0 12px 30px rgba(0,0,0,0.08); transform: translateY(-2px); border-left-color: var(--gold-light); }.soybean-page-container .faq-item.active { border-left-color: var(--gold); background: linear-gradient(to right, rgba(253, 184, 19, 0.05), var(--warm-white) 40%); }.soybean-page-container .faq-btn {
-      width: 100%; text-align: left; background: transparent; border: none; padding: 24px;
-      font-family: var(--fd); font-size: 1.25rem; font-weight: 600; color: var(--text-dark);
-      display: flex; justify-content: space-between; align-items: center; cursor: pointer;
-    }.soybean-page-container .faq-icon {
-      width: 36px; height: 36px; border-radius: 50%; background: rgba(0,0,0,0.05); color: var(--green-deep);
-      display: flex; align-items: center; justify-content: center; font-family: var(--fb); font-size: 1.4rem;
-      transition: transform 0.3s ease, background 0.3s ease; flex-shrink: 0;
-    }.soybean-page-container .faq-item.active .faq-icon { transform: rotate(45deg); background: var(--gold); color: #121C16; }.soybean-page-container .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s var(--ease-out-expo); }.soybean-page-container .faq-content-inner { padding: 0 24px 24px 24px; font-family: var(--fb); font-size: 0.95rem; font-weight: 300; color: var(--text-mid); line-height: 1.7; }.soybean-page-container #footer {
-      background: var(--bg-foot); padding: clamp(30px, 4vw, 40px) clamp(24px, 5vw, 80px);
-      display: grid; grid-template-columns: 1fr auto 1fr; gap: clamp(20px, 3vw, 40px);
-      align-items: center; position: relative; overflow: hidden; z-index: 2; transition: background 0.5s ease;
-    }.soybean-page-container #footer::after {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(253, 184, 19, 0.15) 0%, transparent 50%, rgba(0, 75, 35, 0.25) 100%);
-      opacity: 0; z-index: 1; pointer-events: none; transition: opacity 0.6s var(--ease-out-expo);
-    }.soybean-page-container #footer:hover::after { opacity: 1; }@media (max-width: 900px) {.soybean-page-container #footer { grid-template-columns: 1fr; text-align: center; gap: 20px; }.soybean-page-container .footer-brand { align-items: center !important; }.soybean-page-container .footer-copy { text-align: center !important; } }.soybean-page-container .footer-brand { display: flex; flex-direction: column; gap: 12px; position: relative; z-index: 2; align-items: flex-start; }.soybean-page-container .footer-tagline-center { font-family: var(--fd); font-style: italic; font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 500; color: var(--text-dark); text-align: center; position: relative; z-index: 2; }.soybean-page-container .footer-copy { font-family: var(--fb); font-size: 0.75rem; color: var(--text-mid); text-align: right; line-height: 1.6; position: relative; z-index: 2; }.soybean-page-container .back-to-site {
-      display: inline-flex; align-items: center; gap: 8px;
-      font-family: var(--fb); font-size: 0.78rem; font-weight: 600;
-      letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
-      color: var(--hero-text, #fff);
-      border: 1px solid rgba(255,255,255,0.3);
-      background: rgba(255,255,255,0.12);
-      backdrop-filter: blur(8px);
-      padding: 7px 16px; border-radius: 100px;
-      transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
-      white-space: nowrap;
-    }.soybean-page-container .back-to-site:hover { background: rgba(255,255,255,0.24); transform: translateX(-3px); }.soybean-page-container #nav.scrolled .back-to-site { color: var(--text-dark); border-color: rgba(0,0,0,0.14); background: rgba(0,0,0,0.05); }.soybean-page-container #nav.scrolled .back-to-site:hover { background: rgba(0,0,0,0.1); }
-.soybean-page-container .faq-item.active .faq-content { max-height: 500px !important; }
+    }.soybean-page-container .compare-source { text-align: center; font-family: var(--fb); font-size: 0.75rem; color: var(--text-light); margin-top: 32px; font-style: italic; }.soybean-page-container #faq { background: var(--bg-faq); padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 60px); position: relative; z-index: 2; }
+
+/* FAQ Two-Column Layout */
+.soybean-page-container .faq-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start; }
+.soybean-page-container .faq-left { position: sticky; top: 100px; }
+@media (max-width: 900px) {
+  .soybean-page-container .faq-inner { grid-template-columns: 1fr; }
+  .soybean-page-container .faq-left { position: static; }
+}
+
+/* Comparison Section */
+.soybean-page-container .advantage-header {
+  margin-bottom: 56px;
+  text-align: center;
+}
+
+/* Premium Comparison Table */
+.soybean-page-container .compare-table-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 75, 35, 0.08);
+  box-shadow: 0 12px 32px rgba(0, 75, 35, 0.04);
+  background: var(--warm-white);
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+}
+.soybean-page-container .compare-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.soybean-page-container .compare-header-row {
+  border-bottom: 1px solid rgba(0, 75, 35, 0.08);
+  background: rgba(0, 75, 35, 0.02);
+}
+.soybean-page-container .compare-th {
+  height: auto !important;
+  padding: 36px 24px 20px 24px !important;
+  font-family: var(--fb);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-mid);
+  text-align: center;
+}
+.soybean-page-container .compare-feature-header {
+  text-align: left;
+  font-family: var(--fd);
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+.soybean-page-container .compare-winner-header {
+  background: var(--green-deep);
+  color: var(--warm-white) !important;
+  font-weight: 700;
+  position: relative;
+  padding-top: 36px !important;
+}
+.soybean-page-container .compare-badge {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--text-dark);
+  font-family: var(--fb);
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 3px 12px;
+  border-radius: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.soybean-page-container .compare-body-row {
+  border-bottom: 1px solid rgba(0, 75, 35, 0.05);
+  transition: background-color 0.25s ease;
+}
+.soybean-page-container .compare-body-row:hover {
+  background-color: rgba(0, 75, 35, 0.015);
+}
+.soybean-page-container .compare-body-row td {
+  padding: 20px 24px;
+  font-family: var(--fb);
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  text-align: center;
+  vertical-align: middle;
+}
+.soybean-page-container .compare-feature-cell {
+  text-align: left !important;
+  font-family: var(--fd) !important;
+  font-size: 1.1rem !important;
+  font-weight: 600;
+  color: var(--text-dark) !important;
+}
+.soybean-page-container .compare-winner-cell {
+  background: rgba(0, 75, 35, 0.03);
+  color: var(--text-dark) !important;
+  font-weight: 600;
+}
+[data-theme="dark"] .soybean-page-container .compare-winner-cell {
+  background: rgba(255, 255, 255, 0.02);
+  color: #FFF !important;
+}
+.soybean-page-container .compare-icon {
+  color: var(--gold);
+  margin-right: 6px;
+}
+.soybean-page-container .compare-winner-cell .compare-icon {
+  color: var(--green-deep);
+}
+[data-theme="colorful"] .soybean-page-container .compare-winner-cell .compare-icon {
+  color: var(--gold);
+}
+@media (max-width: 768px) {
+  .soybean-page-container .compare-th,
+  .soybean-page-container .compare-body-row td {
+    padding: 14px 16px;
+    font-size: 0.82rem;
+  }
+  .soybean-page-container .compare-feature-cell {
+    font-size: 0.95rem !important;
+  }
+  .soybean-page-container .compare-winner-header {
+    padding-top: 48px !important;
+  }
+  .soybean-page-container .compare-badge {
+    top: 4px;
+    font-size: 0.55rem;
+    padding: 2px 8px;
+  }
+}
+
+/* Premium FAQ Accordion Styling */
+.soybean-page-container .faq-accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+.soybean-page-container .faq-accordion-item {
+  background: var(--warm-white);
+  border: 1px solid rgba(0, 75, 35, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+  transition: all 0.3s var(--ease-out-expo);
+}
+.soybean-page-container .faq-accordion-item:hover {
+  box-shadow: 0 12px 30px rgba(0, 75, 35, 0.06);
+  transform: translateY(-2px);
+  border-color: var(--gold-light);
+}
+.soybean-page-container .faq-accordion-trigger {
+  width: 100%;
+  padding: 22px 24px;
+  font-family: var(--fd);
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  text-decoration: none !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  transition: color 0.3s ease;
+}
+.soybean-page-container .faq-accordion-trigger:hover {
+  color: var(--green-deep);
+}
+.soybean-page-container .faq-accordion-content {
+  color: var(--text-mid);
+  font-family: var(--fb);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 0 24px 24px 24px;
+}
+
+/* Accessible FAQ Accordion Trigger Chevron Toggles */
+.soybean-page-container .faq-accordion-trigger svg[data-slot="accordion-trigger-icon"] {
+  display: none !important;
+}
+.soybean-page-container .faq-accordion-trigger[aria-expanded="true"] svg[data-slot="accordion-trigger-icon"]:nth-of-type(2) {
+  display: block !important;
+  color: var(--gold) !important;
+}
+.soybean-page-container .faq-accordion-trigger[aria-expanded="false"] svg[data-slot="accordion-trigger-icon"]:nth-of-type(1) {
+  display: block !important;
+  color: var(--green-deep) !important;
+}
+
+/* Premium Footer Layout */
+.soybean-page-container #footer {
+  background: linear-gradient(to bottom, #004B23 0%, #002210 100%);
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  transition: background 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+.soybean-page-container #footer::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(253, 184, 19, 0.12) 0%, transparent 50%, rgba(0, 75, 35, 0.3) 100%);
+  opacity: 0; z-index: 1; pointer-events: none;
+  transition: opacity 0.6s var(--ease-out-expo);
+}
+.soybean-page-container #footer:hover::after { opacity: 1; }
+
+.soybean-page-container .footer-inner-wrap {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 60px 24px 50px 24px;
+  position: relative;
+  z-index: 2;
+}
+
+.soybean-page-container .footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.5fr;
+  gap: 60px;
+  align-items: start;
+}
+.soybean-page-container .footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+.soybean-page-container .footer-brand-desc {
+  font-family: var(--fb);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  max-width: 320px;
+}
+.soybean-page-container .footer-nav-col,
+.soybean-page-container .footer-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.soybean-page-container .footer-col-title {
+  font-family: var(--fd);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+.soybean-page-container .footer-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.soybean-page-container .footer-links-list a {
+  font-family: var(--fb);
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.soybean-page-container .footer-links-list a:hover {
+  color: var(--gold);
+  transform: translateX(4px);
+}
+.soybean-page-container .footer-info-text {
+  font-family: var(--fb);
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+/* Subfooter End-to-End Thin Strip */
+.soybean-page-container .footer-bottom-strip {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 16px 24px;
+  position: relative;
+  z-index: 2;
+}
+.soybean-page-container .footer-bottom-inner {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.soybean-page-container .footer-copy {
+  font-family: var(--fb);
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+.soybean-page-container .footer-tagline-center {
+  font-family: var(--fd);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .soybean-page-container .footer-inner-wrap {
+    padding: 40px 24px 30px 24px;
+  }
+  .soybean-page-container .footer-top {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .soybean-page-container .footer-bottom-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .soybean-page-container .footer-brand-col {
+    align-items: center;
+    text-align: center;
+  }
+  .soybean-page-container .footer-brand-desc {
+    max-width: 100%;
+  }
+  .soybean-page-container .footer-nav-col {
+    align-items: center;
+  }
+  .soybean-page-container .footer-links-list {
+    align-items: center;
+  }
+}
+
+.soybean-page-container .footer-logo-link {
+  display: inline-block;
+}
+
+.soybean-page-container a:focus-visible,
+.soybean-page-container button:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
+}
+.soybean-page-container .ab-link {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.soybean-page-container .ab-link:hover {
+  color: var(--gold);
+}
+
+/* ── Scroll-reveal "All Products" back button ── */
+.soybean-page-container .back-to-site {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--fb);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: transparent;
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 8px 18px;
+  border-radius: 100px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.soybean-page-container #nav.scrolled .back-to-site {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+  color: var(--green-deep);
+  border-color: rgba(0, 75, 35, 0.22);
+  background: rgba(0, 75, 35, 0.06);
+  box-shadow: 0 2px 10px rgba(0, 75, 35, 0.06);
+}
+.soybean-page-container #nav.scrolled .back-to-site:hover {
+  background: rgba(0, 75, 35, 0.12);
+  border-color: var(--green-deep);
+  box-shadow: 0 4px 18px rgba(0, 75, 35, 0.14);
+  transform: translateX(-4px);
+}

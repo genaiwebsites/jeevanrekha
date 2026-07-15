@@ -1,9 +1,13 @@
 "use client";
 
+/* Hallmark · macrostructure: Marquee Hero · genre: atmospheric · theme: studied-DNA (source: rice-bran-oil) */
+
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Table, TableHeader, TableBody, TableRow, TableCell, TableHead } from "@/components/ui/table";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const productSchema = {
   "@context": "https://schema.org",
@@ -131,7 +135,7 @@ export default function RiceBranOilPage() {
       // Comparison section grid
       ScrollTrigger.create({
         trigger: '#comparison', start: 'top 75%', once: true,
-        onEnter: () => gsap.to('.compare-grid', { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out' })
+        onEnter: () => gsap.to('.compare-table-wrapper', { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out' })
       });
 
       // Infinite Spin
@@ -167,9 +171,11 @@ export default function RiceBranOilPage() {
 
   <nav id="nav" role="navigation">
     <div className="nav-logo">
-      <img src="/jeevan-rekha-logo.png"
-           alt="Jeevan Rekha — Premium Edible Oils"
-           style={{height: '44px', width: 'auto', objectFit: 'contain'}} />
+      <Link href="/" title="Jeevan Rekha Home" className="nav-logo-link">
+        <img src="/jeevan-rekha-logo.png"
+             alt="Jeevan Rekha — Premium Edible Oils"
+             style={{height: '44px', width: 'auto', objectFit: 'contain'}} />
+      </Link>
     </div>
     
     <ul className="nav-links">
@@ -180,8 +186,8 @@ export default function RiceBranOilPage() {
     </ul>
 
     <div className="nav-spacer">
-      <Link href="/products" className="back-to-site" title="Back to Jeevan Rekha">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      <Link href="/products" className="back-to-site" title="All Products">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
         All Products
       </Link>
     </div>
@@ -295,7 +301,6 @@ export default function RiceBranOilPage() {
     <div className="applications-inner">
       <div className="applications-header">
         <div>
-          <div className="section-label">Perfect Smoke Point</div>
           <h2 id="applications-heading" className="section-title">Ideal for<br/>Every Cuisine</h2>
         </div>
         <p>Jeevan Rekha Rice Bran Oil delivers optimal performance across all cooking methods — a single premium ingredient that elevates the taste and health quotient of your everyday meals.</p>
@@ -303,41 +308,37 @@ export default function RiceBranOilPage() {
 
       <div className="feed-grid">
         <article className="feed-card">
-          <div className="feed-card-number">01</div>
           <div className="feed-card-content">
             <div className="feed-card-icon-wrap">🍛</div>
-            <h3 className="feed-card-title">Indian Cooking</h3>
-            <p className="feed-card-desc">Ideal for traditional Indian cooking methods. Blends beautifully with spices without leaving a heavy or greasy feel in gravies.</p>
+            <h3 className="feed-card-title">Everyday Cuisine</h3>
+            <p className="feed-card-desc">Perfect for high-heat tadkas, rich curries, and daily sautéing. Blends seamlessly with traditional spices without leaving a greasy residue.</p>
             <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
           </div>
         </article>
 
         <article className="feed-card">
-          <div className="feed-card-number">02</div>
           <div className="feed-card-content">
             <div className="feed-card-icon-wrap">🍟</div>
-            <h3 className="feed-card-title">Deep Frying</h3>
-            <p className="feed-card-desc">The perfect high smoke point ensures light, crispy, golden-fried dishes without absorbing excess oil or breaking down.</p>
+            <h3 className="feed-card-title">Crisp Deep Frying</h3>
+            <p className="feed-card-desc">Stable up to 450°F (232°C). Guarantees crispy pooris and pakoras that absorb up to 15% less oil while preventing harmful free radicals.</p>
             <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
           </div>
         </article>
 
         <article className="feed-card">
-          <div className="feed-card-number">03</div>
           <div className="feed-card-content">
             <div className="feed-card-icon-wrap">🥘</div>
-            <h3 className="feed-card-title">Sautéing</h3>
-            <p className="feed-card-desc">Maintains heat stability effortlessly, allowing vegetables to retain their vibrant colours, textures, and essential nutrients.</p>
+            <h3 className="feed-card-title">Nutrient Sautéing</h3>
+            <p className="feed-card-desc">Maintains molecular stability under heat, allowing vegetables and paneer to retain their natural vitamins, vibrant colors, and crisp textures.</p>
             <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
           </div>
         </article>
 
         <article className="feed-card">
-          <div className="feed-card-number">04</div>
           <div className="feed-card-content">
             <div className="feed-card-icon-wrap">🥖</div>
-            <h3 className="feed-card-title">Baking</h3>
-            <p className="feed-card-desc">A neutral flavour profile makes it an excellent, heart-healthy substitute for butter or heavy fats in delicate baking applications.</p>
+            <h3 className="feed-card-title">Light Baking</h3>
+            <p className="feed-card-desc">A light, neutral fat alternative that replaces butter. Ideal for soft breads, moist cakes, and cookies, cutting saturated fats by 70%.</p>
             <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
           </div>
         </article>
@@ -375,7 +376,6 @@ export default function RiceBranOilPage() {
     <div className="section-bg-art"></div>
     <div className="nutrition-inner">
       <div className="nutrition-header">
-        <div className="section-label">Nutritional Synergy</div>
         <h2 className="section-title">The Foundation<br/>of Health</h2>
       </div>
 
@@ -423,69 +423,61 @@ export default function RiceBranOilPage() {
     <div className="section-bg-art"></div>
     <div className="comparison-inner">
       <div className="advantage-header">
-        <div className="section-label">Fact Check</div>
         <h2 className="section-title">Know Your Cooking Oil<br/><em>A Comparative Study</em></h2>
       </div>
 
-      <div className="compare-grid">
-        {/* Header Row */}
-        <div className="cg-row cg-header-row">
-          <div className="cg-cell">Features</div>
-          <div className="cg-cell cg-header-winner">
-            <span className="cg-badge">Top Choice</span>
-            Rice Bran Oil
-          </div>
-          <div className="cg-cell">Palm Oil</div>
-          <div className="cg-cell">Soybean Oil</div>
-        </div>
-
-        {/* Row 1 */}
-        <div className="cg-row">
-          <div className="cg-cell cg-feature">Smoke Point</div>
-          <div className="cg-cell cg-winner" data-label="Rice Bran Oil"><span className="cg-icon">✦</span> High (450°F / 232°C)</div>
-          <div className="cg-cell" data-label="Palm Oil">Moderate</div>
-          <div className="cg-cell" data-label="Soybean Oil">High</div>
-        </div>
-
-        {/* Row 2 */}
-        <div className="cg-row">
-          <div className="cg-cell cg-feature">Stability</div>
-          <div className="cg-cell cg-winner" data-label="Rice Bran Oil"><span className="cg-icon">✦</span> High oxidative stability</div>
-          <div className="cg-cell" data-label="Palm Oil">Moderate</div>
-          <div className="cg-cell" data-label="Soybean Oil">Less stable</div>
-        </div>
-
-        {/* Row 3 */}
-        <div className="cg-row">
-          <div className="cg-cell cg-feature">Gamma Oryzanol</div>
-          <div className="cg-cell cg-winner" data-label="Rice Bran Oil"><span className="cg-icon">✦</span> Abundant (up to 1000 MG)</div>
-          <div className="cg-cell" data-label="Palm Oil">Zero</div>
-          <div className="cg-cell" data-label="Soybean Oil">Zero</div>
-        </div>
-
-        {/* Row 4 */}
-        <div className="cg-row">
-          <div className="cg-cell cg-feature">Cholesterol Mgmt</div>
-          <div className="cg-cell cg-winner" data-label="Rice Bran Oil"><span className="cg-icon">✦</span> Reduces LDL, maintains HDL</div>
-          <div className="cg-cell" data-label="Palm Oil">Increases Bad LDL</div>
-          <div className="cg-cell" data-label="Soybean Oil">Neutral Effect</div>
-        </div>
-
-        {/* Row 5 */}
-        <div className="cg-row">
-          <div className="cg-cell cg-feature">Fatty Acid Profile</div>
-          <div className="cg-cell cg-winner" data-label="Rice Bran Oil"><span className="cg-icon">✦</span> Ideal balanced ratio</div>
-          <div className="cg-cell" data-label="Palm Oil">High in saturated fats</div>
-          <div className="cg-cell" data-label="Soybean Oil">High polyunsaturated fats</div>
-        </div>
-
-        {/* Row 6 */}
-        <div className="cg-row">
-          <div className="cg-cell cg-feature">Antioxidants</div>
-          <div className="cg-cell cg-winner" data-label="Rice Bran Oil"><span className="cg-icon">✦</span> Rich (Oryzanol, Tocopherols)</div>
-          <div className="cg-cell" data-label="Palm Oil">Low (Extensively refined)</div>
-          <div className="cg-cell" data-label="Soybean Oil">Lacks unique composition</div>
-        </div>
+      <div className="compare-table-wrapper">
+        <Table className="compare-table">
+          <TableHeader>
+            <TableRow className="compare-header-row">
+              <TableHead className="compare-th compare-feature-header">Features</TableHead>
+              <TableHead className="compare-th compare-winner-header">
+                <span className="compare-badge">Top Choice</span>
+                Rice Bran Oil
+              </TableHead>
+              <TableHead className="compare-th">Palm Oil</TableHead>
+              <TableHead className="compare-th">Soybean Oil</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Smoke Point</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Rice Bran Oil"><span className="compare-icon">✦</span> High (450°F / 232°C)</TableCell>
+              <TableCell data-label="Palm Oil">Moderate</TableCell>
+              <TableCell data-label="Soybean Oil">High</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Stability</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Rice Bran Oil"><span className="compare-icon">✦</span> High oxidative stability</TableCell>
+              <TableCell data-label="Palm Oil">Moderate</TableCell>
+              <TableCell data-label="Soybean Oil">Less stable</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Gamma Oryzanol</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Rice Bran Oil"><span className="compare-icon">✦</span> Abundant (up to 1000 MG)</TableCell>
+              <TableCell data-label="Palm Oil">Zero</TableCell>
+              <TableCell data-label="Soybean Oil">Zero</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Cholesterol Mgmt</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Rice Bran Oil"><span className="compare-icon">✦</span> Reduces LDL, maintains HDL</TableCell>
+              <TableCell data-label="Palm Oil">Increases Bad LDL</TableCell>
+              <TableCell data-label="Soybean Oil">Neutral Effect</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Fatty Acid Profile</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Rice Bran Oil"><span className="compare-icon">✦</span> Ideal balanced ratio</TableCell>
+              <TableCell data-label="Palm Oil">High in saturated fats</TableCell>
+              <TableCell data-label="Soybean Oil">High polyunsaturated fats</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Antioxidants</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Rice Bran Oil"><span className="compare-icon">✦</span> Rich (Oryzanol, Tocopherols)</TableCell>
+              <TableCell data-label="Palm Oil">Low (Extensively refined)</TableCell>
+              <TableCell data-label="Soybean Oil">Lacks unique composition</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
       </div>
       
       <div className="compare-source">Source: Food Science and Technology Department, AL-Azhar University | Centre for Food Safety | Dr. Lily SUEN, Scientific Officer</div>
@@ -496,57 +488,80 @@ export default function RiceBranOilPage() {
   <section id="faq">
     <div className="faq-inner">
       <div className="faq-left">
-        <div className="section-label">Our Process</div>
         <h2 className="section-title">Frequently Asked Questions</h2>
       </div>
 
       <div className="faq-right">
-        <div className="faq-list">
-          <div className={`faq-item ${openFaq === 0 ? "active" : ""}`}>
-            <button className="faq-btn" onClick={ () => toggleFaq(0) }>
-              How is Jeevan Rekha Rice Bran Oil produced? <span className="faq-icon">+</span>
-            </button>
-            <div className="faq-content">
-              <div className="faq-content-inner">
-                <p>Jeevan Rekha Rice Bran Oil is produced from the bran layer of rice, which is separated during the milling process. Physical refining is a natural process that removes free fatty acids and impurities without using chemicals, maintaining the oil’s natural nutrients. The quality is ensured through stringent quality control measures at every stage of production, including regular testing for contaminants and nutrient content.</p>
-              </div>
-            </div>
-          </div>
+        <Accordion className="faq-accordion-container">
+          <AccordionItem value="faq-1" className="faq-accordion-item">
+            <AccordionTrigger className="faq-accordion-trigger">
+              How is Jeevan Rekha Rice Bran Oil produced?
+            </AccordionTrigger>
+            <AccordionContent className="faq-accordion-content">
+              Jeevan Rekha Rice Bran Oil is extracted from the nutrient-dense inner husk of organically sourced paddy. Our state-of-the-art physical refining process removes impurities and free fatty acids naturally, without using any chemicals. This preserves the oil’s rich content of Gamma Oryzanol, vitamins, and natural antioxidants.
+            </AccordionContent>
+          </AccordionItem>
 
-          <div className={`faq-item ${openFaq === 1 ? "active" : ""}`}>
-            <button className="faq-btn" onClick={ () => toggleFaq(1) }>
-              What pack sizes are available? <span className="faq-icon">+</span>
-            </button>
-            <div className="faq-content">
-              <div className="faq-content-inner">
-                <p>It is available in various sizes, including 1-litre Lite Pouches, 1-litre Bottles, and 5-litre Tins, as well as larger containers for bulk use. The oil is packaged in airtight, food-grade containers that protect it from light and air, preserving its purity, freshness and nutritional value.</p>
-              </div>
-            </div>
-          </div>
+          <AccordionItem value="faq-2" className="faq-accordion-item">
+            <AccordionTrigger className="faq-accordion-trigger">
+              What pack sizes are available?
+            </AccordionTrigger>
+            <AccordionContent className="faq-accordion-content">
+              To serve both home kitchens and professional catering, we package Jeevan Rekha Rice Bran Oil in food-grade, airtight containers. It is available in 1-litre Lite Pouches, 1-litre Bottles, and 5-litre Tins, preserving the freshness and dietary properties of the oil from light and oxidation.
+            </AccordionContent>
+          </AccordionItem>
 
-          <div className={`faq-item ${openFaq === 2 ? "active" : ""}`}>
-            <button className="faq-btn" onClick={ () => toggleFaq(2) }>
-              Where can consumers purchase it? <span className="faq-icon">+</span>
-            </button>
-            <div className="faq-content">
-              <div className="faq-content-inner">
-                <p>Consumers can purchase Jeevan Rekha Rice Bran Oil following direct to consumer method, directly from the factory, official website, or from online platforms like Amazon, Flipkart, and Jiomart. Retailers are not involved in the sale or purchase of Jeevan Rekha Rice Bran Oil.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <AccordionItem value="faq-3" className="faq-accordion-item">
+            <AccordionTrigger className="faq-accordion-trigger">
+              Where can consumers purchase it?
+            </AccordionTrigger>
+            <AccordionContent className="faq-accordion-content">
+              Jeevan Rekha Rice Bran Oil operates on a direct-to-consumer model. You can purchase it directly from our official factory outlets, our website, or major e-commerce platforms like Amazon, Flipkart, and JioMart. We bypass retail distributors to ensure you receive fresh stock directly from the source.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </div>
   </section>
 
   <footer id="footer">
-    <div className="footer-brand">
-      <div className="footer-logo-wrap">
-        <img src="/jeevan-rekha-logo-white.png" alt="Jeevan Rekha — Premium Edible Oils" style={{height: '48px', width: 'auto', objectFit: 'contain'}} />
+    <div className="footer-inner-wrap">
+      <div className="footer-top">
+        <div className="footer-brand-col">
+          <Link href="/" title="Jeevan Rekha Home" className="footer-logo-link">
+            <img src="/jeevan-rekha-logo-white.png" alt="Jeevan Rekha — Premium Edible Oils" style={{height: '48px', width: 'auto', objectFit: 'contain'}} />
+          </Link>
+          <p className="footer-brand-desc">
+            Crafting premium physically refined edible oils with scientific precision and uncompromising purity.
+          </p>
+        </div>
+        
+        <div className="footer-nav-col">
+          <h4 className="footer-col-title">Navigation</h4>
+          <div className="footer-links-list">
+            <Link href="/">Home</Link>
+            <Link href="/about">About Us</Link>
+            <Link href="/manufacturing">Manufacturing</Link>
+            <Link href="/blogs">Blogs</Link>
+            <Link href="/contact">Contact</Link>
+          </div>
+        </div>
+        
+        <div className="footer-info-col">
+          <h4 className="footer-col-title">Purity Certified</h4>
+          <p className="footer-info-text">
+            100% physically refined under strict lab control. Direct delivery from factory to consumer for absolute freshness.
+          </p>
+        </div>
       </div>
     </div>
-    <div className="footer-tagline-center">"Purity. Health. Happiness."</div>
-    <div className="footer-copy">&copy; <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog</a>. All rights reserved.</div>
+
+    <div className="footer-bottom-strip">
+      <div className="footer-bottom-inner">
+        <p className="footer-copy">&copy; <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog</a>. All rights reserved.</p>
+        <div className="footer-tagline-center">“Purity. Health. Happiness.”</div>
+      </div>
+    </div>
   </footer>
 
   

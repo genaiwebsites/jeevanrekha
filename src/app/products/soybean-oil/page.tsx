@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Table, TableHeader, TableBody, TableRow, TableCell, TableHead } from "@/components/ui/table";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const productSchema = {
   "@context": "https://schema.org",
@@ -60,18 +62,13 @@ const faqSchema = {
       "name": "What makes Jeevan Rekha Soybean Oil different?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Jeevan Rekha Soybean Oil is produced under FSSAI-certified processes by AB Udyog Pvt. Ltd., a manufacturer with 40+ years of expertise in edible oil production in West Bengal."
+        "text": "Jeevan Rekha Soybean Oil is packed under FSSAI-certified quality controls by AB Udyog Pvt. Ltd., a trusted brand with 40+ years of expertise in the edible oil industry in West Bengal."
       }
     }
   ]
 };
 
 export default function SoybeanOilPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -128,10 +125,10 @@ export default function SoybeanOilPage() {
         onEnter: () => gsap.to('.nutri-card', { opacity: 1, y: 0, stagger: 0.2, duration: 0.8, ease: 'expo.out' })
       });
 
-      // Comparison section grid
+      // Comparison section table
       ScrollTrigger.create({
         trigger: '#comparison', start: 'top 75%', once: true,
-        onEnter: () => gsap.to('.compare-grid', { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out' })
+        onEnter: () => gsap.to('.compare-table-wrapper', { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out' })
       });
 
       // Infinite Spin
@@ -178,8 +175,8 @@ export default function SoybeanOilPage() {
     </ul>
 
     <div className="nav-spacer">
-      <Link href="/products" className="back-to-site" title="Back to Jeevan Rekha">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      <Link href="/products" className="back-to-site" title="All Products">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
         All Products
       </Link>
     </div>
@@ -204,12 +201,12 @@ export default function SoybeanOilPage() {
         <h1 className="hero-title">Jeevan Rekha<br/><em>Soybean Oil</em></h1>
         
         <div className="hero-taglines">
-          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Contains Omega 3 & 6 fatty acids</div>
-          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Contains Vitamin D & A</div>
-          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Linoleic Acid helps maintain normal blood cholesterol</div>
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Rare plant-based source of Omega-3 ALA (6–8g per 100g)</div>
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>High PUFA profile (52.5–70g) — including Linoleic Acid</div>
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Fortified with Vitamin A (2500 IU) &amp; Vitamin D (450 IU)</div>
         </div>
 
-        <p className="hero-desc">Discover the purity of Jeevan Rekha Refined Soybean Oil. Naturally rich in Omega 3 & 6 fatty acids and Linoleic Acid to help maintain normal blood cholesterol levels. Fortified with Vitamins A & D, and packed with natural anti-oxidants (Tocopherols), it offers a high smoke point perfectly suitable for all your varied cooking applications.</p>
+        <p className="hero-desc">Jeevan Rekha Refined Soybean Oil is one of the very few vegetable oils that delivers a meaningful dose of Alpha-Linolenic Acid (Omega-3 ALA) — 6 to 8 grams per 100g — alongside a rich Omega-6 Linoleic Acid profile scientifically linked to maintaining healthy blood cholesterol. With a high smoke point of ~232°C, natural Tocopherols, and fortified Vitamins A &amp; D, it is engineered to serve every cooking method in the Indian kitchen — from everyday tadkas to festive baking.</p>
 
         <a className="hero-cta" href="#nutrition">
           <span className="cta-text">Explore Benefits</span>
@@ -279,49 +276,44 @@ export default function SoybeanOilPage() {
     <div className="applications-inner">
       <div className="applications-header">
         <div>
-          <div className="section-label">Unmatched Versatility</div>
           <h2 id="applications-heading" className="section-title">Suitable for various<br/>cooking applications</h2>
         </div>
-        <p>Jeevan Rekha Soybean Oil is celebrated for its incredibly light texture and high smoke point. It naturally adapts to your cooking without overpowering the dish, making it the ultimate everyday oil for diverse culinary needs.</p>
+        <p>Soybean oil is the global benchmark for kitchen versatility — and for good reason. Its nearly flavourless character comes from an exceptionally low level of natural colouring pigments, allowing it to act as a pure, transparent medium that amplifies the spices and ingredients you add — not itself.</p>
       </div>
 
       <div className="feed-grid">
         <article className="feed-card">
-          <div className="feed-card-number">01</div>
           <div className="feed-card-content">
             <div className="feed-card-icon-wrap">🍛</div>
             <h3 className="feed-card-title">Indian Curries</h3>
-            <p className="feed-card-desc">Its odourless and neutral profile ensures that the authentic aromas and complex flavours of traditional Indian spices shine through brilliantly.</p>
+            <p className="feed-card-desc">Its near-zero flavour interference means spice-forward curries — built on cumin, coriander, mustard seeds, and turmeric — taste exactly as they should. The oil carries the masala, not the other way around.</p>
             <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
           </div>
         </article>
 
         <article className="feed-card">
-          <div className="feed-card-number">02</div>
           <div className="feed-card-content">
             <div className="feed-card-icon-wrap">🍟</div>
             <h3 className="feed-card-title">Deep Frying</h3>
-            <p className="feed-card-desc">Boasting a high smoke point, it guarantees crispier, non-greasy fried foods while maintaining complete thermal stability.</p>
+            <p className="feed-card-desc">With a smoke point of ~232°C, it maintains thermal stability well into high-heat frying without producing harmful polar compounds — delivering consistently crisp, dry, non-greasy results.</p>
             <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
           </div>
         </article>
 
         <article className="feed-card">
-          <div className="feed-card-number">03</div>
           <div className="feed-card-content">
             <div className="feed-card-icon-wrap">🥗</div>
             <h3 className="feed-card-title">Dressings & Sautéing</h3>
-            <p className="feed-card-desc">The extremely light consistency makes it perfect for tossing fresh salads or quickly sautéing vegetables, helping them retain vibrant colours and snap.</p>
+            <p className="feed-card-desc">Its low viscosity at room temperature makes it ideal for cold applications — emulsifying effortlessly into vinaigrettes and adhering evenly to greens without pooling or heaviness.</p>
             <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
           </div>
         </article>
 
         <article className="feed-card">
-          <div className="feed-card-number">04</div>
           <div className="feed-card-content">
             <div className="feed-card-icon-wrap">🧁</div>
             <h3 className="feed-card-title">Baking</h3>
-            <p className="feed-card-desc">A superb alternative to solid fats. It lends a superior moistness and tender crumb to cakes and pastries without altering the intended taste.</p>
+            <p className="feed-card-desc">The high proportion of unsaturated fats remains stable in oven heat and integrates seamlessly into batters, yielding consistently moist crumb structure and extended shelf life in baked goods.</p>
             <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
           </div>
         </article>
@@ -333,24 +325,24 @@ export default function SoybeanOilPage() {
     <div className="section-bg-art"></div>
     <div className="stats-inner">
       <div className="stat-item">
-        <div className="stat-icon">🌱</div>
-        <div className="stat-label">Omega 3 & 6</div>
-        <div className="stat-sub">Rich in essential ALA (6-8g) and Omega 6</div>
+        <div className="stat-icon">🌿</div>
+        <div className="stat-label">ALA Omega-3</div>
+        <div className="stat-sub">6–8g per 100g — rare in vegetable oils</div>
       </div>
       <div className="stat-item">
         <div className="stat-icon">🔥</div>
-        <div className="stat-label">High Smoke Point</div>
-        <div className="stat-sub">Stable for various cooking applications</div>
+        <div className="stat-label">~232°C Smoke Point</div>
+        <div className="stat-sub">Stable across all cooking temperatures</div>
       </div>
       <div className="stat-item">
-        <div className="stat-icon">⚖️</div>
+        <div className="stat-icon">💚</div>
         <div className="stat-label">Linoleic Acid</div>
-        <div className="stat-sub">Helps to maintain normal blood cholesterol levels</div>
+        <div className="stat-sub">Clinically shown to support normal blood cholesterol</div>
       </div>
       <div className="stat-item">
-        <div className="stat-icon">✨</div>
-        <div className="stat-label">Natural Antioxidants</div>
-        <div className="stat-sub">Contains Tocopherols and Fortified Vit A & D</div>
+        <div className="stat-icon">🛡️</div>
+        <div className="stat-label">Tocopherols + Vit A & D</div>
+        <div className="stat-sub">Natural antioxidant protection + fortified micronutrients</div>
       </div>
     </div>
   </section>
@@ -359,15 +351,14 @@ export default function SoybeanOilPage() {
     <div className="section-bg-art"></div>
     <div className="nutrition-inner">
       <div className="nutrition-header">
-        <div className="section-label">Nutritional Purity</div>
-        <h2 className="section-title">The Foundation<br/>of Health</h2>
+        <h2 className="section-title">Plant-Based Power,<br/>Decoded</h2>
       </div>
 
       <div className="nutrition-grid">
         <div className="nutri-card nutri-card-dark">
-          <div className="nutri-card-label">Pure Ingredients</div>
-          <div className="nutri-card-title">Meticulously Refined</div>
-          <p className="nutri-desc">A premium formulation crafted to deliver a naturally balanced fatty acid profile that actively supports long-term heart health and family wellness.</p>
+          <div className="nutri-card-label">Refined. Fortified. Ready.</div>
+          <div className="nutri-card-title">A Complete Formula</div>
+          <p className="nutri-desc">Every drop carries 100% refined soybean oil — the world&rsquo;s most widely consumed edible oil — plus FSSAI-mandated Vitamin A &amp; D fortification and TBHQ antioxidant protection for lasting freshness.</p>
           
           <ul className="nutri-list">
             <li className="nutri-list-item">
@@ -383,9 +374,9 @@ export default function SoybeanOilPage() {
         </div>
 
         <div className="nutri-card nutri-card-light">
-          <div className="nutri-card-label">Nutritional Information (Approx per 100g)</div>
-          <div className="nutri-card-title">Vital Dietary Payback</div>
-          <p className="nutri-desc">Naturally abundant in heart-healthy unsaturated fats while remaining completely free from cholesterol, supporting an active lifestyle.</p>
+          <div className="nutri-card-label">Nutritional Facts (Approx. per 100g)</div>
+          <div className="nutri-card-title">Highest PUFA Yield</div>
+          <p className="nutri-desc">At 52.5–70g of PUFA per 100g, soybean oil ranks among the richest plant-based sources of polyunsaturated fat — with zero cholesterol and a caloric density of 900 Kcal optimal for active households.</p>
           
           <ul className="nutri-list">
             <li className="nutri-list-item">Polyunsaturated Fatty Acids (PUFA) <span className="nutri-val">52.5 - 70g</span></li>
@@ -405,55 +396,55 @@ export default function SoybeanOilPage() {
     <div className="section-bg-art"></div>
     <div className="comparison-inner">
       <div className="advantage-header">
-        <div className="section-label">Fact Check</div>
-        <h2 className="section-title">Know Your Cooking Oil<br/><em>A Comparative Study</em></h2>
+        <h2 className="section-title">Soybean vs. The Rest<br/><em>Where Science Settles the Debate</em></h2>
       </div>
 
-      <div className="compare-grid">
-        <div className="cg-row cg-header-row">
-          <div className="cg-cell">Features</div>
-          <div className="cg-cell cg-header-winner">
-            <span className="cg-badge">Top Choice</span>
-            Soybean Oil
-          </div>
-          <div className="cg-cell">Palm Oil</div>
-          <div className="cg-cell">Sunflower Oil</div>
-        </div>
-
-        <div className="cg-row">
-          <div className="cg-cell cg-feature">Smoke Point</div>
-          <div className="cg-cell cg-winner" data-label="Soybean Oil"><span className="cg-icon">✦</span> High (Suitable for all cooking)</div>
-          <div className="cg-cell" data-label="Palm Oil">Moderate</div>
-          <div className="cg-cell" data-label="Sunflower Oil">High</div>
-        </div>
-
-        <div className="cg-row">
-          <div className="cg-cell cg-feature">Flavour Profile</div>
-          <div className="cg-cell cg-winner" data-label="Soybean Oil"><span className="cg-icon">✦</span> Extremely Neutral</div>
-          <div className="cg-cell" data-label="Palm Oil">Heavy, noticeable taste</div>
-          <div className="cg-cell" data-label="Sunflower Oil">Neutral</div>
-        </div>
-
-        <div className="cg-row">
-          <div className="cg-cell cg-feature">PUFA Content</div>
-          <div className="cg-cell cg-winner" data-label="Soybean Oil"><span className="cg-icon">✦</span> High (52.5 - 70g per 100g)</div>
-          <div className="cg-cell" data-label="Palm Oil">Very Low (~9%)</div>
-          <div className="cg-cell" data-label="Sunflower Oil">High (~65%)</div>
-        </div>
-
-        <div className="cg-row">
-          <div className="cg-cell cg-feature">Omega 3 Source</div>
-          <div className="cg-cell cg-winner" data-label="Soybean Oil"><span className="cg-icon">✦</span> Excellent source (ALA 6-8g)</div>
-          <div className="cg-cell" data-label="Palm Oil">Negligible</div>
-          <div className="cg-cell" data-label="Sunflower Oil">Negligible</div>
-        </div>
-
-        <div className="cg-row">
-          <div className="cg-cell cg-feature">Saturated Fat Level</div>
-          <div className="cg-cell cg-winner" data-label="Soybean Oil"><span className="cg-icon">✦</span> Low (20g per 100g)</div>
-          <div className="cg-cell" data-label="Palm Oil">High (~50%)</div>
-          <div className="cg-cell" data-label="Sunflower Oil">Low (~10%)</div>
-        </div>
+      <div className="compare-table-wrapper">
+        <Table className="compare-table">
+          <TableHeader>
+            <TableRow className="compare-header-row">
+              <TableHead className="compare-th compare-feature-header">Features</TableHead>
+              <TableHead className="compare-th compare-winner-header">
+                <span className="compare-badge">Top Choice</span>
+                Soybean Oil
+              </TableHead>
+              <TableHead className="compare-th">Palm Oil</TableHead>
+              <TableHead className="compare-th">Sunflower Oil</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Smoke Point</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Soybean Oil"><span className="compare-icon">✦</span> High (Suitable for all cooking)</TableCell>
+              <TableCell data-label="Palm Oil">Moderate</TableCell>
+              <TableCell data-label="Sunflower Oil">High</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Flavour Profile</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Soybean Oil"><span className="compare-icon">✦</span> Extremely Neutral</TableCell>
+              <TableCell data-label="Palm Oil">Heavy, noticeable taste</TableCell>
+              <TableCell data-label="Sunflower Oil">Neutral</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">PUFA Content</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Soybean Oil"><span className="compare-icon">✦</span> High (52.5–70g per 100g)</TableCell>
+              <TableCell data-label="Palm Oil">Very Low (~9%)</TableCell>
+              <TableCell data-label="Sunflower Oil">High (~65%)</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Omega 3 Source</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Soybean Oil"><span className="compare-icon">✦</span> Excellent (ALA 6–8g)</TableCell>
+              <TableCell data-label="Palm Oil">Negligible</TableCell>
+              <TableCell data-label="Sunflower Oil">Negligible</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Saturated Fat Level</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Soybean Oil"><span className="compare-icon">✦</span> Low (20g per 100g)</TableCell>
+              <TableCell data-label="Palm Oil">High (~50%)</TableCell>
+              <TableCell data-label="Sunflower Oil">Low (~10%)</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
       </div>
       
       <div className="compare-source">Note: Values are approximate and can vary based on specific refining processes and sourcing.</div>
@@ -462,59 +453,82 @@ export default function SoybeanOilPage() {
 
   {/* INTERACTIVE FAQ ACCORDION */}
   <section id="faq">
-     <div className="faq-inner">
+    <div className="faq-inner">
       <div className="faq-left">
-        <div className="section-label">Discover More</div>
         <h2 className="section-title">Frequently Asked Questions</h2>
       </div>
 
       <div className="faq-right">
-        <div className="faq-list">
-          <div className={`faq-item ${openFaq === 0 ? "active" : ""}`}>
-            <button className="faq-btn" onClick={ () => toggleFaq(0) }>
-              Why is Soybean Oil considered heart-healthy? <span className="faq-icon">+</span>
-            </button>
-            <div className="faq-content">
-              <div className="faq-content-inner">
-                <p>Jeevan Rekha Soybean oil contains mostly polyunsaturated fats (PUFAs) and monounsaturated fats (MUFAs). It is a rare, excellent source of Alpha-Linolenic Acid (Omega-3) and Linoleic Acid (Omega-6), which helps maintain normal blood cholesterol levels. It is also packed with natural anti-oxidants (Tocopherols).</p>
-              </div>
-            </div>
-          </div>
+        <Accordion className="faq-accordion-container">
+          <AccordionItem value="faq-1" className="faq-accordion-item">
+            <AccordionTrigger className="faq-accordion-trigger">
+              Why is Soybean Oil considered heart-healthy?
+            </AccordionTrigger>
+            <AccordionContent className="faq-accordion-content">
+              Soybean oil is one of the few common vegetable oils with a measurable Omega-3 (ALA) content — between 6 and 8 grams per 100g. This, combined with high Linoleic Acid (Omega-6) levels, helps maintain a balanced polyunsaturated fatty acid intake. PUFA-rich diets are scientifically associated with healthy LDL cholesterol management. Jeevan Rekha Soybean Oil also contains natural Tocopherols (Vitamin E isomers) that protect cells from oxidative stress.
+            </AccordionContent>
+          </AccordionItem>
 
-          <div className={`faq-item ${openFaq === 1 ? "active" : ""}`}>
-            <button className="faq-btn" onClick={ () => toggleFaq(1) }>
-              What does "Fortified with Vitamin A & D" mean? <span className="faq-icon">+</span>
-            </button>
-            <div className="faq-content">
-              <div className="faq-content-inner">
-                <p>Jeevan Rekha Soybean Oil is enriched with essential fat-soluble vitamins. It contains added Vitamin A (2500 IU per 100g), which supports healthy vision and immunity, and Vitamin D (450 IU per 100g), which is crucial for strong bones and calcium absorption.</p>
-              </div>
-            </div>
-          </div>
+          <AccordionItem value="faq-2" className="faq-accordion-item">
+            <AccordionTrigger className="faq-accordion-trigger">
+              What does &ldquo;Fortified with Vitamin A &amp; D&rdquo; mean?
+            </AccordionTrigger>
+            <AccordionContent className="faq-accordion-content">
+              As a refined edible oil, soybean oil is fat-soluble — meaning the vitamins A and D added to Jeevan Rekha Soybean Oil are absorbed efficiently by the body alongside dietary fat. Vitamin A (2500 IU per 100g) is essential for epithelial tissue health, vision, and immune function. Vitamin D (450 IU per 100g) drives calcium and phosphorus absorption, critical for bone density — a particular concern in Indian households with limited sun exposure.
+            </AccordionContent>
+          </AccordionItem>
 
-          <div className={`faq-item ${openFaq === 2 ? "active" : ""}`}>
-            <button className="faq-btn" onClick={ () => toggleFaq(2) }>
-              What are the main ingredients in Jeevan Rekha Soybean Oil? <span className="faq-icon">+</span>
-            </button>
-            <div className="faq-content">
-              <div className="faq-content-inner">
-                <p>The product contains 100% pure Refined Soybean Oil, Antioxidant TBHQ (E 319) to maintain freshness and stability during high-heat cooking, and is fortified with Vitamin A and Vitamin D. It is strictly free from Argemone Oil.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+          <AccordionItem value="faq-3" className="faq-accordion-item">
+            <AccordionTrigger className="faq-accordion-trigger">
+              What are the main ingredients in Jeevan Rekha Soybean Oil?
+            </AccordionTrigger>
+            <AccordionContent className="faq-accordion-content">
+              Jeevan Rekha Soybean Oil contains Refined Soybean Oil, Antioxidant TBHQ (E-319) — a permitted food-grade antioxidant that prevents rancidity at high temperatures — and is fortified with Vitamins A and D as mandated by FSSAI. It is packaged and marketed by AB Udyog Pvt. Ltd., a trusted name with 40+ years of expertise in West Bengal&rsquo;s edible oil industry, and is certified free from Argemone Oil adulteration.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </div>
   </section>
 
   <footer id="footer">
-    <div className="footer-brand">
-      <div className="footer-logo-wrap">
-        <img src="/jeevan-rekha-logo-white.png" alt="Jeevan Rekha — Premium Edible Oils" style={{height: '48px', width: 'auto', objectFit: 'contain'}} />
+    <div className="footer-inner-wrap">
+      <div className="footer-top">
+        <div className="footer-brand-col">
+          <Link href="/" title="Jeevan Rekha Home" className="footer-logo-link">
+            <img src="/jeevan-rekha-logo-white.png" alt="Jeevan Rekha — Premium Edible Oils" style={{height: '48px', width: 'auto', objectFit: 'contain'}} />
+          </Link>
+          <p className="footer-brand-desc">
+            Delivering premium refined edible oils rich in Omega 3 &amp; 6 fatty acids, with scientific precision and uncompromising purity.
+          </p>
+        </div>
+
+        <div className="footer-nav-col">
+          <h4 className="footer-col-title">Navigation</h4>
+          <div className="footer-links-list">
+            <Link href="/">Home</Link>
+            <Link href="/about">About Us</Link>
+            <Link href="/manufacturing">Manufacturing</Link>
+            <Link href="/blogs">Blogs</Link>
+            <Link href="/contact">Contact</Link>
+          </div>
+        </div>
+
+        <div className="footer-info-col">
+          <h4 className="footer-col-title">Quality Assured</h4>
+          <p className="footer-info-text">
+            FSSAI certified. Fortified with Vitamins A &amp; D. Strict lab-controlled packaging and quality checks for guaranteed freshness.
+          </p>
+        </div>
       </div>
     </div>
-    <div className="footer-tagline-center">"At the heart of every healthy meal."</div>
-    <div className="footer-copy">&copy; <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog</a>. All rights reserved.</div>
+
+    <div className="footer-bottom-strip">
+      <div className="footer-bottom-inner">
+        <p className="footer-copy">&copy; <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog</a>. All rights reserved.</p>
+        <div className="footer-tagline-center">&ldquo;At the heart of every healthy meal.&rdquo;</div>
+      </div>
+    </div>
   </footer>
 
   

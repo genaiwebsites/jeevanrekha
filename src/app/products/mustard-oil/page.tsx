@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Table, TableHeader, TableBody, TableRow, TableCell, TableHead } from "@/components/ui/table";
+import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
 
 const productSchema = {
   "@context": "https://schema.org",
@@ -67,11 +69,6 @@ const faqSchema = {
 };
 
 export default function MustardOilPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaq(openFaq === index ? null : index);
-  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -80,12 +77,6 @@ export default function MustardOilPage() {
       document.documentElement.setAttribute("data-theme", "colorful");
 
       gsap.registerPlugin(ScrollTrigger);
-
-      // Standard Fade-up Observer
-      const obs = new IntersectionObserver(entries => {
-        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
-      }, { threshold: 0.12 });
-      document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
 
       // Scroll triggered scrolled nav
       ScrollTrigger.create({
@@ -118,6 +109,39 @@ export default function MustardOilPage() {
         }
       });
 
+      // Batch ScrollTrigger on .benefit-card
+      ScrollTrigger.batch('.benefit-card', {
+        onEnter: (cards) => {
+          gsap.to(cards, { y: 0, opacity: 1, stagger: 0.14, duration: 1.0, ease: 'expo.out' });
+        }, start: 'top 88%', once: true
+      });
+
+      // Batch ScrollTrigger on .stat-item
+      ScrollTrigger.batch('.stat-item', {
+        onEnter: (cards) => gsap.to(cards, { y: 0, opacity: 1, stagger: 0.1, duration: 0.8, ease: 'expo.out' }),
+        start: 'top 85%', once: true
+      });
+
+      // Nutrition section cards
+      gsap.set('.nutri-card', { opacity: 0, y: 30 });
+      ScrollTrigger.create({
+        trigger: '#nutrition', start: 'top 75%', once: true,
+        onEnter: () => gsap.to('.nutri-card', { opacity: 1, y: 0, stagger: 0.2, duration: 0.8, ease: 'expo.out' })
+      });
+
+      // Quality section cards
+      gsap.set('.quality-card', { opacity: 0, y: 30 });
+      ScrollTrigger.create({
+        trigger: '#quality', start: 'top 75%', once: true,
+        onEnter: () => gsap.to('.quality-card', { opacity: 1, y: 0, stagger: 0.2, duration: 0.8, ease: 'expo.out' })
+      });
+
+      // Comparison section table
+      ScrollTrigger.create({
+        trigger: '#comparison', start: 'top 75%', once: true,
+        onEnter: () => gsap.to('.compare-table-wrapper', { opacity: 1, y: 0, duration: 0.8, ease: 'expo.out' })
+      });
+
       // Infinite Spin
       gsap.to(".hero-ring", { rotate: "+=360", duration: 80, repeat: -1, ease: "none" });
 
@@ -127,7 +151,6 @@ export default function MustardOilPage() {
         } else {
           document.documentElement.removeAttribute("data-theme");
         }
-        obs.disconnect();
         ScrollTrigger.getAll().forEach(t => t.kill());
       };
     }
@@ -150,7 +173,6 @@ export default function MustardOilPage() {
       <div className="mustard-page-container">
         
 
-  {/* NAV */}
   <nav id="nav" role="navigation">
     <div className="nav-logo">
       <img src="/jeevan-rekha-logo.png" alt="Jeevan Rekha — Premium Edible Oils" style={{height: '44px', width: 'auto', objectFit: 'contain'}} />
@@ -159,14 +181,13 @@ export default function MustardOilPage() {
     <ul className="nav-links">
       <li><a href="#hero">Home</a></li>
       <li><a href="#benefits">Benefits</a></li>
-      <li><a href="#advantage">Advantage</a></li>
       <li><a href="#nutrition">Nutrition</a></li>
-      <li><a href="#quality">Quality</a></li>
+      <li><a href="#comparison">Compare</a></li>
     </ul>
 
     <div className="nav-spacer">
-      <Link href="/products" className="back-to-site" title="Back to Jeevan Rekha">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+      <Link href="/products" className="back-to-site" title="All Products">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
         All Products
       </Link>
     </div>
@@ -193,12 +214,12 @@ export default function MustardOilPage() {
         <h1 className="hero-title">Jeevan Rekha<br/><em>Mustard Oil</em></h1>
 
         <div className="hero-taglines">
-          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Kachi Ghani Cold-Pressed</div>
-          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Rich in Natural Antioxidants</div>
-          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Cholesterol Free &amp; FSSAI Certified</div>
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Cold-pressed extraction from premium Brassica juncea seeds</div>
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Naturally rich in Monounsaturated Fatty Acids (MUFA ~60%)</div>
+          <div className="hero-tagline-item"><span className="hero-tagline-dot"></span>Bioactive Allyl Isothiocyanate (AITC) for authentic pungency</div>
         </div>
 
-        <p className="hero-desc">Experience the authentic pungency and richness of Jeevan Rekha Kachi Ghani Mustard Oil — cold-pressed the traditional way to preserve every drop of natural flavour, Omega-3 fatty acids, and natural antioxidants. The trusted choice of Indian kitchens for generations.</p>
+        <p className="hero-desc">Jeevan Rekha Kacchi Ghani Mustard Oil is crafted from selected bold mustard seeds, cold-pressed at low temperatures to fully retain its natural Allyl Isothiocyanate (AITC) content, essential fatty acids, and Vitamin E. Known for its intense aroma, rich golden hue, and thermal stability (smoke point ~250°C), it is the definitive choice for authentic regional cooking, preservation, and tempering.</p>
 
         <a className="hero-cta" href="#benefits">
           <span className="cta-text">Discover the Oil</span>
@@ -251,261 +272,313 @@ export default function MustardOilPage() {
     </div>
   </section>
 
-  {/* TICKER MARQUEE */}
   <div id="about-strip" aria-hidden="true">
     <div className="strip-marquee-track" id="marqueeTrack">
-      <span className="strip-item">Kachi Ghani Mustard Oil</span>
-      <span className="strip-item">FSSAI Certified</span>
-      <span className="strip-item">Omega-3 PUFA Rich</span>
-      <span className="strip-item">Natural Antioxidants</span>
-      <span className="strip-item">Cholesterol Free</span>
-      <span className="strip-item">Manufactured in India</span>
-      <span className="strip-item">Kachi Ghani Mustard Oil</span>
-      <span className="strip-item">FSSAI Certified</span>
-      <span className="strip-item">Omega-3 PUFA Rich</span>
-      <span className="strip-item">Natural Antioxidants</span>
-      <span className="strip-item">Cholesterol Free</span>
-      <span className="strip-item">Manufactured in India</span>
+      <span className="strip-item">Kacchi Ghani Cold-Pressed</span>
+      <span className="strip-item">High Pungency AITC</span>
+      <span className="strip-item">Rich in MUFA (~60%)</span>
+      <span className="strip-item">Cold-Pressed under 50°C</span>
+      <span className="strip-item">Zero Argemone Oil Adulteration</span>
+      <span className="strip-item">Fortified with Vitamin A &amp; D</span>
+      <span className="strip-item">Kacchi Ghani Cold-Pressed</span>
+      <span className="strip-item">High Pungency AITC</span>
+      <span className="strip-item">Rich in MUFA (~60%)</span>
+      <span className="strip-item">Cold-Pressed under 50°C</span>
+      <span className="strip-item">Zero Argemone Oil Adulteration</span>
+      <span className="strip-item">Fortified with Vitamin A &amp; D</span>
     </div>
   </div>
 
-  {/* BENEFITS */}
-  <section id="benefits">
+  <section id="benefits" aria-labelledby="benefits-heading">
     <div className="section-bg-art" style={{transform: 'scaleY(-1)'}}></div>
-    <div className="section-label">Core Benefits</div>
-    <h2 className="section-title">Pure Goodness,<br /><em>Every Drop</em></h2>
-    <div className="benefits-grid">
-      <div className="benefit-card fade-up">
-        <div className="benefit-num">01</div>
-        <div className="benefit-icon">🌶️</div>
-        <h3>Distinct Flavour</h3>
-        <p>A strong, pungent character from allyl isothiocyanate adds an unmistakable depth to Indian cuisine — from curries to pickles.</p>
+    
+    <div className="applications-inner">
+      <div className="applications-header">
+        <div>
+          <h2 id="benefits-heading" className="section-title">Suitable for various<br/>cooking applications</h2>
+        </div>
+        <p>Jeevan Rekha Kacchi Ghani Mustard Oil is celebrated for its intense aroma, high smoke point, and natural preservative qualities. It is uniquely suited for traditional high-heat cooking and pickling.</p>
       </div>
-      <div className="benefit-card fade-up delay-1">
-        <div className="benefit-num">02</div>
-        <div className="benefit-icon">❤️</div>
-        <h3>Heart Health</h3>
-        <p>Rich in monounsaturated and polyunsaturated fats, Jeevan Rekha Mustard Oil helps reduce the risk of cardiovascular disease.</p>
-      </div>
-      <div className="benefit-card fade-up delay-2">
-        <div className="benefit-num">03</div>
-        <div className="benefit-icon">🛡️</div>
-        <h3>Natural Antioxidants</h3>
-        <p>Contains Vitamin E and natural antioxidants that protect cells from free radical damage, promoting skin and hair health.</p>
-      </div>
-      <div className="benefit-card fade-up delay-3">
-        <div className="benefit-num">04</div>
-        <div className="benefit-icon">🍳</div>
-        <h3>Versatile Cooking</h3>
-        <p>High smoke point of ~250°C makes it ideal for frying, sautéing, and tempering — without losing nutritional value at high heat.</p>
+
+      <div className="benefits-grid">
+        <article className="benefit-card">
+          <div className="benefit-card-content">
+            <div className="benefit-icon">🌶️</div>
+            <h3>Pungent Aroma &amp; Tadka</h3>
+            <p>The natural concentration of Allyl Isothiocyanate (AITC) provides a sharp, pungent bite that is crucial for authentic mustard-based curries, bhartas, and slow-cooked dishes.</p>
+            <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
+          </div>
+        </article>
+
+        <article className="benefit-card">
+          <div className="benefit-card-content">
+            <div className="benefit-icon">🔥</div>
+            <h3>High-Heat Tempering</h3>
+            <p>With a smoke point of ~250°C, it remains thermally stable during deep frying and tempering, preventing fat breakdown and keeping food crisp and nutritious.</p>
+            <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
+          </div>
+        </article>
+
+        <article className="benefit-card">
+          <div className="benefit-card-content">
+            <div className="benefit-icon">🏺</div>
+            <h3>Pickling &amp; Preservation</h3>
+            <p>Its natural anti-microbial properties make it the perfect medium for preserving traditional Indian pickles, keeping spices fresh and extending shelf life.</p>
+            <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
+          </div>
+        </article>
+
+        <article className="benefit-card">
+          <div className="benefit-card-content">
+            <div className="benefit-icon">🌿</div>
+            <h3>Cold-Pressed Integrity</h3>
+            <p>Cold-pressed using wooden presses below 50°C, it fully retains natural Tocopherols (Vitamin E), lecithin, and essential lipids without any solvent treatment.</p>
+            <div className="feed-card-bar"><div className="feed-card-bar-fill"></div></div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  {/* STATS */}
-  <div id="stats">
-    <div className="section-bg-art" style={{opacity: '0.2'}}></div>
-    <div className="stat fade-up">
-      <span className="stat-num" id="s1">250°C</span>
-      <div className="stat-label">Smoke Point</div>
+  <section id="core-philosophy">
+    <div className="section-bg-art"></div>
+    <div className="stats-inner">
+      <div className="stat-item">
+        <div className="stat-icon">🔥</div>
+        <div className="stat-label">~250°C Smoke Point</div>
+        <div className="stat-sub">Superior heat tolerance for deep frying</div>
+      </div>
+      <div className="stat-item">
+        <div className="stat-icon">🥑</div>
+        <div className="stat-label">MUFA (~60%)</div>
+        <div className="stat-sub">Rich in heart-friendly monounsaturated fats</div>
+      </div>
+      <div className="stat-item">
+        <div className="stat-icon">🌶️</div>
+        <div className="stat-label">Natural Pungency</div>
+        <div className="stat-sub">Contains bioactive Allyl Isothiocyanate</div>
+      </div>
+      <div className="stat-item">
+        <div className="stat-icon">🛡️</div>
+        <div className="stat-label">Tocopherols (Vit E)</div>
+        <div className="stat-sub">Natural antioxidants + Vitamin A &amp; D</div>
+      </div>
     </div>
-    <div className="stat fade-up delay-1">
-      <span className="stat-num" id="s2">36g</span>
-      <div className="stat-label">Mono Unsaturated Fat</div>
-    </div>
-    <div className="stat fade-up delay-2">
-      <span className="stat-num" id="s3">900</span>
-      <div className="stat-label">kcal Energy / 100g</div>
-    </div>
-    <div className="stat fade-up delay-3">
-      <span className="stat-num" id="s4">0g</span>
-      <div className="stat-label">Cholesterol</div>
-    </div>
-  </div>
+  </section>
 
-  {/* ADVANTAGE */}
-  <section id="advantage">
-    <div className="section-label">The Advantage</div>
-    <h2 className="section-title">Why Mustard Oil<br /><em>Outperforms</em></h2>
-    <div className="compare-grid">
-      <div className="compare-card winner fade-up">
-        <div className="compare-header">
-          <h3>Jeevan Rekha</h3>
-          <span className="compare-badge">✦ Best Choice</span>
-        </div>
-        <div className="compare-body">
-          <div className="compare-row winner">
-            <div className="cicon">🔥</div>
-            <div>
-              <h4>High Smoke Point ~250°C</h4>
-              <p>Perfect for high-heat Indian cooking without breaking down or losing nutritional value.</p>
-            </div>
-          </div>
-          <div className="compare-row winner">
-            <div className="cicon">💪</div>
-            <div>
-              <h4>Balanced Fatty Acid Profile</h4>
-              <p>High in omega-3, omega-6, and monounsaturated fats — a complete and heart-friendly profile.</p>
-            </div>
-          </div>
-          <div className="compare-row winner">
-            <div className="cicon">✨</div>
-            <div>
-              <h4>Rich Natural Antioxidants</h4>
-              <p>Vitamin E and natural compounds from the cold press process, retained fully in extraction.</p>
-            </div>
-          </div>
-        </div>
+  {/* COMPARATIVE STUDY */}
+  <section id="comparison">
+    <div className="section-bg-art"></div>
+    <div className="comparison-inner">
+      <div className="advantage-header">
+        <h2 className="section-title">Mustard vs. Refined Oils<br/><em>Where Science Settles the Debate</em></h2>
       </div>
 
-      <div className="compare-card loser fade-up delay-2">
-        <div className="compare-header">
-          <h3>Other Refined Oils</h3>
-          <span className="compare-badge">Standard Option</span>
-        </div>
-        <div className="compare-body">
-          <div className="compare-row loser">
-            <div className="cicon">⚠️</div>
-            <div>
-              <h4>Palm Oil ~235°C</h4>
-              <p>Slightly lower smoke point, high in saturated fat — a known risk factor for bad cholesterol.</p>
-            </div>
-          </div>
-          <div className="compare-row loser">
-            <div className="cicon">📉</div>
-            <div>
-              <h4>Soybean Oil ~230°C</h4>
-              <p>Moderate smoke point, prone to forming trans fats at higher temperatures.</p>
-            </div>
-          </div>
-          <div className="compare-row loser">
-            <div className="cicon">🔬</div>
-            <div>
-              <h4>Low Natural Antioxidants</h4>
-              <p>Extensive refining strips away natural antioxidants and beneficial compounds.</p>
-            </div>
-          </div>
-        </div>
+      <div className="compare-table-wrapper">
+        <Table className="compare-table">
+          <TableHeader>
+            <TableRow className="compare-header-row">
+              <TableHead className="compare-th compare-feature-header">Features</TableHead>
+              <TableHead className="compare-th compare-winner-header">
+                <span className="compare-badge">Top Choice</span>
+                Kacchi Ghani Mustard
+              </TableHead>
+              <TableHead className="compare-th">Palm Oil</TableHead>
+              <TableHead className="compare-th">Refined Oils</TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Extraction Process</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Mustard Oil"><span className="compare-icon">✦</span> Cold-Pressed (under 50°C)</TableCell>
+              <TableCell data-label="Palm Oil">Chemical solvent extraction</TableCell>
+              <TableCell data-label="Refined Oils">High-temperature refining</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Smoke Point</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Mustard Oil"><span className="compare-icon">✦</span> High (~250°C)</TableCell>
+              <TableCell data-label="Palm Oil">Moderate (~235°C)</TableCell>
+              <TableCell data-label="Refined Oils">Varies (~230°C)</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">MUFA Content</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Mustard Oil"><span className="compare-icon">✦</span> Rich (~60g per 100g)</TableCell>
+              <TableCell data-label="Palm Oil">Moderate (~39g)</TableCell>
+              <TableCell data-label="Refined Oils">Low (~20g)</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">AITC Bioactives</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Mustard Oil"><span className="compare-icon">✦</span> High (Natural pungency)</TableCell>
+              <TableCell data-label="Palm Oil">None</TableCell>
+              <TableCell data-label="Refined Oils">Strips during heating</TableCell>
+            </TableRow>
+            <TableRow className="compare-body-row">
+              <TableCell className="compare-feature-cell">Saturated Fats</TableCell>
+              <TableCell className="compare-winner-cell" data-label="Mustard Oil"><span className="compare-icon">✦</span> Low (~12g per 100g)</TableCell>
+              <TableCell data-label="Palm Oil">Very High (~50g)</TableCell>
+              <TableCell data-label="Refined Oils">Varies (~15-20g)</TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
       </div>
+      
+      <div className="compare-source">Note: Values are approximate and based on standard nutritional profiles of cold-pressed vs refined oils.</div>
     </div>
   </section>
 
   {/* NUTRITION */}
   <section id="nutrition">
     <div className="section-bg-art"></div>
-    <div className="section-label">Nutritional Value</div>
-    <h2 className="section-title">Dietician's<br /><em>Recommended</em></h2>
-    <div className="nutrition-layout">
-      <div className="nutrition-intro">
-        <p>Jeevan Rekha Mustard Oil is extracted using the Kachi Ghani (cold press) method — the first press of the finest mustard seeds. This ensures all natural goodness is retained without heat-induced degradation.</p>
-        <div className="ingredients-list">
-          <div className="ingredient fade-up">
-            <div className="ingredient-icon">🌿</div>
-            <div>
-              <h4>Kachi Ghani Cold-Pressed</h4>
-              <p>First press extraction preserving maximum nutrients</p>
-            </div>
-          </div>
-          <div className="ingredient fade-up delay-1">
-            <div className="ingredient-icon">🐟</div>
-            <div>
-              <h4>Best Source of Omega-3</h4>
-              <p>Supports cardiovascular health and reduces inflammation</p>
-            </div>
-          </div>
-          <div className="ingredient fade-up delay-2">
-            <div className="ingredient-icon">☀️</div>
-            <div>
-              <h4>Loaded with Vitamins A, D &amp; E</h4>
-              <p>Essential fat-soluble vitamins for immunity and skin health</p>
-            </div>
-          </div>
-        </div>
+    <div className="nutrition-inner">
+      <div className="nutrition-header">
+        <h2 className="section-title">Cold-Pressed Power,<br/>Decoded</h2>
       </div>
-      <div className="nutrition-facts fade-up delay-2">
-        <div className="nf-title">Nutrition Facts</div>
-        <div className="nf-serving">Serving size: 100g | Per 100g of product</div>
-        <div className="nf-row"><span className="nf-label nf-bold">Energy</span><span className="nf-value">900 kcal</span></div>
-        <div className="nf-row"><span className="nf-label nf-bold">Total Fat</span><span className="nf-value">100g</span></div>
-        <div className="nf-row" style={{paddingLeft: '1rem'}}><span className="nf-label">Saturated Fat</span><span className="nf-value">12g</span></div>
-        <div className="nf-row" style={{paddingLeft: '1rem'}}><span className="nf-label">Mono Unsaturated Fat</span><span className="nf-value">36g</span></div>
-        <div className="nf-row" style={{paddingLeft: '1rem'}}><span className="nf-label">Poly Unsaturated Fat</span><span className="nf-value">16g</span></div>
-        <div className="nf-row" style={{paddingLeft: '1rem'}}><span className="nf-label">Trans Fat (Max)</span><span className="nf-value">1g</span></div>
-        <div className="nf-row"><span className="nf-label nf-bold">Carbohydrates</span><span className="nf-value">0g</span></div>
-        <div className="nf-row"><span className="nf-label nf-bold">Protein</span><span className="nf-value">0g</span></div>
-        <div className="nf-row"><span className="nf-label nf-bold">Cholesterol</span><span className="nf-value" style={{color: '#A3C9A0'}}>0g</span></div>
+
+      <div className="nutrition-grid">
+        <div className="nutri-card nutri-card-dark">
+          <div className="nutri-card-label">Pure Extraction. Fortified.</div>
+          <div className="nutri-card-title">Traditional Kacchi Ghani</div>
+          <p className="nutri-desc">Every drop is cold-pressed below 50&deg;C from premium bold mustard seeds, fortified with Vitamin A &amp; D to support everyday wellness and FSSAI safety compliance.</p>
+          
+          <ul className="nutri-list">
+            <li className="nutri-list-item">
+              <span className="nutri-icon">✨</span> 100% Pure Mustard Oil
+            </li>
+            <li className="nutri-list-item">
+              <span className="nutri-icon">🛡️</span> Rich in Natural Bioactives (AITC)
+            </li>
+            <li className="nutri-list-item">
+              <span className="nutri-icon">☀️</span> Fortified with Vitamin A &amp; D
+            </li>
+          </ul>
+        </div>
+
+        <div className="nutri-card nutri-card-light">
+          <div className="nutri-card-label">Nutritional Facts (Approx. per 100g)</div>
+          <div className="nutri-card-title">Naturally MUFA Rich</div>
+          <p className="nutri-desc">Jeevan Rekha Mustard Oil provides an excellent balance of monounsaturated fats (MUFA ~60g) and natural antioxidants (Tocopherols), with zero cholesterol.</p>
+          
+          <ul className="nutri-list">
+            <li className="nutri-list-item">Monounsaturated Fatty Acids (MUFA) <span className="nutri-val">58 - 62g</span></li>
+            <li className="nutri-list-item">Polyunsaturated Fatty Acids (PUFA) <span className="nutri-val">15 - 18g</span></li>
+            <li className="nutri-list-item">Saturated Fat <span className="nutri-val">11 - 13g</span></li>
+            <li className="nutri-list-item">Natural Vitamin E (Tocopherols) <span className="nutri-val">~30mg</span></li>
+            <li className="nutri-list-item">Added Vitamin A / D <span className="nutri-val">2500 IU / 450 IU</span></li>
+            <li className="nutri-list-item">Energy / Cholesterol <span className="nutri-val">900 Kcal / 0 mg</span></li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   {/* QUALITY */}
-  <section id="quality">
-    <div className="section-label">What Makes It Premium</div>
-    <h2 className="section-title">Crafted for<br /><em>Purity</em></h2>
-    <div className="quality-grid">
-      <div className="quality-card fade-up">
-        <div className="quality-icon">🧪</div>
-        <h3>Lab Tested Every Batch</h3>
-        <p>Every production batch is independently lab-tested to verify purity, fatty acid profile, and absence of adulterants before dispatch.</p>
+  <section id="quality" aria-labelledby="quality-heading">
+    <div className="applications-inner">
+      <div className="applications-header">
+        <div>
+          <h2 id="quality-heading" className="section-title">Crafted for<br /><em>Absolute Purity</em></h2>
+        </div>
+        <p>Jeevan Rekha Mustard Oil is selected and packed under strict quality control and laboratory testing to ensure zero contamination.</p>
       </div>
-      <div className="quality-card fade-up delay-1">
-        <div className="quality-icon">🌾</div>
-        <h3>First-Press Kachi Ghani</h3>
-        <p>Cold-pressed using traditional stone grinding techniques, preserving the natural aroma, flavour, and nutritional integrity of mustard seeds.</p>
-      </div>
-      <div className="quality-card fade-up delay-2">
-        <div className="quality-icon">🏛️</div>
-        <h3>FSSAI Certified</h3>
-        <p>Fully compliant with India's Food Safety and Standards Authority regulations — your assurance of safe, authentic, quality cooking oil.</p>
+
+      <div className="quality-grid">
+        <article className="quality-card">
+          <div className="quality-icon">🧪</div>
+          <h3>Lab-Verified Batches</h3>
+          <p>Every single batch undergoes chromatography testing to guarantee a zero-adulteration profile and confirm the natural presence of Allyl Isothiocyanate (AITC).</p>
+        </article>
+        <article className="quality-card">
+          <div className="quality-icon">🌾</div>
+          <h3>First-Press Extraction</h3>
+          <p>We process only premium black mustard seeds in wooden press systems, avoiding high-temperature friction to prevent erucic acid breakdown or oil oxidation.</p>
+        </article>
+        <article className="quality-card">
+          <div className="quality-icon">🏛️</div>
+          <h3>FSSAI Compliant</h3>
+          <p>Fully certified and fortified according to the Food Safety and Standards Authority of India (FSSAI) guidelines, ensuring standard-compliant safety.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  {/* FAQ */}
+  {/* INTERACTIVE FAQ ACCORDION */}
   <section id="faq">
-    <div className="section-bg-art" style={{transform: 'rotate(180deg)'}}></div>
-    <div className="section-label">Questions</div>
-    <h2 className="section-title">Frequently<br /><em>Asked</em></h2>
-    <div className="faq-list">
-      <div className={`faq-item fade-up ${openFaq === 0 ? "open" : ""}`}>
-        <div className="faq-q" onClick={ () => toggleFaq(0) }>
-          What are the health benefits of mustard oil?
-          <div className="faq-icon">+</div>
-        </div>
-        <div className="faq-a">Mustard oil is rich in monounsaturated fats, omega-3 fatty acids, and antioxidants, which can support heart health, reduce inflammation, and promote skin and hair health. Its anti-inflammatory properties also make it beneficial as a massage oil for joint pain.</div>
+    <div className="faq-inner">
+      <div className="faq-left">
+        <h2 className="section-title">Frequently Asked Questions</h2>
       </div>
-      <div className={`faq-item fade-up ${openFaq === 1 ? "open" : ""}`}>
-        <div className="faq-q" onClick={ () => toggleFaq(1) }>
-          Why does mustard oil have a strong smell and taste?
-          <div className="faq-icon">+</div>
-        </div>
-        <div className="faq-a">Mustard oil has a pungent aroma and flavour due to compounds like allyl isothiocyanate. This unique taste enhances flavours in cooking, particularly in spicy and savoury dishes — it is this character that makes it irreplaceable in traditional Indian cuisine.</div>
-      </div>
-      <div className={`faq-item fade-up ${openFaq === 2 ? "open" : ""}`}>
-        <div className="faq-q" onClick={ () => toggleFaq(2) }>
-          What is mustard oil's smoke point?
-          <div className="faq-icon">+</div>
-        </div>
-        <div className="faq-a">Mustard oil has a high smoke point of around 250°C (482°F). This makes it suitable for high-heat cooking methods like frying, sautéing, and deep-frying without breaking down or forming harmful compounds.</div>
-      </div>
-      <div className={`faq-item fade-up ${openFaq === 3 ? "open" : ""}`}>
-        <div className="faq-q" onClick={ () => toggleFaq(3) }>
-          How should mustard oil be stored?
-          <div className="faq-icon">+</div>
-        </div>
-        <div className="faq-a">Store mustard oil in a cool, dark place, ideally in an airtight container to prevent it from going rancid and to preserve its flavour and nutritional value. Jeevan Rekha packages its oil in airtight, food-grade containers that protect it from light and air.</div>
+
+      <div className="faq-right">
+        <Accordion className="faq-accordion-container">
+          <AccordionItem value="faq-1" className="faq-accordion-item">
+            <AccordionTrigger className="faq-accordion-trigger">
+              Why is Kacchi Ghani Mustard Oil pungent?
+            </AccordionTrigger>
+            <AccordionContent className="faq-accordion-content">
+              Mustard seeds naturally contain sinigrin and the myrosinase enzyme. When seeds are cold-pressed (Kacchi Ghani) in the presence of water/moisture, they react to release Allyl Isothiocyanate (AITC). This compound is volatile and responsible for the signature sharp aroma and pungent taste that enhances traditional Indian dishes.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="faq-2" className="faq-accordion-item">
+            <AccordionTrigger className="faq-accordion-trigger">
+              How does cold-pressing differ from refining?
+            </AccordionTrigger>
+            <AccordionContent className="faq-accordion-content">
+              Refined vegetable oils undergo high-temperature extraction (200&deg;C+), chemical neutralization, and bleaching, which strip away natural pigments, antioxidants, and nutrients. Cold-pressed Kacchi Ghani Mustard Oil is mechanically pressed under 50&deg;C, preserving all natural Vitamin E (Tocopherols), aroma, and essential fatty acids.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="faq-3" className="faq-accordion-item">
+            <AccordionTrigger className="faq-accordion-trigger">
+              What does Vitamin A &amp; D fortification accomplish?
+            </AccordionTrigger>
+            <AccordionContent className="faq-accordion-content">
+              Under FSSAI guidelines, edible oils are fortified to combat micronutrient deficiencies. Fortifying Jeevan Rekha Kacchi Ghani Mustard Oil ensures that fat-soluble Vitamin A (for eye health and immunity) and Vitamin D (for calcium absorption and skeletal strength) are delivered in a stable, easily absorbed form.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </div>
   </section>
 
   <footer id="footer">
-    <div className="footer-brand">
-      <div className="footer-logo-wrap">
-        <img src="/jeevan-rekha-logo-white.png" alt="Jeevan Rekha — Premium Edible Oils" style={{height: '48px', width: 'auto', objectFit: 'contain'}} />
+    <div className="footer-inner-wrap">
+      <div className="footer-top">
+        <div className="footer-brand-col">
+          <Link href="/" title="Jeevan Rekha Home" className="footer-logo-link">
+            <img src="/jeevan-rekha-logo-white.png" alt="Jeevan Rekha — Premium Edible Oils" style={{height: '48px', width: 'auto', objectFit: 'contain'}} />
+          </Link>
+          <p className="footer-brand-desc">
+            AB Udyog Pvt. Ltd. delivers premium cold-pressed Kacchi Ghani Mustard Oil, backed by 40+ years of trust and quality.
+          </p>
+        </div>
+
+        <div className="footer-nav-col">
+          <h4 className="footer-col-title">Navigation</h4>
+          <div className="footer-links-list">
+            <Link href="/">Home</Link>
+            <Link href="/about">About Us</Link>
+            <Link href="/manufacturing">Manufacturing</Link>
+            <Link href="/blogs">Blogs</Link>
+            <Link href="/contact">Contact</Link>
+          </div>
+        </div>
+
+        <div className="footer-info-col">
+          <h4 className="footer-col-title">Quality Assured</h4>
+          <p className="footer-info-text">
+            FSSAI certified. Fortified with Vitamins A &amp; D. High AITC pungency value with zero adulteration.
+          </p>
+        </div>
       </div>
     </div>
-    <div className="footer-tagline-center">"Pure Mustard Oil — Kacchi Ghani Cold Pressed."</div>
-    <div className="footer-copy">&copy; <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog</a>. All rights reserved.</div>
+
+    <div className="footer-bottom-strip">
+      <div className="footer-bottom-inner">
+        <p className="footer-copy">&copy; <a href="https://abudyog.in/" target="_blank" rel="noopener noreferrer" className="ab-link">AB Udyog</a>. All rights reserved.</p>
+        <div className="footer-tagline-center">&ldquo;At the heart of every healthy meal.&rdquo;</div>
+      </div>
+    </div>
   </footer>
 
   
