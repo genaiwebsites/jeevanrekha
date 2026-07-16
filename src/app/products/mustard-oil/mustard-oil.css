@@ -1027,3 +1027,11 @@
   transform: translateX(-4px);
 }
 
+
+
+/* Mobile Responsiveness Fixes */
+@media (max-width: 1024px) { .mustard-page-container .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } .mustard-page-container .faq-inner { grid-template-columns: 1fr; gap: 40px; } }
+@media (max-width: 768px) { .mustard-page-container .benefits-grid { grid-template-columns: 1fr; } }
+.mustard-page-container .compare-table-wrapper { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; }
+.mustard-page-container .compare-table { min-width: 600px; }
+

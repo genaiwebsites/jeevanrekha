@@ -640,3 +640,11 @@
   box-shadow: 0 4px 18px rgba(0, 75, 35, 0.14);
   transform: translateX(-4px);
 }
+
+
+/* Mobile Responsiveness Fixes */
+@media (max-width: 1024px) { .soybean-page-container .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; } .soybean-page-container .faq-inner { grid-template-columns: 1fr; gap: 40px; } }
+@media (max-width: 768px) { .soybean-page-container .benefits-grid { grid-template-columns: 1fr; } }
+.soybean-page-container .compare-table-wrapper { overflow-x: auto; overflow-y: hidden; -webkit-overflow-scrolling: touch; }
+.soybean-page-container .compare-table { min-width: 600px; }
+
