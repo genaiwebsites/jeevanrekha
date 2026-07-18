@@ -58,7 +58,7 @@ export default function BlogPost() {
       <div className="post-layout">
         
         
-        <div className="post-content rv sl" data-d="1">
+        <div className="post-content" data-d="1">
           <Image
             src="/blogs/avoid-these-myths-about-rice-bran-oil-in-india.png"
             alt="Avoid these Myths about Rice Bran Oil in India - Jeevan Rekha Foods"

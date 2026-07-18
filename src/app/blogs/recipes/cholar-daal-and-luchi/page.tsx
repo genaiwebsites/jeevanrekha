@@ -21,7 +21,7 @@ export default function RecipePage() {
       </div>
 
       <div className="post-layout">
-        <div className="post-content rv sl" data-d="1">
+        <div className="post-content" data-d="1">
           <img src="/blogs/cholar-daal-and-luchi.jpg" alt="Cholar Daal and Luchi" className="post-img" loading="lazy" />
           <div className="rich-text" dangerouslySetInnerHTML={{ __html: `<p>There is nothing quite like the aroma of a quintessential Bengali breakfast. Let us whisk you away to a cozy morning in Bengal with the classic pairing of sweet, spiced Cholar Daal and perfectly puffed Luchi. Imagine golden Luchis swelling into crisp little pillows, ready to scoop up the comforting warmth of the daal. By frying them in physically refined Rice Bran Oil, your Luchis emerge brilliantly light, non-greasy, and enriched with heart-healthy Gamma Oryzanol—ensuring this nostalgic piece of home is as wholesome as it is delicious.</p>
 

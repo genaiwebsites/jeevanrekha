@@ -58,7 +58,7 @@ export default function BlogPost() {
       <div className="post-layout">
         
         
-        <div className="post-content rv sl" data-d="1">
+        <div className="post-content" data-d="1">
           <Image
             src="/blogs/easy-evening-snacks-recipe-with-rice-bran-oil.png"
             alt="Easy Evening Snacks Recipe with Rice Bran Oil - Jeevan Rekha Foods"

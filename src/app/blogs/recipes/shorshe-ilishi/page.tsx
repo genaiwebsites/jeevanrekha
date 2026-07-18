@@ -21,7 +21,7 @@ export default function RecipePage() {
       </div>
 
       <div className="post-layout">
-        <div className="post-content rv sl" data-d="1">
+        <div className="post-content" data-d="1">
           <img src="/blogs/shorshe-ilishi.jpg" alt="Shorshe Ilish" className="post-img" loading="lazy" />
           <div className="rich-text" dangerouslySetInnerHTML={{ __html: `<p>Shorshe Ilish. The very name conjures the sharp, pungent aroma of freshly ground mustard and the unmatched, delicate flavor of Hilsa fish. It is a dish that sings of Bengali monsoons, where every bite is a celebration of heritage. Today, we are bringing this culinary crown jewel to life. By cooking it in premium Rice Bran Oil, you ensure the pungent mustard paste and the rich oils of the Hilsa aren't overpowered by heavy cooking mediums, allowing the pure, authentic flavors of the monsoon to take center stage.</p>
 

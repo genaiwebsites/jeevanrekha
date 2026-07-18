@@ -21,7 +21,7 @@ export default function RecipePage() {
       </div>
 
       <div className="post-layout">
-        <div className="post-content rv sl" data-d="1">
+        <div className="post-content" data-d="1">
           <img src="/blogs/indian-evening-snacks-rice-bran-oil.jpg" alt="Easy Indian Snacks with Rice Bran Oil | Jeevan Rekha" className="post-img" loading="lazy" />
           <div className="rich-text" dangerouslySetInnerHTML={{ __html: `<p>There is a distinct magic to the 4 PM hunger pangs that strike every Indian household. The crackle of a fresh batch of pakoras and the aroma of roasted spices turn ordinary evenings into a daily celebration. Today, we are exploring how switching to Rice Bran Oil transforms these deep-fried indulgences into guilt-free pleasures. Thanks to its exceptionally high smoke point, snacks absorb 15% less oil, leaving you with a perfectly crisp, light bite that’s packed with heart-healthy antioxidants.</p>
 

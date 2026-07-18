@@ -21,7 +21,7 @@ export default function RecipePage() {
       </div>
 
       <div className="post-layout">
-        <div className="post-content rv sl" data-d="1">
+        <div className="post-content" data-d="1">
           <img src="/blogs/diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg" alt="Rice Bran Oil: The Heart" className="post-img" loading="lazy" />
           <div className="rich-text" dangerouslySetInnerHTML={{ __html: `<p>As the Festival of Lights approaches, our kitchens come alive with the irresistible aroma of cardamom, saffron, and frying dough. From melt-in-your-mouth Gulab Jamuns to perfectly crisp Kachoris, Diwali is defined by these beloved delicacies. But festive indulgence doesn't have to mean compromising on health. By choosing physically refined Rice Bran Oil—with its neutral taste and naturally occurring Gamma Oryzanol—your festive treats emerge lighter, crispier, and genuinely healthier without altering the authentic flavors you grew up with.</p>
 

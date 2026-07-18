@@ -58,7 +58,7 @@ export default function BlogPost() {
       <div className="post-layout">
         
         
-        <div className="post-content rv sl" data-d="1">
+        <div className="post-content" data-d="1">
           <Image
             src="/blogs/why-smoke-point-of-the-cooking-oil-matters.png"
             alt="Why Smoke Point of the Cooking Oil Matters? - Jeevan Rekha Foods"

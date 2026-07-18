@@ -21,7 +21,7 @@ export default function RecipePage() {
       </div>
 
       <div className="post-layout">
-        <div className="post-content rv sl" data-d="1">
+        <div className="post-content" data-d="1">
           <img src="/blogs/potoler-dorma.jpg" alt="Potoler Dorma" className="post-img" loading="lazy" />
           <div className="rich-text" dangerouslySetInnerHTML={{ __html: `<p>Ah, Potoler Dorma. The very name evokes images of grand Bengali feasts and lazy Sunday afternoons. Picture the aroma of rich, aromatic spices drifting from the kitchen as family gathers around the table. At the center of it all: plump pointed gourds, lovingly stuffed and simmered to perfection in a thick, velvety gravy. Today, we are recreating this timeless classic with a mindful upgrade. Cooked in physically refined Rice Bran Oil, the rich spices are allowed to shine through its neutral flavor, while heart-healthy antioxidants make this royal dish a little kinder to your body.</p>
 

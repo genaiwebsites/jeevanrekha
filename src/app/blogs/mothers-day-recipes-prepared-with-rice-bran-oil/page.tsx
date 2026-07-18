@@ -58,7 +58,7 @@ export default function BlogPost() {
       <div className="post-layout">
         
         
-        <div className="post-content rv sl" data-d="1">
+        <div className="post-content" data-d="1">
           <Image
             src="/blogs/mothers-day-recipes-prepared-with-rice-bran-oil.png"
             alt="Mothers Day Recipes prepared with Rice Bran Oil - Jeevan Rekha Foods"
