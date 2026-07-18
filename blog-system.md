@@ -134,7 +134,7 @@ export default function BlogPost() {
           <span className="pm-tag">Blog</span>
           <span className="pm-date">Mon DD, YYYY • X Min Read</span>
         </div>
-        <h1 className="ph-title">Your Blog Title</h1>
+        <h1 className="post-h1">Your Blog Title</h1>
         <div className="post-author">
           <div className="pa-avatar">JR</div>
           <div className="pa-name">By Jeevan Rekha Editorial Team</div>
