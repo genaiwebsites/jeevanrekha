@@ -119,7 +119,7 @@ export default function Blogs() {
     <div className="bc-tag">Recipe</div>
     <div className="bc-date">Mar 14, 2025 • 5 Min Read</div>
     <h3 className="bc-title" dangerouslySetInnerHTML={{ __html: "Potoler Dorma" }}></h3>
-    <p className="bc-desc" dangerouslySetInnerHTML={{ __html: "Potoler Dorma..." }}></p>
+    <p className="bc-desc" dangerouslySetInnerHTML={{ __html: "A classic Bengali dish of pointed gourds stuffed with paneer and simmered in a rich, aromatic gravy." }}></p>
     <div className="bc-read">Read Recipe</div>
   </div>
 </Link>
@@ -131,7 +131,7 @@ export default function Blogs() {
     <div className="bc-tag">Recipe</div>
     <div className="bc-date">Apr 05, 2025 • 5 Min Read</div>
     <h3 className="bc-title" dangerouslySetInnerHTML={{ __html: "Shorshe Ilish" }}></h3>
-    <p className="bc-desc" dangerouslySetInnerHTML={{ __html: "Shorshe Ilish..." }}></p>
+    <p className="bc-desc" dangerouslySetInnerHTML={{ __html: "The quintessential Bengali delicacy of fresh Hilsa fish cooked in a pungent, flavor-packed mustard paste." }}></p>
     <div className="bc-read">Read Recipe</div>
   </div>
 </Link>
@@ -143,7 +143,7 @@ export default function Blogs() {
     <div className="bc-tag">Recipe</div>
     <div className="bc-date">May 10, 2025 • 5 Min Read</div>
     <h3 className="bc-title" dangerouslySetInnerHTML={{ __html: "Cholar Daal and Luchi" }}></h3>
-    <p className="bc-desc" dangerouslySetInnerHTML={{ __html: "Cholar Daal and Luchi..." }}></p>
+    <p className="bc-desc" dangerouslySetInnerHTML={{ __html: "A festive Bengali breakfast featuring spiced lentils paired with puffed, golden flatbreads." }}></p>
     <div className="bc-read">Read Recipe</div>
   </div>
 </Link>

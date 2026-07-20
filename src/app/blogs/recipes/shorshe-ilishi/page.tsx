@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
   title: "Shorshe Ilish | Jeevan Rekha",
-  description: "Delicious and healthy recipe using physically refined Rice Bran Oil."
+  description: "The ultimate Shorshe Ilish recipe: fresh Hilsa fish in a pungent mustard gravy, perfected with premium Rice Bran Oil."
 };
 
 export default function RecipePage() {
@@ -17,12 +18,14 @@ export default function RecipePage() {
         <div className="post-author">
           <div className="pa-avatar">JR</div>
           <div className="pa-name">By Jeevan Rekha Editorial Team</div>
+          <div className="pa-name" style={{fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginTop: "4px"}}>Reviewed by Jeevan Rekha Quality Team</div>
         </div>
       </div>
 
       <div className="post-layout">
         <div className="post-content" data-d="1">
-          <img src="/blogs/shorshe-ilishi.jpg" alt="Shorshe Ilish" className="post-img" loading="lazy" />
+          <div dangerouslySetInnerHTML={{ __html: `<blockquote>"Hilsa is a delicate fish with its own rich oils. Cooking it in a light, neutral oil ensures the pungent mustard paste isn't overpowered, preserving the authentic taste of the Bengali monsoon."<br/><br/><strong>— The Jeevan Rekha Quality Team</strong></blockquote>` }} />
+          <Image src="/blogs/shorshe-ilishi.jpg" alt="Shorshe Ilish" width={800} height={500} className="post-img object-cover" priority />
           <div className="rich-text" dangerouslySetInnerHTML={{ __html: `<p>Shorshe Ilish. The very name conjures the sharp, pungent aroma of freshly ground mustard and the unmatched, delicate flavor of Hilsa fish. It is a dish that sings of Bengali monsoons, where every bite is a celebration of heritage. Today, we are bringing this culinary crown jewel to life. By cooking it in premium Rice Bran Oil, you ensure the pungent mustard paste and the rich oils of the Hilsa aren't overpowered by heavy cooking mediums, allowing the pure, authentic flavors of the monsoon to take center stage.</p>
 
 <h2>Ingredients:</h2>
@@ -93,10 +96,10 @@ export default function RecipePage() {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": "Shorshe Ilish",
-          "description": "Delicious and healthy recipe using physically refined Rice Bran Oil.",
+          "description": "The ultimate Shorshe Ilish recipe: fresh Hilsa fish in a pungent mustard gravy, perfected with premium Rice Bran Oil.",
           "image": "https://jeevanrekhafoods.com/blogs/shorshe-ilishi.jpg",
-          "datePublished": "2025-01-01T00:00:00Z",
-          "dateModified": "2025-01-01T00:00:00Z",
+          "datePublished": "2025-04-09T18:30:00.000Z",
+          "dateModified": "2025-04-09T18:30:00.000Z",
           "author": {
             "@type": "Organization",
             "name": "Jeevan Rekha Editorial Team",

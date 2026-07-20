@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
   title: "Rice Bran Oil Recipes: Heart | Jeevan Rekha",
-  description: "Delicious and healthy recipe using physically refined Rice Bran Oil."
+  description: "8 authentic, less greasy Rice Bran Oil recipes for a heart-healthy Diwali. Enjoy perfect sweets and savouries."
 };
 
 export default function RecipePage() {
@@ -17,12 +18,14 @@ export default function RecipePage() {
         <div className="post-author">
           <div className="pa-avatar">JR</div>
           <div className="pa-name">By Jeevan Rekha Editorial Team</div>
+          <div className="pa-name" style={{fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginTop: "4px"}}>Reviewed by Jeevan Rekha Quality Team</div>
         </div>
       </div>
 
       <div className="post-layout">
         <div className="post-content" data-d="1">
-          <img src="/blogs/8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg" alt="Rice Bran Oil Recipes: Heart" className="post-img" loading="lazy" />
+          <div dangerouslySetInnerHTML={{ __html: `<blockquote>"Festivals shouldn’t mean compromising your cardiovascular health. By switching to a high-smoke-point oil rich in Gamma-Oryzanol, you can enjoy authentic Diwali sweets and savouries while protecting your heart."<br/><br/><strong>— The Jeevan Rekha Quality Team</strong></blockquote>` }} />
+          <Image src="/blogs/8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg" alt="Rice Bran Oil Recipes: Heart" width={800} height={500} className="post-img object-cover" priority />
           <div className="rich-text" dangerouslySetInnerHTML={{ __html: `<p>Make your Festival of Lights truly radiant. From decadent sweets to crispy savouries, traditional Diwali cooking requires high heat and uncompromised flavor. Physically refined Rice Bran Oil, with its remarkable 232°C (450°F) smoke point and heart-healthy Gamma Oryzanol, ensures your festive delicacies fry perfectly light without absorbing excess oil—preserving every authentic spice and tradition.</p>
 
 <p><a href="https://jeevanrekhafoods.com/product/rice-bran-oil/">Rice bran oil</a>, with its High Smoke Point of 232°C (450°F), Neutral Flavour and Heart Healthy Gamma Oryzanol is the perfect cooking oil for preparing traditional Diwali delicacies. Here are authentic recipes for your festive celebrations.</p>
@@ -315,10 +318,10 @@ export default function RecipePage() {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": "Rice Bran Oil Recipes: Heart",
-          "description": "Delicious and healthy recipe using physically refined Rice Bran Oil.",
+          "description": "8 authentic, less greasy Rice Bran Oil recipes for a heart-healthy Diwali. Enjoy perfect sweets and savouries.",
           "image": "https://jeevanrekhafoods.com/blogs/8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
-          "datePublished": "2025-01-01T00:00:00Z",
-          "dateModified": "2025-01-01T00:00:00Z",
+          "datePublished": "2025-05-26T18:30:00.000Z",
+          "dateModified": "2025-05-26T18:30:00.000Z",
           "author": {
             "@type": "Organization",
             "name": "Jeevan Rekha Editorial Team",

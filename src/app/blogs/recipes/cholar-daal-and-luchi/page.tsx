@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
   title: "Cholar Daal and Luchi | Jeevan Rekha",
-  description: "Delicious and healthy recipe using physically refined Rice Bran Oil."
+  description: "A classic Bengali breakfast recipe: Cholar Daal and Luchi, cooked beautifully with heart-healthy Rice Bran Oil."
 };
 
 export default function RecipePage() {
@@ -17,12 +18,14 @@ export default function RecipePage() {
         <div className="post-author">
           <div className="pa-avatar">JR</div>
           <div className="pa-name">By Jeevan Rekha Editorial Team</div>
+          <div className="pa-name" style={{fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginTop: "4px"}}>Reviewed by Jeevan Rekha Quality Team</div>
         </div>
       </div>
 
       <div className="post-layout">
         <div className="post-content" data-d="1">
-          <img src="/blogs/cholar-daal-and-luchi.jpg" alt="Cholar Daal and Luchi" className="post-img" loading="lazy" />
+          <div dangerouslySetInnerHTML={{ __html: `<blockquote>"The secret to perfect Bengali Luchi lies in the temperature of the oil. A high-smoke-point medium like Rice Bran Oil ensures the dough puffs immediately without absorbing excess fat."<br/><br/><strong>— The Jeevan Rekha Quality Team</strong></blockquote>` }} />
+          <Image src="/blogs/cholar-daal-and-luchi.jpg" alt="Cholar Daal and Luchi" width={800} height={500} className="post-img object-cover" priority />
           <div className="rich-text" dangerouslySetInnerHTML={{ __html: `<p>There is nothing quite like the aroma of a quintessential Bengali breakfast. Let us whisk you away to a cozy morning in Bengal with the classic pairing of sweet, spiced Cholar Daal and perfectly puffed Luchi. Imagine golden Luchis swelling into crisp little pillows, ready to scoop up the comforting warmth of the daal. By frying them in physically refined Rice Bran Oil, your Luchis emerge brilliantly light, non-greasy, and enriched with heart-healthy Gamma Oryzanol—ensuring this nostalgic piece of home is as wholesome as it is delicious.</p>
 
 <p>Imagine the soft golden hue of Luchis puffed up like tiny pillows, ready to be paired with the comforting warmth of Cholar Daal. The nutty fragrance of best oil for frying and cooking elevates this simple fare, adding a subtle richness that makes each bite a little more special.</p>
@@ -103,10 +106,10 @@ export default function RecipePage() {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": "Cholar Daal and Luchi",
-          "description": "Delicious and healthy recipe using physically refined Rice Bran Oil.",
+          "description": "A classic Bengali breakfast recipe: Cholar Daal and Luchi, cooked beautifully with heart-healthy Rice Bran Oil.",
           "image": "https://jeevanrekhafoods.com/blogs/cholar-daal-and-luchi.jpg",
-          "datePublished": "2025-01-01T00:00:00Z",
-          "dateModified": "2025-01-01T00:00:00Z",
+          "datePublished": "2025-04-11T18:30:00.000Z",
+          "dateModified": "2025-04-11T18:30:00.000Z",
           "author": {
             "@type": "Organization",
             "name": "Jeevan Rekha Editorial Team",

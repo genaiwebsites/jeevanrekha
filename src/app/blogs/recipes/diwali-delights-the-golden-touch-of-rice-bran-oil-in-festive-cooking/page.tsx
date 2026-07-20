@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
   title: "Rice Bran Oil: The Heart | Jeevan Rekha",
-  description: "Delicious and healthy recipe using physically refined Rice Bran Oil."
+  description: "Discover why physically refined Rice Bran Oil is the perfect, heart-healthy secret for your Diwali sweets and savouries."
 };
 
 export default function RecipePage() {
@@ -17,12 +18,14 @@ export default function RecipePage() {
         <div className="post-author">
           <div className="pa-avatar">JR</div>
           <div className="pa-name">By Jeevan Rekha Editorial Team</div>
+          <div className="pa-name" style={{fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginTop: "4px"}}>Reviewed by Jeevan Rekha Quality Team</div>
         </div>
       </div>
 
       <div className="post-layout">
         <div className="post-content" data-d="1">
-          <img src="/blogs/diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg" alt="Rice Bran Oil: The Heart" className="post-img" loading="lazy" />
+          <div dangerouslySetInnerHTML={{ __html: `<blockquote>"Traditional festive cooking often relies on heavy mediums, but physically refined Rice Bran Oil offers a neutral canvas that lets the authentic spices shine through, all while protecting your heart."<br/><br/><strong>— The Jeevan Rekha Quality Team</strong></blockquote>` }} />
+          <Image src="/blogs/diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg" alt="Rice Bran Oil: The Heart" width={800} height={500} className="post-img object-cover" priority />
           <div className="rich-text" dangerouslySetInnerHTML={{ __html: `<p>As the Festival of Lights approaches, our kitchens come alive with the irresistible aroma of cardamom, saffron, and frying dough. From melt-in-your-mouth Gulab Jamuns to perfectly crisp Kachoris, Diwali is defined by these beloved delicacies. But festive indulgence doesn't have to mean compromising on health. By choosing physically refined Rice Bran Oil—with its neutral taste and naturally occurring Gamma Oryzanol—your festive treats emerge lighter, crispier, and genuinely healthier without altering the authentic flavors you grew up with.</p>
 
 <h2>Why Rice Bran Oil is Perfect for Diwali Cooking</h2>
@@ -107,10 +110,10 @@ export default function RecipePage() {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": "Rice Bran Oil: The Heart",
-          "description": "Delicious and healthy recipe using physically refined Rice Bran Oil.",
+          "description": "Discover why physically refined Rice Bran Oil is the perfect, heart-healthy secret for your Diwali sweets and savouries.",
           "image": "https://jeevanrekhafoods.com/blogs/diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg",
-          "datePublished": "2025-01-01T00:00:00Z",
-          "dateModified": "2025-01-01T00:00:00Z",
+          "datePublished": "2025-04-20T18:30:00.000Z",
+          "dateModified": "2025-04-20T18:30:00.000Z",
           "author": {
             "@type": "Organization",
             "name": "Jeevan Rekha Editorial Team",

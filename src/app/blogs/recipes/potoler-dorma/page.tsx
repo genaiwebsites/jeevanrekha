@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
   title: "Potoler Dorma | Jeevan Rekha",
-  description: "Delicious and healthy recipe using physically refined Rice Bran Oil."
+  description: "Learn how to make authentic Potoler Dorma, a classic Bengali dish of stuffed pointed gourds, cooked in healthy Rice Bran Oil."
 };
 
 export default function RecipePage() {
@@ -17,12 +18,14 @@ export default function RecipePage() {
         <div className="post-author">
           <div className="pa-avatar">JR</div>
           <div className="pa-name">By Jeevan Rekha Editorial Team</div>
+          <div className="pa-name" style={{fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginTop: "4px"}}>Reviewed by Jeevan Rekha Quality Team</div>
         </div>
       </div>
 
       <div className="post-layout">
         <div className="post-content" data-d="1">
-          <img src="/blogs/potoler-dorma.jpg" alt="Potoler Dorma" className="post-img" loading="lazy" />
+          <div dangerouslySetInnerHTML={{ __html: `<blockquote>"Rich, aromatic gravies require a cooking medium that doesn't compete with the spices. The neutral profile of physically refined Rice Bran Oil allows the intricate flavors of Potoler Dorma to take center stage."<br/><br/><strong>— The Jeevan Rekha Quality Team</strong></blockquote>` }} />
+          <Image src="/blogs/potoler-dorma.jpg" alt="Potoler Dorma" width={800} height={500} className="post-img object-cover" priority />
           <div className="rich-text" dangerouslySetInnerHTML={{ __html: `<p>Ah, Potoler Dorma. The very name evokes images of grand Bengali feasts and lazy Sunday afternoons. Picture the aroma of rich, aromatic spices drifting from the kitchen as family gathers around the table. At the center of it all: plump pointed gourds, lovingly stuffed and simmered to perfection in a thick, velvety gravy. Today, we are recreating this timeless classic with a mindful upgrade. Cooked in physically refined Rice Bran Oil, the rich spices are allowed to shine through its neutral flavor, while heart-healthy antioxidants make this royal dish a little kinder to your body.</p>
 
 <p><b>Yields:</b> 6-8 servings<br><b>Prep time:</b> 30 minutes<br><b>Cook time:</b> 35 minutes</p>
@@ -97,10 +100,10 @@ export default function RecipePage() {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": "Potoler Dorma",
-          "description": "Delicious and healthy recipe using physically refined Rice Bran Oil.",
+          "description": "Learn how to make authentic Potoler Dorma, a classic Bengali dish of stuffed pointed gourds, cooked in healthy Rice Bran Oil.",
           "image": "https://jeevanrekhafoods.com/blogs/potoler-dorma.jpg",
-          "datePublished": "2025-01-01T00:00:00Z",
-          "dateModified": "2025-01-01T00:00:00Z",
+          "datePublished": "2025-02-02T18:30:00.000Z",
+          "dateModified": "2025-02-02T18:30:00.000Z",
           "author": {
             "@type": "Organization",
             "name": "Jeevan Rekha Editorial Team",

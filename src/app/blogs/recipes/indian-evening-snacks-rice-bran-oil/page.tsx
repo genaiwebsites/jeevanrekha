@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata = {
   title: "Easy Indian Snacks with Rice Bran Oil | Jeevan Rekha | Jeevan Rekha",
-  description: "Delicious and healthy recipe using physically refined Rice Bran Oil."
+  description: "Make tasty and healthy Indian snacks with pure Rice Bran Oil. Enjoy crispy pakoras, samosas, and cutlets at home."
 };
 
 export default function RecipePage() {
@@ -17,12 +18,14 @@ export default function RecipePage() {
         <div className="post-author">
           <div className="pa-avatar">JR</div>
           <div className="pa-name">By Jeevan Rekha Editorial Team</div>
+          <div className="pa-name" style={{fontSize: "0.8rem", color: "rgba(255,255,255,0.7)", marginTop: "4px"}}>Reviewed by Jeevan Rekha Quality Team</div>
         </div>
       </div>
 
       <div className="post-layout">
         <div className="post-content" data-d="1">
-          <img src="/blogs/indian-evening-snacks-rice-bran-oil.jpg" alt="Easy Indian Snacks with Rice Bran Oil | Jeevan Rekha" className="post-img" loading="lazy" />
+          <div dangerouslySetInnerHTML={{ __html: `<blockquote>"Deep frying doesn't have to be a guilty pleasure. Oils with a 450°F smoke point seal the outside of snacks faster, reducing total oil absorption by up to 15%."<br/><br/><strong>— The Jeevan Rekha Quality Team</strong></blockquote>` }} />
+          <Image src="/blogs/indian-evening-snacks-rice-bran-oil.jpeg" alt="Easy Indian Snacks with Rice Bran Oil | Jeevan Rekha" width={800} height={500} className="post-img object-cover" priority />
           <div className="rich-text" dangerouslySetInnerHTML={{ __html: `<p>There is a distinct magic to the 4 PM hunger pangs that strike every Indian household. The crackle of a fresh batch of pakoras and the aroma of roasted spices turn ordinary evenings into a daily celebration. Today, we are exploring how switching to Rice Bran Oil transforms these deep-fried indulgences into guilt-free pleasures. Thanks to its exceptionally high smoke point, snacks absorb 15% less oil, leaving you with a perfectly crisp, light bite that’s packed with heart-healthy antioxidants.</p>
 
 <h2>Why Rice Bran Oil is Perfect for Indian Evening Snacks</h2>
@@ -87,7 +90,7 @@ export default function RecipePage() {
 
 <ul><li><strong>Bread Pakoras:</strong> Stuff bread slices with mint chutney and potato filling, dip in besan batter, and deep fry</li><li><strong>Paneer Tikka:</strong> Marinate paneer cubes in yogurt and spices, then pan-fry in original rice bran oil</li><li><strong>Masala Poha:</strong> Sauté flattened rice with vegetables and curry leaves in the best cooking oil</li></ul>
 
-<p>Evening snacks are more than just food, they’re moments of comfort, family bonding, and pure indulgence. With <a href="https://darksalmon-wombat-623121.hostingersite.com/">Jeevan Rekha</a>‘s&nbsp;best quality rice bran oil as your cooking companion, you can enjoy all your favorite Indian snacks with the confidence that you’re making a healthier choice without compromising on taste or texture. From crispy pakoras to succulent chicken bites, pure rice bran oil ensures every snack hour is both delicious and memorable.</p>
+<p>Evening snacks are more than just food, they’re moments of comfort, family bonding, and pure indulgence. With Jeevan Rekha‘s&nbsp;best quality rice bran oil as your cooking companion, you can enjoy all your favorite Indian snacks with the confidence that you’re making a healthier choice without compromising on taste or texture. From crispy pakoras to succulent chicken bites, pure rice bran oil ensures every snack hour is both delicious and memorable.</p>
 
 <p>So the next time those 4 PM cravings hit, reach for that bottle of rice bran oil for cooking and create some kitchen magic that your family will love and remember.</p>
 
@@ -141,10 +144,10 @@ export default function RecipePage() {
           "@context": "https://schema.org",
           "@type": "BlogPosting",
           "headline": "Easy Indian Snacks with Rice Bran Oil | Jeevan Rekha",
-          "description": "Delicious and healthy recipe using physically refined Rice Bran Oil.",
-          "image": "https://jeevanrekhafoods.com/blogs/indian-evening-snacks-rice-bran-oil.jpg",
-          "datePublished": "2025-01-01T00:00:00Z",
-          "dateModified": "2025-01-01T00:00:00Z",
+          "description": "Make tasty and healthy Indian snacks with pure Rice Bran Oil. Enjoy crispy pakoras, samosas, and cutlets at home.",
+          "image": "https://jeevanrekhafoods.com/blogs/indian-evening-snacks-rice-bran-oil.jpeg",
+          "datePublished": "2025-03-07T18:30:00.000Z",
+          "dateModified": "2025-03-07T18:30:00.000Z",
           "author": {
             "@type": "Organization",
             "name": "Jeevan Rekha Editorial Team",
