@@ -10,6 +10,7 @@ import Footer from "@/components/Footer";
 import ScrollRevealObserver from "@/components/ScrollRevealObserver";
 import JsonLd from "@/components/JsonLd";
 import { cn } from "@/lib/utils";
+import { Analytics } from '@vercel/analytics/next';
 
 const lora = Lora({
   variable: "--font-lora",
@@ -129,8 +130,8 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
 }
-
