@@ -11,7 +11,7 @@ import ScrollRevealObserver from "@/components/ScrollRevealObserver";
 import JsonLd from "@/components/JsonLd";
 import { cn } from "@/lib/utils";
 import { Analytics } from '@vercel/analytics/next';
-import { GoogleTagManager } from '@next/third-parties/google';
+import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
 
 const lora = Lora({
   variable: "--font-lora",
@@ -133,6 +133,7 @@ export default function RootLayout({
         <Footer />
         <Analytics />
         <GoogleTagManager gtmId="GTM-NNPQ73JP" />
+        <GoogleAnalytics gaId="G-ZZHTK4M9DW" />
       </body>
     </html>
   );
