@@ -2876,8 +2876,10 @@ footer {
 }
 /* ═══ HOME PAGE HERO — 100vh, mirrors products-hero structure ═══ */
 .home-hero {
-  height: 100vh;
-  height: 100dvh;
+  min-height: max(100vh, 750px);
+  min-height: max(100dvh, 750px);
+  max-height: 1200px;
+  height: auto;
   display: flex; align-items: flex-start; justify-content: center;
   padding: 0; position: relative; overflow: hidden;
 }
