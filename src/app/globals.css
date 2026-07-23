@@ -2385,6 +2385,8 @@ footer {
 
   .hs-grid, .why-grid, .bento-why-grid, .ben-grid, .commit-grid, .faq-grid, .wt-grid, .blog-grid, .tgrid { grid-template-columns: 1fr 1fr; gap: 24px; }
   .bento-why-grid .wcard-2col { grid-column: span 2; }
+  .why-top { grid-template-columns: 1fr; gap: 24px; margin-bottom: 40px; }
+  .why { padding: 72px 0; }
   .h1 { font-size: 3.5rem; }
   .comp-table { overflow-x: auto; }
   .comp-header, .comp-row { min-width: 640px; }
