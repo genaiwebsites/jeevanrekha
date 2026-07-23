@@ -7,12 +7,16 @@ export const metadata: Metadata = {
     title: 'Pure Soybean Oil | Jeevan Rekha',
     description: 'Light, neutral-flavoured pure soybean oil enriched with Omega-3 fatty acids and Vitamin A & D2. Perfect for everyday light cooking and baking.',
     url: 'https://jeevanrekhafoods.com/products/soybean-oil',
+    siteName: 'Jeevan Rekha',
+    type: 'website',
     images: [
       {
-        url: '/product_range.jpeg',
+        url: 'https://jeevanrekhafoods.com/jr_sbo.png',
+        secureUrl: 'https://jeevanrekhafoods.com/jr_sbo.png',
         width: 1200,
-        height: 600,
-        alt: 'Jeevan Rekha Soybean Oil Product Range',
+        height: 1200,
+        type: 'image/png',
+        alt: 'Jeevan Rekha Pure Soybean Oil Pack',
       },
     ],
   },
@@ -20,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pure Soybean Oil | Jeevan Rekha',
     description: 'Light, neutral-flavoured pure soybean oil enriched with Omega-3 fatty acids.',
-    images: ['/product_range.jpeg'],
+    images: ['https://jeevanrekhafoods.com/jr_sbo.png'],
   },
 };
 

@@ -9,8 +9,25 @@ export const metadata: Metadata = {
     title: 'Why Smoke Point of Cooking Oil Matters | Jeevan Rekha',
     description: 'Understand the science behind high smoke point oils and why cooking fats affect your health. Learn why physically refined Rice Bran Oil is ideal for Indian cooking.',
     url: 'https://jeevanrekhafoods.com/blogs/why-smoke-point-of-the-cooking-oil-matters',
-    images: [{ url: '/blogs/why-smoke-point-of-the-cooking-oil-matters.png', alt: 'Why Smoke Point of the Cooking Oil Matters' }]
-  }
+    siteName: 'Jeevan Rekha',
+    type: 'article',
+    images: [
+      {
+        url: 'https://jeevanrekhafoods.com/blogs/why-smoke-point-of-the-cooking-oil-matters.png',
+        secureUrl: 'https://jeevanrekhafoods.com/blogs/why-smoke-point-of-the-cooking-oil-matters.png',
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: 'Why Smoke Point of Cooking Oil Matters',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Why Smoke Point of Cooking Oil Matters | Jeevan Rekha',
+    description: 'Understand the science behind high smoke point oils and why cooking fats affect your health.',
+    images: ['https://jeevanrekhafoods.com/blogs/why-smoke-point-of-the-cooking-oil-matters.png'],
+  },
 };
 
 const blogSchema = {

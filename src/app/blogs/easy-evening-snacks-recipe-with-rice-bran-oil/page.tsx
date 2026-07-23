@@ -9,8 +9,25 @@ export const metadata: Metadata = {
     title: 'Easy Evening Snacks Recipe with Rice Bran Oil | Jeevan Rekha',
     description: 'Learn how to prepare 5 simple and delicious Indian evening snacks like Samosa and Aloo Tikki with healthy, light physically refined Rice Bran Oil.',
     url: 'https://jeevanrekhafoods.com/blogs/easy-evening-snacks-recipe-with-rice-bran-oil',
-    images: [{ url: '/blogs/easy-evening-snacks-recipe-with-rice-bran-oil.png', alt: 'Easy Evening Snacks Recipe with Rice Bran Oil' }]
-  }
+    siteName: 'Jeevan Rekha',
+    type: 'article',
+    images: [
+      {
+        url: 'https://jeevanrekhafoods.com/blogs/easy-evening-snacks-recipe-with-rice-bran-oil.png',
+        secureUrl: 'https://jeevanrekhafoods.com/blogs/easy-evening-snacks-recipe-with-rice-bran-oil.png',
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: 'Easy Evening Snacks Recipe with Rice Bran Oil',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Easy Evening Snacks Recipe with Rice Bran Oil | Jeevan Rekha',
+    description: 'Learn how to prepare 5 simple Indian evening snacks with light physically refined Rice Bran Oil.',
+    images: ['https://jeevanrekhafoods.com/blogs/easy-evening-snacks-recipe-with-rice-bran-oil.png'],
+  },
 };
 
 const blogSchema = {

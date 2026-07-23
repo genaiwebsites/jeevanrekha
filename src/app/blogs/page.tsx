@@ -7,10 +7,27 @@ export const metadata: Metadata = {
   description: 'Read the latest articles, healthy recipes, cooking tips, and debunked myths about edible oils from the Jeevan Rekha editorial team.',
   openGraph: {
     title: 'Insights on Health, Nutrition & Cooking | Jeevan Rekha Blogs',
-    description: 'Read the latest articles, healthy recipes, cooking tips, and debunked myths about edible oils.',
+    description: 'Read the latest articles, healthy recipes, cooking tips, and debunked myths about edible oils from the Jeevan Rekha editorial team.',
     url: 'https://jeevanrekhafoods.com/blogs',
-    images: [{ url: '/blogs_hero.png', alt: 'Jeevan Rekha Blogs Hero' }]
-  }
+    siteName: 'Jeevan Rekha',
+    type: 'website',
+    images: [
+      {
+        url: 'https://jeevanrekhafoods.com/blogs_hero.png',
+        secureUrl: 'https://jeevanrekhafoods.com/blogs_hero.png',
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: 'Jeevan Rekha Blogs Hero',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Insights on Health, Nutrition & Cooking | Jeevan Rekha Blogs',
+    description: 'Read the latest articles, healthy recipes, cooking tips, and debunked myths about edible oils.',
+    images: ['https://jeevanrekhafoods.com/blogs_hero.png'],
+  },
 };
 
 export default function Blogs() {

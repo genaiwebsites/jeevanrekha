@@ -9,8 +9,25 @@ export const metadata: Metadata = {
     title: 'Avoid These Myths About Rice Bran Oil in India | Jeevan Rekha',
     description: 'Debunk 7 common myths surrounding Rice Bran Oil in India, from extraction concerns to gluten content, and explore its true heart-health benefits.',
     url: 'https://jeevanrekhafoods.com/blogs/avoid-these-myths-about-rice-bran-oil-in-india',
-    images: [{ url: '/blogs/avoid-these-myths-about-rice-bran-oil-in-india.png', alt: 'Avoid These Myths About Rice Bran Oil in India' }]
-  }
+    siteName: 'Jeevan Rekha',
+    type: 'article',
+    images: [
+      {
+        url: 'https://jeevanrekhafoods.com/blogs/avoid-these-myths-about-rice-bran-oil-in-india.png',
+        secureUrl: 'https://jeevanrekhafoods.com/blogs/avoid-these-myths-about-rice-bran-oil-in-india.png',
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: 'Avoid These Myths About Rice Bran Oil in India',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Avoid These Myths About Rice Bran Oil in India | Jeevan Rekha',
+    description: 'Debunk 7 common myths surrounding Rice Bran Oil in India and explore its true health benefits.',
+    images: ['https://jeevanrekhafoods.com/blogs/avoid-these-myths-about-rice-bran-oil-in-india.png'],
+  },
 };
 
 const blogSchema = {

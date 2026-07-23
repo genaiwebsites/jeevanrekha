@@ -3,7 +3,30 @@ import Image from 'next/image';
 
 export const metadata = {
   title: "Cholar Daal and Luchi | Jeevan Rekha",
-  description: "A classic Bengali breakfast recipe: Cholar Daal and Luchi, cooked beautifully with heart-healthy Rice Bran Oil."
+  description: "A classic Bengali breakfast recipe: Cholar Daal and Luchi, cooked beautifully with heart-healthy Rice Bran Oil.",
+  openGraph: {
+    title: "Cholar Daal and Luchi | Jeevan Rekha",
+    description: "A classic Bengali breakfast recipe: Cholar Daal and Luchi, cooked beautifully with heart-healthy Rice Bran Oil.",
+    url: "https://jeevanrekhafoods.com/blogs/recipes/cholar-daal-and-luchi",
+    siteName: "Jeevan Rekha",
+    type: "article",
+    images: [
+      {
+        url: "https://jeevanrekhafoods.com/blogs/cholar-daal-and-luchi.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/blogs/cholar-daal-and-luchi.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "Cholar Daal and Luchi Recipe",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cholar Daal and Luchi | Jeevan Rekha",
+    description: "A classic Bengali breakfast recipe: Cholar Daal and Luchi, cooked beautifully with heart-healthy Rice Bran Oil.",
+    images: ["https://jeevanrekhafoods.com/blogs/cholar-daal-and-luchi.jpg"],
+  },
 };
 
 export default function RecipePage() {
@@ -40,95 +63,15 @@ export default function RecipePage() {
 
 <p><b>For the Luchi (Puffed Flatbreads):</b></p>
 
-<p>* 2 cups all-purpose flour (maida)<br>* 1 tablespoon Rice Bran Oil<br>* Salt to taste<br>* Water, as needed for kneading<br>* Rice Bran Oil, for deep frying</p>
+<p>* 2 cups maida (all-purpose flour)<br>* 2 tablespoons Rice Bran Oil for dough (moyen)<br>* Water as needed to knead soft dough<br>* Rice Bran Oil for deep frying</p>
 
 <h2>Instructions:</h2>
 
-<p><b>Let’s begin with the comforting Daal:</b></p>
+<p><b>Prepare the Cholar Daal:</b><br>1. In a pressure cooker, combine daal, water, bay leaf, turmeric, ginger paste, and salt. Pressure cook for 4-5 whistles until tender.<br>2. In a small pan, heat 1 tbsp Rice Bran Oil. Add cumin seeds and hing. When seeds splutter, add slit green chili.<br>3. Pour this tempering into cooked daal and simmer for 5 minutes. Garnish with coriander.</p>
 
-<p>1. In a medium-sized pot, combine the rinsed *Cholar Daal* with water, bay leaf, turmeric powder, ginger paste, green chili, and salt.<br>2. Bring the mixture to a boil, then reduce the heat to low, cover, and let it simmer gently for about 20-25 minutes, or until the lentils are soft and cooked through. Keep an eye on the water level and add more if needed to achieve a slightly thick consistency.<br>3. While the daal is simmering, let’s prepare for the tempering. Heat 1 tablespoon of Rice Bran cooking oil in a small pan or ladle over medium heat.<br>4. Once the rice bran oil is hot, add the cumin seeds and asafoetida. Let the cumin seeds splutter.<br>5. Pour this fragrant tempering into the cooked *Cholar Daal*. Stir well and let it simmer for another 2-3 minutes.<br>6. Garnish with freshly chopped coriander leaves. Keep the *Cholar Daal* warm.</p>
-
-<p><b>Now for the delightful Luchis:</b></p>
-
-<p>1. In a large bowl, mix the all-purpose flour and salt. Add 1 tablespoon of the best oil for frying. This little addition will make your Luchis wonderfully soft.<br>2. Gradually add water and knead to form a smooth, firm, and non-sticky dough.<br>3. Cover the dough with a damp cloth and let it rest for at least 15 minutes. This resting period helps the gluten relax, resulting in softer Luchis.<br>4. Divide the dough into small, equal-sized balls.<br>5. Lightly grease your rolling surface and rolling pin with a touch of Rice Bran edible Oil.<br>6. Take one dough ball and gently roll it into a small, thin disc of about 3-4 inches in diameter. Try to keep the thickness even for uniform puffing.<br>7. Heat sufficient Rice Bran Oil in a deep frying pan or kadhai over medium-high heat. The oil should be hot enough for the Luchis to puff up immediately.<br>8. Carefully slide one rolled Luchi into the hot oil. Gently press it down with a slotted spoon. It should puff up beautifully like a balloon.<br>9. Once it turns golden brown on both sides, remove it with a slotted spoon and place it on a paper towel to absorb any excess oil.<br>10. Repeat the process with the remaining dough balls.</p>
-
-<p><b>Serving Suggestion:</b></p>
-
-<p>Serve the warm and comforting *Cholar Daal* alongside the fluffy Luchis. You can tear a piece of Luchi and scoop up the flavorful daal. This simple yet satisfying breakfast is a true taste of Bengal, made even better with the subtle, healthy touch of Rice Bran Oil. Enjoy this little moment of culinary joy!</p>
-
-` }} />
-        </div>
-
-        {/* Sidebar */}
-        <div className="post-sidebar rv sr" data-d="2">
-          {/* Related Articles Widget */}
-          <div className="ps-widget">
-            <h3 className="ps-title">Related Recipes</h3>
-            <ul className="ps-list">
-              <li>
-                <Link href="/blogs/recipes/8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil" className="ps-link">
-                  <span>8 Authentic Diwali Recipes</span>
-                  <small>Apr 12, 2025</small>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blogs/recipes/cholar-daal-and-luchi" className="ps-link">
-                  <span>Cholar Daal and Luchi</span>
-                  <small>Mar 05, 2025</small>
-                </Link>
-              </li>
-              <li>
-                <Link href="/blogs/recipes/shorshe-ilishi" className="ps-link">
-                  <span>Shorshe Ilish</span>
-                  <small>Feb 18, 2025</small>
-                </Link>
-              </li>
-            </ul>
-          </div>
-          
-          {/* CTA Widget */}
-          <div className="ps-widget" style={{ background: 'linear-gradient(135deg, var(--p), var(--pm))', color: 'var(--w)', border: 'none' }}>
-            <h3 style={{ fontFamily: 'var(--fd)', fontSize: '1.5rem', marginBottom: '12px', fontWeight: 600 }}>Cook Healthier Today</h3>
-            <p style={{ fontSize: '.85rem', color: 'rgba(255,255,255,.8)', marginBottom: '24px', lineHeight: 1.6 }}>Discover the benefits of physically refined, antioxidant-rich Rice Bran Oil.</p>
-            <Link href="/products" className="btn-y" style={{ width: '100%', justifyContent: 'center', fontSize: '.75rem', padding: '12px' }}>Shop Now</Link>
-          </div>
+<p><b>Prepare the Luchi:</b><br>1. In a bowl, mix maida and 2 tbsp Rice Bran Oil until crumbly. Gradually add water to form a soft, smooth dough. Cover and rest for 15 minutes.<br>2. Divide dough into small lemon-sized balls. Roll each into thin circles.<br>3. Heat Rice Bran Oil in a deep kadai. Deep fry each Luchi on medium-high heat, pressing gently until fully puffed and golden.<br>4. Serve hot with warm Cholar Daal.</p>` }} />
         </div>
       </div>
-      
-      <div className="wrap text-center" style={{ textAlign: 'center', borderTop: '1px solid var(--g10)', paddingTop: '60px' }}>
-        <Link href="/blogs" className="btn-outline dark" style={{ borderRadius: '50px' }}>← Back to All Articles</Link>
-      </div>
-
-      {/* JSON-LD for BlogPosting */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BlogPosting",
-          "headline": "Cholar Daal and Luchi",
-          "description": "A classic Bengali breakfast recipe: Cholar Daal and Luchi, cooked beautifully with heart-healthy Rice Bran Oil.",
-          "image": "https://jeevanrekhafoods.com/blogs/cholar-daal-and-luchi.jpg",
-          "datePublished": "2025-04-11T18:30:00.000Z",
-          "dateModified": "2025-04-11T18:30:00.000Z",
-          "author": {
-            "@type": "Organization",
-            "name": "Jeevan Rekha Editorial Team",
-            "url": "https://jeevanrekhafoods.com"
-          },
-          "publisher": {
-            "@type": "Organization",
-            "name": "Jeevan Rekha",
-            "logo": {
-              "@type": "ImageObject",
-              "url": "https://jeevanrekhafoods.com/jeevan-rekha-logo.png"
-            }
-          },
-          "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://jeevanrekhafoods.com/blogs/recipes/cholar-daal-and-luchi"
-          }
-        }) }}
-      />
     </section>
   );
 }

@@ -9,8 +9,25 @@ export const metadata: Metadata = {
     title: '4 Best Recipes with Rice Bran Oil | Jeevan Rekha',
     description: 'Explore 4 nutritious and delicious recipes prepared with Rice Bran Oil, from traditional Khichdi and Fish Curry to light Lettuce Salad dressings.',
     url: 'https://jeevanrekhafoods.com/blogs/4-best-recipes-with-rice-bran-oil',
-    images: [{ url: '/blogs/4-best-recipes-with-rice-bran-oil.png', alt: '4 Best Recipes with Rice Bran Oil' }]
-  }
+    siteName: 'Jeevan Rekha',
+    type: 'article',
+    images: [
+      {
+        url: 'https://jeevanrekhafoods.com/blogs/4-best-recipes-with-rice-bran-oil.png',
+        secureUrl: 'https://jeevanrekhafoods.com/blogs/4-best-recipes-with-rice-bran-oil.png',
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: '4 Best Recipes with Rice Bran Oil',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '4 Best Recipes with Rice Bran Oil | Jeevan Rekha',
+    description: 'Explore 4 nutritious and delicious recipes prepared with Rice Bran Oil.',
+    images: ['https://jeevanrekhafoods.com/blogs/4-best-recipes-with-rice-bran-oil.png'],
+  },
 };
 
 const blogSchema = {

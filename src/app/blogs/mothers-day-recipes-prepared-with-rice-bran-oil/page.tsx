@@ -7,10 +7,27 @@ export const metadata: Metadata = {
   description: 'Surprise your mother with 5 delicious and healthy dinner recipes prepared with physically refined Rice Bran Oil, bringing together health and happiness.',
   openGraph: {
     title: 'Mother’s Day Recipes Prepared with Rice Bran Oil | Jeevan Rekha',
-    description: 'Surprise your mother with 5 delicious and healthy dinner recipes prepared with physically refined Rice Bran Oil.',
+    description: 'Surprise your mother with 5 delicious and healthy dinner recipes prepared with physically refined Rice Bran Oil, bringing together health and happiness.',
     url: 'https://jeevanrekhafoods.com/blogs/mothers-day-recipes-prepared-with-rice-bran-oil',
-    images: [{ url: '/blogs/mothers-day-recipes-prepared-with-rice-bran-oil.png', alt: 'Mother’s Day Recipes Prepared with Rice Bran Oil' }]
-  }
+    siteName: 'Jeevan Rekha',
+    type: 'article',
+    images: [
+      {
+        url: 'https://jeevanrekhafoods.com/blogs/mothers-day-recipes-prepared-with-rice-bran-oil.png',
+        secureUrl: 'https://jeevanrekhafoods.com/blogs/mothers-day-recipes-prepared-with-rice-bran-oil.png',
+        width: 1200,
+        height: 630,
+        type: 'image/png',
+        alt: 'Mother’s Day Recipes Prepared with Rice Bran Oil',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Mother’s Day Recipes Prepared with Rice Bran Oil | Jeevan Rekha',
+    description: 'Surprise your mother with 5 delicious dinner recipes prepared with Rice Bran Oil.',
+    images: ['https://jeevanrekhafoods.com/blogs/mothers-day-recipes-prepared-with-rice-bran-oil.png'],
+  },
 };
 
 const blogSchema = {

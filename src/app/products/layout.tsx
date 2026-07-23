@@ -7,11 +7,15 @@ export const metadata: Metadata = {
     title: 'Our Premium Cooking Oils | Jeevan Rekha',
     description: 'Explore the Jeevan Rekha range of premium edible oils: cold-pressed Kacchi Ghani Mustard Oil, physically refined Rice Bran Oil, and neutral Soybean Oil.',
     url: 'https://jeevanrekhafoods.com/products',
+    siteName: 'Jeevan Rekha',
+    type: 'website',
     images: [
       {
-        url: '/product_range.jpeg',
+        url: 'https://jeevanrekhafoods.com/product_range.jpeg',
+        secureUrl: 'https://jeevanrekhafoods.com/product_range.jpeg',
         width: 1200,
         height: 600,
+        type: 'image/jpeg',
         alt: 'Jeevan Rekha Premium Cooking Oils Product Range',
       },
     ],
@@ -20,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Our Premium Cooking Oils | Jeevan Rekha',
     description: 'Explore the Jeevan Rekha range of premium edible oils: cold-pressed Kacchi Ghani Mustard Oil, physically refined Rice Bran Oil, and neutral Soybean Oil.',
-    images: ['/product_range.jpeg'],
+    images: ['https://jeevanrekhafoods.com/product_range.jpeg'],
   },
 };
 

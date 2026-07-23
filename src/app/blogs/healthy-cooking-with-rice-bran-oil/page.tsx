@@ -9,8 +9,25 @@ export const metadata: Metadata = {
     title: 'Healthy Cooking with Rice Bran Oil: Benefits & Facts | Jeevan Rekha',
     description: 'Discover the health benefits of physically refined Rice Bran Oil, rich in Gamma Oryzanol, Vitamin E, and perfect omega balance for everyday cooking.',
     url: 'https://jeevanrekhafoods.com/blogs/healthy-cooking-with-rice-bran-oil',
-    images: [{ url: '/blogs/healthy-cooking-with-rice-bran-oil.jpeg', alt: 'Healthy Cooking with Rice Bran Oil' }]
-  }
+    siteName: 'Jeevan Rekha',
+    type: 'article',
+    images: [
+      {
+        url: 'https://jeevanrekhafoods.com/blogs/healthy-cooking-with-rice-bran-oil.jpeg',
+        secureUrl: 'https://jeevanrekhafoods.com/blogs/healthy-cooking-with-rice-bran-oil.jpeg',
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'Healthy Cooking with Rice Bran Oil',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Healthy Cooking with Rice Bran Oil: Benefits & Facts | Jeevan Rekha',
+    description: 'Discover the health benefits of physically refined Rice Bran Oil.',
+    images: ['https://jeevanrekhafoods.com/blogs/healthy-cooking-with-rice-bran-oil.jpeg'],
+  },
 };
 
 const blogSchema = {
