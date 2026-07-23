@@ -3,7 +3,7 @@ import { Factory, Handshake, ShieldCheck, Microscope, Sprout, Package, Phone, Ma
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import Image from 'next/image';
 
-import factory1Img from '../../../public/factory1.webp';
+import factoryEntryImg from '../../../public/factory-entry.webp';
 
 export default function About() {
   return (
@@ -37,11 +37,12 @@ export default function About() {
               <div className="refinery-spec-img-wrap">
                 <AspectRatio ratio={16/10}>
                   <Image
-                    src={factory1Img}
-                    alt="Jeevan Rekha Burdwan Plant"
+                    src={factoryEntryImg}
+                    alt="Jeevan Rekha Burdwan Refinery Plant Entry"
                     className="object-cover w-full h-full"
                     placeholder="blur"
                     sizes="(max-width: 768px) 100vw, 520px"
+                    priority
                   />
                 </AspectRatio>
               </div>
