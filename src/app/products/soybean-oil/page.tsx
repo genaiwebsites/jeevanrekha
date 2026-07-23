@@ -23,7 +23,7 @@ const productSchema = {
   "offers": {
     "@type": "Offer",
     "availability": "https://schema.org/InStock",
-    "url": "https://jeevanrekhafoods.com/products/soybean-oil"
+    "url": "https://jeevanrekhafoods.com/contact"
   }
 };
 

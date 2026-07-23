@@ -23,9 +23,35 @@ const productSchema = {
     "url": "https://jeevanrekhafoods.com"
   },
   "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "url": "https://jeevanrekhafoods.com/products/rice-bran-oil"
+    "@type": "AggregateOffer",
+    "priceCurrency": "INR",
+    "lowPrice": "165.00",
+    "highPrice": "780.00",
+    "offerCount": "2",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "1-Litre Pouch",
+        "price": "165.00",
+        "priceCurrency": "INR",
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.flipkart.com/jeevanrekha-refined-rice-bran-oil-12000-ppm-oryzanol-pouch-daily-cooking/p/itmaf945e60600db?pid=EDOHNCJRF6CXDCY4",
+        "seller": { "@type": "Organization", "name": "Flipkart" }
+      },
+      {
+        "@type": "Offer",
+        "name": "5-Litre Jar",
+        "price": "780.00",
+        "priceCurrency": "INR",
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.flipkart.com/jeevanrekha-refined-jar-12000-ppm-oryzanol-daily-cooking-rice-bran-oil/p/itmb4215dac74f13?pid=EDOHNCJRTN9QZYYY",
+        "seller": { "@type": "Organization", "name": "Flipkart" }
+      }
+    ]
   }
 };
 

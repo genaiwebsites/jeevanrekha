@@ -21,9 +21,35 @@ const productSchema = {
     "url": "https://jeevanrekhafoods.com"
   },
   "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "url": "https://jeevanrekhafoods.com/products/mustard-oil"
+    "@type": "AggregateOffer",
+    "priceCurrency": "INR",
+    "lowPrice": "155.00",
+    "highPrice": "750.00",
+    "offerCount": "2",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "1-Litre Pouch",
+        "price": "155.00",
+        "priceCurrency": "INR",
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.flipkart.com/jeevanrekha-premium-kacchi-ghani-pure-mustard-oil-pouch/p/itmdf9320ba020dc?pid=EDOHNCJQRZPPFJJN",
+        "seller": { "@type": "Organization", "name": "Flipkart" }
+      },
+      {
+        "@type": "Offer",
+        "name": "5-Litre Jar",
+        "price": "750.00",
+        "priceCurrency": "INR",
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "url": "https://www.flipkart.com/jeevanrekha-premium-kacchi-ghani-pure-mustard-oil-5-litre-jar/p/itme5ca42178f49c?pid=EDOHNMWAXPY4HCF8",
+        "seller": { "@type": "Organization", "name": "Flipkart" }
+      }
+    ]
   }
 };
 
