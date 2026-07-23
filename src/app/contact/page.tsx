@@ -38,7 +38,7 @@ export default function Contact() {
     };
   }, []);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
@@ -46,7 +46,7 @@ export default function Contact() {
     const newErrors: Record<string, boolean> = {};
     let hasError = false;
 
-    // Validate radio (enquiry type)
+    // Validate enquiry type
     if (!selectedEnquiry) {
       newErrors.enquiry = true;
       hasError = true;
@@ -60,7 +60,7 @@ export default function Contact() {
     }
 
     const email = formData.get('email') as string;
-    if (!email?.trim()) {
+    if (!email?.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       newErrors.email = true;
       hasError = true;
     }
@@ -79,18 +79,45 @@ export default function Contact() {
     setErrors({});
     setStatus('sending');
 
-    // Simulate sending form submission
-    setTimeout(() => {
+    try {
+      const payload = {
+        fname,
+        company: formData.get('company') as string,
+        email,
+        phone: formData.get('phone') as string,
+        enquiry: selectedEnquiry,
+        product: formData.get('product') as string,
+        message,
+        website_url: formData.get('website_url') as string,
+      };
+
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok || result.error) {
+        alert(`Error sending message: ${result.error || 'Please try again.'}`);
+        setStatus('idle');
+        return;
+      }
+
       setStatus('success');
       form.reset();
       setSelectedEnquiry('');
 
-      // Scroll to the card containing the form
       const card = document.getElementById('formCard');
       if (card) {
         card.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
-    }, 1800);
+    } catch (err) {
+      console.error('Submission error:', err);
+      alert('Failed to send message. Please check your internet connection and try again.');
+      setStatus('idle');
+    }
   };
 
   const toggleFaq = (index: number) => {
@@ -280,6 +307,11 @@ export default function Contact() {
                   </p>
 
                   <form id="contactForm" onSubmit={handleSubmit} noValidate>
+                    {/* Honeypot Field for Spam Bot Trapping */}
+                    <div style={{ display: 'none', visibility: 'hidden' }} aria-hidden="true">
+                      <input type="text" id="website_url" name="website_url" tabIndex={-1} autoComplete="off" />
+                    </div>
+
                     {/* Full Name & Company */}
                     <div className="field-grid">
                       <div className={`form-field ${errors.fname ? 'error' : ''}`}>
@@ -357,8 +389,8 @@ export default function Contact() {
                         <label className="field-label" htmlFor="product">Product of Interest</label>
                         <select id="product" name="product" className="field-select" defaultValue="">
                           <option value="" disabled>Select product</option>
-                          <option value="mustard">Kacchi Ghani Mustard Oil</option>
                           <option value="rice-bran">Rice Bran Oil</option>
+                          <option value="mustard">Kacchi Ghani Mustard Oil</option>
                           <option value="soybean">Soybean Oil</option>
                           <option value="all">All / Multiple Products</option>
                         </select>
