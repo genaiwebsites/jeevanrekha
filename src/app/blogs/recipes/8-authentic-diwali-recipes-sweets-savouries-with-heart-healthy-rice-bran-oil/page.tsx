@@ -17,7 +17,15 @@ export const metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "8 Authentic Diwali Recipes Sweets & Savouries",
+        alt: "8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil Thumbnail",
       },
     ],
   },
@@ -25,7 +33,24 @@ export const metadata = {
     card: "summary_large_image",
     title: "8 Authentic Diwali Recipes: Sweets & Savouries | Jeevan Rekha",
     description: "8 authentic, less greasy Rice Bran Oil recipes for a heart-healthy Diwali.",
-    images: ["https://jeevanrekhafoods.com/og/og_8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg"],
+    images: [
+      {
+        url: "https://jeevanrekhafoods.com/og/og_8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil Thumbnail",
+      },
+    ],
   },
 };
 

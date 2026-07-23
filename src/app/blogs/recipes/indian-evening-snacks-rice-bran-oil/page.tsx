@@ -17,7 +17,15 @@ export const metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Easy Indian Evening Snacks with Rice Bran Oil",
+        alt: "indian-evening-snacks-rice-bran-oil Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_indian-evening-snacks-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_indian-evening-snacks-rice-bran-oil.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "indian-evening-snacks-rice-bran-oil Thumbnail",
       },
     ],
   },
@@ -25,7 +33,24 @@ export const metadata = {
     card: "summary_large_image",
     title: "Easy Indian Snacks with Rice Bran Oil | Jeevan Rekha",
     description: "Make tasty and healthy Indian snacks with pure Rice Bran Oil.",
-    images: ["https://jeevanrekhafoods.com/og/og_indian-evening-snacks-rice-bran-oil.jpg"],
+    images: [
+      {
+        url: "https://jeevanrekhafoods.com/og/og_indian-evening-snacks-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_indian-evening-snacks-rice-bran-oil.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "indian-evening-snacks-rice-bran-oil Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_indian-evening-snacks-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_indian-evening-snacks-rice-bran-oil.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "indian-evening-snacks-rice-bran-oil Thumbnail",
+      },
+    ],
   },
 };
 

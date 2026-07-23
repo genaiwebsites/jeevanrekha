@@ -13,12 +13,20 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/og/og_avoid-these-myths-about-rice-bran-oil-in-india.jpg',
-        secureUrl: 'https://jeevanrekhafoods.com/og/og_avoid-these-myths-about-rice-bran-oil-in-india.jpg',
+        url: "https://jeevanrekhafoods.com/og/og_avoid-these-myths-about-rice-bran-oil-in-india.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_avoid-these-myths-about-rice-bran-oil-in-india.jpg",
         width: 1200,
         height: 630,
-        type: 'image/png',
-        alt: 'Avoid These Myths About Rice Bran Oil in India',
+        type: "image/jpeg",
+        alt: "avoid-these-myths-about-rice-bran-oil-in-india Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_avoid-these-myths-about-rice-bran-oil-in-india.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_avoid-these-myths-about-rice-bran-oil-in-india.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "avoid-these-myths-about-rice-bran-oil-in-india Thumbnail",
       },
     ],
   },
@@ -26,7 +34,24 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Avoid These Myths About Rice Bran Oil in India | Jeevan Rekha',
     description: 'Debunk 7 common myths surrounding Rice Bran Oil in India and explore its true health benefits.',
-    images: ['https://jeevanrekhafoods.com/og/og_avoid-these-myths-about-rice-bran-oil-in-india.jpg'],
+    images: [
+      {
+        url: "https://jeevanrekhafoods.com/og/og_avoid-these-myths-about-rice-bran-oil-in-india.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_avoid-these-myths-about-rice-bran-oil-in-india.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "avoid-these-myths-about-rice-bran-oil-in-india Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_avoid-these-myths-about-rice-bran-oil-in-india.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_avoid-these-myths-about-rice-bran-oil-in-india.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "avoid-these-myths-about-rice-bran-oil-in-india Thumbnail",
+      },
+    ],
   },
 };
 

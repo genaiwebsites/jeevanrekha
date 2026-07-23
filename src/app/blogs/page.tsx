@@ -18,7 +18,15 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: 'image/jpeg',
-        alt: 'Jeevan Rekha Blogs Hero',
+        alt: 'Jeevan Rekha Blogs Hero Banner',
+      },
+      {
+        url: 'https://jeevanrekhafoods.com/og/square/sq_blogs.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/square/sq_blogs.jpg',
+        width: 800,
+        height: 800,
+        type: 'image/jpeg',
+        alt: 'Jeevan Rekha Blogs Hero Thumbnail',
       },
     ],
   },
@@ -26,7 +34,24 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Insights on Health, Nutrition & Cooking | Jeevan Rekha Blogs',
     description: 'Read the latest articles, healthy recipes, cooking tips, and debunked myths about edible oils.',
-    images: ['https://jeevanrekhafoods.com/og/og_blogs.jpg'],
+    images: [
+      {
+        url: 'https://jeevanrekhafoods.com/og/og_blogs.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/og_blogs.jpg',
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'Jeevan Rekha Blogs Hero Banner',
+      },
+      {
+        url: 'https://jeevanrekhafoods.com/og/square/sq_blogs.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/square/sq_blogs.jpg',
+        width: 800,
+        height: 800,
+        type: 'image/jpeg',
+        alt: 'Jeevan Rekha Blogs Hero Thumbnail',
+      },
+    ],
   },
 };
 

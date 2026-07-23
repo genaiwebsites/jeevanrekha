@@ -13,12 +13,20 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/og/og_easy-evening-snacks-recipe-with-rice-bran-oil.jpg',
-        secureUrl: 'https://jeevanrekhafoods.com/og/og_easy-evening-snacks-recipe-with-rice-bran-oil.jpg',
+        url: "https://jeevanrekhafoods.com/og/og_easy-evening-snacks-recipe-with-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_easy-evening-snacks-recipe-with-rice-bran-oil.jpg",
         width: 1200,
         height: 630,
-        type: 'image/png',
-        alt: 'Easy Evening Snacks Recipe with Rice Bran Oil',
+        type: "image/jpeg",
+        alt: "easy-evening-snacks-recipe-with-rice-bran-oil Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_easy-evening-snacks-recipe-with-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_easy-evening-snacks-recipe-with-rice-bran-oil.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "easy-evening-snacks-recipe-with-rice-bran-oil Thumbnail",
       },
     ],
   },
@@ -26,7 +34,24 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Easy Evening Snacks Recipe with Rice Bran Oil | Jeevan Rekha',
     description: 'Learn how to prepare 5 simple Indian evening snacks with light physically refined Rice Bran Oil.',
-    images: ['https://jeevanrekhafoods.com/og/og_easy-evening-snacks-recipe-with-rice-bran-oil.jpg'],
+    images: [
+      {
+        url: "https://jeevanrekhafoods.com/og/og_easy-evening-snacks-recipe-with-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_easy-evening-snacks-recipe-with-rice-bran-oil.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "easy-evening-snacks-recipe-with-rice-bran-oil Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_easy-evening-snacks-recipe-with-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_easy-evening-snacks-recipe-with-rice-bran-oil.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "easy-evening-snacks-recipe-with-rice-bran-oil Thumbnail",
+      },
+    ],
   },
 };
 

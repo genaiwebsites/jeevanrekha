@@ -13,12 +13,20 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/og/og_why-smoke-point-of-the-cooking-oil-matters.jpg',
-        secureUrl: 'https://jeevanrekhafoods.com/og/og_why-smoke-point-of-the-cooking-oil-matters.jpg',
+        url: "https://jeevanrekhafoods.com/og/og_why-smoke-point-of-the-cooking-oil-matters.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_why-smoke-point-of-the-cooking-oil-matters.jpg",
         width: 1200,
         height: 630,
-        type: 'image/png',
-        alt: 'Why Smoke Point of Cooking Oil Matters',
+        type: "image/jpeg",
+        alt: "why-smoke-point-of-the-cooking-oil-matters Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_why-smoke-point-of-the-cooking-oil-matters.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_why-smoke-point-of-the-cooking-oil-matters.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "why-smoke-point-of-the-cooking-oil-matters Thumbnail",
       },
     ],
   },
@@ -26,7 +34,24 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Why Smoke Point of Cooking Oil Matters | Jeevan Rekha',
     description: 'Understand the science behind high smoke point oils and why cooking fats affect your health.',
-    images: ['https://jeevanrekhafoods.com/og/og_why-smoke-point-of-the-cooking-oil-matters.jpg'],
+    images: [
+      {
+        url: "https://jeevanrekhafoods.com/og/og_why-smoke-point-of-the-cooking-oil-matters.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_why-smoke-point-of-the-cooking-oil-matters.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "why-smoke-point-of-the-cooking-oil-matters Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_why-smoke-point-of-the-cooking-oil-matters.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_why-smoke-point-of-the-cooking-oil-matters.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "why-smoke-point-of-the-cooking-oil-matters Thumbnail",
+      },
+    ],
   },
 };
 

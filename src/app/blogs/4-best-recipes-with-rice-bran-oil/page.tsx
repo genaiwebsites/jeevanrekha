@@ -13,12 +13,20 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/og/og_4-best-recipes-with-rice-bran-oil.jpg',
-        secureUrl: 'https://jeevanrekhafoods.com/og/og_4-best-recipes-with-rice-bran-oil.jpg',
+        url: "https://jeevanrekhafoods.com/og/og_4-best-recipes-with-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_4-best-recipes-with-rice-bran-oil.jpg",
         width: 1200,
         height: 630,
-        type: 'image/png',
-        alt: '4 Best Recipes with Rice Bran Oil',
+        type: "image/jpeg",
+        alt: "4-best-recipes-with-rice-bran-oil Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_4-best-recipes-with-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_4-best-recipes-with-rice-bran-oil.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "4-best-recipes-with-rice-bran-oil Thumbnail",
       },
     ],
   },
@@ -26,7 +34,24 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '4 Best Recipes with Rice Bran Oil | Jeevan Rekha',
     description: 'Explore 4 nutritious and delicious recipes prepared with Rice Bran Oil.',
-    images: ['https://jeevanrekhafoods.com/og/og_4-best-recipes-with-rice-bran-oil.jpg'],
+    images: [
+      {
+        url: "https://jeevanrekhafoods.com/og/og_4-best-recipes-with-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_4-best-recipes-with-rice-bran-oil.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "4-best-recipes-with-rice-bran-oil Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_4-best-recipes-with-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_4-best-recipes-with-rice-bran-oil.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "4-best-recipes-with-rice-bran-oil Thumbnail",
+      },
+    ],
   },
 };
 

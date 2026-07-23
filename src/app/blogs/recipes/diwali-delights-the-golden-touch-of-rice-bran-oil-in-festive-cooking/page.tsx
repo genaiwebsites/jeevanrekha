@@ -17,7 +17,15 @@ export const metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Diwali Delights Rice Bran Oil Festive Cooking",
+        alt: "diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking Thumbnail",
       },
     ],
   },
@@ -25,7 +33,24 @@ export const metadata = {
     card: "summary_large_image",
     title: "Diwali Delights: Golden Touch of Rice Bran Oil | Jeevan Rekha",
     description: "Discover why physically refined Rice Bran Oil is the perfect secret for your Diwali sweets.",
-    images: ["https://jeevanrekhafoods.com/og/og_diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg"],
+    images: [
+      {
+        url: "https://jeevanrekhafoods.com/og/og_diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking Thumbnail",
+      },
+    ],
   },
 };
 

@@ -17,7 +17,15 @@ export const metadata = {
         width: 1200,
         height: 630,
         type: "image/jpeg",
-        alt: "Cholar Daal and Luchi Recipe",
+        alt: "cholar-daal-and-luchi Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_cholar-daal-and-luchi.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_cholar-daal-and-luchi.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "cholar-daal-and-luchi Thumbnail",
       },
     ],
   },
@@ -25,7 +33,24 @@ export const metadata = {
     card: "summary_large_image",
     title: "Cholar Daal and Luchi | Jeevan Rekha",
     description: "A classic Bengali breakfast recipe: Cholar Daal and Luchi, cooked beautifully with heart-healthy Rice Bran Oil.",
-    images: ["https://jeevanrekhafoods.com/og/og_cholar-daal-and-luchi.jpg"],
+    images: [
+      {
+        url: "https://jeevanrekhafoods.com/og/og_cholar-daal-and-luchi.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_cholar-daal-and-luchi.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "cholar-daal-and-luchi Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_cholar-daal-and-luchi.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_cholar-daal-and-luchi.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "cholar-daal-and-luchi Thumbnail",
+      },
+    ],
   },
 };
 

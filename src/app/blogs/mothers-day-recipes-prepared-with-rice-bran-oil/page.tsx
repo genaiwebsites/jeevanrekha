@@ -13,12 +13,20 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/og/og_mothers-day-recipes-prepared-with-rice-bran-oil.jpg',
-        secureUrl: 'https://jeevanrekhafoods.com/og/og_mothers-day-recipes-prepared-with-rice-bran-oil.jpg',
+        url: "https://jeevanrekhafoods.com/og/og_mothers-day-recipes-prepared-with-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_mothers-day-recipes-prepared-with-rice-bran-oil.jpg",
         width: 1200,
         height: 630,
-        type: 'image/png',
-        alt: 'Mother’s Day Recipes Prepared with Rice Bran Oil',
+        type: "image/jpeg",
+        alt: "mothers-day-recipes-prepared-with-rice-bran-oil Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_mothers-day-recipes-prepared-with-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_mothers-day-recipes-prepared-with-rice-bran-oil.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "mothers-day-recipes-prepared-with-rice-bran-oil Thumbnail",
       },
     ],
   },
@@ -26,7 +34,24 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Mother’s Day Recipes Prepared with Rice Bran Oil | Jeevan Rekha',
     description: 'Surprise your mother with 5 delicious dinner recipes prepared with Rice Bran Oil.',
-    images: ['https://jeevanrekhafoods.com/og/og_mothers-day-recipes-prepared-with-rice-bran-oil.jpg'],
+    images: [
+      {
+        url: "https://jeevanrekhafoods.com/og/og_mothers-day-recipes-prepared-with-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_mothers-day-recipes-prepared-with-rice-bran-oil.jpg",
+        width: 1200,
+        height: 630,
+        type: "image/jpeg",
+        alt: "mothers-day-recipes-prepared-with-rice-bran-oil Banner",
+      },
+      {
+        url: "https://jeevanrekhafoods.com/og/square/sq_mothers-day-recipes-prepared-with-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/square/sq_mothers-day-recipes-prepared-with-rice-bran-oil.jpg",
+        width: 800,
+        height: 800,
+        type: "image/jpeg",
+        alt: "mothers-day-recipes-prepared-with-rice-bran-oil Thumbnail",
+      },
+    ],
   },
 };
 

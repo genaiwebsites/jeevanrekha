@@ -16,7 +16,15 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         type: 'image/jpeg',
-        alt: 'Jeevan Rekha Pure Soybean Oil Pack',
+        alt: 'Jeevan Rekha Pure Soybean Oil Banner',
+      },
+      {
+        url: 'https://jeevanrekhafoods.com/og/square/sq_soybean_oil.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/square/sq_soybean_oil.jpg',
+        width: 800,
+        height: 800,
+        type: 'image/jpeg',
+        alt: 'Jeevan Rekha Pure Soybean Oil Thumbnail',
       },
     ],
   },
@@ -24,7 +32,24 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Pure Soybean Oil | Jeevan Rekha',
     description: 'Light, neutral-flavoured pure soybean oil enriched with Omega-3 fatty acids.',
-    images: ['https://jeevanrekhafoods.com/og/og_soybean_oil.jpg'],
+    images: [
+      {
+        url: 'https://jeevanrekhafoods.com/og/og_soybean_oil.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/og_soybean_oil.jpg',
+        width: 1200,
+        height: 630,
+        type: 'image/jpeg',
+        alt: 'Jeevan Rekha Pure Soybean Oil Banner',
+      },
+      {
+        url: 'https://jeevanrekhafoods.com/og/square/sq_soybean_oil.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/square/sq_soybean_oil.jpg',
+        width: 800,
+        height: 800,
+        type: 'image/jpeg',
+        alt: 'Jeevan Rekha Pure Soybean Oil Thumbnail',
+      },
+    ],
   },
 };
 
