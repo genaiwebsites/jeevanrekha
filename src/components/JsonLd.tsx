@@ -26,6 +26,7 @@ export default function JsonLd() {
     },
     sameAs: [
       'https://jeevanrekhafoods.com',
+      'https://www.indiamart.com/abudyog/',
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',

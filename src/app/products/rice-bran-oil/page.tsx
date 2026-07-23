@@ -4,6 +4,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Table, TableHeader, TableBody, TableRow, TableCell, TableHead } from "@/components/ui/table";
@@ -239,10 +240,13 @@ export default function RiceBranOilPage() {
 
       <div className="hero-product-col">
         <div className="hero-product-wrap" id="productWrap">
-          <img className="hero-product-img"
-               src="/jr_rbo.png"
-               alt="Jeevan Rekha Rice Bran Oil Pouch"
-                />
+          <Image className="hero-product-img"
+                 src="/jr_rbo.png"
+                 alt="Jeevan Rekha Rice Bran Oil Pouch"
+                 width={400}
+                 height={600}
+                 priority
+                  />
 
           <div className="hero-product-fallback" style={{display: 'none', width: '280px', height: '380px', background: 'linear-gradient(145deg,var(--beige),var(--beige-mid))', borderRadius: '16px', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '16px', boxShadow: '0 24px 48px rgba(0,0,0,0.12)', position: 'relative', zIndex: 2}}>
             <div style={{fontFamily: 'var(--serif)', fontSize: '3rem', fontWeight: 300, color: 'var(--text-dark)', lineHeight: 1, textAlign: 'center'}}>Jeevan<br />Rekha</div>
