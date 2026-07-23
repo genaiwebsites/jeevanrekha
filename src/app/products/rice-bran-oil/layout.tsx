@@ -11,18 +11,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/jr_rbo.png',
-        secureUrl: 'https://jeevanrekhafoods.com/jr_rbo.png',
+        url: 'https://jeevanrekhafoods.com/og/og_rice_bran_oil.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/og_rice_bran_oil.jpg',
         width: 1200,
-        height: 1200,
-        type: 'image/png',
-        alt: 'Jeevan Rekha Physically Refined Rice Bran Oil Pack',
-      },
-      {
-        url: 'https://jeevanrekhafoods.com/banners/product_banner_rbo.jpeg',
-        secureUrl: 'https://jeevanrekhafoods.com/banners/product_banner_rbo.jpeg',
-        width: 1200,
-        height: 600,
+        height: 630,
         type: 'image/jpeg',
         alt: 'Jeevan Rekha Physically Refined Rice Bran Oil Banner',
       },
@@ -32,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Physically Refined Rice Bran Oil | Jeevan Rekha',
     description: '100% physically refined rice bran oil with 14,000 PPM Gamma-Oryzanol and Vitamin E.',
-    images: ['https://jeevanrekhafoods.com/jr_rbo.png'],
+    images: ['https://jeevanrekhafoods.com/og/og_rice_bran_oil.jpg'],
   },
 };
 

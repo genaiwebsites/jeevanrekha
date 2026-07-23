@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/blogs/healthy-cooking-with-rice-bran-oil.jpeg',
-        secureUrl: 'https://jeevanrekhafoods.com/blogs/healthy-cooking-with-rice-bran-oil.jpeg',
+        url: 'https://jeevanrekhafoods.com/og/og_healthy-cooking-with-rice-bran-oil.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/og_healthy-cooking-with-rice-bran-oil.jpg',
         width: 1200,
         height: 630,
         type: 'image/jpeg',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Healthy Cooking with Rice Bran Oil: Benefits & Facts | Jeevan Rekha',
     description: 'Discover the health benefits of physically refined Rice Bran Oil.',
-    images: ['https://jeevanrekhafoods.com/blogs/healthy-cooking-with-rice-bran-oil.jpeg'],
+    images: ['https://jeevanrekhafoods.com/og/og_healthy-cooking-with-rice-bran-oil.jpg'],
   },
 };
 
@@ -34,7 +34,7 @@ const blogSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Healthy Cooking with Rice Bran Oil",
-  "image": "https://jeevanrekhafoods.com/blogs/healthy-cooking-with-rice-bran-oil.jpeg",
+  "image": "https://jeevanrekhafoods.com/og/og_healthy-cooking-with-rice-bran-oil.jpg",
   "datePublished": "2025-06-22T00:00:00Z",
   "dateModified": "2025-06-22T00:00:00Z",
   "author": {

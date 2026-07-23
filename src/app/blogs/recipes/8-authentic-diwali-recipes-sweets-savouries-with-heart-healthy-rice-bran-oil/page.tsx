@@ -12,8 +12,8 @@ export const metadata = {
     type: "article",
     images: [
       {
-        url: "https://jeevanrekhafoods.com/blogs/8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
-        secureUrl: "https://jeevanrekhafoods.com/blogs/8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
+        url: "https://jeevanrekhafoods.com/og/og_8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -25,7 +25,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "8 Authentic Diwali Recipes: Sweets & Savouries | Jeevan Rekha",
     description: "8 authentic, less greasy Rice Bran Oil recipes for a heart-healthy Diwali.",
-    images: ["https://jeevanrekhafoods.com/blogs/8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg"],
+    images: ["https://jeevanrekhafoods.com/og/og_8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg"],
   },
 };
 
@@ -342,7 +342,7 @@ export default function RecipePage() {
           "@type": "BlogPosting",
           "headline": "Rice Bran Oil Recipes: Heart",
           "description": "8 authentic, less greasy Rice Bran Oil recipes for a heart-healthy Diwali. Enjoy perfect sweets and savouries.",
-          "image": "https://jeevanrekhafoods.com/blogs/8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
+          "image": "https://jeevanrekhafoods.com/og/og_8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil.jpg",
           "datePublished": "2025-05-26T18:30:00.000Z",
           "dateModified": "2025-05-26T18:30:00.000Z",
           "author": {

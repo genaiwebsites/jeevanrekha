@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/blogs/4-best-recipes-with-rice-bran-oil.png',
-        secureUrl: 'https://jeevanrekhafoods.com/blogs/4-best-recipes-with-rice-bran-oil.png',
+        url: 'https://jeevanrekhafoods.com/og/og_4-best-recipes-with-rice-bran-oil.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/og_4-best-recipes-with-rice-bran-oil.jpg',
         width: 1200,
         height: 630,
         type: 'image/png',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '4 Best Recipes with Rice Bran Oil | Jeevan Rekha',
     description: 'Explore 4 nutritious and delicious recipes prepared with Rice Bran Oil.',
-    images: ['https://jeevanrekhafoods.com/blogs/4-best-recipes-with-rice-bran-oil.png'],
+    images: ['https://jeevanrekhafoods.com/og/og_4-best-recipes-with-rice-bran-oil.jpg'],
   },
 };
 
@@ -34,7 +34,7 @@ const blogSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "4 Best Recipes with Rice Bran Oil",
-  "image": "https://jeevanrekhafoods.com/blogs/4-best-recipes-with-rice-bran-oil.png",
+  "image": "https://jeevanrekhafoods.com/og/og_4-best-recipes-with-rice-bran-oil.jpg",
   "datePublished": "2025-04-30T00:00:00Z",
   "dateModified": "2025-04-30T00:00:00Z",
   "author": {

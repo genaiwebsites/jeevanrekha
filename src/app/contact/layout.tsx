@@ -11,12 +11,12 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/factory_top_view.jpg',
-        secureUrl: 'https://jeevanrekhafoods.com/factory_top_view.jpg',
+        url: 'https://jeevanrekhafoods.com/og/og_contact.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/og_contact.jpg',
         width: 1200,
-        height: 675,
+        height: 630,
         type: 'image/jpeg',
-        alt: 'Jeevan Rekha Burdwan Production Facility',
+        alt: 'Jeevan Rekha Contact Us & Trade Enquiries',
       },
     ],
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Us & Trade Enquiries | Jeevan Rekha',
     description: 'Get in touch with AB Udyog Pvt. Ltd. regarding retail distribution, trade enquiries, or bulk orders.',
-    images: ['https://jeevanrekhafoods.com/factory_top_view.jpg'],
+    images: ['https://jeevanrekhafoods.com/og/og_contact.jpg'],
   },
 };
 

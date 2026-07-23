@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/factory-entry.png',
-        secureUrl: 'https://jeevanrekhafoods.com/factory-entry.png',
+        url: 'https://jeevanrekhafoods.com/og/og_about.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/og_about.jpg',
         width: 1200,
-        height: 675,
-        type: 'image/png',
+        height: 630,
+        type: 'image/jpeg',
         alt: 'Jeevan Rekha Burdwan Refinery Plant Entry',
       },
     ],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Our Heritage & Story | Jeevan Rekha',
     description: 'AB Udyog Pvt. Ltd. combines 40+ years of rice bran industry expertise with modern refining technology.',
-    images: ['https://jeevanrekhafoods.com/factory-entry.png'],
+    images: ['https://jeevanrekhafoods.com/og/og_about.jpg'],
   },
 };
 

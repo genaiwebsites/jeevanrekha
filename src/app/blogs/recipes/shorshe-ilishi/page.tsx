@@ -12,8 +12,8 @@ export const metadata = {
     type: "article",
     images: [
       {
-        url: "https://jeevanrekhafoods.com/blogs/shorshe-ilishi.jpg",
-        secureUrl: "https://jeevanrekhafoods.com/blogs/shorshe-ilishi.jpg",
+        url: "https://jeevanrekhafoods.com/og/og_shorshe-ilishi.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_shorshe-ilishi.jpg",
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -25,7 +25,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Shorshe Ilish | Jeevan Rekha",
     description: "The ultimate Shorshe Ilish recipe: fresh Hilsa fish in a pungent mustard gravy.",
-    images: ["https://jeevanrekhafoods.com/blogs/shorshe-ilishi.jpg"],
+    images: ["https://jeevanrekhafoods.com/og/og_shorshe-ilishi.jpg"],
   },
 };
 

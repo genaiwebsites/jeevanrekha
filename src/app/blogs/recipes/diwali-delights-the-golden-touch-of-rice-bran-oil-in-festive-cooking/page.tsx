@@ -12,8 +12,8 @@ export const metadata = {
     type: "article",
     images: [
       {
-        url: "https://jeevanrekhafoods.com/blogs/diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg",
-        secureUrl: "https://jeevanrekhafoods.com/blogs/diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg",
+        url: "https://jeevanrekhafoods.com/og/og_diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg",
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -25,7 +25,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Diwali Delights: Golden Touch of Rice Bran Oil | Jeevan Rekha",
     description: "Discover why physically refined Rice Bran Oil is the perfect secret for your Diwali sweets.",
-    images: ["https://jeevanrekhafoods.com/blogs/diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg"],
+    images: ["https://jeevanrekhafoods.com/og/og_diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking.jpg"],
   },
 };
 

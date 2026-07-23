@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/blogs/avoid-these-myths-about-rice-bran-oil-in-india.png',
-        secureUrl: 'https://jeevanrekhafoods.com/blogs/avoid-these-myths-about-rice-bran-oil-in-india.png',
+        url: 'https://jeevanrekhafoods.com/og/og_avoid-these-myths-about-rice-bran-oil-in-india.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/og_avoid-these-myths-about-rice-bran-oil-in-india.jpg',
         width: 1200,
         height: 630,
         type: 'image/png',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Avoid These Myths About Rice Bran Oil in India | Jeevan Rekha',
     description: 'Debunk 7 common myths surrounding Rice Bran Oil in India and explore its true health benefits.',
-    images: ['https://jeevanrekhafoods.com/blogs/avoid-these-myths-about-rice-bran-oil-in-india.png'],
+    images: ['https://jeevanrekhafoods.com/og/og_avoid-these-myths-about-rice-bran-oil-in-india.jpg'],
   },
 };
 
@@ -34,7 +34,7 @@ const blogSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Avoid these Myths about Rice Bran Oil in India",
-  "image": "https://jeevanrekhafoods.com/blogs/avoid-these-myths-about-rice-bran-oil-in-india.png",
+  "image": "https://jeevanrekhafoods.com/og/og_avoid-these-myths-about-rice-bran-oil-in-india.jpg",
   "datePublished": "2025-04-30T00:00:00Z",
   "dateModified": "2025-04-30T00:00:00Z",
   "author": {

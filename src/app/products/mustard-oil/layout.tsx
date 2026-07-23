@@ -11,18 +11,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/jr_kgmo.png',
-        secureUrl: 'https://jeevanrekhafoods.com/jr_kgmo.png',
+        url: 'https://jeevanrekhafoods.com/og/og_mustard_oil.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/og_mustard_oil.jpg',
         width: 1200,
-        height: 1200,
-        type: 'image/png',
-        alt: 'Jeevan Rekha Kacchi Ghani Mustard Oil Pack',
-      },
-      {
-        url: 'https://jeevanrekhafoods.com/banners/product_banner_kgmo.jpeg',
-        secureUrl: 'https://jeevanrekhafoods.com/banners/product_banner_kgmo.jpeg',
-        width: 1200,
-        height: 600,
+        height: 630,
         type: 'image/jpeg',
         alt: 'Jeevan Rekha Kacchi Ghani Mustard Oil Banner',
       },
@@ -32,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Premium Kacchi Ghani Mustard Oil | Jeevan Rekha',
     description: 'Pure cold-pressed kacchi ghani mustard oil with authentic pungency, natural MUFA/PUFA, and antioxidants.',
-    images: ['https://jeevanrekhafoods.com/jr_kgmo.png'],
+    images: ['https://jeevanrekhafoods.com/og/og_mustard_oil.jpg'],
   },
 };
 

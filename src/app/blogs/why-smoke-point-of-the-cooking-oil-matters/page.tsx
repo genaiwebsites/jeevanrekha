@@ -13,8 +13,8 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/blogs/why-smoke-point-of-the-cooking-oil-matters.png',
-        secureUrl: 'https://jeevanrekhafoods.com/blogs/why-smoke-point-of-the-cooking-oil-matters.png',
+        url: 'https://jeevanrekhafoods.com/og/og_why-smoke-point-of-the-cooking-oil-matters.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/og_why-smoke-point-of-the-cooking-oil-matters.jpg',
         width: 1200,
         height: 630,
         type: 'image/png',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Why Smoke Point of Cooking Oil Matters | Jeevan Rekha',
     description: 'Understand the science behind high smoke point oils and why cooking fats affect your health.',
-    images: ['https://jeevanrekhafoods.com/blogs/why-smoke-point-of-the-cooking-oil-matters.png'],
+    images: ['https://jeevanrekhafoods.com/og/og_why-smoke-point-of-the-cooking-oil-matters.jpg'],
   },
 };
 
@@ -34,7 +34,7 @@ const blogSchema = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Why Smoke Point of the Cooking Oil Matters?",
-  "image": "https://jeevanrekhafoods.com/blogs/why-smoke-point-of-the-cooking-oil-matters.png",
+  "image": "https://jeevanrekhafoods.com/og/og_why-smoke-point-of-the-cooking-oil-matters.jpg",
   "datePublished": "2025-04-25T00:00:00Z",
   "dateModified": "2025-04-25T00:00:00Z",
   "author": {

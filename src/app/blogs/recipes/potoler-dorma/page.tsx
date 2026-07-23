@@ -12,8 +12,8 @@ export const metadata = {
     type: "article",
     images: [
       {
-        url: "https://jeevanrekhafoods.com/blogs/potoler-dorma.jpg",
-        secureUrl: "https://jeevanrekhafoods.com/blogs/potoler-dorma.jpg",
+        url: "https://jeevanrekhafoods.com/og/og_potoler-dorma.jpg",
+        secureUrl: "https://jeevanrekhafoods.com/og/og_potoler-dorma.jpg",
         width: 1200,
         height: 630,
         type: "image/jpeg",
@@ -25,7 +25,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Potoler Dorma | Jeevan Rekha",
     description: "Learn how to make authentic Potoler Dorma cooked in healthy Rice Bran Oil.",
-    images: ["https://jeevanrekhafoods.com/blogs/potoler-dorma.jpg"],
+    images: ["https://jeevanrekhafoods.com/og/og_potoler-dorma.jpg"],
   },
 };
 

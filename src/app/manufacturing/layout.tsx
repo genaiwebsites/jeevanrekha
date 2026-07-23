@@ -11,10 +11,10 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: 'https://jeevanrekhafoods.com/factory_top_view.jpg',
-        secureUrl: 'https://jeevanrekhafoods.com/factory_top_view.jpg',
+        url: 'https://jeevanrekhafoods.com/og/og_manufacturing.jpg',
+        secureUrl: 'https://jeevanrekhafoods.com/og/og_manufacturing.jpg',
         width: 1200,
-        height: 675,
+        height: 630,
         type: 'image/jpeg',
         alt: 'Jeevan Rekha Burdwan Manufacturing Plant Top View',
       },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'State-of-the-Art Oil Refining & Extraction | Jeevan Rekha',
     description: 'Inside our Burdwan manufacturing facility: 300 TPD Solvent Extraction and 150 TPD Physical Refining.',
-    images: ['https://jeevanrekhafoods.com/factory_top_view.jpg'],
+    images: ['https://jeevanrekhafoods.com/og/og_manufacturing.jpg'],
   },
 };
 
