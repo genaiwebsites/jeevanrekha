@@ -51,6 +51,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: 'https://jeevanrekhafoods.com/products/soybean-oil',
+  },
 };
 
 export default function SoybeanOilLayout({ children }: { children: React.ReactNode }) {

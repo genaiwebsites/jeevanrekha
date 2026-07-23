@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Mother’s Day Recipes Prepared with Rice Bran Oil | Jeevan Rekha',
+  title: "Mother's Day Recipes with Rice Bran Oil | Jeevan Rekha",
   description: 'Surprise your mother with 5 delicious and healthy dinner recipes prepared with physically refined Rice Bran Oil, bringing together health and happiness.',
   openGraph: {
-    title: 'Mother’s Day Recipes Prepared with Rice Bran Oil | Jeevan Rekha',
+    title: "Mother's Day Recipes with Rice Bran Oil | Jeevan Rekha",
     description: 'Surprise your mother with 5 delicious and healthy dinner recipes prepared with physically refined Rice Bran Oil, bringing together health and happiness.',
     url: 'https://jeevanrekhafoods.com/blogs/mothers-day-recipes-prepared-with-rice-bran-oil',
     siteName: 'Jeevan Rekha',

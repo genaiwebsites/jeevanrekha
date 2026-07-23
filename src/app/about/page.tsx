@@ -5,10 +5,48 @@ import Image from 'next/image';
 
 import factoryEntryImg from '../../../public/factory-entry.webp';
 
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'AB Udyog Pvt. Ltd.',
+  alternateName: 'Jeevan Rekha',
+  url: 'https://jeevanrekhafoods.com',
+  logo: 'https://jeevanrekhafoods.com/jeevan-rekha-logo.png',
+  foundingDate: '1984',
+  description: 'AB Udyog Pvt. Ltd. is a manufacturer of premium edible oils — Jeevan Rekha Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soybean Oil — with 40+ years of expertise in West Bengal\'s edible oil industry.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Burdwan Industrial Area',
+    addressLocality: 'Burdwan',
+    addressRegion: 'West Bengal',
+    addressCountry: 'IN',
+  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: 'info@abudyog.in',
+      areaServed: 'IN',
+      availableLanguage: ['English', 'Hindi', 'Bengali'],
+    },
+  ],
+  numberOfEmployees: {
+    '@type': 'QuantitativeValue',
+    value: 200,
+  },
+  knowsAbout: ['Rice Bran Oil', 'Mustard Oil', 'Edible Oil Refining', 'Solvent Extraction', 'NABL Certification'],
+};
+
 export default function About() {
   return (
-    <section id="view-about" className="view-section active">
-      {/* PAGE HERO */}
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <section id="view-about" className="view-section active">
+        {/* PAGE HERO */}
       <div className="hero vh-100">
         <div className="hero-bg"></div>
         <div className="hero-mesh"></div>
@@ -436,7 +474,8 @@ export default function About() {
           </div>
         </div>
       </section>
-    </section>
+      </section>
+    </>
   );
 }
 

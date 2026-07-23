@@ -3,10 +3,10 @@ import Image from 'next/image';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Healthy Cooking with Rice Bran Oil: Benefits & Facts | Jeevan Rekha',
+  title: 'Healthy Cooking with Rice Bran Oil | Jeevan Rekha',
   description: 'Discover the health benefits of physically refined Rice Bran Oil, rich in Gamma Oryzanol, Vitamin E, and perfect omega balance for everyday cooking.',
   openGraph: {
-    title: 'Healthy Cooking with Rice Bran Oil: Benefits & Facts | Jeevan Rekha',
+    title: 'Healthy Cooking with Rice Bran Oil | Jeevan Rekha',
     description: 'Discover the health benefits of physically refined Rice Bran Oil, rich in Gamma Oryzanol, Vitamin E, and perfect omega balance for everyday cooking.',
     url: 'https://jeevanrekhafoods.com/blogs/healthy-cooking-with-rice-bran-oil',
     siteName: 'Jeevan Rekha',

@@ -54,8 +54,39 @@ export const metadata = {
   },
 };
 
+
+const recipeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Recipe',
+  name: 'Cholar Daal and Luchi',
+  image: ['https://jeevanrekhafoods.com/og/og_cholar-daal-and-luchi.jpg'],
+  author: { '@type': 'Organization', name: 'Jeevan Rekha Editorial Team' },
+  datePublished: '2025-04-12',
+  description: 'A classic Bengali breakfast recipe: Cholar Daal and Luchi, cooked beautifully with heart-healthy Rice Bran Oil.',
+  prepTime: 'PT20M',
+  cookTime: 'PT30M',
+  totalTime: 'PT50M',
+  recipeCategory: 'Breakfast',
+  recipeCuisine: 'Bengali',
+  recipeYield: '4 servings',
+  recipeIngredient: [
+    'Chana Dal (Bengal Gram)', 'Maida (All-Purpose Flour)', 'Jeevan Rekha Rice Bran Oil', 'Coconut', 'Raisins', 'Sugar', 'Salt', 'Turmeric', 'Bay Leaf', 'Ghee',
+  ],
+  recipeInstructions: [
+    { '@type': 'HowToStep', text: 'Soak chana dal for 2 hours, then pressure cook with turmeric and salt until soft.' },
+    { '@type': 'HowToStep', text: 'Heat Rice Bran Oil in a pan, add bay leaf and temper. Add coconut, raisins, and sugar to the dal.' },
+    { '@type': 'HowToStep', text: 'For Luchi, knead maida with salt and Rice Bran Oil into a soft dough. Rest for 15 minutes.' },
+    { '@type': 'HowToStep', text: 'Roll small puris and deep-fry in hot Rice Bran Oil until they puff up and are golden.' },
+    { '@type': 'HowToStep', text: 'Serve Cholar Daal with hot Luchis immediately.' },
+  ],
+  publisher: { '@type': 'Organization', name: 'Jeevan Rekha', logo: { '@type': 'ImageObject', url: 'https://jeevanrekhafoods.com/jeevan-rekha-logo.png' } },
+};
+
 export default function RecipePage() {
   return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeJsonLd) }} />
+
     <section id="view-blog-post" className="view-section post-main active">
       <div className="post-hero rv">
         <div className="post-meta">
@@ -97,6 +128,7 @@ export default function RecipePage() {
 <p><b>Prepare the Luchi:</b><br>1. In a bowl, mix maida and 2 tbsp Rice Bran Oil until crumbly. Gradually add water to form a soft, smooth dough. Cover and rest for 15 minutes.<br>2. Divide dough into small lemon-sized balls. Roll each into thin circles.<br>3. Heat Rice Bran Oil in a deep kadai. Deep fry each Luchi on medium-high heat, pressing gently until fully puffed and golden.<br>4. Serve hot with warm Cholar Daal.</p>` }} />
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

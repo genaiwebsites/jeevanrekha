@@ -54,9 +54,37 @@ export const metadata = {
   },
 };
 
+
+const recipeJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Recipe',
+  name: 'Shorshe Ilish (Hilsa Fish in Mustard Gravy)',
+  image: ['https://jeevanrekhafoods.com/og/og_shorshe-ilishi.jpg'],
+  author: { '@type': 'Organization', name: 'Jeevan Rekha Editorial Team' },
+  datePublished: '2025-04-10',
+  description: 'The ultimate Shorshe Ilish recipe: fresh Hilsa fish in a pungent mustard gravy, perfected with premium Rice Bran Oil.',
+  prepTime: 'PT15M',
+  cookTime: 'PT25M',
+  totalTime: 'PT40M',
+  recipeCategory: 'Main Course',
+  recipeCuisine: 'Bengali',
+  recipeYield: '4 servings',
+  recipeIngredient: ['Hilsa (Ilish) fish', 'Mustard seeds (black and yellow)', 'Green chilies', 'Turmeric', 'Kalo jeere (Nigella seeds)', 'Jeevan Rekha Rice Bran Oil', 'Salt'],
+  recipeInstructions: [
+    { '@type': 'HowToStep', text: 'Soak mustard seeds in warm water with salt for 15 minutes, then grind with green chilies into a smooth paste.' },
+    { '@type': 'HowToStep', text: 'Marinate Hilsa pieces with turmeric and salt for 10 minutes.' },
+    { '@type': 'HowToStep', text: 'Heat Rice Bran Oil in a pan. Add kalo jeere and slit green chilies.' },
+    { '@type': 'HowToStep', text: 'Add mustard paste, turmeric, and warm water. Simmer into a fragrant gravy.' },
+    { '@type': 'HowToStep', text: 'Add Hilsa pieces gently, cover and cook on low heat for 8-10 minutes. Drizzle remaining oil before serving.' },
+  ],
+  publisher: { '@type': 'Organization', name: 'Jeevan Rekha', logo: { '@type': 'ImageObject', url: 'https://jeevanrekhafoods.com/jeevan-rekha-logo.png' } },
+};
+
 export default function RecipePage() {
   return (
-    <section id="view-blog-post" className="view-section post-main active">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeJsonLd) }} />
+      <section id="view-blog-post" className="view-section post-main active">
       <div className="post-hero rv">
         <div className="post-meta">
           <span className="pm-tag">Recipe</span>
@@ -83,6 +111,7 @@ export default function RecipePage() {
 <p>1. Soak black and yellow mustard seeds in warm water with a pinch of salt for 15 minutes. Grind with 2 green chilies into a smooth paste.<br>2. Marinate Hilsa pieces with turmeric and salt for 10 minutes.<br>3. Heat 2 tbsp Rice Bran Oil in a pan. Add kalo jeere and slit green chilies.<br>4. Add mustard paste, turmeric, and warm water. Simmer into a fragrant gravy.<br>5. Gently add Hilsa pieces. Cover and cook on low heat for 8-10 minutes.<br>6. Drizzle remaining 1 tbsp Rice Bran Oil on top before serving hot with steamed rice.</p>` }} />
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 }

@@ -51,6 +51,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: 'https://jeevanrekhafoods.com/manufacturing',
+  },
 };
 
 export default function ManufacturingLayout({ children }: { children: React.ReactNode }) {

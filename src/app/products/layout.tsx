@@ -51,6 +51,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: 'https://jeevanrekhafoods.com/products',
+  },
 };
 
 export default function ProductsLayout({ children }: { children: React.ReactNode }) {

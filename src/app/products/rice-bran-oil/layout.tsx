@@ -51,6 +51,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: 'https://jeevanrekhafoods.com/products/rice-bran-oil',
+  },
 };
 
 export default function RiceBranOilLayout({ children }: { children: React.ReactNode }) {

@@ -2,10 +2,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
-  title: "8 Authentic Diwali Recipes: Sweets & Savouries | Jeevan Rekha",
+  title: "8 Authentic Diwali Recipes & Sweets | Jeevan Rekha",
   description: "8 authentic, less greasy Rice Bran Oil recipes for a heart-healthy Diwali. Enjoy perfect sweets and savouries.",
   openGraph: {
-    title: "8 Authentic Diwali Recipes: Sweets & Savouries | Jeevan Rekha",
+    title: "8 Authentic Diwali Recipes & Sweets | Jeevan Rekha",
     description: "8 authentic, less greasy Rice Bran Oil recipes for a heart-healthy Diwali. Enjoy perfect sweets and savouries.",
     url: "https://jeevanrekhafoods.com/blogs/recipes/8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil",
     siteName: "Jeevan Rekha",

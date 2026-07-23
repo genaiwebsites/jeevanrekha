@@ -51,6 +51,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: 'https://jeevanrekhafoods.com/products/mustard-oil',
+  },
 };
 
 export default function MustardOilLayout({ children }: { children: React.ReactNode }) {

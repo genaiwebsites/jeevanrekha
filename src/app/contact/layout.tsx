@@ -51,6 +51,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: 'https://jeevanrekhafoods.com/contact',
+  },
 };
 
 export default function ContactLayout({ children }: { children: React.ReactNode }) {
