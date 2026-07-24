@@ -2347,8 +2347,14 @@ footer {
 }
 
 /* ═══════════════════ RESPONSIVE ═══════════════════ */
+@media (max-width: 1200px) {
+  .nav-inner { padding-left: 32px; padding-right: 32px; }
+  .nav-links { gap: 20px; }
+}
+
 @media(max-width: 1024px) {
   .wrap, .nav-inner, .sd-row, .certs-row, .cta-inner, .phd-top { padding-left: 28px; padding-right: 28px; }
+  .hero-left { margin: 0 auto; align-items: center; text-align: center; }
   
   /* Mobile Nav Menu Overhaul */
   .nav-links { 
@@ -2409,7 +2415,7 @@ footer {
 
   /* Home Prods Fix */
   .pgrid-home { grid-template-columns: 1fr; }
-  .pcard-home { min-height: auto; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 48px 32px; }
+  .pcard-home { min-height: auto; padding: 48px 32px; }
   .pch-desc { max-height: none; opacity: 1; margin-top: 12px; }
   .pch-link { max-height: none; opacity: 1; margin-top: 14px; transform: none; }
 }
@@ -2962,17 +2968,8 @@ footer {
 @media (max-width: 1024px) {
   .products-hero { height: clamp(440px, 50vw, 600px); }
   .products-hero-copy { padding-top: clamp(100px, 12vw, 140px); }
-  /* Keep image 100% width. At narrower screen it gets proportionally shorter but still anchored bottom */
-  .home-hero-copy { padding-top: clamp(100px, 12vh, 140px); }
-  .home-hero-copy .h1 { font-size: clamp(1.5rem, 2.4vw, 2.4rem); }
-}
-@media (max-width: 768px) {
-  .products-hero { height: 420px; }
-  .products-hero-copy { padding-top: 110px; padding-left: 24px; padding-right: 24px; }
-  .products-hero-copy .h1 { font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
-  .products-hero-copy .h-desc { font-size: 0.88rem; max-width: 380px; }
-  .products-hero-img { background-size: 100% auto; background-position: center bottom; top: 0; bottom: -20px; }
-  /* === MOBILE HOME HERO ===
+
+  /* === TABLET/MOBILE STACKED HOME HERO ===
      PNG is landscape (2:1). Forcing into portrait 100svh always causes gap/crop.
      Solution: height:auto — let hero size to content (copy + image). No full-screen. */
   .home-hero {
@@ -2986,19 +2983,18 @@ footer {
   /* Hide the desktop absolute background-div */
   .home-hero-img-bg { display: none !important; }
   .home-hero-copy {
-    padding-top: max(90px, 12vh);
-    padding-left: 20px; padding-right: 20px;
-    padding-bottom: 20px;
+    padding-top: max(100px, 12vh);
+    padding-left: 24px; padding-right: 24px;
+    padding-bottom: 24px;
     flex: 0 0 auto;
     width: 100%;
   }
-  .home-hero-copy .h1 { font-size: clamp(1.35rem, 5vw, 1.85rem); margin-bottom: 8px; }
-  .home-hero-copy .h-desc { font-size: 0.84rem; max-width: 300px; margin-bottom: 16px; }
-  .home-hero-copy .h-btns { flex-direction: row; flex-wrap: nowrap; gap: 10px; }
+  .home-hero-copy .h1 { font-size: clamp(1.5rem, 5vw, 2.4rem); margin-bottom: 12px; }
+  .home-hero-copy .h-desc { font-size: clamp(0.85rem, 1.8vw, 1.05rem); max-width: 480px; margin-bottom: 20px; }
+  .home-hero-copy .h-btns { flex-direction: row; flex-wrap: nowrap; gap: 12px; }
   .home-hero-copy .btn-y,
-  .home-hero-copy .btn-outline { padding: 9px 20px; font-size: 0.72rem; }
-  /* Mobile img: natural width/height. At 390px wide → image = 390x195px.
-     All products fully visible. No gap. No crop. Clean.
+  .home-hero-copy .btn-outline { padding: 11px 24px; font-size: 0.76rem; }
+  /* Mobile img: natural width/height.
      Needs position:relative and z-index to stay above the absolute background mesh/bg. */
   .home-hero-img-mobile {
     display: block;
@@ -3008,6 +3004,25 @@ footer {
     position: relative;
     z-index: 3;
   }
+}
+@media (max-width: 768px) {
+  .products-hero { height: 420px; }
+  .products-hero-copy { padding-top: 110px; padding-left: 24px; padding-right: 24px; }
+  .products-hero-copy .h1 { font-size: clamp(1.6rem, 5.5vw, 2.2rem); }
+  .products-hero-copy .h-desc { font-size: 0.88rem; max-width: 380px; }
+  .products-hero-img { background-size: 100% auto; background-position: center bottom; top: 0; bottom: -20px; }
+
+  /* Mobile overrides for stacked hero layout */
+  .home-hero-copy {
+    padding-top: max(90px, 12vh);
+    padding-left: 20px; padding-right: 20px;
+    padding-bottom: 20px;
+  }
+  .home-hero-copy .h1 { font-size: clamp(1.35rem, 5vw, 1.85rem); margin-bottom: 8px; }
+  .home-hero-copy .h-desc { font-size: 0.84rem; max-width: 300px; margin-bottom: 16px; }
+  .home-hero-copy .h-btns { flex-direction: row; flex-wrap: nowrap; gap: 10px; }
+  .home-hero-copy .btn-y,
+  .home-hero-copy .btn-outline { padding: 9px 20px; font-size: 0.72rem; }
 }
 @media (max-width: 480px) {
   .products-hero { height: 360px; }

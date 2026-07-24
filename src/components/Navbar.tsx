@@ -29,7 +29,7 @@ export default function Navbar() {
     return null;
   }
 
-  const navClass = scrolled ? 'scrolled' : '';
+  const navClass = `${scrolled ? 'scrolled' : ''} ${isMobileOpen ? 'force-solid mobile-open' : ''}`.trim();
 
   const getLinkClass = (path: string) => {
     if (path === '/') {
@@ -44,7 +44,7 @@ export default function Navbar() {
       <div className="nav-inner">
         <Link href="/" className="nav-logo">
           <img 
-            src={scrolled ? "/jeevan-rekha-logo.png" : "/jeevan-rekha-logo-white.png"} 
+            src={(scrolled || isMobileOpen) ? "/jeevan-rekha-logo.png" : "/jeevan-rekha-logo-white.png"} 
             alt="Jeevan Rekha Logo - Premium Edible Oils" 
             style={{ height: '50px', width: 'auto', objectFit: 'contain' }}
           />
