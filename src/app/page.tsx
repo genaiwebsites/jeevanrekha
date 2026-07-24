@@ -160,7 +160,7 @@ export default function Home() {
             alt="Jeevan Rekha product range"
             priority
             className="pointer-events-none"
-            style={{ width: '100%', height: 'auto', position: 'absolute', bottom: 0, left: 0 }}
+            style={{ width: '100%', maxWidth: '1360px', height: 'auto', position: 'absolute', bottom: 0, left: '50%', transform: 'translateX(-50%)' }}
             sizes="(max-width: 768px) 1px, 100vw"
           />
         </div>
