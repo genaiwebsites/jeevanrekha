@@ -21,9 +21,35 @@ const productSchema = {
     "url": "https://jeevanrekhafoods.com"
   },
   "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "url": "https://jeevanrekhafoods.com/contact"
+    "@type": "AggregateOffer",
+    "priceCurrency": "INR",
+    "lowPrice": "140.00",
+    "highPrice": "680.00",
+    "offerCount": "2",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "1-Litre Pouch",
+        "price": "140.00",
+        "priceCurrency": "INR",
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "url": "https://jeevanrekhafoods.com/products/soybean-oil",
+        "seller": { "@type": "Organization", "name": "Jeevan Rekha" }
+      },
+      {
+        "@type": "Offer",
+        "name": "5-Litre Jar",
+        "price": "680.00",
+        "priceCurrency": "INR",
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "url": "https://jeevanrekhafoods.com/products/soybean-oil",
+        "seller": { "@type": "Organization", "name": "Jeevan Rekha" }
+      }
+    ]
   }
 };
 
