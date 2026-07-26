@@ -5,7 +5,7 @@ import gsap from 'gsap';
 import { MapPin, Mail, Phone, Clock, Check } from 'lucide-react';
 import Image from 'next/image';
 
-import factoryTopImg from '../../../public/factory_top_view.jpg';
+import factoryPlantImg from '../../../public/jeevan-rekha-burdwan-edible-oil-factory.png';
 
 export default function Contact() {
   const [status, setStatus] = useState<'idle' | 'sending' | 'success'>('idle');
@@ -477,8 +477,8 @@ export default function Contact() {
               <div className="factory-visual-card">
                 <div className="factory-visual-img-wrap">
                   <Image
-                    src={factoryTopImg}
-                    alt="Aerial view of Jeevan Rekha Burdwan Plant"
+                    src={factoryPlantImg}
+                    alt="Jeevan Rekha Edible Oil Refining Factory & Processing Plant in Burdwan, West Bengal"
                     className="object-cover w-full h-full"
                     placeholder="blur"
                     sizes="(max-width: 768px) 100vw, 600px"

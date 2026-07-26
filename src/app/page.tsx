@@ -193,9 +193,7 @@ export default function Home() {
       <section className="why">
         <div className="wrap">
           <div className="why-top">
-            <div>
-              <h2 className="s-h rv" data-d="1">Built on <em>Science</em>,<br/>Trusted by <strong>India</strong></h2>
-            </div>
+            <h2 className="s-h rv" data-d="1">Built on <em>Science</em>, Trusted by <strong>India</strong></h2>
             <p className="body-t rv" data-d="2">Four decades of industry knowledge meet state-of-the-art technology at our Burdwan plant, delivering oils as nutritious as they are delicious, batch after batch.</p>
           </div>
           <div className="why-grid bento-why-grid">
