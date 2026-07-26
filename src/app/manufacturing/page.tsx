@@ -25,7 +25,7 @@ export default function Manufacturing() {
           <div className="pipeline-grid rv">
             {/* Node 1: Silo */}
             <div className="process-node n-1">
-              <div className="node-header"><div className="node-title">01. Silo Intake<span>Raw Material</span></div></div>
+              <div className="node-header"><div className="node-title">1. Raw Bran Intake<span>Quality &amp; Stabilization</span></div></div>
               <div className="node-svg-wrapper">
                 <svg className="node-svg" viewBox="0 0 100 120">
                   <path className="svg-detail" d="M25,90 L15,115 M75,90 L85,115" /> 
@@ -41,7 +41,7 @@ export default function Manufacturing() {
                   <circle cx="50" cy="10" r="1.5" fill="var(--c-bran)" className="anim-drop" />
                 </svg>
               </div>
-              <div className="node-desc-inline"><strong>Raw Intake:</strong> 100% traceably sourced. Extracted from the nutrient-rich aleurone and germ layers of rice.</div>
+              <div className="node-desc-inline"><strong>Raw Bran Intake:</strong> Fresh rice bran is sourced from trusted mills, quality-inspected, and stabilized to preserve its natural oil content and nutritional value.</div>
               <div className="pipe-mobile"><svg style={{ width: '10px', height: '100%' }}><line x1="5" y1="0" x2="5" y2="100%" className="anim-flow-line" markerEnd="url(#arrow-oil)"/></svg></div>
             </div>
 
@@ -50,7 +50,7 @@ export default function Manufacturing() {
 
             {/* Node 2: Pelletizer */}
             <div className="process-node n-2">
-              <div className="node-header"><div className="node-title">02. Pelletizer<span>Stabilization</span></div></div>
+              <div className="node-header"><div className="node-title">2. Conditioning &amp; Pelletizing<span>Lipase Deactivation</span></div></div>
               <div className="node-svg-wrapper">
                 <svg className="node-svg" viewBox="0 0 100 120">
                   <rect className="svg-tank" x="20" y="20" width="60" height="40" rx="4" />
@@ -60,7 +60,7 @@ export default function Manufacturing() {
                   <rect x="46" y="105" width="4" height="6" fill="var(--c-bran)" rx="2" className="anim-drop" style={{ animationDelay: '0.3s' }}/>
                 </svg>
               </div>
-              <div className="node-desc-inline"><strong>Conditioning:</strong> Heating chamber with mechanical compression. Steam instantly neutralizes lipase enzyme. Forms porous pellets.</div>
+              <div className="node-desc-inline"><strong>Conditioning &amp; Pelletizing:</strong> Steam conditioning deactivates lipase enzymes while adjusting moisture and forming porous pellets for solvent extraction.</div>
               <div className="pipe-mobile"><svg style={{ width: '10px', height: '100%' }}><line x1="5" y1="0" x2="5" y2="100%" className="anim-flow-line" markerEnd="url(#arrow-oil)"/></svg></div>
             </div>
 
@@ -69,7 +69,7 @@ export default function Manufacturing() {
 
             {/* Node 3: Extractor */}
             <div className="process-node n-3">
-              <div className="node-header"><div className="node-title">03. Extractor<span>Hexane Wash</span></div></div>
+              <div className="node-header"><div className="node-title">3. Solvent Extraction<span>Continuous Hexane Wash</span></div></div>
               <div className="node-svg-wrapper">
                 <svg className="node-svg" viewBox="0 0 100 120">
                   <rect className="svg-tank" x="10" y="10" width="80" height="90" rx="5" />
@@ -83,7 +83,7 @@ export default function Manufacturing() {
                   <path d="M 12 85 L 88 85 L 60 98 L 40 98 Z" fill="var(--c-oil)" opacity="0.8" className="glow-oil" />
                 </svg>
               </div>
-              <div className="node-desc-inline"><strong>Extraction:</strong> Continuous band extraction. Hexane acts as a liquid magnet, dissolving pure oil into a rich Miscella.</div>
+              <div className="node-desc-inline"><strong>Solvent Extraction:</strong> Food-grade hexane extracts oil from stabilized bran, producing oil-rich miscella and de-oiled bran with maximum recovery.</div>
               <div className="pipe-mobile"><svg style={{ width: '10px', height: '100%' }}><line x1="5" y1="0" x2="5" y2="100%" className="anim-flow-line" markerEnd="url(#arrow-oil)"/></svg></div>
             </div>
 
@@ -92,7 +92,7 @@ export default function Manufacturing() {
 
             {/* Node 4: Evaporator */}
             <div className="process-node n-4">
-              <div className="node-header"><div className="node-title">04. Evaporator<span>Thermal Loop</span></div></div>
+              <div className="node-header"><div className="node-title">4. Desolventization<span>Solvent Recovery</span></div></div>
               <div className="node-svg-wrapper">
                 <svg className="node-svg" viewBox="0 0 100 120">
                   <defs><clipPath id="dt-clip"><rect x="50" y="15" width="45" height="80" rx="3" /></clipPath></defs>
@@ -122,7 +122,7 @@ export default function Manufacturing() {
                   <rect x="78" y="95" width="4" height="4" fill="var(--c-bran)" className="anim-drop" rx="1" style={{ animationDelay: '0.4s' }} />
                 </svg>
               </div>
-              <div className="node-desc-inline"><strong>Desolventization:</strong> Zero-waste energy loop. Boiler evaporates hexane from the oil for recycling. Yields De-Oiled Bran (DORB).</div>
+              <div className="node-desc-inline"><strong>Desolventization:</strong> Hexane is safely recovered from miscella and bran through evaporation and steam stripping, producing crude oil and de-oiled bran (DORB).</div>
               <div className="pipe-mobile"><svg style={{ width: '10px', height: '100%' }}><line x1="5" y1="0" x2="5" y2="100%" className="anim-flow-line" markerEnd="url(#arrow-oil)"/></svg></div>
             </div>
 
@@ -131,7 +131,7 @@ export default function Manufacturing() {
 
             {/* Node 5 */}
             <div className="process-node n-5">
-              <div className="node-header"><div className="node-title">05. Bio-Reactor<span>Enzyme Dosing</span></div></div>
+              <div className="node-header"><div className="node-title">5. Enzymatic Degumming<span>Phospholipid Removal</span></div></div>
               <div className="node-svg-wrapper">
                 <svg className="node-svg" viewBox="0 0 100 120">
                   <path className="svg-glass" d="M20,30 L80,30 L80,90 L55,110 L45,110 L20,90 Z" />
@@ -149,7 +149,7 @@ export default function Manufacturing() {
                   <text x="82.5" y="50" className="svg-text-pid anim-pulse" fill="var(--c-enzyme)" style={{ fontSize: '8px' }}>55°C</text>
                 </svg>
               </div>
-              <div className="node-desc-inline"><strong>Bio-Refining:</strong> Natural biological enzymes dose at exactly 55°C, cleanly releasing impurities without harsh acids.</div>
+              <div className="node-desc-inline"><strong>Enzymatic Degumming:</strong> Natural enzymes remove phospholipids and gums under controlled conditions, improving oil purity while minimizing refining losses.</div>
               <div className="pipe-mobile"><svg style={{ width: '10px', height: '100%' }}><line x1="5" y1="0" x2="5" y2="100%" className="anim-flow-line" markerEnd="url(#arrow-oil)"/></svg></div>
             </div>
 
@@ -158,7 +158,7 @@ export default function Manufacturing() {
 
             {/* Node 6: Bleaching (RTL bottom row starts) */}
             <div className="process-node n-6">
-              <div className="node-header"><div className="node-title">06. Bleaching<span>Adsorptive Purification</span></div></div>
+              <div className="node-header"><div className="node-title">6. Bleaching<span>Adsorptive Purification</span></div></div>
               <div className="node-svg-wrapper">
                 <svg className="node-svg" viewBox="0 0 100 120">
                   <defs><clipPath id="bleach-clip"><path d="M 25 20 L 75 20 L 75 70 C 75 105, 25 105, 25 70 Z" /></clipPath></defs>
@@ -180,7 +180,7 @@ export default function Manufacturing() {
                   <text x="10" y="58" className="svg-text-pid anim-pulse" fill="var(--c-steam)" style={{ fontSize: '6px' }}>90°C</text>
                 </svg>
               </div>
-              <div className="node-desc-inline"><strong>Adsorptive Purification:</strong> Vacuum bleaching with acid-activated earth at 95°C adsorbs pigments, oxidation, and trace metals.</div>
+              <div className="node-desc-inline"><strong>Bleaching:</strong> Activated bleaching earth adsorbs pigments, oxidation products, trace metals, and remaining impurities to produce clean, bright oil.</div>
               <div className="pipe-mobile"><svg style={{ width: '10px', height: '100%' }}><line x1="5" y1="0" x2="5" y2="100%" className="anim-flow-line" markerEnd="url(#arrow-oil)"/></svg></div>
             </div>
 
@@ -189,7 +189,7 @@ export default function Manufacturing() {
 
             {/* Node 7 */}
             <div className="process-node n-7">
-              <div className="node-header"><div className="node-title">07. Dewaxing<span>Centrifuge Spin</span></div></div>
+              <div className="node-header"><div className="node-title">7. Dewaxing<span>Controlled Chilling</span></div></div>
               <div className="node-svg-wrapper">
                 <svg className="node-svg" viewBox="0 0 100 120">
                   {/* Base / Motor Mount */}
@@ -240,7 +240,7 @@ export default function Manufacturing() {
                   <text x="13" y="61" className="svg-text-pid" fill="var(--w)" style={{ fontSize: '4px' }}>RPM</text>
                 </svg>
               </div>
-              <div className="node-desc-inline"><strong>Centrifugal Separation:</strong> High-speed centrifuges extract gums. Oil is chilled to 8°C to crystallize and filter natural waxes.</div>
+              <div className="node-desc-inline"><strong>Dewaxing:</strong> Controlled chilling and high-precision filtration remove natural high-melting waxes, ensuring brilliant clarity and cold-temperature stability.</div>
               <div className="pipe-mobile"><svg style={{ width: '10px', height: '100%' }}><line x1="5" y1="0" x2="5" y2="100%" className="anim-flow-line" markerEnd="url(#arrow-oil)"/></svg></div>
             </div>
 
@@ -249,7 +249,7 @@ export default function Manufacturing() {
 
             {/* Node 8 */}
             <div className="process-node n-8">
-              <div className="node-header"><div className="node-title">08. The Flash<span>Vacuum Deodorizer</span></div></div>
+              <div className="node-header"><div className="node-title">8. Physical Refining<span>Vacuum Deodorization</span></div></div>
               <div className="node-svg-wrapper">
                 <svg className="node-svg" viewBox="0 0 100 120">
                   <defs><clipPath id="flash-clip"><rect x="30" y="15" width="40" height="95" rx="4" /></clipPath></defs>
@@ -280,7 +280,7 @@ export default function Manufacturing() {
                   <text x="15" y="53" className="svg-text-pid anim-pulse" fill="var(--c-steam)" style={{ fontSize: '6px', fontWeight: 'bold' }}>260°C</text>
                 </svg>
               </div>
-              <div className="node-desc-inline"><strong>Physical Refining:</strong> Vacuum steam distillation at 260°C strips FFAs while preserving heat-sensitive Gamma-Oryzanol.</div>
+              <div className="node-desc-inline"><strong>Physical Refining:</strong> High-vacuum steam distillation removes free fatty acids, odors, and impurities while preserving natural Gamma Oryzanol and Vitamin E.</div>
               <div className="pipe-mobile"><svg style={{ width: '10px', height: '100%' }}><line x1="5" y1="0" x2="5" y2="100%" className="anim-flow-line" markerEnd="url(#arrow-oil)"/></svg></div>
             </div>
 
@@ -289,7 +289,7 @@ export default function Manufacturing() {
 
             {/* Node 9: Winterization */}
             <div className="process-node n-9">
-              <div className="node-header"><div className="node-title">09. Winterization<span>Fractional Crystallization</span></div></div>
+              <div className="node-header"><div className="node-title">9. Winterization<span>Precision Crystallization</span></div></div>
               <div className="node-svg-wrapper">
                 <svg className="node-svg" viewBox="0 0 100 120">
                   {/* Base and Mounts */}
@@ -357,7 +357,7 @@ export default function Manufacturing() {
                   <text x="10" y="52" className="svg-text-pid" fill="var(--w)" style={{ fontSize: '3px' }} textAnchor="middle">CHILL</text>
                 </svg>
               </div>
-              <div className="node-desc-inline"><strong>Fractional Crystallization:</strong> Deep chilling to 5°C nucleates stearins. Hermetic filtration ensures pristine cold-test stability.</div>
+              <div className="node-desc-inline"><strong>Winterization:</strong> Controlled crystallization and filtration eliminate high-melting fractions, delivering crystal-clear oil for premium applications.</div>
               <div className="pipe-mobile"><svg style={{ width: '10px', height: '100%' }}><line x1="5" y1="0" x2="5" y2="100%" className="anim-flow-line" markerEnd="url(#arrow-oil)"/></svg></div>
             </div>
 
@@ -366,19 +366,19 @@ export default function Manufacturing() {
 
             {/* Node 10 */}
             <div className="process-node n-10">
-              <div className="node-header"><div className="node-title">10. Final Yield<span>Bio-Refined Oil</span></div></div>
+              <div className="node-header"><div className="node-title">10. QA &amp; Packaging<span>Quality Assurance</span></div></div>
               <div className="node-svg-wrapper">
                 <svg className="node-svg" viewBox="0 0 100 120">
-                  <defs><clipPath id="node-08-clip"><path d="M42,20 L58,20 L58,35 C58,45 75,55 75,100 C75,115 25,115 25,100 C25,55 42,45 42,35 Z" /></clipPath></defs>
+                  <defs><clipPath id="node-10-clip"><path d="M42,20 L58,20 L58,35 C58,45 75,55 75,100 C75,115 25,115 25,100 C25,55 42,45 42,35 Z" /></clipPath></defs>
                   <path className="svg-glass" d="M42,20 L58,20 L58,35 C58,45 75,55 75,100 C75,115 25,115 25,100 C25,55 42,45 42,35 Z" />
-                  <g clipPath="url(#node-08-clip)">
+                  <g clipPath="url(#node-10-clip)">
                     <rect x="0" y="120" width="100" height="100" fill="var(--c-oil)" className="glow-oil fill-bottle-rect" />
                   </g>
                   <circle cx="50" cy="10" r="1.5" fill="var(--c-oil)" className="anim-drop glow-oil" />
                   <rect x="40" y="15" width="20" height="8" fill="var(--c-metal)" rx="2" />
                 </svg>
               </div>
-              <div className="node-desc-inline"><strong>Final Yield:</strong> Luminous, pure gold Rice Bran Oil. Bio-Refined to a pristine 0.07 ppm Phosphorus. Ready for global distribution.</div>
+              <div className="node-desc-inline"><strong>QA &amp; Packaging:</strong> Every batch undergoes rigorous testing before hygienic packaging, ensuring consistent quality, food safety, and global compliance.</div>
             </div>
           </div>
         </div>

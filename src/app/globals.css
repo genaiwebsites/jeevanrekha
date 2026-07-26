@@ -1869,9 +1869,9 @@ html:has(.mustard-page-container) ::-webkit-scrollbar-track {
 }
 .pipeline-grid { display: grid; grid-template-columns: 1fr clamp(40px, 6vw, 90px) 1fr clamp(40px, 6vw, 90px) 1fr clamp(40px, 6vw, 90px) 1fr clamp(40px, 6vw, 90px) 1fr; align-items: start; row-gap: 1.5rem; width: 100%; max-width: 1360px; margin: 0 auto; }
 .process-node { display: flex; flex-direction: column; align-items: center; position: relative; height: 100%; z-index: 2; min-width: 0; }
-.node-header { text-align: center; height: 60px; margin-bottom: 1rem; width: 100%; display: flex; flex-direction: column; justify-content: flex-end; }
-.node-title { font-family: var(--f-tech); font-size: clamp(0.6rem, 1vw, 0.75rem); color: var(--w); letter-spacing: 0.1em; text-transform: uppercase; }
-.node-title span { color: rgba(255,255,255,0.6); display: block; font-size: 0.55rem; margin-top: 6px; }
+.node-header { text-align: center; height: 60px; margin-bottom: 1rem; width: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+.node-title { font-family: var(--f-tech); font-size: clamp(0.58rem, 0.9vw, 0.72rem); color: var(--w); letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; text-align: center; }
+.node-title span { color: rgba(255,255,255,0.6); display: block; font-size: 0.55rem; margin-top: 4px; white-space: nowrap; text-align: center; letter-spacing: 0.05em; }
 .node-svg-wrapper { width: 100px; height: 120px; flex-shrink: 0; position: relative; z-index: 5; margin-bottom: 1rem; }
 .node-svg { width: 100%; height: 100%; overflow: visible; filter: drop-shadow(0 10px 20px rgba(0,0,0,0.3)); }
 .node-desc-inline { font-size: 0.75rem; color: rgba(255,255,255,0.72); line-height: 1.5; text-align: center; background: rgba(255,255,255,0.06); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-radius: 8px; border: 1px solid rgba(255,255,255,0.12); padding: 0.8rem 0.5rem; width: 120%; box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25); }
