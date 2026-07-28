@@ -53,6 +53,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: 'https://jeevanrekhafoods.com/blogs/easy-evening-snacks-recipe-with-rice-bran-oil',
+  },
 };
 
 const blogSchema = {

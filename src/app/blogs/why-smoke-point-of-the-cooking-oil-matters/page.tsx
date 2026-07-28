@@ -53,6 +53,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: 'https://jeevanrekhafoods.com/blogs/why-smoke-point-of-the-cooking-oil-matters',
+  },
 };
 
 const blogSchema = {

@@ -52,6 +52,9 @@ export const metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: "https://jeevanrekhafoods.com/blogs/recipes/indian-evening-snacks-rice-bran-oil",
+  },
 };
 
 const recipeJsonLd = {

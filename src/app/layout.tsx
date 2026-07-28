@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
     default: 'Jeevan Rekha | Purity. Health. Happiness.',
-    template: '%s | Jeevan Rekha',
+    template: '%s',
   },
   description: 'Jeevan Rekha, a brand of AB Udyog Pvt. Ltd., brings 40+ years of expertise in producing premium Rice Bran Oil, Kacchi Ghani Mustard Oil, and Soybean Oil. Manufactured in Burdwan, West Bengal. NABL-certified quality. Proudly made in India.',
   keywords: [
@@ -112,7 +112,7 @@ export const metadata: Metadata = {
     ],
   },
   alternates: {
-    canonical: 'https://jeevanrekhafoods.com',
+    canonical: './',
   },
   robots: {
     index: true,

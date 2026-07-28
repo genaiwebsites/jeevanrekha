@@ -53,6 +53,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: 'https://jeevanrekhafoods.com/blogs/mothers-day-recipes-prepared-with-rice-bran-oil',
+  },
 };
 
 const blogSchema = {

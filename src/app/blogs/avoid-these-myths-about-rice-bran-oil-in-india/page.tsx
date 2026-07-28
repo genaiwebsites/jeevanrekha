@@ -53,6 +53,9 @@ export const metadata: Metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: 'https://jeevanrekhafoods.com/blogs/avoid-these-myths-about-rice-bran-oil-in-india',
+  },
 };
 
 const blogSchema = {

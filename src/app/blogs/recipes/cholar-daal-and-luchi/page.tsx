@@ -52,6 +52,9 @@ export const metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: "https://jeevanrekhafoods.com/blogs/recipes/cholar-daal-and-luchi",
+  },
 };
 
 

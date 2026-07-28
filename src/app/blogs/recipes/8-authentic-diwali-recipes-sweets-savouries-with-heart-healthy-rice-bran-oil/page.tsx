@@ -52,6 +52,9 @@ export const metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: "https://jeevanrekhafoods.com/blogs/recipes/8-authentic-diwali-recipes-sweets-savouries-with-heart-healthy-rice-bran-oil",
+  },
 };
 
 export default function RecipePage() {

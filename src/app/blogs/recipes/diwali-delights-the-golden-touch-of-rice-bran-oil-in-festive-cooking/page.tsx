@@ -52,6 +52,9 @@ export const metadata = {
       },
     ],
   },
+  alternates: {
+    canonical: "https://jeevanrekhafoods.com/blogs/recipes/diwali-delights-the-golden-touch-of-rice-bran-oil-in-festive-cooking",
+  },
 };
 
 const recipeJsonLd = {
