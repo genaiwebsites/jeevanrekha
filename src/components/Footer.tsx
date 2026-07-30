@@ -66,12 +66,28 @@ export default function Footer() {
             </ul>
           </div>
           <div className="f-col">
-            <h5>Contact</h5>
+            <h5>Contact Us</h5>
             <ul>
-              <li><a href="tel:+917439289709">📞 +91 74392 89709</a></li>
-              <li><a href="mailto:info@abudyog.in">✉️ info@abudyog.in</a></li>
-              <li><a>📍 Strand Road, Kolkata</a></li>
-              <li><a>🏭 Burdwan 713427</a></li>
+              <li>
+                <a href="tel:+917439289709">📞 +917439289709</a>
+              </li>
+              <li>
+                <a href="mailto:info@abudyog.in">✉️ Email: info@abudyog.in</a>
+              </li>
+              <li className="f-contact-item">
+                <span className="f-contact-icon">📍</span>
+                <span>
+                  55/1B, Strand Road, 3rd Floor,<br />
+                  Room No.05, Kolkata - 700006
+                </span>
+              </li>
+              <li className="f-contact-item">
+                <span className="f-contact-icon">🏭</span>
+                <span>
+                  Dighirkon, Bamunia Road,<br />
+                  Uchallan, Burdwan - 713427
+                </span>
+              </li>
             </ul>
           </div>
         </div>
