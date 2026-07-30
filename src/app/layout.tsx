@@ -12,6 +12,7 @@ import JsonLd from "@/components/JsonLd";
 import { cn } from "@/lib/utils";
 import { Analytics } from '@vercel/analytics/next';
 import { GoogleTagManager, GoogleAnalytics } from '@next/third-parties/google';
+import Script from 'next/script';
 
 const lora = Lora({
   variable: "--font-lora",
@@ -161,6 +162,11 @@ export default function RootLayout({
         <Analytics />
         <GoogleTagManager gtmId="GTM-NNPQ73JP" />
         <GoogleAnalytics gaId="G-ZZHTK4M9DW" />
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="garuSc3cPbrdUoRjJnoN5g"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
