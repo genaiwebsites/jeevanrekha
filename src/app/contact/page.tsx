@@ -204,7 +204,7 @@ export default function Contact() {
               <div className="qc-sub">Response within 24 hrs</div>
             </div>
           </a>
-          <a href="https://web.whatsapp.com/send?phone=+917439289709" target="_blank" rel="noopener noreferrer" className="qc-item rv" data-d="2">
+          <a href="https://web.whatsapp.com/send?phone=+917439289709" target="_blank" rel="nofollow noopener noreferrer" className="qc-item rv" data-d="2">
             <div className="qc-ico ico-w">
               <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
                 <path d="M17.5 14.4c-.3-.1-1.7-.8-2-1-.3-.1-.5-.1-.7.1-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.4.3-.6.1-.2 0-.4 0-.5-.1-.2-.7-1.6-1-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.5.2-1 .1-1.2-.1-.2-.3-.2-.5-.3z" />
